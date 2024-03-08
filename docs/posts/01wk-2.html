@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="최규빈">
+<meta name="dcterms.date" content="2024-03-06">
 
-<title>PP2024 - 파이썬 프로그래밍 (2024)</title>
+<title>PP2024 - 01wk-2: 파이썬은 좋은 계산기다</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,50 +68,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">PP2024</span>
     </a>
   </div>
@@ -139,25 +108,35 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">파이썬 프로그래밍 (2024)</h1>
+<h1 class="title">01wk-2: 파이썬은 좋은 계산기다</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>최규빈 </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 6, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -167,61 +146,46 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>질문하는 방법</strong></p>
-<ul>
-<li>이메일: <a href="mailto:guebin@jbnu.ac.kr" class="email">guebin@jbnu.ac.kr</a></li>
-<li>직접방문: 자연과학대학 본관 205호</li>
-<li>Zoom: <em>이메일로 미리 시간을 정할 것</em></li>
-</ul>
-<p><strong>강의노트</strong></p>
+<p><a href="https://colab.research.google.com/github/guebin/PP2024/blob/main/posts/01wk-2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" style="text-align: left"></a></p>
+<section id="imports" class="level1">
+<h1>2. Imports</h1>
+</section>
+<section id="파이썬은-좋은-계산기-중-하나이다." class="level1">
+<h1>3. 파이썬은 좋은 계산기 중 하나이다.</h1>
+</section>
+<section id="수능-124623" class="level1">
+<h1>4. 2024 수능 – 1,2,4,6,23</h1>
+<p><img src="01wk-2_files/figure-html/43063e22-dece-4c51-8f7a-f75cbc738027-1-670f4a75-f6bd-406e-b883-32e2f589cee2.png" class="img-fluid"></p>
+<p><code>(풀이)</code></p>
+<p><img src="01wk-2_files/figure-html/605d76c5-d04b-449a-9749-88257bec9081-1-e387a7d1-feaa-406e-bec6-0e65c3476ffa.png" class="img-fluid"></p>
+<p><code>(풀이)</code></p>
+<p><img src="01wk-2_files/figure-html/32c1460c-78ca-4405-b8d3-863f1ca30b70-1-81c91964-b138-4bb2-8049-9789c26b1dd8.png" class="img-fluid"></p>
+<p><code>(풀이)</code></p>
+<p><img src="01wk-2_files/figure-html/6f9c14c6-c7ff-4a4a-a262-f200d4f6a203-1-aba879db-fabc-4ff9-9a31-172ac9c1099c.png" class="img-fluid"></p>
+<p><code>(풀이)</code></p>
+<p><img src="01wk-2_files/figure-html/36e7fd14-0d0a-4bc4-bb90-5982c7c71d71-1-75597b3b-dc6a-4046-a10f-a5b0fa43398d.png" class="img-fluid"></p>
+<p><code>(풀이)</code></p>
+</section>
+<section id="수능---367245" class="level1">
+<h1>5. 2024 수능 - 3,6,7,24,5</h1>
+<p><img src="01wk-2_files/figure-html/5d0906a4-29f4-44e1-8de8-64bf886c4223-1-41aa35ac-2a9d-4450-ad52-5429424a164b.png" class="img-fluid"></p>
+<p><code>(풀이)</code></p>
+<p><img src="01wk-2_files/figure-html/f1c5a41a-9807-4d5d-860d-6540eaadf9b0-1-fe8be462-f538-4773-8d28-8dd12b82f50b.png" class="img-fluid"></p>
+<p><code>(풀이)</code></p>
+<p><img src="01wk-2_files/figure-html/bc46b912-269d-4be3-8f55-40f2eab182f3-1-0dafbf8e-dfe4-49f5-b2be-409e2d570e09.png" class="img-fluid"></p>
+<p><code>(풀이)</code></p>
+<p><img src="01wk-2_files/figure-html/8d931234-b6e0-4bbc-b65d-a7a489bfeb23-1-b2ebc251-994e-4f33-9ee6-2288bd50c0cf.png" class="img-fluid"></p>
+<p><code>(풀이)</code></p>
+<p><img src="01wk-2_files/figure-html/212f2751-f779-4697-9350-ac9cb5387f7f-1-c76467ad-9344-4f49-9ada-80134f6e730d.png" class="img-fluid"></p>
+<p><code>(풀이)</code></p>
+</section>
+<section id="파이썬-문법복습" class="level1">
+<h1>6. 파이썬 문법복습</h1>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Author
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1709650800000" data-listing-file-modified-sort="1709859134038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7" data-listing-title-sort="01wk-2: 파이썬은 좋은 계산기다" data-listing-filename-sort="01wk-2.ipynb">
-<td>
-<span class="listing-date">Mar 6, 2024</span>
-</td>
-<td>
-<a href="./posts/01wk-2.html" class="title listing-title">01wk-2: 파이썬은 좋은 계산기다</a>
-</td>
-<td>
-<span class="listing-author">최규빈 </span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1709650800000" data-listing-file-modified-sort="1709773840523" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="89" data-listing-title-sort="01wk-1: 강의소개" data-listing-filename-sort="01wk-1.ipynb">
-<td>
-<span class="listing-date">Mar 6, 2024</span>
-</td>
-<td>
-<a href="./posts/01wk-1.html" class="title listing-title">01wk-1: 강의소개</a>
-</td>
-<td>
-<span class="listing-author">최규빈 </span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

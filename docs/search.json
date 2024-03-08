@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "파이썬 프로그래밍 (2024)",
     "section": "",
-    "text": "질문하는 방법\n\n이메일: guebin@jbnu.ac.kr\n직접방문: 자연과학대학 본관 205호\nZoom: 이메일로 미리 시간을 정할 것\n\n강의노트\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMar 6, 2024\n\n\n01wk-1: 강의소개\n\n\n최규빈 \n\n\n\n\n\nNo matching items"
+    "text": "질문하는 방법\n\n이메일: guebin@jbnu.ac.kr\n직접방문: 자연과학대학 본관 205호\nZoom: 이메일로 미리 시간을 정할 것\n\n강의노트\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMar 6, 2024\n\n\n01wk-2: 파이썬은 좋은 계산기다\n\n\n최규빈 \n\n\n\n\nMar 6, 2024\n\n\n01wk-1: 강의소개\n\n\n최규빈 \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/01wk-1.html",
@@ -12,6 +12,13 @@
     "title": "01wk-1: 강의소개",
     "section": "",
     "text": "1. 전북대 + 충남대\n- 전북대는 전북대학생끼리 성적평가.\n- 충남대는 충남대학생끼리 성적평가.\n- 충남대 학생의 경우 교양과목임을 감안하여 채점할 예정임.\n\n\n2. 플립러닝\n- 수업: 매주 금요일 오후까지 강의홈페이지에 업로드 될 예정.\n\n수업은 영상업로드 방식 (각자 수강)\n영상시청에 대한 별도의 출석체크는 없음.\n\n- 퀴즈: 매주 수요일 수업시간에 퀴즈를 볼 예정임.\n\n시험은 오픈북이며 구글검색, 강의노트 참고등을 허용함.\nChatGPT는 허용하지 않음.\n\n\n\n3. 성적처리 방식\n- 출석 10%, 퀴즈 50%, 중간 20%, 기말 20%\n\n출석은 매주 수요일 퀴즈시간에 체크할 예정임. (따라서 퀴즈를 보면 출석점수는 자동으로 인정)\n사실상 퀴즈의 점수비중이 60%"
+  },
+  {
+    "objectID": "posts/01wk-2.html",
+    "href": "posts/01wk-2.html",
+    "title": "01wk-2: 파이썬은 좋은 계산기다",
+    "section": "",
+    "text": "2. Imports\n\n\n3. 파이썬은 좋은 계산기 중 하나이다.\n\n\n4. 2024 수능 – 1,2,4,6,23\n\n(풀이)\n\n(풀이)\n\n(풀이)\n\n(풀이)\n\n(풀이)\n\n\n5. 2024 수능 - 3,6,7,24,5\n\n(풀이)\n\n(풀이)\n\n(풀이)\n\n(풀이)\n\n(풀이)\n\n\n6. 파이썬 문법복습"
   },
   {
     "objectID": "about.html",
