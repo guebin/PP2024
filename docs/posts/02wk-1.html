@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="최규빈">
-<meta name="dcterms.date" content="2024-03-06">
+<meta name="dcterms.date" content="2024-03-13">
 
 <title>PP2024 - 02wk-1: Quiz 1 (예상문제)</title>
 <style>
@@ -180,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2024</p>
+      <p class="date">March 13, 2024</p>
     </div>
   </div>
   
@@ -211,8 +211,7 @@ Note
 <li>이 문항은 예시일 뿐이며, 본 문항들이 그대로 시험에 출제되지는 않음.</li>
 <li>일부문항은 숫자를 바꿔서 출제되거나 그대로 출제될 수 있음.</li>
 <li>일부문항은 모범답안이 제시되어 있음. (참고용으로..)</li>
-<li>일부문항은 부분문제를 모두 맞출경우만 정답으로 인정함.</li>
-<li><strong>예상문제를 풀기 어려운 경우 질문가능함 (힌트를 주거나 풀이를 알려줄 수 있음, 혹은 학생이 풀이한 답안검토 하고 피드백 줄 수 있음)</strong></li>
+<li><strong>예상문제를 풀기 어려운 경우 질문가능함 (힌트를 주거나 풀이를 알려줄 수 있음, 혹은 학생이 풀이한 답안을 검토하고 피드백 줄 수 있음)</strong></li>
 </ul>
 </div>
 </div>
@@ -228,7 +227,8 @@ Warning
 <div class="callout-body-container callout-body">
 <ul>
 <li>모든 문항은 부분점수 없음. (예를들어 문제1-(1)의 경우 <code>p</code>까지는 생성하였지만 그래프를 그리지 못한 경우 0점처리함)</li>
-<li><code>.ipynb</code> 파일 형태로 제출된 답안지만 채점하며 그 외의 형식 (<code>.hwp</code>등)은 채점하지 않음. 즉 0점 처리함.</li>
+<li>일부문항은 부분문제를 모두 맞출경우만 정답으로 인정함. 예를들면 문제2와 같은 경우.</li>
+<li><code>.ipynb</code> 파일 형태로 제출된 답안지만 채점하며 그 외의 형식 (<code>.hwp</code>등)은 채점하지 않음. 즉 0점 처리함. <strong>제출방법 모르면 물어볼것!</strong></li>
 </ul>
 </div>
 </div>
@@ -243,9 +243,9 @@ Caution
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>전북대 학생들을 시험당일 학생증을 지참할 것. (출석체크 및 본인확인)</li>
+<li>전북대 학생들을 시험당일 학생증을 지참할 것. (출석체크 및 본인확인) 학생증 외에 신분증 여권등도 가능.</li>
 <li>부정행위 (카카오톡 채팅을 통한 코드공유, 생성형모델 사용, 대리시험 등) 적발시 F 처리함.</li>
-<li>퀴즈 중 지각은 기록은 하지만 별다른 감점은 하지 않음.</li>
+<li>퀴즈 중 지각할 경우 지각사실을 기록함. 하지만 별다른 감점은 하지 않음.</li>
 </ul>
 </div>
 </div>
@@ -409,6 +409,7 @@ Caution
 <section id="문제-3." class="level1">
 <h1>문제 3.</h1>
 <p><code>(1)</code> <span class="math inline">\(\frac{\pi}{2}&lt;x&lt;\frac{3}{2}\pi\)</span> 에서 <span class="math inline">\(f(x)=\sin(\frac{3}{2}x)\)</span> 와 <span class="math inline">\(g(x)=\cos(2x)\sin(5x)\)</span> 의 교점의 수를 구하여라.</p>
+<p>(풀이)</p>
 <div id="f5332d89-fff1-49f1-8015-78f8f2138632" class="cell" data-execution_count="113">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(np.pi<span class="op">/</span><span class="dv">2</span>,<span class="dv">3</span><span class="op">/</span><span class="dv">2</span><span class="op">*</span>np.pi,<span class="dv">100</span>)[:<span class="op">-</span><span class="dv">1</span>]</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -445,6 +446,9 @@ Caution
 </figure>
 </div>
 </div>
+</div>
+<div id="bd7f5e8e-e2b2-4af6-93b8-fbf1d25b34dc" class="cell" data-execution_count="115">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 답 3개</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>(2)</code> <span class="math inline">\(a_n=\frac{1}{n(n+1)}\)</span> 일때 <span class="math inline">\(S_1,\dots,S_{20}\)</span>을 구하여라.</p>
 
