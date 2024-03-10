@@ -253,10 +253,10 @@ Caution
 <h1>문제 1.</h1>
 <p><code>(1)</code> <span class="math inline">\(0&lt;p&lt;1\)</span> 인 범위에서 <span class="math inline">\(p(1-p)\)</span>의 그래프를 그려라. – 5점</p>
 <p>(풀이)</p>
-<div id="bfe634c2-9d6b-453b-bef5-fc6d7b4e33da" class="cell" data-execution_count="60">
+<div id="bfe634c2-9d6b-453b-bef5-fc6d7b4e33da" class="cell" data-execution_count="120">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.linspace(<span class="dv">1</span><span class="op">/</span><span class="dv">100</span>,<span class="dv">1</span>,<span class="dv">100</span>)[:<span class="op">-</span><span class="dv">1</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="60">
+<div class="cell-output cell-output-display" data-execution_count="120">
 <pre><code>array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1 , 0.11,
        0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2 , 0.21, 0.22,
        0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3 , 0.31, 0.32, 0.33,
@@ -283,12 +283,12 @@ Caution
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 힌트: 손으로 풀어보면 답은 0.5라는건 알겠죠? </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>(3)</code> 아래와 같이 50개의 숫자를 나열한 배열 <span class="math inline">\({\bf x}=[x_1,x_2,\dots,x_n]\)</span>을 상상하자. – 10점</p>
-<div id="facee20c-d5ad-4f60-822f-34bc06e56d00" class="cell" data-execution_count="21">
+<div id="facee20c-d5ad-4f60-822f-34bc06e56d00" class="cell" data-execution_count="117">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>              <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>              <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>])</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="117">
 <pre><code>array([0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
        0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0,
        0, 0, 0, 0, 1, 0])</code></pre>
@@ -337,7 +337,7 @@ Warning
 <p>1-(5)에서 문제 오류가 있어 수정했습니다.</p>
 <ul>
 <li>수정전: “<span class="math inline">\(0&lt;p&lt;1\)</span>” 의 범위에서 <span class="math inline">\(l(p)\)</span>를 최대값을 구하라.”</li>
-<li>수정후: “<span class="math inline">\(0&lt;p&lt;1\)</span>” 의 범위에서 <span class="math inline">\(l(p)\)</span>를 최대로 만드는 최대값을 구하라. 즉 <span class="math inline">\(\underset{p}{\operatorname{argmax}} l(p)\)</span>를 구하라.”</li>
+<li>수정후: “<span class="math inline">\(0&lt;p&lt;1\)</span>” 의 범위에서 <span class="math inline">\(l(p)\)</span>를 최대로 만드는 <span class="math inline">\(p\)</span>의 값을 구하라. 즉 <span class="math inline">\(\underset{p}{\operatorname{argmax}} l(p)\)</span>를 구하라.”</li>
 </ul>
 </div>
 </div>
