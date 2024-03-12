@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.520">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="최규빈">
-<meta name="dcterms.date" content="2024-03-13">
+<meta name="dcterms.date" content="2023-12-01">
 
-<title>PP2024 - 02wk-1: Quiz 1 (예상문제)</title>
+<title>PP2024 - A0: Quiz 1 (예상문제)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,6 +106,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
 </head>
 
@@ -156,14 +183,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#문제-2." id="toc-문제-2." class="nav-link" data-scroll-target="#문제-2.">문제 2.</a></li>
   <li><a href="#문제-3." id="toc-문제-3." class="nav-link" data-scroll-target="#문제-3.">문제 3.</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02wk-1.out.ipynb" download="02wk-1.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Quiz-sample.out.ipynb" download="Quiz-sample.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">02wk-1: Quiz 1 (예상문제)</h1>
+<h1 class="title">A0: Quiz 1 (예상문제)</h1>
 </div>
 
 
@@ -180,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 13, 2024</p>
+      <p class="date">December 1, 2023</p>
     </div>
   </div>
   
@@ -273,7 +300,7 @@ Caution
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="02wk-1_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Quiz-sample_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -299,7 +326,7 @@ Caution
 <p><strong>hint</strong></p>
 <ul>
 <li><span class="math inline">\(n=50\)</span> 으로 설정해야겠죠?</li>
-<li><span class="math inline">\(\sum_{i=1}^{50}x_i=s\)</span>를 미리 계산하고 <span class="math inline">\(s\)</span>를 이용하여 함수 <span class="math inline">\(l(p)=s\log p + (50-s)\log(1-p)\)</span> 를 정의하세요.</li>
+<li><span class="math inline">\(\sum_{i=1}^{50}x_i=s\)</span>를 미리 계산하고 <span class="math inline">\(s\)</span>를 이용하여 함수 <span class="math inline">\(l(p)=s\log p  + (50-s)\log(1-p)\)</span> 를 정의하세요.</li>
 </ul>
 <div id="0f97a1d4-ffa4-4a04-822b-81f9345960fe" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 시각화예시</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -310,7 +337,7 @@ Caution
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="02wk-1_files/figure-html/cell-7-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="Quiz-sample_files/figure-html/cell-7-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -459,7 +486,7 @@ Warning
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="02wk-1_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Quiz-sample_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -601,27 +628,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -636,10 +642,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -648,7 +658,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
