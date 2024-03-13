@@ -159,6 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#문제-5.-10점" id="toc-문제-5.-10점" class="nav-link" data-scroll-target="#문제-5.-10점">문제 5. – 10점</a></li>
   <li><a href="#문제-6.-20점" id="toc-문제-6.-20점" class="nav-link" data-scroll-target="#문제-6.-20점">문제 6. – 20점</a></li>
   <li><a href="#문제-7.-30점" id="toc-문제-7.-30점" class="nav-link" data-scroll-target="#문제-7.-30점">문제 7. – 30점</a></li>
+  <li><a href="#성적분포" id="toc-성적분포" class="nav-link" data-scroll-target="#성적분포">성적분포</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02wk-1.out.ipynb" download="02wk-1.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -530,6 +531,22 @@ Caution
 </div>
 </div>
 <p>발산한다</p>
+</section>
+<section id="성적분포" class="level1">
+<h1>성적분포</h1>
+<div id="4ba08110-c32a-4856-bc03-1e44294e3de6" class="cell" data-tags="[]" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="b8c041a5-f4f0-4993-a64a-4b633d0b0644" class="cell" data-tags="[]" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv(<span class="st">"2wk.csv"</span>)[<span class="st">'2wk'</span>].sort_values().to_numpy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>array([  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+         0,   0,   0,  10,  10,  10,  20,  20,  20,  20,  20,  30,  30,
+        30,  30,  40,  40,  40,  40,  40,  50,  50,  50,  50,  50,  50,
+        50,  60,  60,  60,  70,  70,  80,  80,  80,  90,  90, 100, 100,
+       100, 100, 100, 100])</code></pre>
+</div>
+</div>
 
 
 </section>
