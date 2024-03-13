@@ -198,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><a href="https://colab.research.google.com/github/guebin/PP2024/blob/main/posts/02wk-1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" style="text-align: left"></a></p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/playlist?list=PLQqh36zP38-xkTDmutNidYnOkCgn2Zkdk&amp;si=DPIWwBqzxkGHWIAr" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<div id="a90a9aec-141b-41ee-bb4d-3037b019af2c" class="cell" data-execution_count="1">
+<div id="a90a9aec-141b-41ee-bb4d-3037b019af2c" class="cell" data-execution_count="109">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -242,12 +242,12 @@ Caution
 <p>모두 맞출 경우만 정답으로 인정</p>
 </blockquote>
 <p><code>(1)</code> 아래와 같이 50개의 숫자를 나열한 배열 <span class="math inline">\({\bf x}=[x_1,x_2,\dots,x_n]\)</span>을 상상하자.</p>
-<div id="facee20c-d5ad-4f60-822f-34bc06e56d00" class="cell" data-execution_count="2">
+<div id="facee20c-d5ad-4f60-822f-34bc06e56d00" class="cell" data-execution_count="110">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>,</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>              <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>              <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>])</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="110">
 <pre><code>array([0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
        0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0,
        0, 0, 0, 0, 1, 0])</code></pre>
@@ -258,20 +258,20 @@ Caution
 <p>파이썬을 이용하여 아래를 근사계산하라.</p>
 <p><span class="math display">\[\lim_{h \to 0}\frac{l(0.32+h)-l(0.32)}{h}\]</span></p>
 <p>(풀이)</p>
-<div id="22eba242-9d7a-4fdc-92bc-3c1e90664dc6" class="cell" data-execution_count="8">
+<div id="22eba242-9d7a-4fdc-92bc-3c1e90664dc6" class="cell" data-execution_count="111">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> <span class="kw">lambda</span> p: <span class="dv">16</span><span class="op">*</span>np.log(p) <span class="op">+</span> (<span class="dv">50</span><span class="op">-</span><span class="dv">16</span>)<span class="op">*</span>np.log(<span class="dv">1</span><span class="op">-</span>p)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span><span class="fl">0.000000001</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>(l(<span class="fl">0.32</span><span class="op">+</span>h)<span class="op">-</span>l(<span class="fl">0.32</span>))<span class="op">/</span>h</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="111">
 <pre><code>3.5527136788005005e-06</code></pre>
 </div>
 </div>
 <p><code>(2)</code> <span class="math inline">\(0&lt;p&lt;1\)</span>의 범위에서 <span class="math inline">\(l(p)\)</span>를 최대로 만드는 <span class="math inline">\(p\)</span>의 값을 구하라. 즉 <span class="math inline">\(\underset{p}{\operatorname{argmax}} l(p)\)</span>를 구하라.</p>
 <p>(풀이)</p>
-<div id="cb0a99d3-0fae-4d40-9b5f-d7f7c1767381" class="cell" data-execution_count="10">
+<div id="cb0a99d3-0fae-4d40-9b5f-d7f7c1767381" class="cell" data-execution_count="112">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.linspace(<span class="dv">1</span><span class="op">/</span><span class="dv">100</span>,<span class="dv">1</span>,<span class="dv">100</span>)[:<span class="op">-</span><span class="dv">1</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="112">
 <pre><code>array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1 , 0.11,
        0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2 , 0.21, 0.22,
        0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3 , 0.31, 0.32, 0.33,
@@ -283,9 +283,9 @@ Caution
        0.89, 0.9 , 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99])</code></pre>
 </div>
 </div>
-<div id="4ef0c34c-fbda-4998-9c48-6719e297ee4e" class="cell" data-execution_count="14">
+<div id="4ef0c34c-fbda-4998-9c48-6719e297ee4e" class="cell" data-execution_count="113">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>p[np.argmax(l(p))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="113">
 <pre><code>0.32</code></pre>
 </div>
 </div>
@@ -296,47 +296,47 @@ Caution
 <p>모두 맞출 경우만 정답으로 인정</p>
 </blockquote>
 <p>길이가 100인 벡터 <span class="math inline">\({\bf x} = [x_0, x_1, \dots, x_{99}]\)</span>를 아래와 같이 선언하라.</p>
-<div id="65738e32-e590-4838-979b-ca2e601997ff" class="cell" data-tags="[]" data-execution_count="15">
+<div id="65738e32-e590-4838-979b-ca2e601997ff" class="cell" data-tags="[]" data-execution_count="114">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">43052</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.randn(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>(1)</code> <span class="math inline">\(x_0\)</span>의 값은 얼마인가?</p>
 <p>(풀이)</p>
-<div id="c00bef70-50ca-40f1-891b-7cbb3e73f3bf" class="cell" data-execution_count="16">
+<div id="c00bef70-50ca-40f1-891b-7cbb3e73f3bf" class="cell" data-execution_count="115">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="115">
 <pre><code>0.38342048800857303</code></pre>
 </div>
 </div>
 <p><code>(2)</code> <span class="math inline">\(x_{99}\)</span>의 값은 얼마인가?</p>
 <p>(풀이)</p>
-<div id="0671ca30-a4c4-42db-9ef1-395f55ba913f" class="cell" data-execution_count="17">
+<div id="0671ca30-a4c4-42db-9ef1-395f55ba913f" class="cell" data-execution_count="116">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">99</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="116">
 <pre><code>1.1870144262405193</code></pre>
 </div>
 </div>
 <p><code>(3)</code> <span class="math inline">\(\sum_{i=0}^{99} x_i\)</span>의 값은 얼마인가?</p>
 <p>(풀이)</p>
-<div id="7c81fb9f-5915-4da6-8179-8c059a2a72a7" class="cell" data-execution_count="18">
+<div id="7c81fb9f-5915-4da6-8179-8c059a2a72a7" class="cell" data-execution_count="117">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">sum</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="117">
 <pre><code>-8.136079223187856</code></pre>
 </div>
 </div>
 <p><code>(4)</code> <span class="math inline">\(\sum_{i=22}^{55} x_i\)</span>의 값은 얼마인가?</p>
 <p>(풀이)</p>
-<div id="9c980b5f-65c4-4dd9-a723-a5ac597d8bce" class="cell" data-execution_count="107">
+<div id="9c980b5f-65c4-4dd9-a723-a5ac597d8bce" class="cell" data-execution_count="118">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">sum</span>(x[<span class="dv">22</span>:<span class="dv">56</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="107">
-<pre><code>53.40913128547443</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="118">
+<pre><code>-1.1780743585314586</code></pre>
 </div>
 </div>
 </section>
 <section id="문제-3.-10점" class="level1">
 <h1>문제 3. – 10점</h1>
 <p>길이가 100인 벡터 <span class="math inline">\({\bf x} = [x_0, x_1, \dots, x_{99}]\)</span>를 아래와 같이 선언하라.</p>
-<div id="9ae2a15f-bd51-4bd2-9b32-104d6d6c5391" class="cell" data-execution_count="108">
+<div id="9ae2a15f-bd51-4bd2-9b32-104d6d6c5391" class="cell" data-execution_count="119">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">43052</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.randn(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -349,15 +349,15 @@ Caution
 </ul>
 <p>의 값을 각각 조사하라. a,b,c,d 중 가장 큰 값은 무엇인가?</p>
 <p>(풀이)</p>
-<div id="3aebd49c-ab36-495d-9706-e0d11a6328b3" class="cell" data-execution_count="24">
+<div id="3aebd49c-ab36-495d-9706-e0d11a6328b3" class="cell" data-execution_count="120">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.<span class="bu">sum</span>(x[:<span class="dv">25</span>])</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.<span class="bu">sum</span>(x[<span class="dv">25</span>:<span class="dv">50</span>])</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.<span class="bu">sum</span>(x[<span class="dv">50</span>:<span class="dv">75</span>])</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> np.<span class="bu">sum</span>(x[<span class="dv">75</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f58a91d1-b778-4103-83fc-b9f493a3d112" class="cell" data-execution_count="25">
+<div id="f58a91d1-b778-4103-83fc-b9f493a3d112" class="cell" data-execution_count="121">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>a,b,c,d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="121">
 <pre><code>(-3.006728261055644,
  0.3368136525904264,
  -4.526860531092521,
@@ -372,15 +372,15 @@ Caution
 </blockquote>
 <p><code>(1)</code> <code>lambda</code>를 이용하여 <span class="math inline">\(f(x)=\sin(x)\)</span>에 대응하는 함수를 선언하라.</p>
 <p>(풀이)</p>
-<div id="a5d5cdf5-8e3b-4b3b-acd5-4197a6ba2bdd" class="cell" data-execution_count="26">
+<div id="a5d5cdf5-8e3b-4b3b-acd5-4197a6ba2bdd" class="cell" data-execution_count="122">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">lambda</span> x: np.sin(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="122">
 <pre><code>&lt;function __main__.&lt;lambda&gt;(x)&gt;</code></pre>
 </div>
 </div>
 <p><code>(2)</code> <code>def</code>를 이용하여 <span class="math inline">\(g(x)=\cos(2x)\)</span>에 대응하는 함수를 선언하라.</p>
 <p>(풀이)</p>
-<div id="1b8a8278-0581-4384-acf8-99033674f4b0" class="cell" data-execution_count="27">
+<div id="1b8a8278-0581-4384-acf8-99033674f4b0" class="cell" data-execution_count="123">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(x):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.cos(<span class="dv">2</span><span class="op">*</span>x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -388,18 +388,18 @@ Caution
 <p><span class="math display">\[{\bf x} = [1,2,3,0]\]</span></p>
 <p>의 경우 <span class="math inline">\(x_{max}=3\)</span> 이고 <span class="math inline">\(x_{min}=0\)</span> 이다. 벡터 <span class="math inline">\({\bf x}\)</span>를 입력으로 하고 출력으로 <span class="math inline">\(x_{max}-x_{min}\)</span>의 계산값을 리턴하는 함수를 구현하라.</p>
 <p>(풀이)</p>
-<div id="be56fef9-c392-482e-9cb3-82769ed76ce9" class="cell" data-execution_count="28">
+<div id="be56fef9-c392-482e-9cb3-82769ed76ce9" class="cell" data-execution_count="124">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: np.<span class="bu">max</span>(x) <span class="op">-</span> np.<span class="bu">min</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2a865bac-129f-4792-b218-9551ae8d0db7" class="cell" data-execution_count="29">
+<div id="2a865bac-129f-4792-b218-9551ae8d0db7" class="cell" data-execution_count="125">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>f([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell-output cell-output-display" data-execution_count="125">
 <pre><code>3</code></pre>
 </div>
 </div>
-<div id="a2c651b4-dce2-4a54-b357-3d3c45a261d0" class="cell" data-execution_count="30">
+<div id="a2c651b4-dce2-4a54-b357-3d3c45a261d0" class="cell" data-execution_count="126">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>f([<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell-output cell-output-display" data-execution_count="126">
 <pre><code>11</code></pre>
 </div>
 </div>
@@ -410,32 +410,32 @@ Caution
 <p>모두 맞출 경우만 정답으로 인정</p>
 </blockquote>
 <p>아래의 코드를 실행하여 <code>x</code>를 생성하라.</p>
-<div id="c0c5d947-0797-4976-ba7c-411871985a98" class="cell" data-tags="[]" data-execution_count="31">
+<div id="c0c5d947-0797-4976-ba7c-411871985a98" class="cell" data-tags="[]" data-execution_count="127">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">43052</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.rand(<span class="dv">4305</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>(1)</code> 생성된 <span class="math inline">\(x_i\)</span> 중 0.65와 가장 가까운 값을 출력하라.</p>
 <p>(풀이)</p>
-<div id="783bc6ba-6e80-4041-b8d3-47ebd30516cf" class="cell" data-execution_count="37">
+<div id="783bc6ba-6e80-4041-b8d3-47ebd30516cf" class="cell" data-execution_count="128">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>x[np.argmin(np.<span class="bu">abs</span>(x<span class="op">-</span><span class="fl">0.65</span>))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<div class="cell-output cell-output-display" data-execution_count="128">
 <pre><code>0.6499741766686671</code></pre>
 </div>
 </div>
 <p><code>(2)</code> 생성된 값의 평균을 구하라.</p>
 <p><strong>hint</strong> <span class="math inline">\(\frac{1}{4305}\sum_{i=1}^{4305}x_i\)</span>를 계산하면 된다. 아니면 <code>np.mean()</code> 함수를 이용해도된다.</p>
 <p>(풀이)</p>
-<div id="e586d9f4-6bc6-44ba-9396-93dd5c82be02" class="cell" data-execution_count="41">
+<div id="e586d9f4-6bc6-44ba-9396-93dd5c82be02" class="cell" data-execution_count="129">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">sum</span>(x)<span class="op">/</span><span class="dv">4305</span>, np.mean(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="41">
+<div class="cell-output cell-output-display" data-execution_count="129">
 <pre><code>(0.4965974918744432, 0.4965974918744432)</code></pre>
 </div>
 </div>
 <p><code>(3)</code> <code>(2)</code>에서 계산된 평균값과 가장 가까운 <span class="math inline">\(x_i\)</span>값을 출력하라.</p>
 <p>(풀이)</p>
-<div id="19761671-cafb-4f50-a956-e46e679c27b3" class="cell" data-execution_count="42">
+<div id="19761671-cafb-4f50-a956-e46e679c27b3" class="cell" data-execution_count="130">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>x[np.argmin(np.<span class="bu">abs</span>(x<span class="op">-</span>np.mean(x)))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="42">
+<div class="cell-output cell-output-display" data-execution_count="130">
 <pre><code>0.497315535600802</code></pre>
 </div>
 </div>
@@ -447,12 +447,12 @@ Caution
 <p>근사값만구해도 정답으로 인정함</p>
 </blockquote>
 <p>(풀이)</p>
-<div id="f330a5cc-3654-4e22-8c6c-62719d9dc056" class="cell" data-execution_count="82">
+<div id="f330a5cc-3654-4e22-8c6c-62719d9dc056" class="cell" data-execution_count="131">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(np.pi<span class="op">/</span><span class="dv">2</span>, np.pi,<span class="dv">1000000</span>)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: np.sin(<span class="dv">3</span><span class="op">/</span><span class="dv">2</span><span class="op">*</span>x) </span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="kw">lambda</span> x: np.cos(<span class="dv">2</span><span class="op">*</span>x)<span class="op">*</span>np.sin(<span class="dv">5</span><span class="op">*</span>x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="96528e22-6b10-49d5-bac0-309d219d2e67" class="cell" data-execution_count="83">
+<div id="96528e22-6b10-49d5-bac0-309d219d2e67" class="cell" data-execution_count="132">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>plt.plot(x,f(x))</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x,g(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -463,16 +463,16 @@ Caution
 </div>
 </div>
 </div>
-<div id="459874ce-7366-4a72-ad5b-57051523663f" class="cell" data-execution_count="84">
+<div id="459874ce-7366-4a72-ad5b-57051523663f" class="cell" data-execution_count="133">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>xx <span class="op">=</span> x[np.argmin(np.<span class="bu">abs</span>(f(x)<span class="op">-</span>g(x)))]</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>xx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="84">
+<div class="cell-output cell-output-display" data-execution_count="133">
 <pre><code>1.9462123119258816</code></pre>
 </div>
 </div>
-<div id="c479ad32-5fd4-4274-b436-0a50190a4ec1" class="cell" data-execution_count="85">
+<div id="c479ad32-5fd4-4274-b436-0a50190a4ec1" class="cell" data-execution_count="134">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>f(xx), g(xx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="85">
+<div class="cell-output cell-output-display" data-execution_count="134">
 <pre><code>(0.2204484288597834, 0.2204457729878962)</code></pre>
 </div>
 </div>
@@ -483,14 +483,14 @@ Caution
 <p><strong>힌트</strong></p>
 <p><span class="math inline">\(n=10, 20, 30, ..., 100\)</span> 등에서 <span class="math inline">\(S_n=\sum_{k=1}^{n}a_k\)</span>의 값을 조사해보고 수렴성을 판단하라.</p>
 <p>(풀이)</p>
-<div id="d4ffea5a-4cb8-4f63-b198-4f5fc8b41711" class="cell" data-execution_count="88">
+<div id="d4ffea5a-4cb8-4f63-b198-4f5fc8b41711" class="cell" data-execution_count="135">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> np.linspace(<span class="dv">1</span>,<span class="dv">100</span>,<span class="dv">100</span>)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>an <span class="op">=</span> (<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)<span class="op">**</span>n</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>Sn <span class="op">=</span> np.cumsum(an)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ef2bc2fe-6ccf-4ebe-9093-735fbd9ab8b3" class="cell" data-execution_count="89">
+<div id="ef2bc2fe-6ccf-4ebe-9093-735fbd9ab8b3" class="cell" data-execution_count="136">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>Sn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="89">
+<div class="cell-output cell-output-display" data-execution_count="136">
 <pre><code>array([0.5       , 0.75      , 0.875     , 0.9375    , 0.96875   ,
        0.984375  , 0.9921875 , 0.99609375, 0.99804688, 0.99902344,
        0.99951172, 0.99975586, 0.99987793, 0.99993896, 0.99996948,
@@ -517,14 +517,14 @@ Caution
 <p><code>(2)</code> 무한급수 <span class="math inline">\(\sum_{n=1}^{\infty}\frac{1}{n}\)</span> 의 수렴 및 발산을 파이썬을 이용하여 판정하라. – 20점</p>
 <p><strong>힌트</strong> – <code>(1)</code>번과 동일한 테크닉</p>
 <p>(풀이)</p>
-<div id="1f983878-3e22-4252-bd94-33ef84f15db0" class="cell" data-execution_count="99">
+<div id="1f983878-3e22-4252-bd94-33ef84f15db0" class="cell" data-execution_count="137">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> np.linspace(<span class="dv">1</span>,<span class="dv">100000000</span>,<span class="dv">100000000</span>)</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>an <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>n</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>Sn <span class="op">=</span> np.cumsum(an)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="da1f2c54-cb19-4e45-99b8-a5643d0e380c" class="cell" data-execution_count="101">
+<div id="da1f2c54-cb19-4e45-99b8-a5643d0e380c" class="cell" data-execution_count="138">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>Sn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="101">
+<div class="cell-output cell-output-display" data-execution_count="138">
 <pre><code>array([ 1.        ,  1.5       ,  1.83333333, ..., 18.99789639,
        18.9978964 , 18.99789641])</code></pre>
 </div>
