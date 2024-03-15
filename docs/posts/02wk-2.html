@@ -272,9 +272,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>좀 더 보기 편하게 하기 위해서..</p>
-<div id="72d3115e-4eaf-4a71-883a-052db8cab48f" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.stack([n,an],axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># 이따가 할게요</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div id="72d3115e-4eaf-4a71-883a-052db8cab48f" class="cell" data-execution_count="311">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>np.stack([n,an],axis<span class="op">=</span><span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="311">
 <pre><code>array([[  1., -24.],
        [  2., -20.],
        [  3., -16.],
@@ -307,6 +307,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">sum</span>(an)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>60.0</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>np.stack()</code>을 이용하는 부분은 너무 내용이 많아 이후에 다시 설명할 예정입니다. 이런것이 가능하다 정도만 알아두시고 이번퀴즈에서 공부하실때는 제외하세요.</p>
 </div>
 </div>
 <p>(풀이2)</p>
@@ -788,7 +801,7 @@ The class bool is a subclass of the class int, and cannot be subclassed.</pre>
 <pre><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</code></pre>
 </div>
 </div>
-<p><strong><em>range의 다양한 활용을 익혀보자.</em></strong></p>
+<p><strong><em>보충학습: range의 다양한 활용을 익혀보자.</em></strong></p>
 <div id="87e49de0-1e0c-4da0-9f37-e33b22a4e205" class="cell" data-execution_count="602">
 <div class="sourceCode cell-code" id="cb111"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="602">
@@ -1028,7 +1041,7 @@ The class bool is a subclass of the class int, and cannot be subclassed.</pre>
 <pre><code>array([-2, 44])</code></pre>
 </div>
 </div>
-<p><strong><em>알아둘것</em></strong></p>
+<p><strong><em>보충학습: 아래의 테크닉도 알아둘것</em></strong></p>
 <p><code>-</code> 예시1 – 양수를 카운트</p>
 <div id="cd580c3f-cca8-4919-af46-f72ce6d01155" class="cell" data-execution_count="440">
 <div class="sourceCode cell-code" id="cb171"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">44</span>])</span>
