@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="2c274e6e-60fb-491d-ae64-1d06fe856d0a" class="cell" data-tags="[]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#{{&lt;video https://youtu.be/playlist?list=PLQqh36zP38-xkTDmutNidYnOkCgn2Zkdk&amp;si=DPIWwBqzxkGHWIAr &gt;}}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fbd36cd5-0577-4dcb-a940-1a7b96bf3c15" class="cell" data-tags="[]" data-execution_count="8">
+<div id="fbd36cd5-0577-4dcb-a940-1a7b96bf3c15" class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -240,11 +240,39 @@ Caution
 <li>두 그래프는 <span class="math inline">\(x=3\)</span> 에서 접한다.</li>
 </ul>
 <p>(풀이)</p>
+<div id="0eb066a7-d56f-43ba-ac80-9f62b19e83e4" class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_func(x0):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">3</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> func(x):</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        h <span class="op">=</span> <span class="fl">0.0001</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> (f(x0<span class="op">+</span>h)<span class="op">-</span>f(x0))<span class="op">/</span>h </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> a<span class="op">*</span>(x<span class="op">-</span>x0) <span class="op">+</span> f(x0)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> func</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">101</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>tan_line <span class="op">=</span> make_func(<span class="dv">3</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.plot(x,x<span class="op">**</span><span class="dv">3</span>,<span class="st">'--'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.plot(x,tan_line(x),<span class="st">'--'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03wk-1_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="문제-2.-10점" class="level1">
 <h1>문제 2. – 10점<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h1>
 <p>함수 <span class="math inline">\(f(x)=(x+1)(x^2+3)\)</span>에 대하여 <span class="math inline">\(f'(1)\)</span>의 값을 구하라.</p>
 <p>(풀이)</p>
+<div id="857e0dee-165f-4844-97d4-d4a6609e65a9" class="cell" data-tags="[]" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: (x<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>(x<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">0.000001</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>(f(<span class="dv">1</span><span class="op">+</span>h)<span class="op">-</span>f(<span class="dv">1</span>))<span class="op">/</span>h</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>8.000004001473826</code></pre>
+</div>
+</div>
 </section>
 <div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;2024년 수능 17번</p></li><li id="fn2"><p><sup>2</sup>&nbsp;2024년 수능 4번 응용</p></li></div><section id="문제-3.-10점" class="level1">
 <h1>문제 3. – 10점<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h1>
@@ -252,16 +280,49 @@ Caution
 <p><span class="math display">\[f(x) =\begin{cases} 3x-1 \quad (x&lt;2) \\ x^2+1 \quad (x\geq 2) \end{cases}\]</span></p>
 <p>의 그래프를 그려라.</p>
 <p>(풀이)</p>
+<div id="1c7bb674-ae74-4ce2-a945-e9ca479394b9" class="cell" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: <span class="dv">3</span><span class="op">*</span>x<span class="op">-</span><span class="dv">1</span> <span class="cf">if</span> x<span class="op">&lt;</span><span class="dv">2</span> <span class="cf">else</span> x<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">1</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">101</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.plot(x,<span class="bu">list</span>(<span class="bu">map</span>(f,x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03wk-1_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="문제-4.-10점" class="level1">
 <h1>문제 4. – 10점<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></h1>
 <p><span class="math inline">\(\frac{3}{2}\pi &lt; \theta &lt; 2\pi\)</span> 인 <span class="math inline">\(\theta\)</span> 에 대하여 <span class="math inline">\(\cos\theta = \frac{\sqrt{6}}{3}\)</span> 일 때 <span class="math inline">\(\tan(\theta)\)</span>의 값을 구하라.</p>
 <p>(풀이)</p>
+<div id="aedc80e7-37b2-434d-a8bd-eedb4ea91e6e" class="cell" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="dv">3</span><span class="op">/</span><span class="dv">2</span><span class="op">*</span>np.pi,<span class="dv">2</span><span class="op">*</span>np.pi,<span class="dv">100</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>np.argmin(np.<span class="bu">abs</span>(np.cos(theta) <span class="op">-</span> np.sqrt(<span class="dv">6</span>)<span class="op">/</span><span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>60</code></pre>
+</div>
+</div>
+<div id="b16a1347-88df-4c86-861a-ec7d9c56e01e" class="cell" data-tags="[]" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>np.tan(theta[<span class="dv">60</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>-0.7120967763793676</code></pre>
+</div>
+</div>
 </section>
 <div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;2024년 9평 3번</p></li><li id="fn4"><p><sup>4</sup>&nbsp;2024년 9평 25번</p></li></div><section id="문제-5.-10점" class="level1">
 <h1>문제 5. – 10점<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></h1>
 <p>함수 <span class="math inline">\(f(x)=x+\ln x\)</span>에 대하여 <span class="math inline">\(\int_1^{e} (1+\frac{1}{x})f(x)dx\)</span>의 값은?</p>
 <p>(풀이)</p>
+<div id="fce8ec85-a612-4dbe-a52d-985c1a2e3bae" class="cell" data-tags="[]" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">+</span>np.log(x)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">1</span>,np.exp(<span class="dv">1</span>),<span class="dv">100</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>np.mean((<span class="dv">1</span><span class="op">+</span><span class="dv">1</span><span class="op">/</span>x)<span class="op">*</span>f(x)) <span class="op">*</span> (np.exp(<span class="dv">1</span>)<span class="op">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>6.409521328970472</code></pre>
+</div>
+</div>
 </section>
 <section id="문제-6.-20점" class="level1 page-columns page-full">
 <h1>문제 6. – 20점</h1>
@@ -274,16 +335,32 @@ Caution
 <li><span class="math inline">\(-3&lt;x&lt;3\)</span> 에서의 개형을 그릴것</li>
 </ul>
 <div id="85e8a07a-79fa-4f5c-a15c-7f7dc4ceb403" class="cell" data-tags="[]">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 시각화예시</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 시각화예시</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="03wk-1_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="03wk-1_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>(풀이)</p>
+<div id="f38132af-022e-4af9-92cb-f7776a4407c1" class="cell" data-tags="[]" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">101</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ff <span class="op">=</span> np.<span class="bu">abs</span>(np.sin(x))<span class="op">*</span>np.cos(x)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> np.cumsum(ff) <span class="op">*</span> <span class="fl">0.06</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fefe9522-0b6b-4f8d-a609-177f53c63b0a" class="cell" data-tags="[]" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>plt.plot(x,ff)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x,f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03wk-1_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="문제-7.-30점" class="level1">
 <h1>문제 7. – 30점</h1>
@@ -291,7 +368,7 @@ Caution
 <p><strong>힌트1:</strong> 첫째항이 1이고 공차가 <span class="math inline">\(d&gt;0\)</span>인 등차수열의 일반항은 <span class="math inline">\(a_n = 1 +(n-1)d\)</span>와 같이 표현할 수 있다.</p>
 <p><strong>힌트2:</strong> <span class="math inline">\(d\)</span>는 아래중 하나의 값을 가진다.</p>
 <div id="42217f67-8e11-40bc-82a7-57e464ed249a" class="cell" data-tags="[]">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">101</span>)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">101</span>)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="50">
 <pre><code>array([0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1 , 0.11,
        0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2 , 0.21, 0.22,
@@ -305,6 +382,32 @@ Caution
 </div>
 </div>
 <p>(풀이)</p>
+<div id="bf35816c-c5ef-4d99-8324-85128f9099ac" class="cell" data-tags="[]" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func(d):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="dv">76</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    an <span class="op">=</span> <span class="dv">1</span><span class="op">+</span>(n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>d</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">abs</span>(np.<span class="bu">sum</span>(an)<span class="op">-</span><span class="fl">1046.25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="568fecb3-3db9-4a52-8c54-d8f8d1de3f48" class="cell" data-tags="[]" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>d_arr <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">101</span>)[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>d_arr[np.argmin(<span class="bu">list</span>(<span class="bu">map</span>(func,d_arr)))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<pre><code>0.35000000000000003</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>정답을 구하지 못하여도 논리전개가 올바르면 만점처리함. 노가다로 답을 구한 경우 정답으로 인정하지 않음.</p>
+</div>
+</div>
 
 
 </section>
