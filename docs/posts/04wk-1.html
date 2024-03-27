@@ -278,9 +278,9 @@ Caution
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a> <span class="dv">83621143489848422977</span>, <span class="dv">135301852344706746049</span>, <span class="dv">218922995834555169026</span>,</span>
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a> <span class="dv">354224848179261915075</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(풀이)</p>
-<div id="6dd18925-e83d-4e3f-9f25-243ecccd1d4d" class="cell" data-tags="[]" data-execution_count="10">
+<div id="6dd18925-e83d-4e3f-9f25-243ecccd1d4d" class="cell" data-tags="[]" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>an <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">1</span>]</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>,<span class="dv">101</span>):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>,<span class="dv">101</span>): <span class="co"># range(2,100) 혹은 range(98) 을 써도 결과는 같음</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    an.append(an[<span class="op">-</span><span class="dv">1</span>]<span class="op">+</span>an[<span class="op">-</span><span class="dv">2</span>])</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#an</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
