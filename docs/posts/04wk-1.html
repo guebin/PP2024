@@ -224,9 +224,10 @@ Caution
 </ul>
 <p><strong>hint:</strong> 답은 <span class="math inline">\(\frac{4!}{2!2!}=6\)</span> 이다.</p>
 <p>(풀이)</p>
-<div id="70349aba-36a5-4baa-af05-a93fabe5e249" class="cell" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="bu">set</span>([<span class="st">''</span>.join(i) <span class="cf">for</span> i <span class="kw">in</span> itertools.permutations(<span class="st">'xxyy'</span>)]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div id="70349aba-36a5-4baa-af05-a93fabe5e249" class="cell" data-tags="[]" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="bu">set</span>([<span class="st">''</span>.join(i) <span class="cf">for</span> i <span class="kw">in</span> itertools.permutations(<span class="st">'xxyy'</span>)]))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># len(set([i for i in itertools.permutations('xxyy')])) &lt;-- 이렇게 해도 결과는 같음</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="51">
 <pre><code>6</code></pre>
 </div>
 </div>
