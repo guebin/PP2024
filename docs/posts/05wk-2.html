@@ -2012,7 +2012,7 @@ hanni의 중간고사 점수는 80점 입니다.</code></pre>
 </div>
 <div class="sourceCode" id="cb391"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb391-1"><a href="#cb391-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 출력은 아래와 같아야 한다. </span></span>
 <span id="cb391-2"><a href="#cb391-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">'b'</span>, <span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'b'</span>, <span class="st">'b'</span>, <span class="st">'b'</span>, <span class="st">'a'</span>, <span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'a'</span>, <span class="st">'b'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(풀이)</p>
+<p><code>(풀이)</code></p>
 <div id="0a3e3c7f-6ff2-4239-acf9-27ce1d4c5480" class="cell" data-execution_count="154">
 <div class="sourceCode cell-code" id="cb392"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb392-1"><a href="#cb392-1" aria-hidden="true" tabindex="-1"></a>[k <span class="cf">for</span> l <span class="kw">in</span> lst <span class="cf">for</span> k <span class="kw">in</span> dct <span class="cf">if</span> l <span class="op">==</span> dct[k]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="154">
@@ -2233,7 +2233,7 @@ hanni의 중간고사 점수는 80점 입니다.</code></pre>
 <h1>7. 파이썬 자료형 연습문제</h1>
 <p><code>Oxford-III</code>: // <a href="https://www.robots.ox.ac.uk/~vgg/data/pets/">reference</a></p>
 <p>아래는 이미지 파일명들이 저장된 string을 불러오는 코드이다.</p>
-<div id="7d7dfde0-f122-4710-b00a-db269819d31f" class="cell" data-tags="[]" data-execution_count="17">
+<div id="65f2dd70-7d39-458a-b789-2161b119f4fd" class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb418"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb418-1"><a href="#cb418-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb418-2"><a href="#cb418-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/guebin/PP2023/main/posts/01_PythonBasic/Oxford-IIIT.txt'</span></span>
 <span id="cb418-3"><a href="#cb418-3" aria-hidden="true" tabindex="-1"></a>txt <span class="op">=</span> requests.get(url).content.decode()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2244,123 +2244,114 @@ hanni의 중간고사 점수는 80점 입니다.</code></pre>
 <div class="sourceCode" id="cb420"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb420-1"><a href="#cb420-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fname_list 의 출력결과는 아래와 같아야 한다. </span></span>
 <span id="cb420-2"><a href="#cb420-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">'Abyssinian_1.jpg'</span>,<span class="st">'Abyssinian_10.jpg'</span>, ... ,<span class="st">'yorkshire_terrier_98.jpg'</span>, <span class="st">'yorkshire_terrier_99.jpg'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>(풀이)</code></p>
-<div id="76c19846-ad6f-45b0-baa7-56765a5150ea" class="cell" data-tags="[]" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb421"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb421-1"><a href="#cb421-1" aria-hidden="true" tabindex="-1"></a>fname_list <span class="op">=</span> txt.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="29f0cddc-8912-4547-b3a5-e6673e54a8ae" class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb421"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb421-1"><a href="#cb421-1" aria-hidden="true" tabindex="-1"></a>fname_list <span class="op">=</span> txt.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb421-2"><a href="#cb421-2" aria-hidden="true" tabindex="-1"></a>fname_list[:<span class="dv">5</span>] <span class="co"># 7393개의 이미지파일명이 저장되어있음. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>['Abyssinian_1.jpg',
+ 'Abyssinian_10.jpg',
+ 'Abyssinian_100.jpg',
+ 'Abyssinian_100.mat',
+ 'Abyssinian_101.jpg']</code></pre>
 </div>
-<p><code>#</code>. 각 이미지파일명은 아래와 같은 규칙으로 저장되어 있다.</p>
+</div>
+<p><code># 문제</code>. 각 이미지파일명은 아래와 같은 규칙으로 저장되어 있다.</p>
 <ul>
 <li>파일명의 첫글자가 대문자이면 고양이를 의미하고 첫글자가 소문자이면 강아지를 의미한다.</li>
 </ul>
 <p>이미지 파일명이 입력으로 오면 강아지인지 고양이인지 판단하여 ‘cat’ or ’dog’를 리턴하는 함수 <code>f</code>를 구현하라.</p>
 <p>(함수사용예시)</p>
-<div id="d9aa3318-20ee-4396-a424-0346d7189050" class="cell" data-execution_count="56">
-<div class="sourceCode cell-code" id="cb422"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb422-1"><a href="#cb422-1" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'yorkshire_terrier_99.jpg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="56">
+<div id="871dc1cb-90ac-4a11-82be-93b0d5decda4" class="cell" data-tags="[]" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb423"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb423-1"><a href="#cb423-1" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'yorkshire_terrier_99.jpg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>'dog'</code></pre>
 </div>
 </div>
-<div id="32fceeb6-1b1e-42af-b8ed-214213376313" class="cell" data-execution_count="58">
-<div class="sourceCode cell-code" id="cb424"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb424-1"><a href="#cb424-1" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'Abyssinian_1.jpg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="58">
+<div id="57e054e7-bc09-47c4-b9f4-ecf0a937eb0c" class="cell" data-tags="[]" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb425"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb425-1"><a href="#cb425-1" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'Abyssinian_1.jpg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>'cat'</code></pre>
 </div>
 </div>
 <p><code>(풀이)</code></p>
-<div id="45e6dd84-79d1-4a0c-ba17-bb2aa535fbc7" class="cell" data-tags="[]" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb426"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb426-1"><a href="#cb426-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> s: <span class="st">'cat'</span> <span class="cf">if</span> s[<span class="dv">0</span>].isupper() <span class="cf">else</span> <span class="st">'dog'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="fa8b8c16-1a33-48dd-86e3-00d009dea8b4" class="cell" data-tags="[]" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb427"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb427-1"><a href="#cb427-1" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'yorkshire_terrier_99.jpg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
-<pre><code>'dog'</code></pre>
-</div>
-</div>
-<div id="a22293fd-3fa5-4eb1-ac1a-e096a8a53beb" class="cell" data-tags="[]" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb429"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb429-1"><a href="#cb429-1" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'Abyssinian_1.jpg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div id="8b7ba65f-4153-4870-b372-e24205302fa2" class="cell" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb427"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb427-1"><a href="#cb427-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> s: <span class="st">'cat'</span> <span class="cf">if</span> s[<span class="dv">0</span>].isupper() <span class="cf">else</span> <span class="st">'dog'</span></span>
+<span id="cb427-2"><a href="#cb427-2" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'Abyssinian_1.jpg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>'cat'</code></pre>
 </div>
 </div>
 <p><code># 문제</code>. 위의 결과로 나온 <code>fname_list</code>를 입력으로 하고 리스트의 각 원소가 고양이를 의미하는 그림인지 강아지를 의미하는 그림인지 나타내는 리스트를 만들어라.</p>
-<div class="sourceCode" id="cb431"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb431-1"><a href="#cb431-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 입력예시 </span></span>
-<span id="cb431-2"><a href="#cb431-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">'Abyssinian_1.jpg'</span>,<span class="st">'Abyssinian_10.jpg'</span>,...,<span class="st">'yorkshire_terrier_98.jpg'</span>, <span class="st">'yorkshire_terrier_99.jpg'</span>]</span>
-<span id="cb431-3"><a href="#cb431-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb431-4"><a href="#cb431-4" aria-hidden="true" tabindex="-1"></a><span class="co">## 출력예시</span></span>
-<span id="cb431-5"><a href="#cb431-5" aria-hidden="true" tabindex="-1"></a>[<span class="st">'cat'</span>, <span class="st">'cat'</span>, ... , <span class="st">'dog'</span>, <span class="st">'dog'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb429"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb429-1"><a href="#cb429-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 입력예시 </span></span>
+<span id="cb429-2"><a href="#cb429-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">'Abyssinian_1.jpg'</span>,<span class="st">'Abyssinian_10.jpg'</span>,...,<span class="st">'yorkshire_terrier_98.jpg'</span>, <span class="st">'yorkshire_terrier_99.jpg'</span>]</span>
+<span id="cb429-3"><a href="#cb429-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb429-4"><a href="#cb429-4" aria-hidden="true" tabindex="-1"></a><span class="co">## 출력예시</span></span>
+<span id="cb429-5"><a href="#cb429-5" aria-hidden="true" tabindex="-1"></a>[<span class="st">'cat'</span>, <span class="st">'cat'</span>, ... , <span class="st">'dog'</span>, <span class="st">'dog'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>(풀이1)</code></p>
-<div id="ff75e12c-a080-4c02-8a18-c0adb20dfeec" class="cell" data-execution_count="222">
-<div class="sourceCode cell-code" id="cb432"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb432-1"><a href="#cb432-1" aria-hidden="true" tabindex="-1"></a><span class="co"># list(map(f,fname_list))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="dc00f87f-acc4-4005-9e24-7aeec662bdf0" class="cell" data-tags="[]" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb430"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb430-1"><a href="#cb430-1" aria-hidden="true" tabindex="-1"></a><span class="co">#list(map(f,fname_list))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>(풀이2)</code></p>
-<div id="585b35a6-ee13-40cb-a45a-5dd0c97266c5" class="cell" data-execution_count="226">
-<div class="sourceCode cell-code" id="cb433"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb433-1"><a href="#cb433-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [f(name) for name in fname_list]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a4bdf313-2750-47d8-b098-83f025453609" class="cell" data-tags="[]" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb431"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb431-1"><a href="#cb431-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[f(fname) for fname in fname_list]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code># 문제</code>. 강아지 그림과 고양이 그림이 각각 몇 장씩 포함되어 있는지 파악하는 코드를 구현하라.</p>
-<p><code>(풀이1)</code></p>
-<div id="82ffb2ac-4118-4498-97cf-18ebbfc806e8" class="cell" data-tags="[]" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb434"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb434-1"><a href="#cb434-1" aria-hidden="true" tabindex="-1"></a>[f(name) <span class="cf">for</span> name <span class="kw">in</span> fname_list].count(<span class="st">'cat'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<p><code>(풀이)</code></p>
+<div id="751687f1-8bff-4ae9-9af1-3f4d71787d36" class="cell" data-tags="[]" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb432"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb432-1"><a href="#cb432-1" aria-hidden="true" tabindex="-1"></a>[f(fname) <span class="cf">for</span> fname <span class="kw">in</span> fname_list].count(<span class="st">'cat'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>2403</code></pre>
 </div>
 </div>
-<div id="c72e37d7-f13e-418f-9946-cfb82999ff22" class="cell" data-tags="[]" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb436"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb436-1"><a href="#cb436-1" aria-hidden="true" tabindex="-1"></a>[f(name) <span class="cf">for</span> name <span class="kw">in</span> fname_list].count(<span class="st">'dog'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div id="69f354db-a387-495b-9141-d521697cf641" class="cell" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb434"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb434-1"><a href="#cb434-1" aria-hidden="true" tabindex="-1"></a>[f(fname) <span class="cf">for</span> fname <span class="kw">in</span> fname_list].count(<span class="st">'dog'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>4990</code></pre>
-</div>
-</div>
-<p><code>(풀이2)</code></p>
-<div id="86818774-8a70-48c4-933a-a8223300a3d2" class="cell" data-tags="[]" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb438"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb438-1"><a href="#cb438-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [f(name) <span class="cf">for</span> name <span class="kw">in</span> fname_list]</span>
-<span id="cb438-2"><a href="#cb438-2" aria-hidden="true" tabindex="-1"></a>{s:lst.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(lst)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
-<pre><code>{'dog': 4990, 'cat': 2403}</code></pre>
 </div>
 </div>
 <p><code># 문제</code>. 고양이 혹은 강아지의 각 종이 몇 장씩 포함되어있는지 구하여 딕셔너리로 정리하라.</p>
 <p><code>(풀이)</code></p>
-<p>이름이 <code>Abyssinian</code>, <code>British_Shorthair</code> 이런식으로 되어있어서 까다롭다..</p>
-<div id="d258a210-c7ab-4ee1-ae94-3ba54e4232df" class="cell" data-tags="[]" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb440"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb440-1"><a href="#cb440-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="st">'_'</span>.join(name.split(<span class="st">'_'</span>)[:<span class="op">-</span><span class="dv">1</span>]) <span class="cf">for</span> name <span class="kw">in</span> fname_list]</span>
-<span id="cb440-2"><a href="#cb440-2" aria-hidden="true" tabindex="-1"></a>{s:lst.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(lst)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
-<pre><code>{'keeshond': 200,
- 'beagle': 200,
- 'scottish_terrier': 199,
- 'great_pyrenees': 200,
- 'leonberger': 200,
- 'pomeranian': 200,
- 'Persian': 200,
- 'german_shorthaired': 200,
- 'Egyptian_Mau': 200,
- 'yorkshire_terrier': 200,
- 'Bombay': 200,
- 'Russian_Blue': 200,
- 'pug': 200,
- 'english_cocker_spaniel': 200,
- 'wheaten_terrier': 200,
- 'staffordshire_bull_terrier': 191,
- 'Maine_Coon': 200,
- 'Sphynx': 200,
- 'miniature_pinscher': 200,
- 'chihuahua': 200,
- 'Ragdoll': 200,
- 'Abyssinian': 203,
- 'British_Shorthair': 200,
- 'havanese': 200,
- 'saint_bernard': 200,
- 'Birman': 200,
- 'english_setter': 200,
- 'boxer': 200,
- 'samoyed': 200,
+<div id="7d2aa0f1-8010-44e9-9336-8e2475ced8a5" class="cell" data-tags="[]" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb436"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb436-1"><a href="#cb436-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="st">'_'</span>.join(l.split(<span class="st">'_'</span>)[:<span class="op">-</span><span class="dv">1</span>]) <span class="cf">for</span> l <span class="kw">in</span> fname_list]</span>
+<span id="cb436-2"><a href="#cb436-2" aria-hidden="true" tabindex="-1"></a>{s:lst.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(lst)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>{'yorkshire_terrier': 200,
  'Siamese': 200,
- 'newfoundland': 200,
- 'american_bulldog': 200,
- 'shiba_inu': 200,
+ 'chihuahua': 200,
+ 'Persian': 200,
+ 'miniature_pinscher': 200,
+ 'samoyed': 200,
+ 'boxer': 200,
  'american_pit_bull_terrier': 200,
- 'basset_hound': 200,
+ 'german_shorthaired': 200,
+ 'great_pyrenees': 200,
+ 'Sphynx': 200,
+ 'shiba_inu': 200,
+ 'american_bulldog': 200,
+ 'havanese': 200,
+ 'Bombay': 200,
+ 'japanese_chin': 200,
+ 'Ragdoll': 200,
+ 'english_cocker_spaniel': 200,
+ 'english_setter': 200,
+ 'Egyptian_Mau': 200,
+ 'staffordshire_bull_terrier': 191,
+ 'Russian_Blue': 200,
+ 'beagle': 200,
+ 'pomeranian': 200,
+ 'British_Shorthair': 200,
+ 'pug': 200,
  'Bengal': 200,
- 'japanese_chin': 200}</code></pre>
+ 'newfoundland': 200,
+ 'wheaten_terrier': 200,
+ 'Abyssinian': 203,
+ 'Maine_Coon': 200,
+ 'basset_hound': 200,
+ 'saint_bernard': 200,
+ 'scottish_terrier': 199,
+ 'keeshond': 200,
+ 'leonberger': 200,
+ 'Birman': 200}</code></pre>
 </div>
 </div>
 

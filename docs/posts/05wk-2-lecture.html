@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.520">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>PP2024 - 7. 파이썬 자료형 연습문제</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">PP2024</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/guebin/PP2024"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCQk9RyBNgXc7ORIsYlOfQrg/playlists?view=50&amp;sort=dd&amp;shelf_id=2"> <i class="bi bi-youtube" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="05wk-2-lecture.out.ipynb" download="05wk-2-lecture.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">7. 파이썬 자료형 연습문제</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><code>Oxford-III</code>: // <a href="https://www.robots.ox.ac.uk/~vgg/data/pets/">reference</a></p>
+<p>아래는 이미지 파일명들이 저장된 string을 불러오는 코드이다.</p>
+<div id="7d7dfde0-f122-4710-b00a-db269819d31f" class="cell" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/guebin/PP2023/main/posts/01_PythonBasic/Oxford-IIIT.txt'</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>txt <span class="op">=</span> requests.get(url).content.decode()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>txt의 출력 일부를 나타내면 아래와 같다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>'Abyssinian_1.jpg\nAbyssinian_10.jpg\nAbyssinian_100.jpg\nAbyssinian_100.mat\nAbyssinian_101.jpg\nAbyssinian_101.mat\nAbyssinian_102.jpg\nAbyssinian_102.mat\nAbyssinian_103.jpg\nAbyssinian_104.jpg\nAbyssinian_105.jpg\nAbyssinian_106.jpg\nAbyssinian_107.jpg\nAbyssinian_108.jpg\nAbyssinian_109.jpg\nAbyssinian_11.jpg\nAbyssinian_110.jpg\nAbyssinian_111.jpg\nAbyssinian_112.jpg\nAbyssinian_113.jpg\nAbyssinian_114.jpg\nAbyssinian_115.jpg\nAbyssinian_116.jpg\nAbyssinian_117.jpg\nAbyssinian_118.jpg\nAbyssinian_119.jpg\nAbyssinian_12.jpg\nAbyssinian_120.jpg\nAbyssinian_121.jpg\nAbyssinian_122.jpg\nAbyssinian_123.jpg\nAbyssinian_124.jpg\nAbyssinian_125.jpg\nAbyssinian_126.jpg\nAbyssinian_127.jpg\nAbyssinian_128.jpg\nAbyssinian_129.jpg\nAbyssinian_13.jpg\nAbyssinian_130.jpg\nAbyssinian_131.jpg\nAbyssinian_132.jpg\n ....... </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code># 문제</code>. 각 파일명은 <code>\n</code>으로 구분되어있다. 위의 스트링을 분해하여 아래와 같은 리스트를 생성하고 <code>fname_list</code>에 저장하라.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fname_list 의 출력결과는 아래와 같아야 한다. </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">'Abyssinian_1.jpg'</span>,<span class="st">'Abyssinian_10.jpg'</span>, ... ,<span class="st">'yorkshire_terrier_98.jpg'</span>, <span class="st">'yorkshire_terrier_99.jpg'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>(풀이)</code></p>
+<div id="0b5f8b08" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fname_list <span class="op">=</span> txt.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fname_list <span class="co"># 7393개의 이미지파일명이 저장되어있음. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>['Abyssinian_1.jpg',
+ 'Abyssinian_10.jpg',
+ 'Abyssinian_100.jpg',
+ 'Abyssinian_100.mat',
+ 'Abyssinian_101.jpg',
+ 'Abyssinian_101.mat',
+ 'Abyssinian_102.jpg',
+ 'Abyssinian_102.mat',
+ 'Abyssinian_103.jpg',
+ 'Abyssinian_104.jpg',
+ 'Abyssinian_105.jpg',
+ 'Abyssinian_106.jpg',
+ 'Abyssinian_107.jpg',
+ 'Abyssinian_108.jpg',
+ 'Abyssinian_109.jpg',
+ 'Abyssinian_11.jpg',
+ 'Abyssinian_110.jpg',
+ 'Abyssinian_111.jpg',
+ 'Abyssinian_112.jpg',
+ 'Abyssinian_113.jpg',
+ 'Abyssinian_114.jpg',
+ 'Abyssinian_115.jpg',
+ 'Abyssinian_116.jpg',
+ 'Abyssinian_117.jpg',
+ 'Abyssinian_118.jpg',
+ 'Abyssinian_119.jpg',
+ 'Abyssinian_12.jpg',
+ 'Abyssinian_120.jpg',
+ 'Abyssinian_121.jpg',
+ 'Abyssinian_122.jpg',
+ 'Abyssinian_123.jpg',
+ 'Abyssinian_124.jpg',
+ 'Abyssinian_125.jpg',
+ 'Abyssinian_126.jpg',
+ 'Abyssinian_127.jpg',
+ 'Abyssinian_128.jpg',
+ 'Abyssinian_129.jpg',
+ 'Abyssinian_13.jpg',
+ 'Abyssinian_130.jpg',
+ 'Abyssinian_131.jpg',
+ 'Abyssinian_132.jpg',
+ 'Abyssinian_133.jpg',
+ 'Abyssinian_134.jpg',
+ 'Abyssinian_135.jpg',
+ 'Abyssinian_136.jpg',
+ 'Abyssinian_137.jpg',
+ 'Abyssinian_138.jpg',
+ 'Abyssinian_139.jpg',
+ 'Abyssinian_14.jpg',
+ 'Abyssinian_140.jpg',
+ 'Abyssinian_141.jpg',
+ 'Abyssinian_142.jpg',
+ 'Abyssinian_143.jpg',
+ 'Abyssinian_144.jpg',
+ 'Abyssinian_145.jpg',
+ 'Abyssinian_146.jpg',
+ 'Abyssinian_148.jpg',
+ 'Abyssinian_149.jpg',
+ 'Abyssinian_15.jpg',
+ 'Abyssinian_150.jpg',
+ 'Abyssinian_151.jpg',
+ 'Abyssinian_152.jpg',
+ 'Abyssinian_153.jpg',
+ 'Abyssinian_154.jpg',
+ 'Abyssinian_155.jpg',
+ 'Abyssinian_156.jpg',
+ 'Abyssinian_157.jpg',
+ 'Abyssinian_158.jpg',
+ 'Abyssinian_159.jpg',
+ 'Abyssinian_16.jpg',
+ 'Abyssinian_160.jpg',
+ 'Abyssinian_161.jpg',
+ 'Abyssinian_164.jpg',
+ 'Abyssinian_165.jpg',
+ 'Abyssinian_166.jpg',
+ 'Abyssinian_167.jpg',
+ 'Abyssinian_168.jpg',
+ 'Abyssinian_169.jpg',
+ 'Abyssinian_17.jpg',
+ 'Abyssinian_170.jpg',
+ 'Abyssinian_172.jpg',
+ 'Abyssinian_173.jpg',
+ 'Abyssinian_174.jpg',
+ 'Abyssinian_175.jpg',
+ 'Abyssinian_176.jpg',
+ 'Abyssinian_177.jpg',
+ 'Abyssinian_178.jpg',
+ 'Abyssinian_179.jpg',
+ 'Abyssinian_18.jpg',
+ 'Abyssinian_180.jpg',
+ 'Abyssinian_181.jpg',
+ 'Abyssinian_182.jpg',
+ 'Abyssinian_183.jpg',
+ 'Abyssinian_184.jpg',
+ 'Abyssinian_185.jpg',
+ 'Abyssinian_19.jpg',
+ 'Abyssinian_190.jpg',
+ 'Abyssinian_191.jpg',
+ 'Abyssinian_192.jpg',
+ 'Abyssinian_193.jpg',
+ 'Abyssinian_195.jpg',
+ 'Abyssinian_196.jpg',
+ 'Abyssinian_197.jpg',
+ 'Abyssinian_2.jpg',
+ 'Abyssinian_20.jpg',
+ 'Abyssinian_201.jpg',
+ 'Abyssinian_202.jpg',
+ 'Abyssinian_204.jpg',
+ 'Abyssinian_205.jpg',
+ 'Abyssinian_206.jpg',
+ 'Abyssinian_207.jpg',
+ 'Abyssinian_21.jpg',
+ 'Abyssinian_210.jpg',
+ 'Abyssinian_212.jpg',
+ 'Abyssinian_213.jpg',
+ 'Abyssinian_215.jpg',
+ 'Abyssinian_216.jpg',
+ 'Abyssinian_217.jpg',
+ 'Abyssinian_219.jpg',
+ 'Abyssinian_22.jpg',
+ 'Abyssinian_220.jpg',
+ 'Abyssinian_221.jpg',
+ 'Abyssinian_223.jpg',
+ 'Abyssinian_224.jpg',
+ 'Abyssinian_225.jpg',
+ 'Abyssinian_226.jpg',
+ 'Abyssinian_228.jpg',
+ 'Abyssinian_230.jpg',
+ 'Abyssinian_232.jpg',
+ 'Abyssinian_24.jpg',
+ 'Abyssinian_25.jpg',
+ 'Abyssinian_26.jpg',
+ 'Abyssinian_27.jpg',
+ 'Abyssinian_29.jpg',
+ 'Abyssinian_3.jpg',
+ 'Abyssinian_30.jpg',
+ 'Abyssinian_31.jpg',
+ 'Abyssinian_32.jpg',
+ 'Abyssinian_33.jpg',
+ 'Abyssinian_34.jpg',
+ 'Abyssinian_36.jpg',
+ 'Abyssinian_37.jpg',
+ 'Abyssinian_4.jpg',
+ 'Abyssinian_40.jpg',
+ 'Abyssinian_43.jpg',
+ 'Abyssinian_44.jpg',
+ 'Abyssinian_45.jpg',
+ 'Abyssinian_46.jpg',
+ 'Abyssinian_47.jpg',
+ 'Abyssinian_48.jpg',
+ 'Abyssinian_49.jpg',
+ 'Abyssinian_5.jpg',
+ 'Abyssinian_50.jpg',
+ 'Abyssinian_51.jpg',
+ 'Abyssinian_52.jpg',
+ 'Abyssinian_54.jpg',
+ 'Abyssinian_55.jpg',
+ 'Abyssinian_56.jpg',
+ 'Abyssinian_57.jpg',
+ 'Abyssinian_58.jpg',
+ 'Abyssinian_6.jpg',
+ 'Abyssinian_60.jpg',
+ 'Abyssinian_61.jpg',
+ 'Abyssinian_62.jpg',
+ 'Abyssinian_63.jpg',
+ 'Abyssinian_65.jpg',
+ 'Abyssinian_66.jpg',
+ 'Abyssinian_67.jpg',
+ 'Abyssinian_68.jpg',
+ 'Abyssinian_69.jpg',
+ 'Abyssinian_7.jpg',
+ 'Abyssinian_70.jpg',
+ 'Abyssinian_71.jpg',
+ 'Abyssinian_72.jpg',
+ 'Abyssinian_73.jpg',
+ 'Abyssinian_74.jpg',
+ 'Abyssinian_75.jpg',
+ 'Abyssinian_76.jpg',
+ 'Abyssinian_77.jpg',
+ 'Abyssinian_78.jpg',
+ 'Abyssinian_79.jpg',
+ 'Abyssinian_8.jpg',
+ 'Abyssinian_80.jpg',
+ 'Abyssinian_81.jpg',
+ 'Abyssinian_82.jpg',
+ 'Abyssinian_83.jpg',
+ 'Abyssinian_84.jpg',
+ 'Abyssinian_85.jpg',
+ 'Abyssinian_86.jpg',
+ 'Abyssinian_87.jpg',
+ 'Abyssinian_88.jpg',
+ 'Abyssinian_89.jpg',
+ 'Abyssinian_9.jpg',
+ 'Abyssinian_90.jpg',
+ 'Abyssinian_91.jpg',
+ 'Abyssinian_92.jpg',
+ 'Abyssinian_93.jpg',
+ 'Abyssinian_94.jpg',
+ 'Abyssinian_95.jpg',
+ 'Abyssinian_96.jpg',
+ 'Abyssinian_97.jpg',
+ 'Abyssinian_98.jpg',
+ 'Abyssinian_99.jpg',
+ 'Bengal_1.jpg',
+ 'Bengal_10.jpg',
+ 'Bengal_100.jpg',
+ 'Bengal_101.jpg',
+ 'Bengal_102.jpg',
+ 'Bengal_103.jpg',
+ 'Bengal_104.jpg',
+ 'Bengal_105.jpg',
+ 'Bengal_106.jpg',
+ 'Bengal_107.jpg',
+ 'Bengal_108.jpg',
+ 'Bengal_109.jpg',
+ 'Bengal_11.jpg',
+ 'Bengal_110.jpg',
+ 'Bengal_111.jpg',
+ 'Bengal_112.jpg',
+ 'Bengal_113.jpg',
+ 'Bengal_114.jpg',
+ 'Bengal_115.jpg',
+ 'Bengal_116.jpg',
+ 'Bengal_117.jpg',
+ 'Bengal_118.jpg',
+ 'Bengal_119.jpg',
+ 'Bengal_12.jpg',
+ 'Bengal_120.jpg',
+ 'Bengal_121.jpg',
+ 'Bengal_122.jpg',
+ 'Bengal_123.jpg',
+ 'Bengal_124.jpg',
+ 'Bengal_125.jpg',
+ 'Bengal_126.jpg',
+ 'Bengal_127.jpg',
+ 'Bengal_128.jpg',
+ 'Bengal_129.jpg',
+ 'Bengal_13.jpg',
+ 'Bengal_130.jpg',
+ 'Bengal_131.jpg',
+ 'Bengal_132.jpg',
+ 'Bengal_133.jpg',
+ 'Bengal_134.jpg',
+ 'Bengal_135.jpg',
+ 'Bengal_136.jpg',
+ 'Bengal_137.jpg',
+ 'Bengal_138.jpg',
+ 'Bengal_139.jpg',
+ 'Bengal_14.jpg',
+ 'Bengal_140.jpg',
+ 'Bengal_141.jpg',
+ 'Bengal_142.jpg',
+ 'Bengal_143.jpg',
+ 'Bengal_144.jpg',
+ 'Bengal_145.jpg',
+ 'Bengal_146.jpg',
+ 'Bengal_147.jpg',
+ 'Bengal_148.jpg',
+ 'Bengal_149.jpg',
+ 'Bengal_15.jpg',
+ 'Bengal_150.jpg',
+ 'Bengal_151.jpg',
+ 'Bengal_152.jpg',
+ 'Bengal_153.jpg',
+ 'Bengal_154.jpg',
+ 'Bengal_155.jpg',
+ 'Bengal_156.jpg',
+ 'Bengal_157.jpg',
+ 'Bengal_158.jpg',
+ 'Bengal_159.jpg',
+ 'Bengal_16.jpg',
+ 'Bengal_160.jpg',
+ 'Bengal_161.jpg',
+ 'Bengal_162.jpg',
+ 'Bengal_163.jpg',
+ 'Bengal_164.jpg',
+ 'Bengal_165.jpg',
+ 'Bengal_166.jpg',
+ 'Bengal_167.jpg',
+ 'Bengal_168.jpg',
+ 'Bengal_169.jpg',
+ 'Bengal_17.jpg',
+ 'Bengal_170.jpg',
+ 'Bengal_171.jpg',
+ 'Bengal_172.jpg',
+ 'Bengal_173.jpg',
+ 'Bengal_174.jpg',
+ 'Bengal_175.jpg',
+ 'Bengal_176.jpg',
+ 'Bengal_177.jpg',
+ 'Bengal_178.jpg',
+ 'Bengal_179.jpg',
+ 'Bengal_18.jpg',
+ 'Bengal_180.jpg',
+ 'Bengal_182.jpg',
+ 'Bengal_183.jpg',
+ 'Bengal_184.jpg',
+ 'Bengal_185.jpg',
+ 'Bengal_186.jpg',
+ 'Bengal_187.jpg',
+ 'Bengal_188.jpg',
+ 'Bengal_189.jpg',
+ 'Bengal_19.jpg',
+ 'Bengal_190.jpg',
+ 'Bengal_191.jpg',
+ 'Bengal_192.jpg',
+ 'Bengal_193.jpg',
+ 'Bengal_194.jpg',
+ 'Bengal_195.jpg',
+ 'Bengal_196.jpg',
+ 'Bengal_197.jpg',
+ 'Bengal_198.jpg',
+ 'Bengal_199.jpg',
+ 'Bengal_2.jpg',
+ 'Bengal_20.jpg',
+ 'Bengal_200.jpg',
+ 'Bengal_201.jpg',
+ 'Bengal_21.jpg',
+ 'Bengal_22.jpg',
+ 'Bengal_23.jpg',
+ 'Bengal_24.jpg',
+ 'Bengal_25.jpg',
+ 'Bengal_26.jpg',
+ 'Bengal_27.jpg',
+ 'Bengal_28.jpg',
+ 'Bengal_29.jpg',
+ 'Bengal_3.jpg',
+ 'Bengal_30.jpg',
+ 'Bengal_31.jpg',
+ 'Bengal_32.jpg',
+ 'Bengal_33.jpg',
+ 'Bengal_34.jpg',
+ 'Bengal_35.jpg',
+ 'Bengal_36.jpg',
+ 'Bengal_37.jpg',
+ 'Bengal_38.jpg',
+ 'Bengal_39.jpg',
+ 'Bengal_4.jpg',
+ 'Bengal_40.jpg',
+ 'Bengal_41.jpg',
+ 'Bengal_42.jpg',
+ 'Bengal_43.jpg',
+ 'Bengal_44.jpg',
+ 'Bengal_45.jpg',
+ 'Bengal_46.jpg',
+ 'Bengal_47.jpg',
+ 'Bengal_48.jpg',
+ 'Bengal_49.jpg',
+ 'Bengal_5.jpg',
+ 'Bengal_50.jpg',
+ 'Bengal_51.jpg',
+ 'Bengal_52.jpg',
+ 'Bengal_53.jpg',
+ 'Bengal_54.jpg',
+ 'Bengal_55.jpg',
+ 'Bengal_56.jpg',
+ 'Bengal_57.jpg',
+ 'Bengal_58.jpg',
+ 'Bengal_59.jpg',
+ 'Bengal_6.jpg',
+ 'Bengal_60.jpg',
+ 'Bengal_61.jpg',
+ 'Bengal_62.jpg',
+ 'Bengal_63.jpg',
+ 'Bengal_64.jpg',
+ 'Bengal_65.jpg',
+ 'Bengal_66.jpg',
+ 'Bengal_67.jpg',
+ 'Bengal_68.jpg',
+ 'Bengal_69.jpg',
+ 'Bengal_7.jpg',
+ 'Bengal_70.jpg',
+ 'Bengal_71.jpg',
+ 'Bengal_72.jpg',
+ 'Bengal_73.jpg',
+ 'Bengal_74.jpg',
+ 'Bengal_75.jpg',
+ 'Bengal_76.jpg',
+ 'Bengal_77.jpg',
+ 'Bengal_78.jpg',
+ 'Bengal_79.jpg',
+ 'Bengal_8.jpg',
+ 'Bengal_80.jpg',
+ 'Bengal_81.jpg',
+ 'Bengal_82.jpg',
+ 'Bengal_83.jpg',
+ 'Bengal_84.jpg',
+ 'Bengal_85.jpg',
+ 'Bengal_86.jpg',
+ 'Bengal_87.jpg',
+ 'Bengal_88.jpg',
+ 'Bengal_89.jpg',
+ 'Bengal_9.jpg',
+ 'Bengal_90.jpg',
+ 'Bengal_91.jpg',
+ 'Bengal_92.jpg',
+ 'Bengal_93.jpg',
+ 'Bengal_94.jpg',
+ 'Bengal_95.jpg',
+ 'Bengal_96.jpg',
+ 'Bengal_97.jpg',
+ 'Bengal_98.jpg',
+ 'Bengal_99.jpg',
+ 'Birman_1.jpg',
+ 'Birman_10.jpg',
+ 'Birman_100.jpg',
+ 'Birman_101.jpg',
+ 'Birman_102.jpg',
+ 'Birman_103.jpg',
+ 'Birman_104.jpg',
+ 'Birman_105.jpg',
+ 'Birman_106.jpg',
+ 'Birman_107.jpg',
+ 'Birman_108.jpg',
+ 'Birman_109.jpg',
+ 'Birman_11.jpg',
+ 'Birman_110.jpg',
+ 'Birman_111.jpg',
+ 'Birman_112.jpg',
+ 'Birman_113.jpg',
+ 'Birman_114.jpg',
+ 'Birman_115.jpg',
+ 'Birman_116.jpg',
+ 'Birman_117.jpg',
+ 'Birman_118.jpg',
+ 'Birman_119.jpg',
+ 'Birman_12.jpg',
+ 'Birman_120.jpg',
+ 'Birman_121.jpg',
+ 'Birman_122.jpg',
+ 'Birman_123.jpg',
+ 'Birman_124.jpg',
+ 'Birman_125.jpg',
+ 'Birman_126.jpg',
+ 'Birman_127.jpg',
+ 'Birman_128.jpg',
+ 'Birman_129.jpg',
+ 'Birman_13.jpg',
+ 'Birman_130.jpg',
+ 'Birman_131.jpg',
+ 'Birman_132.jpg',
+ 'Birman_133.jpg',
+ 'Birman_134.jpg',
+ 'Birman_135.jpg',
+ 'Birman_136.jpg',
+ 'Birman_137.jpg',
+ 'Birman_138.jpg',
+ 'Birman_139.jpg',
+ 'Birman_14.jpg',
+ 'Birman_140.jpg',
+ 'Birman_141.jpg',
+ 'Birman_142.jpg',
+ 'Birman_143.jpg',
+ 'Birman_144.jpg',
+ 'Birman_145.jpg',
+ 'Birman_146.jpg',
+ 'Birman_147.jpg',
+ 'Birman_148.jpg',
+ 'Birman_149.jpg',
+ 'Birman_15.jpg',
+ 'Birman_150.jpg',
+ 'Birman_151.jpg',
+ 'Birman_152.jpg',
+ 'Birman_153.jpg',
+ 'Birman_154.jpg',
+ 'Birman_155.jpg',
+ 'Birman_156.jpg',
+ 'Birman_157.jpg',
+ 'Birman_158.jpg',
+ 'Birman_159.jpg',
+ 'Birman_16.jpg',
+ 'Birman_160.jpg',
+ 'Birman_161.jpg',
+ 'Birman_162.jpg',
+ 'Birman_163.jpg',
+ 'Birman_164.jpg',
+ 'Birman_165.jpg',
+ 'Birman_166.jpg',
+ 'Birman_167.jpg',
+ 'Birman_168.jpg',
+ 'Birman_169.jpg',
+ 'Birman_17.jpg',
+ 'Birman_170.jpg',
+ 'Birman_171.jpg',
+ 'Birman_172.jpg',
+ 'Birman_173.jpg',
+ 'Birman_174.jpg',
+ 'Birman_175.jpg',
+ 'Birman_176.jpg',
+ 'Birman_177.jpg',
+ 'Birman_178.jpg',
+ 'Birman_179.jpg',
+ 'Birman_18.jpg',
+ 'Birman_180.jpg',
+ 'Birman_181.jpg',
+ 'Birman_182.jpg',
+ 'Birman_183.jpg',
+ 'Birman_184.jpg',
+ 'Birman_185.jpg',
+ 'Birman_186.jpg',
+ 'Birman_187.jpg',
+ 'Birman_188.jpg',
+ 'Birman_189.jpg',
+ 'Birman_19.jpg',
+ 'Birman_190.jpg',
+ 'Birman_191.jpg',
+ 'Birman_192.jpg',
+ 'Birman_193.jpg',
+ 'Birman_194.jpg',
+ 'Birman_196.jpg',
+ 'Birman_197.jpg',
+ 'Birman_198.jpg',
+ 'Birman_199.jpg',
+ 'Birman_2.jpg',
+ 'Birman_20.jpg',
+ 'Birman_200.jpg',
+ 'Birman_201.jpg',
+ 'Birman_21.jpg',
+ 'Birman_22.jpg',
+ 'Birman_23.jpg',
+ 'Birman_24.jpg',
+ 'Birman_25.jpg',
+ 'Birman_26.jpg',
+ 'Birman_27.jpg',
+ 'Birman_28.jpg',
+ 'Birman_29.jpg',
+ 'Birman_3.jpg',
+ 'Birman_30.jpg',
+ 'Birman_31.jpg',
+ 'Birman_32.jpg',
+ 'Birman_33.jpg',
+ 'Birman_34.jpg',
+ 'Birman_35.jpg',
+ 'Birman_36.jpg',
+ 'Birman_37.jpg',
+ 'Birman_38.jpg',
+ 'Birman_39.jpg',
+ 'Birman_4.jpg',
+ 'Birman_40.jpg',
+ 'Birman_41.jpg',
+ 'Birman_42.jpg',
+ 'Birman_43.jpg',
+ 'Birman_44.jpg',
+ 'Birman_45.jpg',
+ 'Birman_46.jpg',
+ 'Birman_47.jpg',
+ 'Birman_48.jpg',
+ 'Birman_49.jpg',
+ 'Birman_5.jpg',
+ 'Birman_50.jpg',
+ 'Birman_51.jpg',
+ 'Birman_52.jpg',
+ 'Birman_53.jpg',
+ 'Birman_54.jpg',
+ 'Birman_55.jpg',
+ 'Birman_56.jpg',
+ 'Birman_57.jpg',
+ 'Birman_58.jpg',
+ 'Birman_59.jpg',
+ 'Birman_6.jpg',
+ 'Birman_60.jpg',
+ 'Birman_61.jpg',
+ 'Birman_62.jpg',
+ 'Birman_63.jpg',
+ 'Birman_64.jpg',
+ 'Birman_65.jpg',
+ 'Birman_66.jpg',
+ 'Birman_67.jpg',
+ 'Birman_68.jpg',
+ 'Birman_69.jpg',
+ 'Birman_7.jpg',
+ 'Birman_70.jpg',
+ 'Birman_71.jpg',
+ 'Birman_72.jpg',
+ 'Birman_73.jpg',
+ 'Birman_74.jpg',
+ 'Birman_75.jpg',
+ 'Birman_76.jpg',
+ 'Birman_77.jpg',
+ 'Birman_78.jpg',
+ 'Birman_79.jpg',
+ 'Birman_8.jpg',
+ 'Birman_80.jpg',
+ 'Birman_81.jpg',
+ 'Birman_82.jpg',
+ 'Birman_83.jpg',
+ 'Birman_84.jpg',
+ 'Birman_85.jpg',
+ 'Birman_86.jpg',
+ 'Birman_87.jpg',
+ 'Birman_88.jpg',
+ 'Birman_89.jpg',
+ 'Birman_9.jpg',
+ 'Birman_90.jpg',
+ 'Birman_91.jpg',
+ 'Birman_92.jpg',
+ 'Birman_93.jpg',
+ 'Birman_94.jpg',
+ 'Birman_95.jpg',
+ 'Birman_96.jpg',
+ 'Birman_97.jpg',
+ 'Birman_98.jpg',
+ 'Birman_99.jpg',
+ 'Bombay_1.jpg',
+ 'Bombay_10.jpg',
+ 'Bombay_100.jpg',
+ 'Bombay_101.jpg',
+ 'Bombay_102.jpg',
+ 'Bombay_103.jpg',
+ 'Bombay_104.jpg',
+ 'Bombay_105.jpg',
+ 'Bombay_106.jpg',
+ 'Bombay_107.jpg',
+ 'Bombay_108.jpg',
+ 'Bombay_109.jpg',
+ 'Bombay_11.jpg',
+ 'Bombay_110.jpg',
+ 'Bombay_111.jpg',
+ 'Bombay_112.jpg',
+ 'Bombay_113.jpg',
+ 'Bombay_114.jpg',
+ 'Bombay_115.jpg',
+ 'Bombay_116.jpg',
+ 'Bombay_117.jpg',
+ 'Bombay_118.jpg',
+ 'Bombay_119.jpg',
+ 'Bombay_12.jpg',
+ 'Bombay_120.jpg',
+ 'Bombay_121.jpg',
+ 'Bombay_122.jpg',
+ 'Bombay_123.jpg',
+ 'Bombay_125.jpg',
+ 'Bombay_126.jpg',
+ 'Bombay_127.jpg',
+ 'Bombay_128.jpg',
+ 'Bombay_129.jpg',
+ 'Bombay_13.jpg',
+ 'Bombay_130.jpg',
+ 'Bombay_131.jpg',
+ 'Bombay_132.jpg',
+ 'Bombay_133.jpg',
+ 'Bombay_134.jpg',
+ 'Bombay_135.jpg',
+ 'Bombay_136.jpg',
+ 'Bombay_137.jpg',
+ 'Bombay_138.jpg',
+ 'Bombay_139.jpg',
+ 'Bombay_14.jpg',
+ 'Bombay_140.jpg',
+ 'Bombay_141.jpg',
+ 'Bombay_143.jpg',
+ 'Bombay_144.jpg',
+ 'Bombay_145.jpg',
+ 'Bombay_146.jpg',
+ 'Bombay_148.jpg',
+ 'Bombay_15.jpg',
+ 'Bombay_150.jpg',
+ 'Bombay_151.jpg',
+ 'Bombay_152.jpg',
+ 'Bombay_153.jpg',
+ 'Bombay_154.jpg',
+ 'Bombay_155.jpg',
+ 'Bombay_156.jpg',
+ 'Bombay_157.jpg',
+ 'Bombay_158.jpg',
+ 'Bombay_159.jpg',
+ 'Bombay_16.jpg',
+ 'Bombay_160.jpg',
+ 'Bombay_161.jpg',
+ 'Bombay_162.jpg',
+ 'Bombay_163.jpg',
+ 'Bombay_164.jpg',
+ 'Bombay_166.jpg',
+ 'Bombay_167.jpg',
+ 'Bombay_168.jpg',
+ 'Bombay_169.jpg',
+ 'Bombay_170.jpg',
+ 'Bombay_171.jpg',
+ 'Bombay_172.jpg',
+ 'Bombay_173.jpg',
+ 'Bombay_174.jpg',
+ 'Bombay_175.jpg',
+ 'Bombay_176.jpg',
+ 'Bombay_177.jpg',
+ 'Bombay_178.jpg',
+ 'Bombay_179.jpg',
+ 'Bombay_18.jpg',
+ 'Bombay_180.jpg',
+ 'Bombay_181.jpg',
+ 'Bombay_182.jpg',
+ 'Bombay_183.jpg',
+ 'Bombay_184.jpg',
+ 'Bombay_185.jpg',
+ 'Bombay_186.jpg',
+ 'Bombay_188.jpg',
+ 'Bombay_189.jpg',
+ 'Bombay_19.jpg',
+ 'Bombay_190.jpg',
+ 'Bombay_191.jpg',
+ 'Bombay_192.jpg',
+ 'Bombay_193.jpg',
+ 'Bombay_194.jpg',
+ 'Bombay_198.jpg',
+ 'Bombay_2.jpg',
+ 'Bombay_20.jpg',
+ 'Bombay_200.jpg',
+ 'Bombay_201.jpg',
+ 'Bombay_202.jpg',
+ 'Bombay_203.jpg',
+ 'Bombay_204.jpg',
+ 'Bombay_205.jpg',
+ 'Bombay_206.jpg',
+ 'Bombay_208.jpg',
+ 'Bombay_209.jpg',
+ 'Bombay_21.jpg',
+ 'Bombay_210.jpg',
+ 'Bombay_213.jpg',
+ 'Bombay_214.jpg',
+ 'Bombay_215.jpg',
+ 'Bombay_217.jpg',
+ 'Bombay_22.jpg',
+ 'Bombay_220.jpg',
+ 'Bombay_221.jpg',
+ 'Bombay_23.jpg',
+ 'Bombay_24.jpg',
+ 'Bombay_25.jpg',
+ 'Bombay_26.jpg',
+ 'Bombay_27.jpg',
+ 'Bombay_29.jpg',
+ 'Bombay_3.jpg',
+ 'Bombay_30.jpg',
+ 'Bombay_31.jpg',
+ 'Bombay_32.jpg',
+ 'Bombay_33.jpg',
+ 'Bombay_34.jpg',
+ 'Bombay_36.jpg',
+ 'Bombay_37.jpg',
+ 'Bombay_38.jpg',
+ 'Bombay_39.jpg',
+ 'Bombay_4.jpg',
+ 'Bombay_40.jpg',
+ 'Bombay_41.jpg',
+ 'Bombay_42.jpg',
+ 'Bombay_43.jpg',
+ 'Bombay_45.jpg',
+ 'Bombay_46.jpg',
+ 'Bombay_47.jpg',
+ 'Bombay_48.jpg',
+ 'Bombay_49.jpg',
+ 'Bombay_5.jpg',
+ 'Bombay_50.jpg',
+ 'Bombay_52.jpg',
+ 'Bombay_53.jpg',
+ 'Bombay_54.jpg',
+ 'Bombay_55.jpg',
+ 'Bombay_56.jpg',
+ 'Bombay_57.jpg',
+ 'Bombay_58.jpg',
+ 'Bombay_59.jpg',
+ 'Bombay_6.jpg',
+ 'Bombay_60.jpg',
+ 'Bombay_61.jpg',
+ 'Bombay_62.jpg',
+ 'Bombay_63.jpg',
+ 'Bombay_64.jpg',
+ 'Bombay_65.jpg',
+ 'Bombay_66.jpg',
+ 'Bombay_67.jpg',
+ 'Bombay_68.jpg',
+ 'Bombay_69.jpg',
+ 'Bombay_7.jpg',
+ 'Bombay_70.jpg',
+ 'Bombay_71.jpg',
+ 'Bombay_72.jpg',
+ 'Bombay_73.jpg',
+ 'Bombay_74.jpg',
+ 'Bombay_75.jpg',
+ 'Bombay_76.jpg',
+ 'Bombay_77.jpg',
+ 'Bombay_78.jpg',
+ 'Bombay_79.jpg',
+ 'Bombay_8.jpg',
+ 'Bombay_80.jpg',
+ 'Bombay_81.jpg',
+ 'Bombay_82.jpg',
+ 'Bombay_83.jpg',
+ 'Bombay_84.jpg',
+ 'Bombay_85.jpg',
+ 'Bombay_86.jpg',
+ 'Bombay_87.jpg',
+ 'Bombay_88.jpg',
+ 'Bombay_89.jpg',
+ 'Bombay_9.jpg',
+ 'Bombay_90.jpg',
+ 'Bombay_91.jpg',
+ 'Bombay_92.jpg',
+ 'Bombay_93.jpg',
+ 'Bombay_94.jpg',
+ 'Bombay_95.jpg',
+ 'Bombay_96.jpg',
+ 'Bombay_97.jpg',
+ 'Bombay_98.jpg',
+ 'Bombay_99.jpg',
+ 'British_Shorthair_10.jpg',
+ 'British_Shorthair_100.jpg',
+ 'British_Shorthair_101.jpg',
+ 'British_Shorthair_102.jpg',
+ 'British_Shorthair_103.jpg',
+ 'British_Shorthair_104.jpg',
+ 'British_Shorthair_105.jpg',
+ 'British_Shorthair_106.jpg',
+ 'British_Shorthair_107.jpg',
+ 'British_Shorthair_108.jpg',
+ 'British_Shorthair_109.jpg',
+ 'British_Shorthair_110.jpg',
+ 'British_Shorthair_111.jpg',
+ 'British_Shorthair_112.jpg',
+ 'British_Shorthair_113.jpg',
+ 'British_Shorthair_114.jpg',
+ 'British_Shorthair_115.jpg',
+ 'British_Shorthair_116.jpg',
+ 'British_Shorthair_117.jpg',
+ 'British_Shorthair_118.jpg',
+ 'British_Shorthair_119.jpg',
+ 'British_Shorthair_120.jpg',
+ 'British_Shorthair_121.jpg',
+ 'British_Shorthair_122.jpg',
+ 'British_Shorthair_123.jpg',
+ 'British_Shorthair_124.jpg',
+ 'British_Shorthair_125.jpg',
+ 'British_Shorthair_126.jpg',
+ 'British_Shorthair_127.jpg',
+ 'British_Shorthair_128.jpg',
+ 'British_Shorthair_129.jpg',
+ 'British_Shorthair_130.jpg',
+ 'British_Shorthair_133.jpg',
+ 'British_Shorthair_134.jpg',
+ 'British_Shorthair_135.jpg',
+ 'British_Shorthair_136.jpg',
+ 'British_Shorthair_137.jpg',
+ 'British_Shorthair_139.jpg',
+ 'British_Shorthair_140.jpg',
+ 'British_Shorthair_141.jpg',
+ 'British_Shorthair_144.jpg',
+ 'British_Shorthair_145.jpg',
+ 'British_Shorthair_148.jpg',
+ 'British_Shorthair_149.jpg',
+ 'British_Shorthair_15.jpg',
+ 'British_Shorthair_151.jpg',
+ 'British_Shorthair_153.jpg',
+ 'British_Shorthair_154.jpg',
+ 'British_Shorthair_155.jpg',
+ 'British_Shorthair_156.jpg',
+ 'British_Shorthair_157.jpg',
+ 'British_Shorthair_158.jpg',
+ 'British_Shorthair_159.jpg',
+ 'British_Shorthair_16.jpg',
+ 'British_Shorthair_160.jpg',
+ 'British_Shorthair_161.jpg',
+ 'British_Shorthair_162.jpg',
+ 'British_Shorthair_163.jpg',
+ 'British_Shorthair_164.jpg',
+ 'British_Shorthair_165.jpg',
+ 'British_Shorthair_166.jpg',
+ 'British_Shorthair_167.jpg',
+ 'British_Shorthair_168.jpg',
+ 'British_Shorthair_169.jpg',
+ 'British_Shorthair_17.jpg',
+ 'British_Shorthair_170.jpg',
+ 'British_Shorthair_172.jpg',
+ 'British_Shorthair_173.jpg',
+ 'British_Shorthair_174.jpg',
+ 'British_Shorthair_175.jpg',
+ 'British_Shorthair_176.jpg',
+ 'British_Shorthair_177.jpg',
+ 'British_Shorthair_178.jpg',
+ 'British_Shorthair_179.jpg',
+ 'British_Shorthair_18.jpg',
+ 'British_Shorthair_180.jpg',
+ 'British_Shorthair_181.jpg',
+ 'British_Shorthair_182.jpg',
+ 'British_Shorthair_183.jpg',
+ 'British_Shorthair_184.jpg',
+ 'British_Shorthair_185.jpg',
+ 'British_Shorthair_186.jpg',
+ 'British_Shorthair_187.jpg',
+ 'British_Shorthair_188.jpg',
+ 'British_Shorthair_189.jpg',
+ 'British_Shorthair_190.jpg',
+ 'British_Shorthair_193.jpg',
+ 'British_Shorthair_195.jpg',
+ 'British_Shorthair_196.jpg',
+ 'British_Shorthair_197.jpg',
+ 'British_Shorthair_198.jpg',
+ 'British_Shorthair_199.jpg',
+ 'British_Shorthair_2.jpg',
+ 'British_Shorthair_200.jpg',
+ 'British_Shorthair_201.jpg',
+ 'British_Shorthair_203.jpg',
+ 'British_Shorthair_204.jpg',
+ 'British_Shorthair_205.jpg',
+ 'British_Shorthair_207.jpg',
+ 'British_Shorthair_209.jpg',
+ 'British_Shorthair_21.jpg',
+ 'British_Shorthair_210.jpg',
+ 'British_Shorthair_212.jpg',
+ 'British_Shorthair_213.jpg',
+ 'British_Shorthair_218.jpg',
+ 'British_Shorthair_22.jpg',
+ 'British_Shorthair_223.jpg',
+ 'British_Shorthair_230.jpg',
+ 'British_Shorthair_239.jpg',
+ 'British_Shorthair_241.jpg',
+ 'British_Shorthair_248.jpg',
+ 'British_Shorthair_25.jpg',
+ 'British_Shorthair_258.jpg',
+ 'British_Shorthair_26.jpg',
+ 'British_Shorthair_263.jpg',
+ 'British_Shorthair_265.jpg',
+ 'British_Shorthair_266.jpg',
+ 'British_Shorthair_267.jpg',
+ 'British_Shorthair_268.jpg',
+ 'British_Shorthair_269.jpg',
+ 'British_Shorthair_27.jpg',
+ 'British_Shorthair_270.jpg',
+ 'British_Shorthair_271.jpg',
+ 'British_Shorthair_272.jpg',
+ 'British_Shorthair_273.jpg',
+ 'British_Shorthair_274.jpg',
+ 'British_Shorthair_275.jpg',
+ 'British_Shorthair_276.jpg',
+ 'British_Shorthair_277.jpg',
+ 'British_Shorthair_278.jpg',
+ 'British_Shorthair_28.jpg',
+ 'British_Shorthair_29.jpg',
+ 'British_Shorthair_3.jpg',
+ 'British_Shorthair_30.jpg',
+ 'British_Shorthair_31.jpg',
+ 'British_Shorthair_32.jpg',
+ 'British_Shorthair_33.jpg',
+ 'British_Shorthair_34.jpg',
+ 'British_Shorthair_36.jpg',
+ 'British_Shorthair_37.jpg',
+ 'British_Shorthair_38.jpg',
+ 'British_Shorthair_39.jpg',
+ 'British_Shorthair_40.jpg',
+ 'British_Shorthair_41.jpg',
+ 'British_Shorthair_42.jpg',
+ 'British_Shorthair_43.jpg',
+ 'British_Shorthair_44.jpg',
+ 'British_Shorthair_45.jpg',
+ 'British_Shorthair_46.jpg',
+ 'British_Shorthair_47.jpg',
+ 'British_Shorthair_48.jpg',
+ 'British_Shorthair_49.jpg',
+ 'British_Shorthair_50.jpg',
+ 'British_Shorthair_51.jpg',
+ 'British_Shorthair_52.jpg',
+ 'British_Shorthair_53.jpg',
+ 'British_Shorthair_54.jpg',
+ 'British_Shorthair_55.jpg',
+ 'British_Shorthair_56.jpg',
+ 'British_Shorthair_57.jpg',
+ 'British_Shorthair_58.jpg',
+ 'British_Shorthair_59.jpg',
+ 'British_Shorthair_6.jpg',
+ 'British_Shorthair_60.jpg',
+ 'British_Shorthair_61.jpg',
+ 'British_Shorthair_62.jpg',
+ 'British_Shorthair_63.jpg',
+ 'British_Shorthair_64.jpg',
+ 'British_Shorthair_65.jpg',
+ 'British_Shorthair_66.jpg',
+ 'British_Shorthair_67.jpg',
+ 'British_Shorthair_68.jpg',
+ 'British_Shorthair_70.jpg',
+ 'British_Shorthair_71.jpg',
+ 'British_Shorthair_72.jpg',
+ 'British_Shorthair_74.jpg',
+ 'British_Shorthair_75.jpg',
+ 'British_Shorthair_77.jpg',
+ 'British_Shorthair_78.jpg',
+ 'British_Shorthair_79.jpg',
+ 'British_Shorthair_8.jpg',
+ 'British_Shorthair_82.jpg',
+ 'British_Shorthair_83.jpg',
+ 'British_Shorthair_84.jpg',
+ 'British_Shorthair_85.jpg',
+ 'British_Shorthair_86.jpg',
+ 'British_Shorthair_87.jpg',
+ 'British_Shorthair_88.jpg',
+ 'British_Shorthair_89.jpg',
+ 'British_Shorthair_9.jpg',
+ 'British_Shorthair_90.jpg',
+ 'British_Shorthair_91.jpg',
+ 'British_Shorthair_92.jpg',
+ 'British_Shorthair_93.jpg',
+ 'British_Shorthair_94.jpg',
+ 'British_Shorthair_95.jpg',
+ 'British_Shorthair_96.jpg',
+ ...]</code></pre>
+</div>
+</div>
+<p><code># 문제</code>. 각 이미지파일명은 아래와 같은 규칙으로 저장되어 있다.</p>
+<ul>
+<li>파일명의 첫글자가 대문자이면 고양이를 의미하고 첫글자가 소문자이면 강아지를 의미한다.</li>
+</ul>
+<p>이미지 파일명이 입력으로 오면 강아지인지 고양이인지 판단하여 ‘cat’ or ’dog’를 리턴하는 함수 <code>f</code>를 구현하라.</p>
+<p>(함수사용예시)</p>
+<div id="d9aa3318-20ee-4396-a424-0346d7189050" class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'yorkshire_terrier_99.jpg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<pre><code>'dog'</code></pre>
+</div>
+</div>
+<div id="32fceeb6-1b1e-42af-b8ed-214213376313" class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'Abyssinian_1.jpg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="58">
+<pre><code>'cat'</code></pre>
+</div>
+</div>
+<p><code>(풀이)</code></p>
+<div id="3a760754" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> s: <span class="st">'cat'</span> <span class="cf">if</span> s[<span class="dv">0</span>].isupper() <span class="cf">else</span> <span class="st">'dog'</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'Abyssinian_1.jpg'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>'cat'</code></pre>
+</div>
+</div>
+<p><code># 문제</code>. 위의 결과로 나온 <code>fname_list</code>를 입력으로 하고 리스트의 각 원소가 고양이를 의미하는 그림인지 강아지를 의미하는 그림인지 나타내는 리스트를 만들어라.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 입력예시 </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">'Abyssinian_1.jpg'</span>,<span class="st">'Abyssinian_10.jpg'</span>,...,<span class="st">'yorkshire_terrier_98.jpg'</span>, <span class="st">'yorkshire_terrier_99.jpg'</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">## 출력예시</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>[<span class="st">'cat'</span>, <span class="st">'cat'</span>, ... , <span class="st">'dog'</span>, <span class="st">'dog'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>(풀이1)</code></p>
+<div id="df061eb2" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#list(map(f,fname_list))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>(풀이2)</code></p>
+<div id="14f6de12" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[f(fname) for fname in fname_list]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code># 문제</code>. 강아지 그림과 고양이 그림이 각각 몇 장씩 포함되어 있는지 파악하는 코드를 구현하라.</p>
+<p><code>(풀이)</code></p>
+<div id="f16ff663" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>[f(fname) <span class="cf">for</span> fname <span class="kw">in</span> fname_list].count(<span class="st">'cat'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>2403</code></pre>
+</div>
+</div>
+<div id="756baeb5" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>[f(fname) <span class="cf">for</span> fname <span class="kw">in</span> fname_list].count(<span class="st">'dog'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="43">
+<pre><code>4990</code></pre>
+</div>
+</div>
+<p><code># 문제</code>. 고양이 혹은 강아지의 각 종이 몇 장씩 포함되어있는지 구하여 딕셔너리로 정리하라.</p>
+<p><code>(풀이)</code></p>
+<div id="81edeea8" class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="st">'_'</span>.join(l.split(<span class="st">'_'</span>)[:<span class="op">-</span><span class="dv">1</span>]) <span class="cf">for</span> l <span class="kw">in</span> fname_list]</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>{s:lst.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(lst)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="71">
+<pre><code>{'Sphynx': 200,
+ 'miniature_pinscher': 200,
+ 'shiba_inu': 200,
+ 'yorkshire_terrier': 200,
+ 'samoyed': 200,
+ 'Persian': 200,
+ 'newfoundland': 200,
+ 'Birman': 200,
+ 'Russian_Blue': 200,
+ 'german_shorthaired': 200,
+ 'japanese_chin': 200,
+ 'Bombay': 200,
+ 'english_cocker_spaniel': 200,
+ 'wheaten_terrier': 200,
+ 'beagle': 200,
+ 'keeshond': 200,
+ 'pomeranian': 200,
+ 'american_pit_bull_terrier': 200,
+ 'scottish_terrier': 199,
+ 'havanese': 200,
+ 'Bengal': 200,
+ 'chihuahua': 200,
+ 'Maine_Coon': 200,
+ 'Egyptian_Mau': 200,
+ 'boxer': 200,
+ 'american_bulldog': 200,
+ 'British_Shorthair': 200,
+ 'Ragdoll': 200,
+ 'leonberger': 200,
+ 'staffordshire_bull_terrier': 191,
+ 'basset_hound': 200,
+ 'saint_bernard': 200,
+ 'Siamese': 200,
+ 'english_setter': 200,
+ 'pug': 200,
+ 'great_pyrenees': 200,
+ 'Abyssinian': 203}</code></pre>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="guebin/DL2024" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
