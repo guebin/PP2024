@@ -194,9 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><a href="https://colab.research.google.com/github/guebin/PP2024/blob/main/posts/07wk-1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" style="text-align: left"></a></p>
-<div id="91c02339-920a-41da-8b6f-c38f5c129c71" class="cell" data-tags="[]" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># {{&lt;video https://youtu.be/playlist?list=PLQqh36zP38-yC_m_UJuLhA4k9IqOiQwzO&amp;si=Xr5e4YLDFsT1s-69 &gt;}}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/playlist?list=PLQqh36zP38-xz7YnuptdUg-tIHaBhFrqJ&amp;si=prXpB8pP1luQvaz-" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -215,24 +213,24 @@ Caution
 </ul>
 </div>
 </div>
-<div id="cc1b2d29-161d-4ac7-b820-12fa0bd04a75" class="cell" data-tags="[]" data-execution_count="73">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cc1b2d29-161d-4ac7-b820-12fa0bd04a75" class="cell" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="점" class="level1">
 <h1>1. – 10점</h1>
 <p>아래는 파이썬프로그래밍 수강생들의 학번, 이름, 출석점수, 과제점수, 중간고사점수, 기말고사점수를 저장한 중첩리스트이다.</p>
-<div id="d1b99320-0e07-4cc0-813c-a433b09aaad8" class="cell" data-tags="[]" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [[<span class="st">'2021-43052'</span>, <span class="st">'GuebinChoi'</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">25</span>],</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2019-12342'</span>, <span class="st">'Heung-min Son'</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">15</span>],</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2018-32234'</span>, <span class="st">'hynn'</span>, <span class="dv">7</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">15</span>],</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2022-42323'</span>, <span class="st">'Minji'</span>, <span class="dv">8</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">35</span>],</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2023-55342'</span>, <span class="st">'Hanni'</span>, <span class="dv">7</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">35</span>],</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2022-46624'</span>, <span class="st">'Danielle'</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">40</span>],</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2022-11239'</span>, <span class="st">'Haerin'</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>],</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2022-32114'</span>, <span class="st">'Hyein'</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">35</span>]]</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>lst </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div id="d1b99320-0e07-4cc0-813c-a433b09aaad8" class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [[<span class="st">'2021-43052'</span>, <span class="st">'GuebinChoi'</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">25</span>],</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2019-12342'</span>, <span class="st">'Heung-min Son'</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">15</span>],</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2018-32234'</span>, <span class="st">'hynn'</span>, <span class="dv">7</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">15</span>],</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2022-42323'</span>, <span class="st">'Minji'</span>, <span class="dv">8</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">35</span>],</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2023-55342'</span>, <span class="st">'Hanni'</span>, <span class="dv">7</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">35</span>],</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2022-46624'</span>, <span class="st">'Danielle'</span>, <span class="dv">3</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">40</span>],</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2022-11239'</span>, <span class="st">'Haerin'</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>],</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>       [<span class="st">'2022-32114'</span>, <span class="st">'Hyein'</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">35</span>]]</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>lst </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[['2021-43052', 'GuebinChoi', 5, 10, 20, 25],
  ['2019-12342', 'Heung-min Son', 10, 15, 30, 15],
  ['2018-32234', 'hynn', 7, 20, 30, 15],
@@ -244,17 +242,36 @@ Caution
 </div>
 </div>
 <p>중간고사와 기말고사의 합이 60점 이상인 학생은 몇명인가? (확장 가능한 코드만 정답으로 인정)</p>
+<p><code>(풀이)</code></p>
+<div id="ac8f8e58-5179-499e-9bfc-000938b5f532" class="cell" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>([l <span class="cf">for</span> l <span class="kw">in</span> lst <span class="cf">if</span> <span class="bu">sum</span>(l[<span class="op">-</span><span class="dv">2</span>:])<span class="op">&gt;=</span><span class="dv">60</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>3</code></pre>
+</div>
+</div>
 </section>
 <section id="점-1" class="level1">
 <h1>2. – 10점</h1>
 <p>아래의 <code>list</code>를 관찰하라.</p>
-<div id="bc9949e7-edbd-4120-b765-3622251d1225" class="cell" data-tags="[]" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="st">'2022/09/21'</span>,<span class="st">'2022/10/30'</span>,<span class="st">'2022/12/25'</span>,<span class="st">'2023/01/01'</span>,<span class="st">'2023/01/31'</span>,<span class="st">'2023/03/20'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="bc9949e7-edbd-4120-b765-3622251d1225" class="cell" data-tags="[]" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="st">'2022/09/21'</span>,<span class="st">'2022/10/30'</span>,<span class="st">'2022/12/25'</span>,<span class="st">'2023/01/01'</span>,<span class="st">'2023/01/31'</span>,<span class="st">'2023/03/20'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>이를 아래와 같은 리스트로 변환하는 코드를 작성하라. (확장 가능한 코드만 정답으로 인정)</p>
-<div id="5b5434ea-4825-4c8c-a08a-5f88c7a18bad" class="cell" data-tags="[]" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">'2022.09.21.'</span>,<span class="st">'2022.10.30.'</span>,<span class="st">'2022.12.25.'</span>,<span class="st">'2023.01.01.'</span>,<span class="st">'2023.01.31.'</span>,<span class="st">'2023.03.20.'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div id="5b5434ea-4825-4c8c-a08a-5f88c7a18bad" class="cell" data-tags="[]" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">'2022.09.21.'</span>,<span class="st">'2022.10.30.'</span>,<span class="st">'2022.12.25.'</span>,<span class="st">'2023.01.01.'</span>,<span class="st">'2023.01.31.'</span>,<span class="st">'2023.03.20.'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>['2022.09.21.',
+ '2022.10.30.',
+ '2022.12.25.',
+ '2023.01.01.',
+ '2023.01.31.',
+ '2023.03.20.']</code></pre>
+</div>
+</div>
+<p><code>(풀이)</code></p>
+<div id="bba181b9-edac-4de6-a9f7-5e7857fa1b37" class="cell" data-tags="[]" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>[l.replace(<span class="st">'/'</span>,<span class="st">'.'</span>)<span class="op">+</span><span class="st">'.'</span> <span class="cf">for</span> l <span class="kw">in</span> lst]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>['2022.09.21.',
  '2022.10.30.',
  '2022.12.25.',
@@ -267,10 +284,23 @@ Caution
 <section id="점-2" class="level1">
 <h1>3. – 10점</h1>
 <p>아래의 문자열을 관찰하라.</p>
-<div id="1726890b-44b8-44d1-b7d2-ecbdb6841659" class="cell" data-tags="[]" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>test_arr <span class="op">=</span> <span class="st">'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9Tjom/BWDSUGPl+nafzlHDTYW7hdI4yZ5ew18JH4JW9jbhUFrviQzM7xlELEVf4h9lFX5QVkbPppSwg0cda3Pbv7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8V6RjsNAQwdsdMFvSlVK/7XAt3FaoJoAsncM1Q9x5+3V0Ww68/eIFmb1zuUFljQJKprrX88XypNDvjYNby6vw/Pb0rwert/EnmZ+AW4OZPnTPI89ZPmVMLuayrD2cE86Z/il8b+gw3r3+1nKatmIkjn2so1d01QraTlMqVSsbxNrRFi9wrf+M7Q== schacon@mylaptop.local'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1726890b-44b8-44d1-b7d2-ecbdb6841659" class="cell" data-tags="[]" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>test_arr <span class="op">=</span> <span class="st">'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9Tjom/BWDSUGPl+nafzlHDTYW7hdI4yZ5ew18JH4JW9jbhUFrviQzM7xlELEVf4h9lFX5QVkbPppSwg0cda3Pbv7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8V6RjsNAQwdsdMFvSlVK/7XAt3FaoJoAsncM1Q9x5+3V0Ww68/eIFmb1zuUFljQJKprrX88XypNDvjYNby6vw/Pb0rwert/EnmZ+AW4OZPnTPI89ZPmVMLuayrD2cE86Z/il8b+gw3r3+1nKatmIkjn2so1d01QraTlMqVSsbxNrRFi9wrf+M7Q== schacon@mylaptop.local'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>‘A’ 가 몇개 있는지 count하라</p>
+<p><code>(풀이)</code></p>
+<div id="987560d8-f219-4cf8-aa77-94f38e38980e" class="cell" data-tags="[]" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(test_arr).count(<span class="st">'A'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>18</code></pre>
+</div>
+</div>
+<div id="ac8d4a7d-74ea-4277-8d7e-666f54f7f04e" class="cell" data-tags="[]" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>test_arr.count(<span class="st">'A'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>18</code></pre>
+</div>
+</div>
 </section>
 <section id="점-3" class="level1">
 <h1>4. – 10점</h1>
@@ -278,22 +308,49 @@ Caution
 <p>모두 맞출경우만 정답으로 인정</p>
 </blockquote>
 <p><code>(1)</code> 아래의 조건을 만족하는 자료형 <code>a</code>를 선언하라.</p>
-<div id="b8a89a26-4c25-4d6f-965d-48b90c7fdef9" class="cell" data-tags="[]" data-execution_count="50">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(a), <span class="bu">len</span>(a), a[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="50">
+<div id="b8a89a26-4c25-4d6f-965d-48b90c7fdef9" class="cell" data-tags="[]" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(a), <span class="bu">len</span>(a), a[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>(tuple, 1, 'a')</code></pre>
+</div>
+</div>
+<p><code>(풀이)</code></p>
+<div id="8a26e6c0-6b63-4f03-8c0b-b782a3bb0d76" class="cell" data-tags="[]" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span> (<span class="st">'a'</span>,)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="d8179793-833b-4573-8585-3e0d791f5b77" class="cell" data-tags="[]" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(a), <span class="bu">len</span>(a), a[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>(tuple, 1, 'a')</code></pre>
 </div>
 </div>
 <p><code>(2)</code> 아래와 같은 출력결과를 보이는 numpy array <code>a</code>,<code>b</code> 를 선언하라.</p>
 <div id="f5fbcad0-c6a7-4c80-8491-ffb8084e0ae3" class="cell" data-tags="[]" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>a, a.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>a, a.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="45">
 <pre><code>(array(3), ())</code></pre>
 </div>
 </div>
 <div id="1a6a2635-b36f-432a-b91d-0f4b089516a4" class="cell" data-tags="[]" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>b, b.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>b, b.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="52">
+<pre><code>(array([3]), (1,))</code></pre>
+</div>
+</div>
+<p><code>(풀이)</code></p>
+<div id="7cd8eeeb-70d4-41df-8500-ea78686ac912" class="cell" data-tags="[]" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array(<span class="dv">3</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="7be913b3-adf0-427d-b436-fe83d3501f0c" class="cell" data-tags="[]" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>a, a.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>(array(3), ())</code></pre>
+</div>
+</div>
+<div id="68d420a0-0b33-4b3c-b9d6-75a5e66fd02b" class="cell" data-tags="[]" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>b, b.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>(array([3]), (1,))</code></pre>
 </div>
 </div>
@@ -304,11 +361,11 @@ Caution
 <p>모두 맞출경우만 정답으로 인정</p>
 </blockquote>
 <p>아래와 같은 2차원 numpy array를 선언하라.</p>
-<div id="93f1e52c-d95c-4509-8ce0-23e24df500ae" class="cell" data-tags="[]" data-execution_count="132">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">43052</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.randn(<span class="dv">20</span>,<span class="dv">5</span>).<span class="bu">round</span>(<span class="dv">2</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="132">
+<div id="93f1e52c-d95c-4509-8ce0-23e24df500ae" class="cell" data-tags="[]" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">43052</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.randn(<span class="dv">20</span>,<span class="dv">5</span>).<span class="bu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>array([[ 0.38,  1.08,  1.14,  0.31,  0.24],
        [ 0.36, -1.66, -1.38, -1.93, -1.49],
        [ 0.01, -0.03, -0.34,  0.71, -1.55],
@@ -333,11 +390,26 @@ Caution
 </div>
 <p><code>(1)</code> 열별로(column-wise) <code>X</code>의 평균을 계산하라.</p>
 <div id="77fba872-4343-4d57-890e-5c5feb94c43f" class="cell" data-execution_count="136">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 답: np.array([-0.042 ,  0.0475, -0.2675, -0.273 ,  0.13  ])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 답: np.array([-0.042 ,  0.0475, -0.2675, -0.273 ,  0.13  ])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>(풀이)</code></p>
+<div id="0e724e57-fc3d-4c13-9823-1bb6f1372028" class="cell" data-tags="[]" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>X.mean(axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<pre><code>array([-0.042 ,  0.0475, -0.2675, -0.273 ,  0.13  ])</code></pre>
+</div>
 </div>
 <p><code>(2)</code> 행별로(row-wise) <code>X</code>의 최대값과 최소값의 차이를 계산하라.</p>
 <div id="50b22362-0c7f-4f26-a326-160f98edc769" class="cell" data-tags="[]" data-execution_count="146">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 답: np.array([0.9 , 2.29, 2.26, 2.81, 3.94, 1.35, 1.58, 2.3 , 1.04, 2.75, 1.19, 3.86, 3.01, 1.02, 2.16, 3.85, 2.64, 2.09, 1.72, 1.5 ])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 답: np.array([0.9 , 2.29, 2.26, 2.81, 3.94, 1.35, 1.58, 2.3 , 1.04, 2.75, 1.19, 3.86, 3.01, 1.02, 2.16, 3.85, 2.64, 2.09, 1.72, 1.5 ])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>(풀이)</code></p>
+<div id="4e837e37-24fa-44dd-a83e-b197e1f0e74b" class="cell" data-tags="[]" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>X.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>) <span class="op">-</span> X.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>array([0.9 , 2.29, 2.26, 2.81, 3.94, 1.35, 1.58, 2.3 , 1.04, 2.75, 1.19,
+       3.86, 3.01, 1.02, 2.16, 3.85, 2.64, 2.09, 1.72, 1.5 ])</code></pre>
+</div>
 </div>
 </section>
 <section id="점-5" class="level1">
@@ -346,13 +418,13 @@ Caution
 <p>각 20점</p>
 </blockquote>
 <p>아래의 코드를 실행하여 <code>data</code>를 생성하라.</p>
-<div id="dee2200b-ea56-426c-b3d8-a91f13bee9f8" class="cell" data-tags="[]" data-execution_count="204">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/guebin/DV2021/master/_notebooks/2021-10-25-FIFA22_official_data.csv'</span>).drop([<span class="st">'Loaned From'</span>,<span class="st">'Marking'</span>],axis<span class="op">=</span><span class="dv">1</span>).dropna().loc[:,[<span class="st">'Name'</span>,<span class="st">'Nationality'</span>,<span class="st">'Overall'</span>]].to_numpy().tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="dee2200b-ea56-426c-b3d8-a91f13bee9f8" class="cell" data-tags="[]" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/guebin/DV2021/master/_notebooks/2021-10-25-FIFA22_official_data.csv'</span>).drop([<span class="st">'Loaned From'</span>,<span class="st">'Marking'</span>],axis<span class="op">=</span><span class="dv">1</span>).dropna().loc[:,[<span class="st">'Name'</span>,<span class="st">'Nationality'</span>,<span class="st">'Overall'</span>]].to_numpy().tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>data</code>는 list로 만들어져 있으며 각 원소는 축구선수들의 능력치를 나타낸다. <code>data</code>의 각 원소는 [이름,소속국가,능력치]를 의미하며 처음 5개의 원소는 아래와 같다.</p>
-<div id="86db125d-fd6b-46cb-ad7f-4302c901c73d" class="cell" data-tags="[]" data-execution_count="209">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>data[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="209">
+<div id="86db125d-fd6b-46cb-ad7f-4302c901c73d" class="cell" data-tags="[]" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>data[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="58">
 <pre><code>[['Bruno Fernandes', 'Portugal', 88],
  ['L. Goretzka', 'Germany', 87],
  ['L. Suárez', 'Uruguay', 88],
@@ -361,30 +433,48 @@ Caution
 </div>
 </div>
 <p><code>(1)</code> 아래의 dictionary를 이용하여 <code>data</code>의 국가이름을 대륙이름으로 바꾸라.</p>
-<div id="a04ff251-2a23-4d18-a3b1-aecf99eabe50" class="cell" data-tags="[]" data-execution_count="206">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>continent_dict <span class="op">=</span> {</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Asia'</span>: [<span class="st">'Afghanistan'</span>, <span class="st">'Japan'</span>, <span class="st">'Macau'</span>, <span class="st">'Chinese Taipei'</span>, <span class="st">'Indonesia'</span>, <span class="st">'Korea Republic'</span>, <span class="st">'Kazakhstan'</span>, <span class="st">'Kyrgyzstan'</span>, <span class="st">'Bhutan'</span>, <span class="st">'Philippines'</span>, <span class="st">'Syria'</span>, <span class="st">'China PR'</span>, <span class="st">'Oman'</span>, <span class="st">'Guam'</span>, <span class="st">'Vietnam'</span>, <span class="st">'Jordan'</span>, <span class="st">'Palestine'</span>, <span class="st">'Malaysia'</span>, <span class="st">'Hong Kong'</span>, <span class="st">'Korea DPR'</span>, <span class="st">'Lebanon'</span>, <span class="st">'Uzbekistan'</span>, <span class="st">'India'</span>,<span class="st">'Iraq'</span>, <span class="st">'Iran'</span>, <span class="st">'Saudi Arabia'</span>, <span class="st">'United Arab Emirates'</span>,<span class="st">'Australia'</span>],</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Europe'</span>: [<span class="st">'Portugal'</span>, <span class="st">'Germany'</span>, <span class="st">'Belgium'</span>, <span class="st">'Netherlands'</span>, <span class="st">'Croatia'</span>, <span class="st">'Spain'</span>, <span class="st">'Austria'</span>, <span class="st">'Italy'</span>, <span class="st">'France'</span>, <span class="st">'Serbia'</span>, <span class="st">'England'</span>, <span class="st">'Poland'</span>, <span class="st">'Ukraine'</span>, <span class="st">'Wales'</span>, <span class="st">'Scotland'</span>, <span class="st">'Czech Republic'</span>, <span class="st">'Slovakia'</span>, <span class="st">'Romania'</span>, <span class="st">'Bosnia and Herzegovina'</span>, <span class="st">'Republic of Ireland'</span>, <span class="st">'Norway'</span>, <span class="st">'Sweden'</span>, <span class="st">'Bulgaria'</span>, <span class="st">'Lithuania'</span>, <span class="st">'Estonia'</span>, <span class="st">'Latvia'</span>, <span class="st">'Liechtenstein'</span>,<span class="st">'Albania'</span>,<span class="st">'Denmark'</span>,<span class="st">'Finland'</span>,<span class="st">'Greece'</span>,<span class="st">'Hungary'</span>,<span class="st">'Iceland'</span>,<span class="st">'Luxembourg'</span>,<span class="st">'Northern Ireland'</span>,<span class="st">'Slovenia'</span>,<span class="st">'Switzerland'</span>,<span class="st">'Andorra'</span>,<span class="st">'Azerbaijan'</span>,<span class="st">'Belarus'</span>,<span class="st">'Cyprus'</span>,<span class="st">'Faroe Islands'</span>,<span class="st">'Georgia'</span>,<span class="st">'Kosovo'</span>,<span class="st">'Malta'</span>,<span class="st">'Moldova'</span>,<span class="st">'Montenegro'</span>,<span class="st">'North Macedonia'</span>,<span class="st">'Armenia'</span>,<span class="st">'Gibraltar'</span>,<span class="st">'Russia'</span>,<span class="st">'Turkey'</span>,<span class="st">'Israel'</span>],</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'South America'</span>: [<span class="st">'Uruguay'</span>, <span class="st">'Argentina'</span>, <span class="st">'Brazil'</span>, <span class="st">'Chile'</span>, <span class="st">'Colombia'</span>, <span class="st">'Ecuador'</span>, <span class="st">'Paraguay'</span>, <span class="st">'Venezuela'</span>, <span class="st">'Suriname'</span>, <span class="st">'Bolivia'</span>,<span class="st">'Peru'</span>,<span class="st">'Guyana'</span>],</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Africa'</span>: [<span class="st">'Egypt'</span>, <span class="st">"Côte d'Ivoire"</span>, <span class="st">'Senegal'</span>, <span class="st">'Morocco'</span>, <span class="st">'Ghana'</span>, <span class="st">'Algeria'</span>, <span class="st">'Guinea'</span>, <span class="st">'Mali'</span>, <span class="st">'Congo DR'</span>, <span class="st">'Liberia'</span>, <span class="st">'Cameroon'</span>, <span class="st">'Tunisia'</span>, <span class="st">'Comoros'</span>, <span class="st">'Kenya'</span>, <span class="st">'South Africa'</span>, <span class="st">'Zimbabwe'</span>, <span class="st">'Madagascar'</span>, <span class="st">'Mozambique'</span>, <span class="st">'Equatorial Guinea'</span>, <span class="st">'Congo'</span>, <span class="st">'Burundi'</span>, <span class="st">'Grenada'</span>, <span class="st">'Thailand'</span>, <span class="st">'Togo'</span>, <span class="st">'Sudan'</span>, <span class="st">'Mauritania'</span>,<span class="st">'Guinea Bissau'</span>,<span class="st">'Libya'</span>,<span class="st">'Nigeria'</span>,<span class="st">'Zambia'</span>,<span class="st">'Angola'</span>,<span class="st">'Benin'</span>,<span class="st">'Burkina Faso'</span>,<span class="st">'Cape Verde Islands'</span>,<span class="st">'Central African Republic'</span>,<span class="st">'Chad'</span>,<span class="st">'Eritrea'</span>,<span class="st">'Gabon'</span>,<span class="st">'Gambia'</span>,<span class="st">'Mauritius'</span>,<span class="st">'Namibia'</span>,<span class="st">'Rwanda'</span>,<span class="st">'Sierra Leone'</span>,<span class="st">'South Sudan'</span>,<span class="st">'São Tomé e Príncipe'</span>,<span class="st">'Uganda'</span>,<span class="st">'Niger'</span>],</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'North and Central America'</span>: [<span class="st">'Antigua and Barbuda'</span>, <span class="st">'Barbados'</span>, <span class="st">'Belize'</span>, <span class="st">'Bermuda'</span>, <span class="st">'Canada'</span>, <span class="st">'Costa Rica'</span>, <span class="st">'Cuba'</span>, <span class="st">'Curacao'</span>, <span class="st">'Dominican Republic'</span>, <span class="st">'El Salvador'</span>, <span class="st">'Guatemala'</span>, <span class="st">'Haiti'</span>, <span class="st">'Honduras'</span>, <span class="st">'Jamaica'</span>, <span class="st">'Mexico'</span>, <span class="st">'Montserrat'</span>, <span class="st">'Panama'</span>, <span class="st">'Puerto Rico'</span>, <span class="st">'Saint Kitts and Nevis'</span>, <span class="st">'Saint Lucia'</span>, <span class="st">'Trinidad and Tobago'</span>, <span class="st">'United States'</span>],</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Oceania'</span>: [<span class="st">'New Zealand'</span>, <span class="st">'Fiji'</span>, <span class="st">'Papua New Guinea'</span>,<span class="st">'New Caledonia'</span>],</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a04ff251-2a23-4d18-a3b1-aecf99eabe50" class="cell" data-tags="[]" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>continent_dict <span class="op">=</span> {</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Asia'</span>: [<span class="st">'Afghanistan'</span>, <span class="st">'Japan'</span>, <span class="st">'Macau'</span>, <span class="st">'Chinese Taipei'</span>, <span class="st">'Indonesia'</span>, <span class="st">'Korea Republic'</span>, <span class="st">'Kazakhstan'</span>, <span class="st">'Kyrgyzstan'</span>, <span class="st">'Bhutan'</span>, <span class="st">'Philippines'</span>, <span class="st">'Syria'</span>, <span class="st">'China PR'</span>, <span class="st">'Oman'</span>, <span class="st">'Guam'</span>, <span class="st">'Vietnam'</span>, <span class="st">'Jordan'</span>, <span class="st">'Palestine'</span>, <span class="st">'Malaysia'</span>, <span class="st">'Hong Kong'</span>, <span class="st">'Korea DPR'</span>, <span class="st">'Lebanon'</span>, <span class="st">'Uzbekistan'</span>, <span class="st">'India'</span>,<span class="st">'Iraq'</span>, <span class="st">'Iran'</span>, <span class="st">'Saudi Arabia'</span>, <span class="st">'United Arab Emirates'</span>,<span class="st">'Australia'</span>],</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Europe'</span>: [<span class="st">'Portugal'</span>, <span class="st">'Germany'</span>, <span class="st">'Belgium'</span>, <span class="st">'Netherlands'</span>, <span class="st">'Croatia'</span>, <span class="st">'Spain'</span>, <span class="st">'Austria'</span>, <span class="st">'Italy'</span>, <span class="st">'France'</span>, <span class="st">'Serbia'</span>, <span class="st">'England'</span>, <span class="st">'Poland'</span>, <span class="st">'Ukraine'</span>, <span class="st">'Wales'</span>, <span class="st">'Scotland'</span>, <span class="st">'Czech Republic'</span>, <span class="st">'Slovakia'</span>, <span class="st">'Romania'</span>, <span class="st">'Bosnia and Herzegovina'</span>, <span class="st">'Republic of Ireland'</span>, <span class="st">'Norway'</span>, <span class="st">'Sweden'</span>, <span class="st">'Bulgaria'</span>, <span class="st">'Lithuania'</span>, <span class="st">'Estonia'</span>, <span class="st">'Latvia'</span>, <span class="st">'Liechtenstein'</span>,<span class="st">'Albania'</span>,<span class="st">'Denmark'</span>,<span class="st">'Finland'</span>,<span class="st">'Greece'</span>,<span class="st">'Hungary'</span>,<span class="st">'Iceland'</span>,<span class="st">'Luxembourg'</span>,<span class="st">'Northern Ireland'</span>,<span class="st">'Slovenia'</span>,<span class="st">'Switzerland'</span>,<span class="st">'Andorra'</span>,<span class="st">'Azerbaijan'</span>,<span class="st">'Belarus'</span>,<span class="st">'Cyprus'</span>,<span class="st">'Faroe Islands'</span>,<span class="st">'Georgia'</span>,<span class="st">'Kosovo'</span>,<span class="st">'Malta'</span>,<span class="st">'Moldova'</span>,<span class="st">'Montenegro'</span>,<span class="st">'North Macedonia'</span>,<span class="st">'Armenia'</span>,<span class="st">'Gibraltar'</span>,<span class="st">'Russia'</span>,<span class="st">'Turkey'</span>,<span class="st">'Israel'</span>],</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'South America'</span>: [<span class="st">'Uruguay'</span>, <span class="st">'Argentina'</span>, <span class="st">'Brazil'</span>, <span class="st">'Chile'</span>, <span class="st">'Colombia'</span>, <span class="st">'Ecuador'</span>, <span class="st">'Paraguay'</span>, <span class="st">'Venezuela'</span>, <span class="st">'Suriname'</span>, <span class="st">'Bolivia'</span>,<span class="st">'Peru'</span>,<span class="st">'Guyana'</span>],</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Africa'</span>: [<span class="st">'Egypt'</span>, <span class="st">"Côte d'Ivoire"</span>, <span class="st">'Senegal'</span>, <span class="st">'Morocco'</span>, <span class="st">'Ghana'</span>, <span class="st">'Algeria'</span>, <span class="st">'Guinea'</span>, <span class="st">'Mali'</span>, <span class="st">'Congo DR'</span>, <span class="st">'Liberia'</span>, <span class="st">'Cameroon'</span>, <span class="st">'Tunisia'</span>, <span class="st">'Comoros'</span>, <span class="st">'Kenya'</span>, <span class="st">'South Africa'</span>, <span class="st">'Zimbabwe'</span>, <span class="st">'Madagascar'</span>, <span class="st">'Mozambique'</span>, <span class="st">'Equatorial Guinea'</span>, <span class="st">'Congo'</span>, <span class="st">'Burundi'</span>, <span class="st">'Grenada'</span>, <span class="st">'Thailand'</span>, <span class="st">'Togo'</span>, <span class="st">'Sudan'</span>, <span class="st">'Mauritania'</span>,<span class="st">'Guinea Bissau'</span>,<span class="st">'Libya'</span>,<span class="st">'Nigeria'</span>,<span class="st">'Zambia'</span>,<span class="st">'Angola'</span>,<span class="st">'Benin'</span>,<span class="st">'Burkina Faso'</span>,<span class="st">'Cape Verde Islands'</span>,<span class="st">'Central African Republic'</span>,<span class="st">'Chad'</span>,<span class="st">'Eritrea'</span>,<span class="st">'Gabon'</span>,<span class="st">'Gambia'</span>,<span class="st">'Mauritius'</span>,<span class="st">'Namibia'</span>,<span class="st">'Rwanda'</span>,<span class="st">'Sierra Leone'</span>,<span class="st">'South Sudan'</span>,<span class="st">'São Tomé e Príncipe'</span>,<span class="st">'Uganda'</span>,<span class="st">'Niger'</span>],</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'North and Central America'</span>: [<span class="st">'Antigua and Barbuda'</span>, <span class="st">'Barbados'</span>, <span class="st">'Belize'</span>, <span class="st">'Bermuda'</span>, <span class="st">'Canada'</span>, <span class="st">'Costa Rica'</span>, <span class="st">'Cuba'</span>, <span class="st">'Curacao'</span>, <span class="st">'Dominican Republic'</span>, <span class="st">'El Salvador'</span>, <span class="st">'Guatemala'</span>, <span class="st">'Haiti'</span>, <span class="st">'Honduras'</span>, <span class="st">'Jamaica'</span>, <span class="st">'Mexico'</span>, <span class="st">'Montserrat'</span>, <span class="st">'Panama'</span>, <span class="st">'Puerto Rico'</span>, <span class="st">'Saint Kitts and Nevis'</span>, <span class="st">'Saint Lucia'</span>, <span class="st">'Trinidad and Tobago'</span>, <span class="st">'United States'</span>],</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Oceania'</span>: [<span class="st">'New Zealand'</span>, <span class="st">'Fiji'</span>, <span class="st">'Papua New Guinea'</span>,<span class="st">'New Caledonia'</span>],</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>바뀐 <code>data</code>의 처음 5개의 출력결과는 아래와 같다.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">'Bruno Fernandes'</span>, <span class="st">'Europe'</span>, <span class="dv">88</span>],</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a> [<span class="st">'L. Goretzka'</span>, <span class="st">'Europe'</span>, <span class="dv">87</span>],</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a> [<span class="st">'L. Suárez'</span>, <span class="st">'South America'</span>, <span class="dv">88</span>],</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a> [<span class="st">'K. De Bruyne'</span>, <span class="st">'Europe'</span>, <span class="dv">91</span>],</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a> [<span class="st">'M. Acuña'</span>, <span class="st">'South America'</span>, <span class="dv">84</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>(2)</code> 능력치가 80이상인 선수들은 대륙별로 몇명의 선수가 있는가? count하라.</p>
-<div id="806b4c87-cd5b-407b-9d58-8be384d65627" class="cell" data-tags="[]" data-execution_count="210">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 답</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># {'South America': 71,</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Africa': 21,</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  'North and Central America': 8,</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Europe': 272,</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Asia': 1}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">'Bruno Fernandes'</span>, <span class="st">'Europe'</span>, <span class="dv">88</span>],</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a> [<span class="st">'L. Goretzka'</span>, <span class="st">'Europe'</span>, <span class="dv">87</span>],</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a> [<span class="st">'L. Suárez'</span>, <span class="st">'South America'</span>, <span class="dv">88</span>],</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a> [<span class="st">'K. De Bruyne'</span>, <span class="st">'Europe'</span>, <span class="dv">91</span>],</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a> [<span class="st">'M. Acuña'</span>, <span class="st">'South America'</span>, <span class="dv">84</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>(풀이)</code></p>
+<div id="6b740953-26b6-4c3d-bdfa-63b6a0d75c84" class="cell" data-tags="[]" data-execution_count="87">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="op">=</span> [[name,key,overall] <span class="cf">for</span> name,nationality,overall <span class="kw">in</span> data <span class="cf">for</span> key <span class="kw">in</span> continent_dict <span class="cf">if</span> nationality <span class="kw">in</span> continent_dict[key]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>(2)</code> 능력치가 80 보다 큰 선수들은 대륙별로 몇명의 선수가 있는가? count하라.</p>
+<div id="806b4c87-cd5b-407b-9d58-8be384d65627" class="cell" data-tags="[]" data-execution_count="88">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 답</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co"># {'South America': 71,</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Africa': 21,</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  'North and Central America': 8,</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Europe': 272,</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Asia': 1}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>(풀이)</code></p>
+<div id="ee5db080-3525-416f-8a14-ff961dbb7134" class="cell" data-tags="[]" data-execution_count="89">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [continent <span class="cf">for</span> _,continent,overall <span class="kw">in</span> data2 <span class="cf">if</span> overall<span class="op">&gt;</span><span class="dv">80</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c46a6b15-d5c8-425b-9b76-b55cf984588e" class="cell" data-execution_count="90">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>{s:lst.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(lst)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="90">
+<pre><code>{'Africa': 21,
+ 'North and Central America': 8,
+ 'Europe': 272,
+ 'South America': 71,
+ 'Asia': 1}</code></pre>
+</div>
 </div>
 
 
