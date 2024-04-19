@@ -391,34 +391,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="e.-통계분포" class="level2">
 <h2 class="anchored" data-anchor-id="e.-통계분포">E. 통계분포</h2>
-<div id="398de0bd-ca7d-4bdf-9064-45a0107005d7" class="cell" data-tags="[]" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>np.random.binomial(n<span class="op">=</span><span class="dv">10</span>,p<span class="op">=</span><span class="fl">0.2</span>,size<span class="op">=</span>(<span class="dv">5</span>,)) <span class="co"># X1, ..., X5 ~ B(10,0.2) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
-<pre><code>array([3, 1, 3, 1, 1])</code></pre>
+<div id="398de0bd-ca7d-4bdf-9064-45a0107005d7" class="cell" data-tags="[]" data-execution_count="128">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>np.random.binomial(n<span class="op">=</span><span class="dv">10</span>,p<span class="op">=</span><span class="fl">0.2</span>,size<span class="op">=</span><span class="dv">5</span>) <span class="co"># X1, ..., X5 ~ B(10,0.2) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="128">
+<pre><code>array([3, 1, 1, 2, 1])</code></pre>
 </div>
 </div>
-<div id="e540f2b2-2917-4945-9b85-ab8818af7372" class="cell" data-tags="[]" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>np.random.normal(loc<span class="op">=</span><span class="dv">10</span>,scale<span class="op">=</span><span class="dv">2</span>,size<span class="op">=</span>(<span class="dv">5</span>,)) <span class="co"># X1, ..., X5 ~ N(10,4) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
-<pre><code>array([11.16033873,  9.59388426, 11.69074925, 11.32723419, 10.94191875])</code></pre>
+<div id="e540f2b2-2917-4945-9b85-ab8818af7372" class="cell" data-tags="[]" data-execution_count="129">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>np.random.normal(loc<span class="op">=</span><span class="dv">10</span>,scale<span class="op">=</span><span class="dv">2</span>,size<span class="op">=</span><span class="dv">5</span>) <span class="co"># X1, ..., X5 ~ N(10,4) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="129">
+<pre><code>array([10.04176539,  5.41053441,  5.61676057, 13.55882306, 10.78582906])</code></pre>
 </div>
 </div>
 <ul>
 <li><code>np.radom.randn(5)*2 + 10</code>와 같은코드</li>
 </ul>
-<div id="4de3a4d7-e821-4738-b09c-1db98381b426" class="cell" data-tags="[]" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>np.random.uniform(low<span class="op">=</span><span class="dv">2</span>,high<span class="op">=</span><span class="dv">4</span>,size<span class="op">=</span>(<span class="dv">5</span>,)) <span class="co"># X1, ..., X5 ~ U(2,4) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>array([3.15664888, 2.28232463, 3.82721519, 3.08455534, 3.38588496])</code></pre>
+<div id="4de3a4d7-e821-4738-b09c-1db98381b426" class="cell" data-tags="[]" data-execution_count="130">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>np.random.uniform(low<span class="op">=</span><span class="dv">2</span>,high<span class="op">=</span><span class="dv">4</span>,size<span class="op">=</span><span class="dv">5</span>) <span class="co"># X1, ..., X5 ~ U(2,4) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="130">
+<pre><code>array([2.86669113, 3.71494791, 3.11352312, 2.88052454, 3.79898426])</code></pre>
 </div>
 </div>
 <ul>
 <li><code>np.random.rand(5)*2+2</code>와 같은 코드</li>
 </ul>
-<div id="7ea02568-5000-4dfb-b006-98d671e8d9a7" class="cell" data-tags="[]" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>np.random.poisson(lam<span class="op">=</span><span class="dv">5</span>,size<span class="op">=</span>(<span class="dv">5</span>,)) <span class="co"># X1,...,X5 ~ Poi(5) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
-<pre><code>array([5, 9, 6, 8, 8])</code></pre>
+<div id="7ea02568-5000-4dfb-b006-98d671e8d9a7" class="cell" data-tags="[]" data-execution_count="131">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>np.random.poisson(lam<span class="op">=</span><span class="dv">5</span>,size<span class="op">=</span><span class="dv">5</span>) <span class="co"># X1,...,X5 ~ Poi(5) </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="131">
+<pre><code>array([ 0, 16,  8,  2,  1])</code></pre>
 </div>
 </div>
 </section>
@@ -520,7 +520,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><code>-</code> 요약 - np.where: 인덱스의 좌표를 읽는 가독성은 떨어짐. 그런데 조건에 맞는 원소를 출력하거나 처리하는 (특수기능) 목적으로는 좋은 함수<br>
-- np.argwhere: 인덱스의 좌표를 읽는 가독성은 좋은 편임. 그런데 조건에 맞는 원소를 출력하거나 처리하는 기능은 떨어짐</p>
+- np.argwhere: 인덱스의 좌표를 읽는 가독성은 좋은 편임. 그런데 조건에 맞는 원소를 출력하거나 처리하는 기능은 떨어짐 – 쓰레기</p>
 </section>
 <section id="b.-인덱싱고급" class="level2">
 <h2 class="anchored" data-anchor-id="b.-인덱싱고급">B. 인덱싱고급</h2>
@@ -584,40 +584,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="c.-np.ix_" class="level2">
 <h2 class="anchored" data-anchor-id="c.-np.ix_">C. np.ix_</h2>
 <p><code>-</code> 아래의 인덱싱을 비교하자.</p>
-<div id="5006cbf2-8b9b-49e5-8b2c-2cd77bc9ee8c" class="cell" data-tags="[]" data-execution_count="42">
+<div id="5006cbf2-8b9b-49e5-8b2c-2cd77bc9ee8c" class="cell" data-tags="[]" data-execution_count="141">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>np.arange(<span class="dv">12</span>).reshape(<span class="dv">3</span>,<span class="dv">4</span>)</span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="42">
+<div class="cell-output cell-output-display" data-execution_count="141">
 <pre><code>array([[ 0,  1,  2,  3],
        [ 4,  5,  6,  7],
        [ 8,  9, 10, 11]])</code></pre>
 </div>
 </div>
-<div id="f8f63cc4-d28d-4731-8d4c-b9e77590b638" class="cell" data-tags="[]" data-execution_count="43">
+<div id="f8f63cc4-d28d-4731-8d4c-b9e77590b638" class="cell" data-tags="[]" data-execution_count="142">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>:<span class="dv">2</span>,<span class="dv">0</span>:<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="43">
+<div class="cell-output cell-output-display" data-execution_count="142">
 <pre><code>array([[0, 1],
        [4, 5]])</code></pre>
 </div>
 </div>
-<div id="d58f33f6-b1c4-4e72-95cd-6e3c1542961c" class="cell" data-tags="[]" data-execution_count="44">
+<div id="d58f33f6-b1c4-4e72-95cd-6e3c1542961c" class="cell" data-tags="[]" data-execution_count="143">
 <div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>a[[<span class="dv">0</span>,<span class="dv">1</span>],<span class="dv">0</span>:<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="44">
+<div class="cell-output cell-output-display" data-execution_count="143">
 <pre><code>array([[0, 1],
        [4, 5]])</code></pre>
 </div>
 </div>
-<div id="eee17b21-f4de-478d-bcc9-fc9bc67eb68c" class="cell" data-tags="[]" data-execution_count="45">
+<div id="eee17b21-f4de-478d-bcc9-fc9bc67eb68c" class="cell" data-tags="[]" data-execution_count="144">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>:<span class="dv">2</span>,[<span class="dv">0</span>,<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="45">
+<div class="cell-output cell-output-display" data-execution_count="144">
 <pre><code>array([[0, 1],
        [4, 5]])</code></pre>
 </div>
 </div>
 <p><code>-</code> 언뜻 생각하면 위의 결과와 <code>a[[0,1],[0,1]]</code>는 결과가 동일할 것 같다.</p>
-<div id="7b077794-3ac1-4614-98d5-a0d1bb9df60a" class="cell" data-tags="[]" data-execution_count="46">
+<div id="7b077794-3ac1-4614-98d5-a0d1bb9df60a" class="cell" data-tags="[]" data-execution_count="140">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>a[[<span class="dv">0</span>,<span class="dv">1</span>],[<span class="dv">0</span>,<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="46">
+<div class="cell-output cell-output-display" data-execution_count="140">
 <pre><code>array([0, 5])</code></pre>
 </div>
 </div>
@@ -928,21 +928,21 @@ _implementation : function
 <pre><code>((2, 3, 4), (2, 3, 4), (2, 3, 8))</code></pre>
 </div>
 </div>
-<p><code>-</code> concat과의 차이?</p>
-<div id="252ed7e7-e226-4239-ba88-97c482dcfa9a" class="cell" data-tags="[]" data-execution_count="70">
+<p><code>-</code> concat과의 차이? – append는 2개만 가능</p>
+<div id="252ed7e7-e226-4239-ba88-97c482dcfa9a" class="cell" data-tags="[]" data-execution_count="145">
 <div class="sourceCode cell-code" id="cb135"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>np.arange(<span class="dv">2</span><span class="op">*</span><span class="dv">3</span><span class="op">*</span><span class="dv">4</span>).reshape(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
 <span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a>b<span class="op">=-</span>a</span>
 <span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span><span class="dv">2</span><span class="op">*</span>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fb3aa4d1-0c58-45eb-bef9-1274b1693767" class="cell" data-tags="[]" data-execution_count="71">
+<div id="fb3aa4d1-0c58-45eb-bef9-1274b1693767" class="cell" data-tags="[]" data-execution_count="147">
 <div class="sourceCode cell-code" id="cb136"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a>np.append(a,b,c,axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>TypeError: append() got multiple values for argument 'axis'</code></pre>
 </div>
 </div>
-<div id="c5eeecda-c4b7-4293-80c0-e68f31ed2da1" class="cell" data-tags="[]" data-execution_count="72">
+<div id="c5eeecda-c4b7-4293-80c0-e68f31ed2da1" class="cell" data-tags="[]" data-execution_count="148">
 <div class="sourceCode cell-code" id="cb138"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>np.concatenate([a,b,c],axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="72">
+<div class="cell-output cell-output-display" data-execution_count="148">
 <pre><code>array([[[  0,   1,   2,   3],
         [  4,   5,   6,   7],
         [  8,   9,  10,  11]],
@@ -1185,25 +1185,26 @@ _implementation : function
 <pre><code>array(['a', '1'], dtype='&lt;U21')</code></pre>
 </div>
 </div>
-<div id="909069b9-27c4-4c70-98b6-457d98809eae" class="cell" data-tags="[]" data-execution_count="107">
+<div id="909069b9-27c4-4c70-98b6-457d98809eae" class="cell" data-tags="[]" data-execution_count="149">
 <div class="sourceCode cell-code" id="cb191"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span> np.array([<span class="st">'a'</span>,<span class="fl">1.0</span>])</span>
 <span id="cb191-2"><a href="#cb191-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="107">
+<div class="cell-output cell-output-display" data-execution_count="149">
 <pre><code>array(['a', '1.0'], dtype='&lt;U32')</code></pre>
 </div>
 </div>
-<p><code>-</code> 숫자를 문자열로 전환</p>
-<div id="2f0d5480-11b9-47aa-9baf-dd96751e169e" class="cell" data-tags="[]" data-execution_count="108">
-<div class="sourceCode cell-code" id="cb193"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
+<p><code>-</code> 문자열을 숫자로 전환</p>
+<div id="79794596-f78d-4c78-ae39-210bcb9ad193" class="cell" data-tags="[]" data-execution_count="153">
+<div class="sourceCode cell-code" id="cb193"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span> np.array([[<span class="st">'a'</span>,<span class="fl">1.0</span>],[<span class="st">'b'</span>,<span class="fl">2.0</span>]])</span>
 <span id="cb193-2"><a href="#cb193-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="108">
-<pre><code>array([1, 2, 3])</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="153">
+<pre><code>array([['a', '1.0'],
+       ['b', '2.0']], dtype='&lt;U32')</code></pre>
 </div>
 </div>
-<div id="aca3f935-ee39-45f8-9e56-95b5579b5281" class="cell" data-tags="[]" data-execution_count="109">
-<div class="sourceCode cell-code" id="cb195"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb195-1"><a href="#cb195-1" aria-hidden="true" tabindex="-1"></a>a.astype(np.str_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="109">
-<pre><code>array(['1', '2', '3'], dtype='&lt;U21')</code></pre>
+<div id="aca3f935-ee39-45f8-9e56-95b5579b5281" class="cell" data-tags="[]" data-execution_count="157">
+<div class="sourceCode cell-code" id="cb195"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb195-1"><a href="#cb195-1" aria-hidden="true" tabindex="-1"></a>a[:,<span class="dv">1</span>].astype(np.float64)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="157">
+<pre><code>array([1., 2.])</code></pre>
 </div>
 </div>
 </section>

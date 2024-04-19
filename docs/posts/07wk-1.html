@@ -450,25 +450,38 @@ Caution
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a> [<span class="st">'K. De Bruyne'</span>, <span class="st">'Europe'</span>, <span class="dv">91</span>],</span>
 <span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a> [<span class="st">'M. Acuña'</span>, <span class="st">'South America'</span>, <span class="dv">84</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>(풀이)</code></p>
-<div id="6b740953-26b6-4c3d-bdfa-63b6a0d75c84" class="cell" data-tags="[]" data-execution_count="87">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="op">=</span> [[name,key,overall] <span class="cf">for</span> name,nationality,overall <span class="kw">in</span> data <span class="cf">for</span> key <span class="kw">in</span> continent_dict <span class="cf">if</span> nationality <span class="kw">in</span> continent_dict[key]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6b740953-26b6-4c3d-bdfa-63b6a0d75c84" class="cell" data-tags="[]" data-execution_count="96">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="op">=</span> [</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    [name,continent,overall] <span class="op">\</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name,nationality,overall <span class="kw">in</span> data <span class="op">\</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> continent <span class="kw">in</span> continent_dict <span class="op">\</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> nationality <span class="kw">in</span> continent_dict[continent]</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>data2[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="96">
+<pre><code>[['Bruno Fernandes', 'Europe', 88],
+ ['L. Goretzka', 'Europe', 87],
+ ['L. Suárez', 'South America', 88],
+ ['K. De Bruyne', 'Europe', 91],
+ ['M. Acuña', 'South America', 84]]</code></pre>
+</div>
 </div>
 <p><code>(2)</code> 능력치가 80 보다 큰 선수들은 대륙별로 몇명의 선수가 있는가? count하라.</p>
 <div id="806b4c87-cd5b-407b-9d58-8be384d65627" class="cell" data-tags="[]" data-execution_count="88">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 답</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co"># {'South America': 71,</span></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Africa': 21,</span></span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  'North and Central America': 8,</span></span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Europe': 272,</span></span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Asia': 1}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 답</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># {'South America': 71,</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Africa': 21,</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  'North and Central America': 8,</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Europe': 272,</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  'Asia': 1}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>(풀이)</code></p>
-<div id="ee5db080-3525-416f-8a14-ff961dbb7134" class="cell" data-tags="[]" data-execution_count="89">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [continent <span class="cf">for</span> _,continent,overall <span class="kw">in</span> data2 <span class="cf">if</span> overall<span class="op">&gt;</span><span class="dv">80</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ee5db080-3525-416f-8a14-ff961dbb7134" class="cell" data-tags="[]" data-execution_count="97">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [continent <span class="cf">for</span> _,continent,overall <span class="kw">in</span> data2 <span class="cf">if</span> overall<span class="op">&gt;</span><span class="dv">80</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c46a6b15-d5c8-425b-9b76-b55cf984588e" class="cell" data-execution_count="90">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>{s:lst.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(lst)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="90">
+<div id="c46a6b15-d5c8-425b-9b76-b55cf984588e" class="cell" data-execution_count="98">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>{s:lst.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(lst)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="98">
 <pre><code>{'Africa': 21,
  'North and Central America': 8,
  'Europe': 272,
