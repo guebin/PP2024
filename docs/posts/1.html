@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="최규빈">
+<meta name="dcterms.date" content="2024-04-19">
 
-<title>PP2024 - 3. numpy의 랜덤모듈</title>
+<title>PP2024 - 07wk-2: numpy (2)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -148,11 +150,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a.-np.random.rand" id="toc-a.-np.random.rand" class="nav-link active" data-scroll-target="#a.-np.random.rand">A. np.random.rand()</a></li>
+  <li><a href="#numpy의-랜덤모듈" id="toc-numpy의-랜덤모듈" class="nav-link active" data-scroll-target="#numpy의-랜덤모듈">3. <code>numpy</code>의 랜덤모듈</a>
+  <ul class="collapse">
+  <li><a href="#a.-np.random.rand" id="toc-a.-np.random.rand" class="nav-link" data-scroll-target="#a.-np.random.rand">A. np.random.rand()</a></li>
   <li><a href="#b.-np.random.randn" id="toc-b.-np.random.randn" class="nav-link" data-scroll-target="#b.-np.random.randn">B. np.random.randn()</a></li>
   <li><a href="#c.-np.random.choice" id="toc-c.-np.random.choice" class="nav-link" data-scroll-target="#c.-np.random.choice">C. np.random.choice()</a></li>
   <li><a href="#d.-np.random.randint" id="toc-d.-np.random.randint" class="nav-link" data-scroll-target="#d.-np.random.randint">D. np.random.randint()</a></li>
   <li><a href="#e.-통계분포" id="toc-e.-통계분포" class="nav-link" data-scroll-target="#e.-통계분포">E. 통계분포</a></li>
+  </ul></li>
   <li><a href="#numpy-기타-유용한-기본기능들" id="toc-numpy-기타-유용한-기본기능들" class="nav-link" data-scroll-target="#numpy-기타-유용한-기본기능들">4. <code>numpy</code> – 기타 유용한 기본기능들</a>
   <ul class="collapse">
   <li><a href="#a.-np.where-np.argwhere" id="toc-a.-np.where-np.argwhere" class="nav-link" data-scroll-target="#a.-np.where-np.argwhere">A. np.where, np.argwhere</a></li>
@@ -174,14 +179,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">3. <code>numpy</code>의 랜덤모듈</h1>
+<h1 class="title">07wk-2: <code>numpy</code> (2)</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>최규빈 </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 19, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -194,6 +211,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="1d770eb9-7d71-4ecb-9b7a-ab6e96db464e" class="cell" data-tags="[]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="numpy의-랜덤모듈" class="level1">
+<h1>3. <code>numpy</code>의 랜덤모듈</h1>
 <section id="a.-np.random.rand" class="level2">
 <h2 class="anchored" data-anchor-id="a.-np.random.rand">A. np.random.rand()</h2>
 <p><code>-</code> 0~1 사이의 난수를 생성</p>
@@ -400,6 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
        0, 1, 0, 0, 2, 1, 0, 2, 0, 0, 1, 0])</code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="numpy-기타-유용한-기본기능들" class="level1">
 <h1>4. <code>numpy</code> – 기타 유용한 기본기능들</h1>
