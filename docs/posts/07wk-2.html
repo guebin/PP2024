@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.520">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -105,6 +105,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -1652,27 +1679,24 @@ hani.jpeg           100%[===================&gt;]   2.33M  --.-KB/s    in 0.05s
 <ul>
 <li>실제 라벨과 잘못된 라벨을 구분하여 시각화 할 것</li>
 </ul>
-<div id="907f6e64-adda-4bd3-bfa2-3c65aaefeb84" class="cell" data-tags="[]" data-execution_count="163">
-<div class="sourceCode cell-code" id="cb248"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb248-1"><a href="#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest) <span class="co"># 잘못분류된것은 1797장의 이미지</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="163">
+<div id="9e31ff0d-776e-4370-a2fe-5f941293b2db" class="cell" data-tags="[]" data-execution_count="171">
+<div class="sourceCode cell-code" id="cb248"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb248-1"><a href="#cb248-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">sum</span>(loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest) <span class="co"># 잘못분류된것</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="171">
 <pre><code>1797</code></pre>
 </div>
 </div>
-<div id="ca6a4766-dc26-48ae-9702-beb73f44d5ad" class="cell" data-tags="[]" data-execution_count="164">
-<div class="sourceCode cell-code" id="cb250"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb250-1"><a href="#cb250-1" aria-hidden="true" tabindex="-1"></a>xtest[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest] <span class="co"># 잘못분류된 이미지들 </span></span>
-<span id="cb250-2"><a href="#cb250-2" aria-hidden="true" tabindex="-1"></a>ytest[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest] <span class="co"># 잘못분류된 이미지들에 대한 실제 라벨</span></span>
-<span id="cb250-3"><a href="#cb250-3" aria-hidden="true" tabindex="-1"></a>loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>)[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest] <span class="co"># 잘못분류된 이미지들에 대한 예측된 라벨</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="164">
-<pre><code>array([2, 2, 7, ..., 8, 8, 4])</code></pre>
+<div id="67bb4fae-1f5f-4e82-b4ce-ed57a372a8e2" class="cell" data-tags="[]" data-execution_count="190">
+<div class="sourceCode cell-code" id="cb250"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb250-1"><a href="#cb250-1" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> xtest[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest] <span class="co"># 잘못분류된 이미지</span></span>
+<span id="cb250-2"><a href="#cb250-2" aria-hidden="true" tabindex="-1"></a>label <span class="op">=</span> ytest[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest] <span class="co"># 잘못분류된 이미지의 실제라벨</span></span>
+<span id="cb250-3"><a href="#cb250-3" aria-hidden="true" tabindex="-1"></a>estimated <span class="op">=</span> loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>)[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest] <span class="co"># 잘못분류된 이미지의 예측된라벨</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div id="bf466499-38fc-464e-b4f8-f4ebaef54d3d" class="cell" data-tags="[]" data-execution_count="165">
-<div class="sourceCode cell-code" id="cb252"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb252-1"><a href="#cb252-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">5</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))</span>
-<span id="cb252-2"><a href="#cb252-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
-<span id="cb252-3"><a href="#cb252-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb252-4"><a href="#cb252-4" aria-hidden="true" tabindex="-1"></a>        ax[i][j].imshow(xtest[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest][i<span class="op">+</span>j],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
-<span id="cb252-5"><a href="#cb252-5" aria-hidden="true" tabindex="-1"></a>        ax[i][j].set_title(<span class="ss">f"</span><span class="sc">{</span>ytest[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest][i<span class="op">+</span>j]<span class="sc">}</span><span class="ss"> / </span><span class="sc">{</span>loss<span class="sc">.</span>argmin(axis<span class="op">=-</span><span class="dv">1</span>)[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest][i<span class="op">+</span>j]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb252-6"><a href="#cb252-6" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0e9f1de4-1861-4ff0-85be-ad14c494aef7" class="cell" data-tags="[]" data-execution_count="195">
+<div class="sourceCode cell-code" id="cb251"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb251-1"><a href="#cb251-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">5</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))</span>
+<span id="cb251-2"><a href="#cb251-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb251-3"><a href="#cb251-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):      </span>
+<span id="cb251-4"><a href="#cb251-4" aria-hidden="true" tabindex="-1"></a>        ax[i][j].imshow(img[i<span class="op">*</span><span class="dv">5</span><span class="op">+</span>j],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb251-5"><a href="#cb251-5" aria-hidden="true" tabindex="-1"></a>        ax[i][j].set_title(<span class="ss">f"</span><span class="sc">{</span>label[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> / </span><span class="sc">{</span>estimated[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb251-6"><a href="#cb251-6" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1815,27 +1839,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -1850,10 +1853,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1862,7 +1869,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
