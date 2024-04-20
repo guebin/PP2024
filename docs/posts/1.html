@@ -103,6 +103,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -171,6 +173,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#i.-dtype" id="toc-i.-dtype" class="nav-link" data-scroll-target="#i.-dtype">I. <code>dtype</code></a></li>
   <li><a href="#j.-브로드캐스팅과-시간측정" id="toc-j.-브로드캐스팅과-시간측정" class="nav-link" data-scroll-target="#j.-브로드캐스팅과-시간측정">J. 브로드캐스팅과 시간측정</a></li>
   </ul></li>
+  <li><a href="#numpy의-활용" id="toc-numpy의-활용" class="nav-link" data-scroll-target="#numpy의-활용">5. <code>numpy</code>의 활용</a>
+  <ul class="collapse">
+  <li><a href="#a.-이미지자료의-이해" id="toc-a.-이미지자료의-이해" class="nav-link" data-scroll-target="#a.-이미지자료의-이해">A. 이미지자료의 이해</a></li>
+  <li><a href="#b.-hani" id="toc-b.-hani" class="nav-link" data-scroll-target="#b.-hani">B. <code>hani</code></a></li>
+  <li><a href="#c.-mnist-data" id="toc-c.-mnist-data" class="nav-link" data-scroll-target="#c.-mnist-data">C. MNIST data</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="1.out.ipynb" download="1.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -208,8 +216,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="1d770eb9-7d71-4ecb-9b7a-ab6e96db464e" class="cell" data-tags="[]" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1d770eb9-7d71-4ecb-9b7a-ab6e96db464e" class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="numpy의-랜덤모듈" class="level1">
 <h1>3. <code>numpy</code>의 랜덤모듈</h1>
@@ -1006,6 +1016,672 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="j.-브로드캐스팅과-시간측정" class="level2">
 <h2 class="anchored" data-anchor-id="j.-브로드캐스팅과-시간측정">J. 브로드캐스팅과 시간측정</h2>
 <p>(예비학습)</p>
+<div id="e57ff5b9-ba9c-4e06-90b3-d78db199150b" class="cell" data-tags="[]" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3d039b5f-67da-4342-8598-8f1514322785" class="cell" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> time.time()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="8f8b19f5-d0d7-4ee9-b843-0a9998c517de" class="cell" data-tags="[]" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb182"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> time.time()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="e0cdf5dc-0d74-4c63-811e-4c41017eb5e2" class="cell" data-tags="[]" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb183"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">-</span> t1 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>5.880867004394531</code></pre>
+</div>
+</div>
+<p>예비학습 끝</p>
+<p><code># 예제</code> – x=[0,1,2,3,4] 인 벡터가 있다고 가정하자. <span class="math inline">\((i,j)\)</span>-th 원소가 <code>(x[i]-x[j])**2</code>을 의미하는 (5,5) matrix를 구하라.</p>
+<p>(풀이1) – 이건 이해하기 쉬움</p>
+<div id="5cabfe2d-ef04-40b9-9610-ae975b117bff" class="cell" data-tags="[]" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb185"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
+<span id="cb185-2"><a href="#cb185-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>array([0, 1, 2, 3, 4])</code></pre>
+</div>
+</div>
+<div id="84c8a897-c1c4-499c-904f-6b77b0cc335b" class="cell" data-tags="[]" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb187"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb187-1"><a href="#cb187-1" aria-hidden="true" tabindex="-1"></a>dist2 <span class="op">=</span> np.zeros([<span class="dv">5</span>,<span class="dv">5</span>])</span>
+<span id="cb187-2"><a href="#cb187-2" aria-hidden="true" tabindex="-1"></a>dist2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>array([[0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.]])</code></pre>
+</div>
+</div>
+<div id="048bd31b-3b70-45a6-9bf0-70e02afaecc3" class="cell" data-tags="[]" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb189"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb189-3"><a href="#cb189-3" aria-hidden="true" tabindex="-1"></a>        dist2[i,j] <span class="op">=</span> (x[i]<span class="op">-</span>x[j])<span class="op">**</span><span class="dv">2</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="e6d3bcac-83ba-412f-9132-ca582629b94a" class="cell" data-tags="[]" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb190"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb190-1"><a href="#cb190-1" aria-hidden="true" tabindex="-1"></a>dist2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>array([[ 0.,  1.,  4.,  9., 16.],
+       [ 1.,  0.,  1.,  4.,  9.],
+       [ 4.,  1.,  0.,  1.,  4.],
+       [ 9.,  4.,  1.,  0.,  1.],
+       [16.,  9.,  4.,  1.,  0.]])</code></pre>
+</div>
+</div>
+<p>(풀이2) – 이건 좀 이해하기 어려움</p>
+<div id="7fc1cb6f-f417-4ac9-a704-6bb6c3083462" class="cell" data-tags="[]" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb192"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb192-1"><a href="#cb192-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> x.reshape(<span class="dv">5</span>,<span class="dv">1</span>)</span>
+<span id="cb192-2"><a href="#cb192-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> x.reshape(<span class="dv">1</span>,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cd9ef102-804c-401f-bf0e-19c915b701e8" class="cell" data-tags="[]" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb193"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="co"># (5,1)</span></span>
+<span id="cb193-2"><a href="#cb193-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="co"># (1,5) </span></span>
+<span id="cb193-3"><a href="#cb193-3" aria-hidden="true" tabindex="-1"></a>x1<span class="op">-</span>x2 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<pre><code>array([[ 0, -1, -2, -3, -4],
+       [ 1,  0, -1, -2, -3],
+       [ 2,  1,  0, -1, -2],
+       [ 3,  2,  1,  0, -1],
+       [ 4,  3,  2,  1,  0]])</code></pre>
+</div>
+</div>
+<ul>
+<li>이 매트릭스의 (i,j)-th 원소는 <code>x[i]-x[j]</code>를 의미함</li>
+</ul>
+<p>따라서 우리가 원하는 것은 아래와 같이 구할 수 있다.</p>
+<div id="de84effc-85f7-4b77-8d9a-e5a2739fb43c" class="cell" data-tags="[]" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb195"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb195-1"><a href="#cb195-1" aria-hidden="true" tabindex="-1"></a>(x1<span class="op">-</span>x2)<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>array([[ 0,  1,  4,  9, 16],
+       [ 1,  0,  1,  4,  9],
+       [ 4,  1,  0,  1,  4],
+       [ 9,  4,  1,  0,  1],
+       [16,  9,  4,  1,  0]])</code></pre>
+</div>
+</div>
+<hr>
+<div id="8f472b1e-de0a-4493-93b1-94f21fa886e2" class="cell" data-tags="[]" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb197"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb197-1"><a href="#cb197-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb197-2"><a href="#cb197-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.random.rand(n)</span>
+<span id="cb197-3"><a href="#cb197-3" aria-hidden="true" tabindex="-1"></a>dist2 <span class="op">=</span> np.zeros([n,n]) </span>
+<span id="cb197-4"><a href="#cb197-4" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> time.time()</span>
+<span id="cb197-5"><a href="#cb197-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb197-6"><a href="#cb197-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb197-7"><a href="#cb197-7" aria-hidden="true" tabindex="-1"></a>        dist2[i,j] <span class="op">=</span> (y[i]<span class="op">-</span>y[j])<span class="op">**</span><span class="dv">2</span> </span>
+<span id="cb197-8"><a href="#cb197-8" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> time.time()</span>
+<span id="cb197-9"><a href="#cb197-9" aria-hidden="true" tabindex="-1"></a>t2<span class="op">-</span>t1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>31.838557720184326</code></pre>
+</div>
+</div>
+<div id="df5e59bb-235d-407e-8a3f-6a51441c48f1" class="cell" data-tags="[]" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb199"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb199-1"><a href="#cb199-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> time.time()</span>
+<span id="cb199-2"><a href="#cb199-2" aria-hidden="true" tabindex="-1"></a>(y.reshape(n,<span class="dv">1</span>) <span class="op">-</span> y.reshape(<span class="dv">1</span>,n))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb199-3"><a href="#cb199-3" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> time.time()</span>
+<span id="cb199-4"><a href="#cb199-4" aria-hidden="true" tabindex="-1"></a>t2<span class="op">-</span>t1 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="45">
+<pre><code>0.13161420822143555</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="numpy의-활용" class="level1">
+<h1>5. <code>numpy</code>의 활용</h1>
+<section id="a.-이미지자료의-이해" class="level2">
+<h2 class="anchored" data-anchor-id="a.-이미지자료의-이해">A. 이미지자료의 이해</h2>
+<p><code>-</code> <code>plt.imshow(...)</code> 에서 <code>...</code>의 shape이 (??,??) 이러한 형태라면 흑백이미지를 출력</p>
+<div id="d7365abc-a871-4e17-8d7e-23cf029d9f34" class="cell" data-tags="[]" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb201"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb201-1"><a href="#cb201-1" aria-hidden="true" tabindex="-1"></a>plt.imshow([[<span class="dv">0</span>,<span class="dv">150</span>],[<span class="dv">0</span>,<span class="dv">255</span>]],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb201-2"><a href="#cb201-2" aria-hidden="true" tabindex="-1"></a>plt.colorbar()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-108-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>-</code> <code>plt.imshow(...)</code> 에서 <code>...</code>의 shape이 (??,??,3) 이러한 형태라면 칼라이미지를 출력</p>
+<div id="becf53f8-50d1-4f44-83bc-96971f9f3eea" class="cell" data-tags="[]" data-execution_count="81">
+<div class="sourceCode cell-code" id="cb202"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb202-1"><a href="#cb202-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> [[<span class="dv">0</span>,<span class="dv">255</span>],[<span class="dv">0</span>,<span class="dv">255</span>]] <span class="co"># (2,2)</span></span>
+<span id="cb202-2"><a href="#cb202-2" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> [[<span class="dv">255</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="dv">0</span>]] <span class="co"># (2,2)</span></span>
+<span id="cb202-3"><a href="#cb202-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [[<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">255</span>,<span class="dv">0</span>]] <span class="co"># (2,2) </span></span>
+<span id="cb202-4"><a href="#cb202-4" aria-hidden="true" tabindex="-1"></a>plt.imshow(np.stack([r,g,b],axis<span class="op">=-</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-109-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>-</code> <code>plt.imshow(...)</code> 에서 <code>...</code>의 dtype이 int인지 float인지에 따라서 인식이 다름</p>
+<div id="2ca68bc4-a7a6-4747-92f8-416e0b1baeca" class="cell" data-tags="[]" data-execution_count="89">
+<div class="sourceCode cell-code" id="cb203"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb203-1"><a href="#cb203-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> [[<span class="dv">0</span>,<span class="dv">1</span>],[<span class="dv">0</span>,<span class="dv">1</span>]] <span class="co"># (2,2)</span></span>
+<span id="cb203-2"><a href="#cb203-2" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="dv">0</span>]] <span class="co"># (2,2)</span></span>
+<span id="cb203-3"><a href="#cb203-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [[<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="dv">0</span>]] <span class="co"># (2,2) </span></span>
+<span id="cb203-4"><a href="#cb203-4" aria-hidden="true" tabindex="-1"></a>plt.imshow(np.stack([r,g,b],axis<span class="op">=-</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-110-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="896f3e5a-756e-4cf0-b5ec-3f418af7c02c" class="cell" data-tags="[]" data-execution_count="108">
+<div class="sourceCode cell-code" id="cb204"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb204-1"><a href="#cb204-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> [[<span class="dv">0</span>,<span class="dv">1</span>],[<span class="dv">0</span>,<span class="dv">1</span>]] <span class="co"># (2,2)</span></span>
+<span id="cb204-2"><a href="#cb204-2" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="dv">0</span>]] <span class="co"># (2,2)</span></span>
+<span id="cb204-3"><a href="#cb204-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [[<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="dv">0</span>]] <span class="co"># (2,2) </span></span>
+<span id="cb204-4"><a href="#cb204-4" aria-hidden="true" tabindex="-1"></a>plt.imshow(np.stack([r,g,b],axis<span class="op">=-</span><span class="dv">1</span>).astype(np.float64))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-111-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>이건 마치 1을 255로 생각한 결과</li>
+</ul>
+<p><code>###</code> – 예비학습 끝</p>
+</section>
+<section id="b.-hani" class="level2">
+<h2 class="anchored" data-anchor-id="b.-hani">B. <code>hani</code></h2>
+<div id="c5b1c36f-cd4a-4e30-8d62-91f4d145dbe7" class="cell" data-tags="[]" data-execution_count="111">
+<div class="sourceCode cell-code" id="cb205"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb205-1"><a href="#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> PIL</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="0f2b249e-7bd3-4bf7-aa1e-8161595655db" class="cell" data-tags="[]" data-execution_count="153">
+<div class="sourceCode cell-code" id="cb206"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb206-1"><a href="#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget https:<span class="op">//</span>raw.githubusercontent.com<span class="op">/</span>guebin<span class="op">/</span>SC2022<span class="op">/</span>main<span class="op">/</span>hani.jpeg</span>
+<span id="cb206-2"><a href="#cb206-2" aria-hidden="true" tabindex="-1"></a>hani <span class="op">=</span> np.einsum(<span class="st">'ijk-&gt;jik'</span>,np.array(PIL.Image.<span class="bu">open</span>(<span class="st">'hani.jpeg'</span>),dtype<span class="op">=</span>np.int64)<span class="op">/</span><span class="dv">255</span>)</span>
+<span id="cb206-3"><a href="#cb206-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>rm hani.jpeg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>--2024-04-20 10:44:59--  https://raw.githubusercontent.com/guebin/SC2022/main/hani.jpeg
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.109.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2445959 (2.3M) [image/jpeg]
+Saving to: ‘hani.jpeg’
+
+hani.jpeg           100%[===================&gt;]   2.33M  --.-KB/s    in 0.04s   
+
+2024-04-20 10:44:59 (57.5 MB/s) - ‘hani.jpeg’ saved [2445959/2445959]
+</code></pre>
+</div>
+</div>
+<ul>
+<li>note: 위 코드는 코랩 혹은 리눅스기반 환경에서 동작가능.</li>
+</ul>
+<p>불러온 이미지는 아래와 같다.</p>
+<div id="7cc6c59e-15b4-40f3-b875-9fedd3811a28" class="cell" data-tags="[]" data-execution_count="154">
+<div class="sourceCode cell-code" id="cb208"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb208-1"><a href="#cb208-1" aria-hidden="true" tabindex="-1"></a>hani,hani.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="154">
+<pre><code>(array([[[0.44705882, 0.48627451, 0.49411765],
+         [0.43137255, 0.46666667, 0.48627451],
+         [0.45882353, 0.50196078, 0.5254902 ],
+         ...,
+         [0.6627451 , 0.6627451 , 0.70196078],
+         [0.63529412, 0.62745098, 0.67058824],
+         [0.64313725, 0.63529412, 0.67843137]],
+ 
+        [[0.45882353, 0.49803922, 0.50588235],
+         [0.44313725, 0.48235294, 0.49019608],
+         [0.4627451 , 0.50588235, 0.52156863],
+         ...,
+         [0.63921569, 0.63921569, 0.67843137],
+         [0.64313725, 0.63529412, 0.67843137],
+         [0.63137255, 0.62352941, 0.66666667]],
+ 
+        [[0.45490196, 0.49411765, 0.50196078],
+         [0.4627451 , 0.49803922, 0.51764706],
+         [0.45882353, 0.50196078, 0.5254902 ],
+         ...,
+         [0.64313725, 0.64313725, 0.68235294],
+         [0.65490196, 0.65490196, 0.69411765],
+         [0.64313725, 0.64313725, 0.68235294]],
+ 
+        ...,
+ 
+        [[0.69411765, 0.69803922, 0.70588235],
+         [0.68627451, 0.69019608, 0.69803922],
+         [0.69411765, 0.69803922, 0.70588235],
+         ...,
+         [0.60784314, 0.6       , 0.60392157],
+         [0.6       , 0.59215686, 0.59607843],
+         [0.59607843, 0.58823529, 0.59215686]],
+ 
+        [[0.70196078, 0.70588235, 0.71372549],
+         [0.72156863, 0.7254902 , 0.73333333],
+         [0.69019608, 0.69411765, 0.70196078],
+         ...,
+         [0.61176471, 0.60392157, 0.60784314],
+         [0.60392157, 0.59607843, 0.6       ],
+         [0.61568627, 0.60784314, 0.61176471]],
+ 
+        [[0.7254902 , 0.72941176, 0.7372549 ],
+         [0.73333333, 0.7372549 , 0.74509804],
+         [0.70980392, 0.71372549, 0.72156863],
+         ...,
+         [0.61176471, 0.60392157, 0.60784314],
+         [0.60392157, 0.59607843, 0.6       ],
+         [0.61960784, 0.61176471, 0.61568627]]]),
+ (4032, 3024, 3))</code></pre>
+</div>
+</div>
+<ul>
+<li>이미지는 4032 <span class="math inline">\(\times\)</span> 3024 개의 격자(픽셀)로 이루어져 있음</li>
+</ul>
+<p>이미지를 보는 방법은 아래와 같다.</p>
+<div id="2f8361d5-5bad-4ea0-8f40-44f833df1c16" class="cell" data-tags="[]" data-execution_count="155">
+<div class="sourceCode cell-code" id="cb210"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb210-1"><a href="#cb210-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(hani) <span class="co"># 모든이미지, 하니매트릭스</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-115-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="823e728a-8075-4836-837b-76ff7453bfb6" class="cell" data-tags="[]" data-execution_count="124">
+<div class="sourceCode cell-code" id="cb211"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb211-1"><a href="#cb211-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(hani[<span class="dv">1000</span>:<span class="dv">1500</span>, <span class="dv">1000</span>:<span class="dv">2000</span>,:]) <span class="co"># 얼굴만 확대, 하니의 서브매트릭스 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-116-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>(1)</code> 하니이미지를 나타내는 어레이를 변형하여 빨간색을 의미하는 칼라만 남겨서 “빨간하니”를 만들고 이미지를 출력하라.</p>
+<p><code>(풀이1)</code> – 제가 원래 하려고 했던 풀이</p>
+<div id="5fcf3f9e-d7e4-479a-bdd9-a8740724283d" class="cell" data-tags="[]" data-execution_count="145">
+<div class="sourceCode cell-code" id="cb212"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb212-1"><a href="#cb212-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(np.stack([hani[:,:,<span class="dv">0</span>], hani[:,:,<span class="dv">0</span>]<span class="op">*</span><span class="dv">0</span>, hani[:,:,<span class="dv">0</span>]<span class="op">*</span><span class="dv">0</span>],axis<span class="op">=-</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-117-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>(풀이2) – GPT이용하여 얻은 힌트</p>
+<div id="1a4f3aef-bcde-4c9e-8de9-01526430b040" class="cell" data-tags="[]" data-execution_count="149">
+<div class="sourceCode cell-code" id="cb213"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb213-1"><a href="#cb213-1" aria-hidden="true" tabindex="-1"></a>hani[:,:,<span class="dv">1</span>].fill(<span class="dv">0</span>)</span>
+<span id="cb213-2"><a href="#cb213-2" aria-hidden="true" tabindex="-1"></a>hani[:,:,<span class="dv">2</span>].fill(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="9a063e42-a0c4-4d04-a660-309e30aa09fc" class="cell" data-tags="[]" data-execution_count="150">
+<div class="sourceCode cell-code" id="cb214"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb214-1"><a href="#cb214-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(hani)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-119-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>(2)</code> 하니의 모든 값에 루트를 취하여 “루트하니”를 만들고 “원본하니”와 “루트하니”를 좌우로 나란히 배치하여 출력하라.</p>
+<p><code>(풀이)</code></p>
+<div id="579b9d1b-70af-4526-81f8-77e766049469" class="cell" data-tags="[]" data-execution_count="158">
+<div class="sourceCode cell-code" id="cb215"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb215-1"><a href="#cb215-1" aria-hidden="true" tabindex="-1"></a>root_hani <span class="op">=</span> np.sqrt(hani) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="15b946d5-2434-4d28-94cb-1f1dddf00b40" class="cell" data-tags="[]" data-execution_count="162">
+<div class="sourceCode cell-code" id="cb216"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb216-1"><a href="#cb216-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(np.concatenate([hani,root_hani],axis<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-121-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>(3)</code> 하니의 모든값에 아래와 같은 함수를 적용하라.</p>
+<ul>
+<li><span class="math inline">\(f(x)=\begin{cases} \sqrt{x} &amp; x&gt;0.75 \\ x &amp; x \leq 0.75 \end{cases}\)</span></li>
+</ul>
+<p>함수의 결과로 얻어진 매트릭스를 “후광하니”라고 부르자. “원본하니”와 “후광하니”를 좌우로 나란히 배치하여 출력하라.</p>
+<p><code>(풀이)</code></p>
+<div id="cca8623c-fa6d-4e93-8b56-62e0f38ff388" class="cell" data-tags="[]" data-execution_count="173">
+<div class="sourceCode cell-code" id="cb217"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb217-1"><a href="#cb217-1" aria-hidden="true" tabindex="-1"></a>shining_hani <span class="op">=</span> np.where(hani<span class="op">&gt;</span><span class="fl">0.75</span>, np.sqrt(hani), hani)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="7dfd0807-d9bd-499d-b23c-ee48d861b514" class="cell" data-tags="[]" data-execution_count="174">
+<div class="sourceCode cell-code" id="cb218"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb218-1"><a href="#cb218-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(np.concatenate([hani,shining_hani],axis<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-123-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="c.-mnist-data" class="level2">
+<h2 class="anchored" data-anchor-id="c.-mnist-data">C. MNIST data</h2>
+<div id="4db23306-7ffd-46de-bb2b-78fc540ea8a2" class="cell" data-tags="[]" data-execution_count="182">
+<div class="sourceCode cell-code" id="cb219"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb219-1"><a href="#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib.request</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>아래는 0~9가지의 숫자이미지가 저장된 이미지데이터를 불러오는 코드이다.</p>
+<div id="69e6f1a5-4f46-40df-a0b5-4d667b476c3f" class="cell" data-tags="[]" data-execution_count="317">
+<div class="sourceCode cell-code" id="cb220"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb220-1"><a href="#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL 설정</span></span>
+<span id="cb220-2"><a href="#cb220-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://github.com/guebin/PP2023/raw/main/posts/02_DataScience/mnist.npz'</span></span>
+<span id="cb220-3"><a href="#cb220-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb220-4"><a href="#cb220-4" aria-hidden="true" tabindex="-1"></a><span class="co"># URL에서 파일 다운로드</span></span>
+<span id="cb220-5"><a href="#cb220-5" aria-hidden="true" tabindex="-1"></a>urllib.request.urlretrieve(url, <span class="st">'./mnist.npz'</span>)</span>
+<span id="cb220-6"><a href="#cb220-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb220-7"><a href="#cb220-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터 로드</span></span>
+<span id="cb220-8"><a href="#cb220-8" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.load(<span class="st">'./mnist.npz'</span>)</span>
+<span id="cb220-9"><a href="#cb220-9" aria-hidden="true" tabindex="-1"></a>xtrain, ytrain, xtest, ytest <span class="op">=</span> data[<span class="st">'x_train'</span>]<span class="op">/</span><span class="dv">255</span>, data[<span class="st">'y_train'</span>], data[<span class="st">'x_test'</span>]<span class="op">/</span><span class="dv">255</span>, data[<span class="st">'y_test'</span>]</span>
+<span id="cb220-10"><a href="#cb220-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb220-11"><a href="#cb220-11" aria-hidden="true" tabindex="-1"></a><span class="co"># mnist.npz 삭제</span></span>
+<span id="cb220-12"><a href="#cb220-12" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>rm mnist.npz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="d118dd10-d445-4746-a58c-b98bfcea5599" class="cell" data-tags="[]" data-execution_count="318">
+<div class="sourceCode cell-code" id="cb221"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb221-1"><a href="#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'이미지: xtrain -- </span><span class="sc">{</span>xtrain<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">, xtest -- </span><span class="sc">{</span>xtest<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb221-2"><a href="#cb221-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'라벨: ytrain -- </span><span class="sc">{</span>ytrain<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">, ytest -- </span><span class="sc">{</span>ytest<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>이미지: xtrain -- (60000, 28, 28), xtest -- (10000, 28, 28)
+라벨: ytrain -- (60000,), ytest -- (10000,)</code></pre>
+</div>
+</div>
+<p>아래는 데이터에 대한 설명이다.</p>
+<ul>
+<li>전체의 이미지의 수는 70000개이며, 60000개의 이미지 <span class="math inline">\({\tt xtrain}\)</span>에 10000개의 이미지는 <span class="math inline">\({\tt xtest}\)</span>에 저장되어 있다.</li>
+<li>이미지에 대한 라벨은 각각 <span class="math inline">\({\tt ytrain}\)</span>과 <span class="math inline">\(\tt ytest\)</span>에 저장되어 있다. 따라서 <span class="math inline">\(\tt ytrain\)</span>에는 60000개의 이미지에 해당하는 라벨이, <span class="math inline">\(\tt ytest\)</span>에는 10000개의 이미지에 해당하는 라벨이 기록되어 있다.</li>
+</ul>
+<div id="09707874-f512-4cb5-a574-7943aaf783f0" class="cell" data-tags="[]" data-execution_count="319">
+<div class="sourceCode cell-code" id="cb223"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb223-1"><a href="#cb223-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">5</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb223-2"><a href="#cb223-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb223-3"><a href="#cb223-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>][<span class="dv">0</span>].imshow(xtrain[<span class="dv">0</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span> ax[<span class="dv">0</span>][<span class="dv">0</span>].set_title(<span class="ss">f'label=</span><span class="sc">{</span>ytrain[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span></span>
+<span id="cb223-4"><a href="#cb223-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>][<span class="dv">1</span>].imshow(xtrain[<span class="dv">1</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span> ax[<span class="dv">0</span>][<span class="dv">1</span>].set_title(<span class="ss">f'label=</span><span class="sc">{</span>ytrain[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span></span>
+<span id="cb223-5"><a href="#cb223-5" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>][<span class="dv">2</span>].imshow(xtrain[<span class="dv">2</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span> ax[<span class="dv">0</span>][<span class="dv">2</span>].set_title(<span class="ss">f'label=</span><span class="sc">{</span>ytrain[<span class="dv">2</span>]<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span></span>
+<span id="cb223-6"><a href="#cb223-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>][<span class="dv">3</span>].imshow(xtrain[<span class="dv">3</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span> ax[<span class="dv">0</span>][<span class="dv">3</span>].set_title(<span class="ss">f'label=</span><span class="sc">{</span>ytrain[<span class="dv">3</span>]<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span></span>
+<span id="cb223-7"><a href="#cb223-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>][<span class="dv">4</span>].imshow(xtrain[<span class="dv">4</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span> ax[<span class="dv">0</span>][<span class="dv">4</span>].set_title(<span class="ss">f'label=</span><span class="sc">{</span>ytrain[<span class="dv">4</span>]<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span></span>
+<span id="cb223-8"><a href="#cb223-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb223-9"><a href="#cb223-9" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>][<span class="dv">0</span>].imshow(xtrain[<span class="dv">5</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span> ax[<span class="dv">1</span>][<span class="dv">0</span>].set_title(<span class="ss">f'label=</span><span class="sc">{</span>ytrain[<span class="dv">5</span>]<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span></span>
+<span id="cb223-10"><a href="#cb223-10" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>][<span class="dv">1</span>].imshow(xtrain[<span class="dv">6</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span> ax[<span class="dv">1</span>][<span class="dv">1</span>].set_title(<span class="ss">f'label=</span><span class="sc">{</span>ytrain[<span class="dv">6</span>]<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span></span>
+<span id="cb223-11"><a href="#cb223-11" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>][<span class="dv">2</span>].imshow(xtrain[<span class="dv">7</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span> ax[<span class="dv">1</span>][<span class="dv">2</span>].set_title(<span class="ss">f'label=</span><span class="sc">{</span>ytrain[<span class="dv">7</span>]<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span></span>
+<span id="cb223-12"><a href="#cb223-12" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>][<span class="dv">3</span>].imshow(xtrain[<span class="dv">8</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span> ax[<span class="dv">1</span>][<span class="dv">3</span>].set_title(<span class="ss">f'label=</span><span class="sc">{</span>ytrain[<span class="dv">8</span>]<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span></span>
+<span id="cb223-13"><a href="#cb223-13" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>][<span class="dv">4</span>].imshow(xtrain[<span class="dv">9</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span> ax[<span class="dv">1</span>][<span class="dv">4</span>].set_title(<span class="ss">f'label=</span><span class="sc">{</span>ytrain[<span class="dv">9</span>]<span class="sc">}</span><span class="ss">'</span>)<span class="op">;</span></span>
+<span id="cb223-14"><a href="#cb223-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb223-15"><a href="#cb223-15" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-127-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>(1)</code> 70000개의 이미지중 0~9에 해당하는 이미지는 각각 몇장씩 들어있는가?</p>
+<p>(풀이)</p>
+<div id="b80bb389-f6a9-4c06-bec5-b90551ac8739" class="cell" data-tags="[]" data-execution_count="320">
+<div class="sourceCode cell-code" id="cb224"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb224-1"><a href="#cb224-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.concatenate([ytrain,ytest]).tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cd5b544f-d4c7-4cbf-83f8-7a2e6bbc90eb" class="cell" data-tags="[]" data-execution_count="321">
+<div class="sourceCode cell-code" id="cb225"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb225-1"><a href="#cb225-1" aria-hidden="true" tabindex="-1"></a>{s:y.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(y)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="321">
+<pre><code>{0: 6903,
+ 1: 7877,
+ 2: 6990,
+ 3: 7141,
+ 4: 6824,
+ 5: 6313,
+ 6: 6876,
+ 7: 7293,
+ 8: 6825,
+ 9: 6958}</code></pre>
+</div>
+</div>
+<p><code>(2)</code> <span class="math inline">\({\tt xtrain}\)</span>에서 손글씨 0을 의미하는 이미지만을 모아서 새로운 다차원 array <span class="math inline">\({\tt xtrain0}\)</span>를 만들어라. 이 다차원 array 에서 처음과 마지막 이미지를 출력하라.</p>
+<p><strong>hint:</strong> <span class="math inline">\({\tt xtrain0}\)</span> 의 shape은 (5923,28,28)이어야 한다.</p>
+<p>(풀이)</p>
+<div id="58b7e765-12a1-4dad-85d1-4a94fc035603" class="cell" data-tags="[]" data-execution_count="322">
+<div class="sourceCode cell-code" id="cb227"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb227-1"><a href="#cb227-1" aria-hidden="true" tabindex="-1"></a>xtrain0 <span class="op">=</span> xtrain[ytrain <span class="op">==</span> <span class="dv">0</span>] <span class="co"># 숫자0이 라벨로 기록된 이미지들 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="44c65230-1c1d-440b-a4ad-cce580634faf" class="cell" data-tags="[]" data-execution_count="329">
+<div class="sourceCode cell-code" id="cb228"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb228-1"><a href="#cb228-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(xtrain0[<span class="dv">0</span>],cmap<span class="op">=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-131-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="7df88a80-761b-46aa-b2c5-102444314790" class="cell" data-tags="[]" data-execution_count="330">
+<div class="sourceCode cell-code" id="cb229"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb229-1"><a href="#cb229-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(xtrain0[<span class="op">-</span><span class="dv">1</span>],cmap<span class="op">=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-132-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>(3)</code> <span class="math inline">\({\tt xtrain}\)</span>에서 손글씨 0을 의미하는 이미지들의 평균을 계산하라. 즉 아래를 계산하라.</p>
+<ul>
+<li><span class="math inline">\({\tt xtrain0mean} = \frac{1}{5923}\sum_{i=1}^{5923} {\tt xtrain0[i, :, :]}\)</span></li>
+</ul>
+<p>계산결과를 출력하라.</p>
+<p>(풀이)</p>
+<p>첫번째 이미지 (왼쪽) 두번째 이미지 (가운데) 와 처음 두개의 이미지의 평균 (오른쪽) 은 아래와 같이 나타낼 수 있다.</p>
+<div id="8916e01e-f1cf-41fe-b23f-7d063c86f566" class="cell" data-tags="[]" data-execution_count="355">
+<div class="sourceCode cell-code" id="cb230"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb230-1"><a href="#cb230-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb230-2"><a href="#cb230-2" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].imshow(xtrain0[<span class="dv">0</span>],cmap<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb230-3"><a href="#cb230-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].imshow(xtrain0[<span class="dv">1</span>],cmap<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb230-4"><a href="#cb230-4" aria-hidden="true" tabindex="-1"></a><span class="co">#ax[2].imshow((xtrain0[0]+xtrain0[1])/2,cmap="gray")</span></span>
+<span id="cb230-5"><a href="#cb230-5" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">2</span>].imshow(xtrain0[[<span class="dv">0</span>,<span class="dv">1</span>]].mean(axis<span class="op">=</span><span class="dv">0</span>),cmap<span class="op">=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-133-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>전체이미지의 평균은 아래와 같다.</p>
+<div id="f7b4cd95-a9c3-4c07-a500-67ffd9a693ad" class="cell" data-tags="[]" data-execution_count="360">
+<div class="sourceCode cell-code" id="cb231"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb231-1"><a href="#cb231-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(xtrain0.mean(axis<span class="op">=</span><span class="dv">0</span>),cmap<span class="op">=</span><span class="st">'gray'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-134-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>(4)</code> <span class="math inline">\({\tt xtrain}\)</span>에서 각 라벨에 대한 평균이미지를 계산하고 계산결과를 <span class="math inline">\({\tt imgmean}\)</span>에 길이가 10인 <code>list</code>로 저장하라. 즉 <span class="math inline">\({\tt imgmean}\)</span>은 아래와 같은 자료구조를 가지고 있어야 한다.</p>
+<ul>
+<li><span class="math inline">\({\tt imgmean}=\big[{\tt imgmean[0]},\dots, {\tt imgmean[9]}\big]\)</span></li>
+<li><span class="math inline">\({\tt imgmean[0]}, \dots, {\tt imgmean[9]}\)</span> 는 각각 (28,28)의 shape을 가진 numpy array</li>
+<li><span class="math inline">\({\tt imgmean[0]}, \dots, {\tt imgmean[9]}\)</span> 는 각각 숫자 0,1, …, 9의 평균이미지를 의미</li>
+</ul>
+<p><span class="math inline">\({\tt imgmean[0]},\dots, {\tt imgmean[9]}\)</span>를 시각화 하라.</p>
+<p>(풀이)</p>
+<div id="ebebe7ff-9fb4-46fc-bf4b-c32294adb0fe" class="cell" data-tags="[]" data-execution_count="373">
+<div class="sourceCode cell-code" id="cb232"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb232-1"><a href="#cb232-1" aria-hidden="true" tabindex="-1"></a>imgmean <span class="op">=</span> [xtrain[ytrain <span class="op">==</span> i].mean(axis<span class="op">=</span><span class="dv">0</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c99d94f2-4bb1-4c3d-92be-04da359cab4b" class="cell" data-tags="[]" data-execution_count="374">
+<div class="sourceCode cell-code" id="cb233"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb233-1"><a href="#cb233-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">5</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb233-2"><a href="#cb233-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb233-3"><a href="#cb233-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>][<span class="dv">0</span>].imshow(imgmean[<span class="dv">0</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb233-4"><a href="#cb233-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>][<span class="dv">1</span>].imshow(imgmean[<span class="dv">1</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb233-5"><a href="#cb233-5" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>][<span class="dv">2</span>].imshow(imgmean[<span class="dv">2</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb233-6"><a href="#cb233-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>][<span class="dv">3</span>].imshow(imgmean[<span class="dv">3</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb233-7"><a href="#cb233-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>][<span class="dv">4</span>].imshow(imgmean[<span class="dv">4</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb233-8"><a href="#cb233-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb233-9"><a href="#cb233-9" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>][<span class="dv">0</span>].imshow(imgmean[<span class="dv">5</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb233-10"><a href="#cb233-10" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>][<span class="dv">1</span>].imshow(imgmean[<span class="dv">6</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb233-11"><a href="#cb233-11" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>][<span class="dv">2</span>].imshow(imgmean[<span class="dv">7</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb233-12"><a href="#cb233-12" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>][<span class="dv">3</span>].imshow(imgmean[<span class="dv">8</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb233-13"><a href="#cb233-13" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>][<span class="dv">4</span>].imshow(imgmean[<span class="dv">9</span>],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb233-14"><a href="#cb233-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb233-15"><a href="#cb233-15" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-136-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>(5)</code> <span class="math inline">\({\tt xtrain}\)</span>의 두번째 이미지와 <span class="math inline">\({\tt imgmean[0]}\)</span>의 차이를 제곱한 값의 평균을 구하라. 즉 아래를 계산하라.</p>
+<ul>
+<li><span class="math inline">\(mean\Big(({\tt xtrain[1]}-{\tt imgmean[0]})^2\Big)\)</span></li>
+</ul>
+<p>(풀이)</p>
+<div id="9e8027e8-4bd5-431d-9ed3-0e1b7eeb84be" class="cell" data-tags="[]" data-execution_count="395">
+<div class="sourceCode cell-code" id="cb234"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb234-1"><a href="#cb234-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb234-2"><a href="#cb234-2" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].imshow(xtrain[<span class="dv">1</span>],cmap<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb234-3"><a href="#cb234-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].imshow(imgmean[<span class="dv">0</span>],cmap<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb234-4"><a href="#cb234-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">2</span>].imshow((xtrain[<span class="dv">1</span>]<span class="op">-</span>imgmean[<span class="dv">0</span>])<span class="op">**</span><span class="dv">2</span>,cmap<span class="op">=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-137-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="15133cbc-1c24-47b9-be05-23da8f370b17" class="cell" data-tags="[]" data-execution_count="400">
+<div class="sourceCode cell-code" id="cb235"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a>((xtrain[<span class="dv">1</span>]<span class="op">-</span>imgmean[<span class="dv">0</span>])<span class="op">**</span><span class="dv">2</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="400">
+<pre><code>0.03537037336385432</code></pre>
+</div>
+</div>
+<p><code>(6)</code> 모든 <span class="math inline">\(j=0,1,\dots,9\)</span> 에 대하여 아래를 계산하라.</p>
+<ul>
+<li><span class="math inline">\(mean\Big(({\tt xtrain[1]}-{\tt imgmean[j]})^2\Big)\)</span></li>
+</ul>
+<p>계산값이 가장 작게 나오는 <span class="math inline">\(j\)</span>는 얼마인가? 위의 계산결과를 토대로 <span class="math inline">\({\tt xtrain}\)</span>의 두번째 이미지는 어떠한 숫자를 의미한다고 “분류”하는 것이 타당한가?</p>
+<p><code>(풀이)</code></p>
+<div id="806d0ad7-421a-4503-a9c9-5e8b9cce26ab" class="cell" data-tags="[]" data-execution_count="448">
+<div class="sourceCode cell-code" id="cb237"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb237-1"><a href="#cb237-1" aria-hidden="true" tabindex="-1"></a>{j:((xtrain[<span class="dv">1</span>]<span class="op">-</span>imgmean[j])<span class="op">**</span><span class="dv">2</span>).mean() <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="448">
+<pre><code>{0: 0.03537037336385432,
+ 1: 0.11495388576147866,
+ 2: 0.09465585697275321,
+ 3: 0.09057822103883667,
+ 4: 0.10401706236099066,
+ 5: 0.07100192423576142,
+ 6: 0.09006332783104219,
+ 7: 0.09943866938812378,
+ 8: 0.09098879425485074,
+ 9: 0.09820108036961576}</code></pre>
+</div>
+</div>
+<p><code>((xtrain[1]-imgmean[j])**2).mean()</code> 를 가장 작게만드는 j는 0 이다.</p>
+<div id="32c154e8-88ab-4e17-bd61-3fd31ac179ca" class="cell" data-tags="[]" data-execution_count="447">
+<div class="sourceCode cell-code" id="cb239"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb239-1"><a href="#cb239-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">10</span>,<span class="dv">3</span>,figsize<span class="op">=</span>(<span class="fl">7.5</span>,<span class="dv">30</span>))</span>
+<span id="cb239-2"><a href="#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb239-3"><a href="#cb239-3" aria-hidden="true" tabindex="-1"></a>    ax[j][<span class="dv">0</span>].imshow(xtrain[<span class="dv">1</span>],cmap<span class="op">=</span><span class="st">"gray"</span>)<span class="op">;</span> </span>
+<span id="cb239-4"><a href="#cb239-4" aria-hidden="true" tabindex="-1"></a>    ax[j][<span class="dv">0</span>].set_title(<span class="st">"xtrain[1]"</span>)</span>
+<span id="cb239-5"><a href="#cb239-5" aria-hidden="true" tabindex="-1"></a>    ax[j][<span class="dv">1</span>].imshow(imgmean[j],cmap<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb239-6"><a href="#cb239-6" aria-hidden="true" tabindex="-1"></a>    ax[j][<span class="dv">1</span>].set_title(<span class="ss">f"imgmean[</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">]"</span>)</span>
+<span id="cb239-7"><a href="#cb239-7" aria-hidden="true" tabindex="-1"></a>    ax[j][<span class="dv">2</span>].imshow((xtrain[<span class="dv">1</span>]<span class="op">-</span>imgmean[j])<span class="op">**</span><span class="dv">2</span>,cmap<span class="op">=</span><span class="st">"gray"</span>)</span>
+<span id="cb239-8"><a href="#cb239-8" aria-hidden="true" tabindex="-1"></a>    ax[j][<span class="dv">2</span>].set_title(<span class="ss">f'loss = </span><span class="sc">{</span>((xtrain[<span class="dv">1</span>]<span class="op">-</span>imgmean[j])<span class="op">**</span><span class="dv">2</span>)<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
+<span id="cb239-9"><a href="#cb239-9" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-140-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>xtrain[1] 이미지는 0으로 분류하는게 타당해보인다.</p>
+<p><code>(7)</code> 아래와 같은 numpy array 를 생성하라.</p>
+<p><span class="math display">\[{\tt loss}=
+\begin{bmatrix}
+{\tt loss[0,0]} &amp; \dots &amp; {\tt loss[0,9]} \\
+{\tt loss[1,0]} &amp; \dots &amp; {\tt loss[1,9]} \\
+\dots &amp; \dots &amp;  \dots \\
+{\tt loss[59999,0]}&amp; \dots &amp;{\tt loss[59999,9]} \\
+\end{bmatrix}\]</span></p>
+<p>단, <span class="math inline">\({\tt loss[i,j]} = mean\Big(({\tt xtrain[i]}-{\tt imgmean[j]})^2\Big)\)</span></p>
+<p>위에서 생성한 <span class="math inline">\({\tt loss}\)</span>를 이용해 (6)와 같은 방식으로 <span class="math inline">\({\tt xtrain}\)</span>의 모든 이미지에 대한 분류를 수행하라.</p>
+<p><strong>hint</strong>: <span class="math inline">\({\tt loss}\)</span>에서 “최소값을 가지는 원소의 인덱스를 출력”하는 함수를 각 행별로 적용하면 된다.</p>
+<p>(풀이)</p>
+<div id="e8257f9d-60cd-4296-b0ec-09c75ef6d611" class="cell" data-tags="[]" data-execution_count="464">
+<div class="sourceCode cell-code" id="cb240"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb240-1"><a href="#cb240-1" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> np.array([[np.mean((xtrain[i] <span class="op">-</span> imgmean[j])<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">60000</span>)])</span>
+<span id="cb240-2"><a href="#cb240-2" aria-hidden="true" tabindex="-1"></a>loss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="464">
+<pre><code>array([[0.08436263, 0.08777293, 0.08016276, ..., 0.07754168, 0.06951451,
+        0.07958829],
+       [0.03537037, 0.11495389, 0.09465586, ..., 0.09943867, 0.09098879,
+        0.09820108],
+       [0.10793399, 0.09755518, 0.08827192, ..., 0.08612435, 0.09451805,
+        0.0769925 ],
+       ...,
+       [0.09429922, 0.08422548, 0.09809041, ..., 0.07034968, 0.06364432,
+        0.06299717],
+       [0.06883611, 0.07933228, 0.0698403 , ..., 0.07655916, 0.08341635,
+        0.07272038],
+       [0.08297837, 0.0728127 , 0.06969071, ..., 0.07119765, 0.05851329,
+        0.06540166]])</code></pre>
+</div>
+</div>
+<div id="6ac267b7-194f-430b-ab29-18b568c51585" class="cell" data-tags="[]" data-execution_count="471">
+<div class="sourceCode cell-code" id="cb242"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb242-1"><a href="#cb242-1" aria-hidden="true" tabindex="-1"></a>loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="co"># 꽤 그럴듯하게 예측하고 있음</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="471">
+<pre><code>array([5, 0, 4, ..., 5, 6, 8])</code></pre>
+</div>
+</div>
+<p><code>(8)</code> <code>(7)</code>에서 수행한 분류결과와 실제 라벨 <span class="math inline">\({\tt ytrain}\)</span>을 비교하라. 얼마나 많은 결과가 일치하는지 비율을 계산하라.</p>
+<p>(풀이)</p>
+<div id="af9769f1-2fba-4c66-a385-f098163206c8" class="cell" data-tags="[]" data-execution_count="475">
+<div class="sourceCode cell-code" id="cb244"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb244-1"><a href="#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(ytrain <span class="op">==</span> loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>)) <span class="op">/</span> <span class="dv">60000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="475">
+<pre><code>0.8079833333333334</code></pre>
+</div>
+</div>
+<div id="bfce54c7-9594-44a6-a083-9a44de076ea4" class="cell" data-tags="[]" data-execution_count="477">
+<div class="sourceCode cell-code" id="cb246"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb246-1"><a href="#cb246-1" aria-hidden="true" tabindex="-1"></a>(ytrain <span class="op">==</span> loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>)).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="477">
+<pre><code>0.8079833333333334</code></pre>
+</div>
+</div>
+<p><code>(9)</code> <span class="math inline">\({\tt xtrain}\)</span>에서 학습한 평균이미지 <span class="math inline">\({\tt imgmean}\)</span>를 바탕으로 <span class="math inline">\({\tt xtest}\)</span>의 이미지를 분류하라. 분류결과를 <span class="math inline">\({\tt ytest}\)</span>와 비교하라. 얼마나 많은 결과가 일치하는지 비율을 계산하라.</p>
+<p>(풀이)</p>
+<div id="4e2f0909-1745-4b4e-ba62-ff9cc710e170" class="cell" data-tags="[]" data-execution_count="487">
+<div class="sourceCode cell-code" id="cb248"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb248-1"><a href="#cb248-1" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> np.array([[np.mean((xtest[i] <span class="op">-</span> imgmean[j])<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)])</span>
+<span id="cb248-2"><a href="#cb248-2" aria-hidden="true" tabindex="-1"></a>(loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">==</span> ytest).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="487">
+<pre><code>0.8203</code></pre>
+</div>
+</div>
+<p><code>(10)</code> <code>(9)</code>의 과정에서 잘못분류된 이미지 10개를 선택하여 시각화 하라.</p>
+<ul>
+<li>실제 라벨과 잘못된 라벨을 구분하여 시각화 할 것</li>
+</ul>
+<div id="785646dc-7c75-402b-9110-0c5d95eb41f7" class="cell" data-tags="[]" data-execution_count="580">
+<div class="sourceCode cell-code" id="cb250"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb250-1"><a href="#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest) <span class="co"># 잘못분류된것은 1797장의 이미지</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="580">
+<pre><code>1797</code></pre>
+</div>
+</div>
+<div id="f8ca15f7-7ffd-40f8-bf8b-41c8cced11cd" class="cell" data-tags="[]" data-execution_count="586">
+<div class="sourceCode cell-code" id="cb252"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb252-1"><a href="#cb252-1" aria-hidden="true" tabindex="-1"></a>xtest[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest] <span class="co"># 잘못분류된 이미지들 </span></span>
+<span id="cb252-2"><a href="#cb252-2" aria-hidden="true" tabindex="-1"></a>ytest[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest] <span class="co"># 잘못분류된 이미지들에 대한 실제 라벨</span></span>
+<span id="cb252-3"><a href="#cb252-3" aria-hidden="true" tabindex="-1"></a>loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>)[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest] <span class="co"># 잘못분류된 이미지들에 대한 예측된 라벨</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="586">
+<pre><code>array([2, 2, 7, ..., 8, 8, 4])</code></pre>
+</div>
+</div>
+<div id="a37d2600-64bc-4ca6-97a1-50d9f2f33bd2" class="cell" data-tags="[]" data-execution_count="591">
+<div class="sourceCode cell-code" id="cb254"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb254-1"><a href="#cb254-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">5</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb254-2"><a href="#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb254-3"><a href="#cb254-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb254-4"><a href="#cb254-4" aria-hidden="true" tabindex="-1"></a>        ax[i][j].imshow(xtest[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest][i<span class="op">+</span>j],cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb254-5"><a href="#cb254-5" aria-hidden="true" tabindex="-1"></a>        ax[i][j].set_title(<span class="ss">f"</span><span class="sc">{</span>ytest[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest][i<span class="op">+</span>j]<span class="sc">}</span><span class="ss"> / </span><span class="sc">{</span>loss<span class="sc">.</span>argmin(axis<span class="op">=-</span><span class="dv">1</span>)[loss.argmin(axis<span class="op">=-</span><span class="dv">1</span>) <span class="op">!=</span> ytest][i<span class="op">+</span>j]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb254-6"><a href="#cb254-6" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_files/figure-html/cell-148-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
