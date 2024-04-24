@@ -191,9 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><a href="https://colab.research.google.com/github/guebin/PP2024/blob/main/posts/08wk-1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" style="text-align: left"></a></p>
-<div id="3582475f-c5cf-4a9b-bdcd-f3eeb3dd72e7" class="cell" data-tags="[]" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#{{&lt;video https://youtu.be/playlist?list=PLQqh36zP38-xz7YnuptdUg-tIHaBhFrqJ&amp;si=prXpB8pP1luQvaz- &gt;}}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/playlist?list=PLQqh36zP38-zw7A6QZV6mBeTwgC61QoJ3&amp;si=awvs8Rt5YDCJM1VN" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -215,36 +213,51 @@ Caution
 <section id="점" class="level1">
 <h1>1. – 20점</h1>
 <p>앞으로 읽어도 뒤로 읽어도 동일한 단어이면 true 그렇지 않으면 false를 리턴하는 함수 <code>solution</code>를 구현하라. 아래는 이러한 함수 <code>solution</code>를 사용한 예시이다.</p>
-<div id="dcfeea81-ec06-4eb9-9f35-33e0dd96b412" class="cell" data-tags="[]" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lst1 <span class="op">=</span> [<span class="st">'기러기'</span>, <span class="st">'토마토'</span>, <span class="st">'스위스'</span>, <span class="st">'인도인'</span>, <span class="st">'별똥별'</span>, <span class="st">'우영우'</span>, <span class="st">'파이썬'</span>]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>lst2 <span class="op">=</span> [<span class="st">'level'</span>, <span class="st">'radar'</span>, <span class="st">'noon'</span>, <span class="st">'deified'</span>, <span class="st">'rotor'</span>, <span class="st">'python'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="dcfeea81-ec06-4eb9-9f35-33e0dd96b412" class="cell" data-tags="[]" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lst1 <span class="op">=</span> [<span class="st">'기러기'</span>, <span class="st">'토마토'</span>, <span class="st">'스위스'</span>, <span class="st">'인도인'</span>, <span class="st">'별똥별'</span>, <span class="st">'우영우'</span>, <span class="st">'파이썬'</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>lst2 <span class="op">=</span> [<span class="st">'level'</span>, <span class="st">'radar'</span>, <span class="st">'noon'</span>, <span class="st">'deified'</span>, <span class="st">'rotor'</span>, <span class="st">'python'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="82aff16e-2558-4a3e-af01-4192bf6dda48" class="cell" data-tags="[]" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>[solution(l) <span class="cf">for</span> l <span class="kw">in</span> lst1]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>[solution(l) <span class="cf">for</span> l <span class="kw">in</span> lst1]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>[True, True, True, True, True, True, False]</code></pre>
 </div>
 </div>
 <div id="c544dc6f-9147-408d-a961-88a91cd12978" class="cell" data-tags="[]" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>[solution(l) <span class="cf">for</span> l <span class="kw">in</span> lst2]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>[solution(l) <span class="cf">for</span> l <span class="kw">in</span> lst2]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>[True, True, True, True, True, False]</code></pre>
 </div>
 </div>
 <p>(풀이)</p>
+<div id="7bfe40ea-54a2-4629-af85-b0da9ed03ddb" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> <span class="kw">lambda</span> x: x[::<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="831c5445" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[solution(l) <span class="cf">for</span> l <span class="kw">in</span> lst1]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>[True, True, True, True, True, True, False]</code></pre>
+</div>
+</div>
+<div id="a0684072" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>[solution(l) <span class="cf">for</span> l <span class="kw">in</span> lst2]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>[True, True, True, True, True, False]</code></pre>
+</div>
+</div>
 </section>
 <section id="점-1" class="level1">
 <h1>2. – 40점</h1>
 <p>아홉개의 공이있다. 이 가운데 여덟개는 무게가 같고 하나는 남은 하나는 좀 더 무겁다. 우리에게는 저울이 하나 있는데 이 저울로는 왼쪽의 공들이 무거운지 오른쪽의 공들이 무거운지밖에 알아낼 수 없다. 이 저울을 딱 두번만 사용하여 가장 무거운 공을 찾아내는 알고리즘을 <code>solution</code> 함수로 정리하여 제시하라. 공들의 무게는 길이가 9인 리스트로 온다고 가정한다. 출력은 가장 무거운 공이 위치한 index를 리턴하도록 한다.</p>
 <p>다음은 solution 함수를 실제로 구현하여 사용한 예시이다.</p>
 <div id="06970faa-7c1d-4f80-b579-bca20237b80d" class="cell" data-tags="[]" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>solution([<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>solution([<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>0</code></pre>
 </div>
 </div>
 <div id="81fb2e9a-fade-490a-b161-d69150b192df" class="cell" data-tags="[]" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>solution([<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>solution([<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>2</code></pre>
 </div>
@@ -253,6 +266,45 @@ Caution
 <blockquote class="blockquote">
 <p>hint: 공을 세 개씩 세 그룹으로 나누세요</p>
 </blockquote>
+<div id="fdb4e98e-4bbf-4160-a27b-cb07417e62a1" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> solution(lst):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    l1,l2,l3 <span class="op">=</span> lst[:<span class="dv">3</span>],lst[<span class="dv">3</span>:<span class="dv">6</span>],lst[<span class="dv">6</span>:]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    argmax <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">sum</span>(l1)<span class="op">&gt;</span><span class="bu">sum</span>(l2): <span class="co"># 0,1,2 중 가장 무거운 공이 있음 </span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> l1[<span class="dv">0</span>] <span class="op">&gt;</span> l1[<span class="dv">1</span>]:</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>            argmax <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> l1[<span class="dv">0</span>] <span class="op">&lt;</span> l1[<span class="dv">1</span>]:</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>            argmax <span class="op">=</span> <span class="dv">1</span> </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>            argmax <span class="op">=</span> <span class="dv">2</span> </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">sum</span>(l1)<span class="op">&lt;</span><span class="bu">sum</span>(l2): <span class="co"># 3,4,5 중 가장 무거운 공이 있음 </span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> l2[<span class="dv">0</span>] <span class="op">&gt;</span> l2[<span class="dv">1</span>]:</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>            argmax <span class="op">=</span> <span class="dv">0</span><span class="op">+</span><span class="dv">3</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> l2[<span class="dv">0</span>] <span class="op">&lt;</span> l2[<span class="dv">1</span>]:</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>            argmax <span class="op">=</span> <span class="dv">1</span><span class="op">+</span><span class="dv">3</span> </span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>            argmax <span class="op">=</span> <span class="dv">2</span><span class="op">+</span><span class="dv">3</span> </span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>: <span class="co"># 6,7,8 중 가장 무거운 공이 있음 </span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> l3[<span class="dv">0</span>] <span class="op">&gt;</span> l3[<span class="dv">1</span>]:</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>            argmax <span class="op">=</span> <span class="dv">0</span><span class="op">+</span><span class="dv">6</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> l3[<span class="dv">0</span>] <span class="op">&lt;</span> l3[<span class="dv">1</span>]:</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>            argmax <span class="op">=</span> <span class="dv">1</span><span class="op">+</span><span class="dv">6</span> </span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>            argmax <span class="op">=</span> <span class="dv">2</span><span class="op">+</span><span class="dv">6</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> argmax </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="8b382583-737c-49a6-9a68-3f22e100a93f" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>solution([<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>0</code></pre>
+</div>
+</div>
+<div id="64b79d3e" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>solution([<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>2</code></pre>
+</div>
+</div>
 </section>
 <section id="점-2" class="level1">
 <h1>5. – 40점</h1>
@@ -357,19 +409,47 @@ Caution
 </ul>
 <p>(풀이)</p>
 <p><strong><em>hint</em></strong> – 아래의 <code>dictionary</code>를 이용하세요</p>
-<div id="d4b8f949-7629-4bab-b59a-3d8fb066ba17" class="cell" data-tags="[]" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dct <span class="op">=</span> {</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'zero'</span>: <span class="st">'0'</span>,</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'one'</span>: <span class="st">'1'</span>,</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'two'</span>: <span class="st">'2'</span>,</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'three'</span>: <span class="st">'3'</span>,</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'four'</span>: <span class="st">'4'</span>,</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'five'</span>: <span class="st">'5'</span>,</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'six'</span>: <span class="st">'6'</span>,</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'seven'</span>: <span class="st">'7'</span>,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'eight'</span>: <span class="st">'8'</span>,</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nine'</span>: <span class="st">'9'</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cc691db1" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> solution(s):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    dct <span class="op">=</span> {</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'zero'</span>: <span class="st">'0'</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'one'</span>: <span class="st">'1'</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'two'</span>: <span class="st">'2'</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'three'</span>: <span class="st">'3'</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'four'</span>: <span class="st">'4'</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'five'</span>: <span class="st">'5'</span>,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'six'</span>: <span class="st">'6'</span>,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'seven'</span>: <span class="st">'7'</span>,</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'eight'</span>: <span class="st">'8'</span>,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'nine'</span>: <span class="st">'9'</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k,v <span class="kw">in</span> dct.items():</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> s.replace(k,v)    </span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="0a30aa84" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>solution(<span class="st">"one4seveneight"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<pre><code>'1478'</code></pre>
+</div>
+</div>
+<div id="8715253d" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>solution(<span class="st">"23four5six7"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<pre><code>'234567'</code></pre>
+</div>
+</div>
+<div id="f93fc829" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>solution(<span class="st">"2three45sixseven"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<pre><code>'234567'</code></pre>
+</div>
+</div>
+<div id="0ff4030d" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>solution(<span class="st">"123"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>'123'</code></pre>
+</div>
 </div>
 
 
