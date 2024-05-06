@@ -233,25 +233,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>xtrain, xtest를 합쳐서 shape이 (70000,28,28) 인 numpy array를 생성하고 이것을 <code>X</code>에 저장하라. 저장된 <code>X</code>에서 각 숫자의 평균이미지를 구하고 평균이미지를 좌우로 붙여 본인의 학번 마지막 5자리를 출력하라. (충남대 학생들은 충남대 학번으로 쓰셔도 괜찮습니다)</p>
 <p><code>(풀이)</code></p>
-<p>학번 마지막 5자리가 43052인 경우 출력예시는 아래와 같다.</p>
-<div id="7c443846" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(img,cmap<span class="op">=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="dd103021-8fcc-432a-be68-be1deb23ddf9" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.concatenate([xtrain,xtest],axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.concatenate([ytrain,ytest])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="93667498-274d-4c12-9de9-5031247e066d" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">4</span>].mean(axis<span class="op">=</span><span class="dv">0</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">3</span>].mean(axis<span class="op">=</span><span class="dv">0</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">0</span>].mean(axis<span class="op">=</span><span class="dv">0</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">5</span>].mean(axis<span class="op">=</span><span class="dv">0</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">2</span>].mean(axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> np.concatenate(lst,axis<span class="op">=-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="f5c7cac2-4106-49eb-a5f7-9ad3df502272" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(img,cmap<span class="op">=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="09wk-2_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="09wk-2_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><code>(2)</code> (1)에서 구한 평균이미지와 가장 차이가 작은 이미지를 숫자별로 찾고, 이를 이어서 (1)처럼 본인의 학번 마지막 5개의 숫자를 출력하라. 이때 평균이미지와 가장 차이가 작은 이미지는 픽셀별로 차이를 제곱한뒤 평균을 내서 계산한다. (07wk-2 // 5.numpy활용 // C.MNIST data // (5)번 문항을 참고할 것)</p>
 <p>(풀이)</p>
-<div id="80a59067" class="cell" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(img,cmap<span class="op">=</span><span class="st">"gray"</span>) <span class="co"># 시각화예시</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="11634033-9c1f-4c8e-8c82-5eef6fc95ad9" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">4</span>][((X[y <span class="op">==</span> <span class="dv">4</span>] <span class="op">-</span> X[y <span class="op">==</span> <span class="dv">4</span>].mean(axis<span class="op">=</span><span class="dv">0</span>))<span class="op">**</span><span class="dv">2</span>).mean(axis<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>)).argmin()],</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">3</span>][((X[y <span class="op">==</span> <span class="dv">3</span>] <span class="op">-</span> X[y <span class="op">==</span> <span class="dv">3</span>].mean(axis<span class="op">=</span><span class="dv">0</span>))<span class="op">**</span><span class="dv">2</span>).mean(axis<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>)).argmin()],</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">0</span>][((X[y <span class="op">==</span> <span class="dv">0</span>] <span class="op">-</span> X[y <span class="op">==</span> <span class="dv">0</span>].mean(axis<span class="op">=</span><span class="dv">0</span>))<span class="op">**</span><span class="dv">2</span>).mean(axis<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>)).argmin()],</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">5</span>][((X[y <span class="op">==</span> <span class="dv">5</span>] <span class="op">-</span> X[y <span class="op">==</span> <span class="dv">5</span>].mean(axis<span class="op">=</span><span class="dv">0</span>))<span class="op">**</span><span class="dv">2</span>).mean(axis<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>)).argmin()],</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">2</span>][((X[y <span class="op">==</span> <span class="dv">2</span>] <span class="op">-</span> X[y <span class="op">==</span> <span class="dv">2</span>].mean(axis<span class="op">=</span><span class="dv">0</span>))<span class="op">**</span><span class="dv">2</span>).mean(axis<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>)).argmin()],</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> np.concatenate(lst,axis<span class="op">=-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="028ce993-6196-4f93-9f68-36acff0df415" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(img,cmap<span class="op">=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="09wk-2_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="09wk-2_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -264,19 +287,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <p>아래의 코드를 실행하여 부산의 야경을 불러오라.</p>
 <div id="dc5aebeb" class="cell" data-execution_count="78">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://cdn.pixabay.com/photo/2016/10/17/07/53/busan-night-scene-1747130_1280.jpg'</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> np.array(PIL.Image.<span class="bu">open</span>(io.BytesIO(requests.get(url).content)))<span class="op">/</span><span class="dv">255</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.imshow(img)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://cdn.pixabay.com/photo/2016/10/17/07/53/busan-night-scene-1747130_1280.jpg'</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> np.array(PIL.Image.<span class="bu">open</span>(io.BytesIO(requests.get(url).content)))<span class="op">/</span><span class="dv">255</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.imshow(img)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="09wk-2_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="09wk-2_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <div id="a129406b" class="cell" data-execution_count="79">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>img.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>img.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="79">
 <pre><code>(854, 1280, 3)</code></pre>
 </div>
@@ -285,35 +308,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><span class="math display">\[Gray = 0.2989 \times R + 0.5870 \times G + 0.1140 \times B\]</span></p>
 <p>여기에서 R,G,B,Gray는 모두 shape이 (854,1280) 인 numpy array 이다.</p>
 <p>(풀이)</p>
-<div id="e5878564" class="cell" data-execution_count="82">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(Gray,cmap<span class="op">=</span><span class="st">"gray"</span>) <span class="co"># 시각화예시</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f8a84124-8777-4eac-a782-587dcfa6470f" class="cell" data-tags="[]" data-execution_count="463">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>R,G,B <span class="op">=</span> img[:,:,<span class="dv">0</span>],img[:,:,<span class="dv">1</span>],img[:,:,<span class="dv">2</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Gray <span class="op">=</span> <span class="fl">0.2989</span><span class="op">*</span>R <span class="op">+</span> <span class="fl">0.5870</span><span class="op">*</span>G <span class="op">+</span> <span class="fl">0.1140</span><span class="op">*</span>B </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plt.imshow(Gray,cmap<span class="op">=</span><span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="09wk-2_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="09wk-2_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><code>(2)</code> <code>R</code>,<code>G</code>,<code>B</code> 에 대하여 아래의 슈도-알고리즘과 동등한 처리를 <code>np.where</code>을 이용하여 수행하라. 편의상 아래의 알고리즘에서 <code>R</code>,<code>G</code>,<code>B</code>는 변수 <code>Ch</code>로 생각한다.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ch_min <span class="op">=</span> np.<span class="bu">min</span>(Ch[<span class="dv">0</span>:<span class="dv">587</span>, <span class="dv">948</span>:<span class="dv">1210</span>])</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ch_max <span class="op">=</span> np.<span class="bu">max</span>(Ch[<span class="dv">0</span>:<span class="dv">587</span>, <span class="dv">948</span>:<span class="dv">1210</span>]) </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">854</span>):</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1280</span>):</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> ch_min <span class="op">&lt;</span> Ch[i,j] <span class="op">&lt;</span> ch_max:</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>            Ch[i,j] <span class="op">=</span> Gray[i,j]</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>            Ch[i,j] <span class="op">=</span> Ch[i,j]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ch_min <span class="op">=</span> np.<span class="bu">min</span>(Ch[<span class="dv">0</span>:<span class="dv">587</span>, <span class="dv">948</span>:<span class="dv">1210</span>])</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ch_max <span class="op">=</span> np.<span class="bu">max</span>(Ch[<span class="dv">0</span>:<span class="dv">587</span>, <span class="dv">948</span>:<span class="dv">1210</span>]) </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">854</span>):</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1280</span>):</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> ch_min <span class="op">&lt;</span> Ch[i,j] <span class="op">&lt;</span> ch_max:</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>            Ch[i,j] <span class="op">=</span> Gray[i,j]</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>            Ch[i,j] <span class="op">=</span> Ch[i,j]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>위의 알고리즘을 각각 <code>R</code>, <code>G</code>, <code>B</code>에 적용하였으면 변화된 <code>R</code>,<code>G</code>,<code>B</code>를 합쳐서 하나의 칼라이미지를 만들고 출력하라.</p>
 <p>(풀이)</p>
-<p><strong>힌트</strong> 채널이 고정되었을때 문제에서 제시한 슈도-알고리즘을 처리하는 함수 <code>f</code>를 선언하고 map 을 이용하면 쉽다. 아래는 이러한 함수 <code>f</code>가 구현되었다고 가정했을 경우 시각화 코드이다.</p>
-<div id="90d2f222-ba9f-4878-ba86-75ffdda97df2" class="cell" data-tags="[]" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> np.stack(<span class="bu">list</span>(<span class="bu">map</span>(f,[R,G,B])),axis<span class="op">=-</span><span class="dv">1</span>) </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.imshow(solution)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="890d74a5-1f44-44bf-bbfe-44c630f063be" class="cell" data-tags="[]" data-execution_count="464">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(Ch):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    ch_min <span class="op">=</span> np.<span class="bu">min</span>(Ch[<span class="dv">0</span>:<span class="dv">587</span>, <span class="dv">948</span>:<span class="dv">1210</span>])</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    ch_max <span class="op">=</span> np.<span class="bu">max</span>(Ch[<span class="dv">0</span>:<span class="dv">587</span>, <span class="dv">948</span>:<span class="dv">1210</span>]) </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    Ch <span class="op">=</span> np.where((ch_min <span class="op">&lt;</span> Ch) <span class="op">&amp;</span> (Ch <span class="op">&lt;</span> ch_max), Gray, Ch)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Ch</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> np.stack(<span class="bu">list</span>(<span class="bu">map</span>(f,[R,G,B])),axis<span class="op">=-</span><span class="dv">1</span>) </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>plt.imshow(solution)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="09wk-2_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="09wk-2_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -328,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>(1)</code> 규빈과 다호가 2층 높이의 탑을 먼저 쌓는 내기를 하였다고 하자. 탑을 쌓을수 있는 기회는 2회 준다. 이 내기는 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라. (둘이 동시에 탑을 쌓을경우 무승부로 판단한다.)</p>
 <p><strong>힌트:</strong> 시뮬레이션 결과는 아래와 같다. 따라서 규빈이 유리하다.</p>
 <div id="538815cd" class="cell" data-execution_count="458">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘이 동시에 성공)'</span>: <span class="dv">25063</span>, <span class="st">'다호승'</span>: <span class="dv">24845</span>, <span class="st">'규빈승'</span>: <span class="dv">50092</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘이 동시에 성공)'</span>: <span class="dv">25063</span>, <span class="st">'다호승'</span>: <span class="dv">24845</span>, <span class="st">'규빈승'</span>: <span class="dv">50092</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="458">
 <pre><code>{'무승부 (둘이 동시에 성공)': 25063, '다호승': 24845, '규빈승': 50092}</code></pre>
 </div>
@@ -336,7 +365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>(2)</code> 규빈과 다호가 10층 높이의 탑을 먼저 쌓는 내기를 하였다고 하자. 탑을 쌓을수 있는 기회는 10회 준다. 이 내기는 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라. (둘이 동시에 탑을 쌓을경우 무승부로 판단한다.)</p>
 <p><strong>힌트</strong>: 시뮬레이션 결과는 아래와 같다. 따라서 다호가 유리하다.</p>
 <div id="b8ad1483" class="cell" data-execution_count="459">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘이 동시에 성공)'</span>: <span class="dv">1580</span>, <span class="st">'다호승'</span>: <span class="dv">89045</span>, <span class="st">'규빈승'</span>: <span class="dv">9375</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘이 동시에 성공)'</span>: <span class="dv">1580</span>, <span class="st">'다호승'</span>: <span class="dv">89045</span>, <span class="st">'규빈승'</span>: <span class="dv">9375</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="459">
 <pre><code>{'무승부 (둘이 동시에 성공)': 1580, '다호승': 89045, '규빈승': 9375}</code></pre>
 </div>
@@ -344,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>(3)</code> 규빈은 (2)의 게임을 반복하다가 본인이 불리하다는 사실을 알고 분노했다. 흑화한 규빈은 매번 50%의 확률로 다호의 탑을 공격하기로 하였다. 공격 성공률은 60% 이며 공격이 성공시 다호의 탑은 모두 무너진다. (단, 공격시 규빈은 탑을 쌓을 수 없다) 규빈과 다호에게 탑을 쌓거나 상대방의 탑을 공격할 기회를 20회 준다고 가정하자. 이 내기는 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라. (둘이 동시에 탑을 쌓거나 둘 모두 탑을 쌓지 못할 경우 무승부로 판단한다.)</p>
 <p><strong>힌트</strong>: 시뮬레이션 결과는 아래와 같다. 유불리가 비슷하다.</p>
 <div id="8e7f00a7" class="cell" data-execution_count="460">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘이 동시에 성공)'</span>: <span class="dv">133</span>, <span class="st">'무승부 (둘다 쌓지 못함)'</span>: <span class="dv">79385</span>, <span class="st">'다호승'</span>: <span class="dv">10165</span>, <span class="st">'규빈승'</span>: <span class="dv">10317</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘이 동시에 성공)'</span>: <span class="dv">133</span>, <span class="st">'무승부 (둘다 쌓지 못함)'</span>: <span class="dv">79385</span>, <span class="st">'다호승'</span>: <span class="dv">10165</span>, <span class="st">'규빈승'</span>: <span class="dv">10317</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="460">
 <pre><code>{'무승부 (둘이 동시에 성공)': 133, '무승부 (둘다 쌓지 못함)': 79385, '다호승': 10165, '규빈승': 10317}</code></pre>
 </div>
@@ -352,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>(4)</code> 규빈은 공격을 하는사이에 본인의 탑을 쌓지 못하게 되자 전략을 바꾸었다. 다호의 탑을 관찰하며, 다호의 탑이 5층 이상인 경우에만 공격하기로 하였다. 이 경우 규빈과 다호에게 탑을 쌓거나 상대방의 탑을 공격할 기회를 20회 준다고 가정하면 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라. (둘이 동시에 탑을 쌓거나 둘 모두 탑을 쌓지 못할 경우 무승부로 판단한다.)</p>
 <p><strong>힌트</strong>: 시뮬레이션 결과는 아래와 같다. 규빈이 유리하다.</p>
 <div id="328c488e" class="cell" data-execution_count="461">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘다 쌓지 못함)'</span>: <span class="dv">79324</span>, <span class="st">'다호승'</span>: <span class="dv">1950</span>, <span class="st">'규빈승'</span>: <span class="dv">18726</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘다 쌓지 못함)'</span>: <span class="dv">79324</span>, <span class="st">'다호승'</span>: <span class="dv">1950</span>, <span class="st">'규빈승'</span>: <span class="dv">18726</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="461">
 <pre><code>{'무승부 (둘다 쌓지 못함)': 79324, '다호승': 1950, '규빈승': 18726}</code></pre>
 </div>
