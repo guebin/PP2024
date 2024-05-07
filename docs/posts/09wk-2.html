@@ -257,8 +257,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><code>(2)</code> (1)에서 구한 평균이미지와 가장 차이가 작은 이미지를 숫자별로 찾고, 이를 이어서 (1)처럼 본인의 학번 마지막 5개의 숫자를 출력하라. 이때 평균이미지와 가장 차이가 작은 이미지는 픽셀별로 차이를 제곱한뒤 평균을 내서 계산한다. (07wk-2 // 5.numpy활용 // C.MNIST data // (5)번 문항을 참고할 것)</p>
-<p>(풀이)</p>
+<p><code>(2)</code> (1)에서 구한 평균이미지와 가장 차이가 작은 이미지를 숫자별로 찾고, 이를 이어서 (1)처럼 본인의 학번 마지막 5개의 숫자를 출력하라. 이때 평균이미지와의 차이는 픽셀별로 차이를 제곱한뒤 평균을 내서 계산한다. (07wk-2 // 5.numpy활용 // C.MNIST data // (5)번 문항을 참고할 것)</p>
+<p><code>(풀이)</code></p>
 <div id="11634033-9c1f-4c8e-8c82-5eef6fc95ad9" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    X[y <span class="op">==</span> <span class="dv">4</span>][((X[y <span class="op">==</span> <span class="dv">4</span>] <span class="op">-</span> X[y <span class="op">==</span> <span class="dv">4</span>].mean(axis<span class="op">=</span><span class="dv">0</span>))<span class="op">**</span><span class="dv">2</span>).mean(axis<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>)).argmin()],</span>
@@ -307,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>(1)</code> 위의 이미지의 Red,Green,Blue 에 해당하는 array 를 변수 <code>R</code>, <code>G</code>, <code>B</code> 에 저장하라. 아래의 공식을 이용하여 새로운 numpy array Gray를 만들고 이를 출력하라.</p>
 <p><span class="math display">\[Gray = 0.2989 \times R + 0.5870 \times G + 0.1140 \times B\]</span></p>
 <p>여기에서 R,G,B,Gray는 모두 shape이 (854,1280) 인 numpy array 이다.</p>
-<p>(풀이)</p>
+<p><code>(풀이)</code></p>
 <div id="f8a84124-8777-4eac-a782-587dcfa6470f" class="cell" data-tags="[]" data-execution_count="463">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>R,G,B <span class="op">=</span> img[:,:,<span class="dv">0</span>],img[:,:,<span class="dv">1</span>],img[:,:,<span class="dv">2</span>]</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Gray <span class="op">=</span> <span class="fl">0.2989</span><span class="op">*</span>R <span class="op">+</span> <span class="fl">0.5870</span><span class="op">*</span>G <span class="op">+</span> <span class="fl">0.1140</span><span class="op">*</span>B </span>
@@ -330,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>            Ch[i,j] <span class="op">=</span> Ch[i,j]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>위의 알고리즘을 각각 <code>R</code>, <code>G</code>, <code>B</code>에 적용하였으면 변화된 <code>R</code>,<code>G</code>,<code>B</code>를 합쳐서 하나의 칼라이미지를 만들고 출력하라.</p>
-<p>(풀이)</p>
+<p><code>(풀이)</code></p>
 <div id="890d74a5-1f44-44bf-bbfe-44c630f063be" class="cell" data-tags="[]" data-execution_count="464">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(Ch):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    ch_min <span class="op">=</span> np.<span class="bu">min</span>(Ch[<span class="dv">0</span>:<span class="dv">587</span>, <span class="dv">948</span>:<span class="dv">1210</span>])</span>
@@ -355,37 +355,135 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>(1)번은 0점, (2)-(3)을 모두 맞출경우 60점, (2)-(4)를 모두 맞출경우 120점</p>
 </blockquote>
 <p><code>(1)</code> 규빈과 다호가 2층 높이의 탑을 먼저 쌓는 내기를 하였다고 하자. 탑을 쌓을수 있는 기회는 2회 준다. 이 내기는 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라. (둘이 동시에 탑을 쌓을경우 무승부로 판단한다.)</p>
-<p><strong>힌트:</strong> 시뮬레이션 결과는 아래와 같다. 따라서 규빈이 유리하다.</p>
-<div id="538815cd" class="cell" data-execution_count="458">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘이 동시에 성공)'</span>: <span class="dv">25063</span>, <span class="st">'다호승'</span>: <span class="dv">24845</span>, <span class="st">'규빈승'</span>: <span class="dv">50092</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="458">
-<pre><code>{'무승부 (둘이 동시에 성공)': 25063, '다호승': 24845, '규빈승': 50092}</code></pre>
+<p><code>(풀이)</code></p>
+<div id="dafa64f5-411d-47f4-9847-5538c8bd1f11" class="cell" data-tags="[]" data-execution_count="475">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_tower(max_time, end_condition):    </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    guebin <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    daho <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(max_time): <span class="co"># max_time 동안 게임을 진행 </span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">#--# 블록을 쌓음 </span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.random.rand() <span class="op">&lt;</span> <span class="fl">0.5</span>:  <span class="co"># 규빈이 탑 쌓다가 실수로 무너짐</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>            guebin <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>            daho <span class="op">=</span> daho <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: <span class="co"># 규빈이 탑을 잘 쌓음 </span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>            guebin <span class="op">=</span> guebin <span class="op">+</span> <span class="dv">2</span>  </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>            daho <span class="op">=</span> daho <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">#--# 승패를 체크</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (guebin <span class="op">&gt;=</span> end_condition) <span class="kw">and</span> (daho <span class="op">&gt;=</span> end_condition):</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"무승부 (둘이 동시에 성공)"</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span> <span class="co"># 규빈,다호의 성공으로 게임 종료</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> (guebin <span class="op">&gt;=</span> end_condition) <span class="kw">and</span> (daho <span class="op">&lt;</span> end_condition):</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"규빈승"</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span> <span class="co"># 규빈의 성공으로 게임 종료 </span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> (guebin <span class="op">&lt;</span> end_condition) <span class="kw">and</span> (daho <span class="op">&gt;=</span> end_condition):</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"다호승"</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span> <span class="co"># 다호의 성공으로 게임 종료 </span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"무승부 (둘다 쌓지 못함)"</span> <span class="co"># 둘다 max_time동안 탑을 쌓지 못함. </span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="50eaad59-221c-40a1-9fa7-3485a7d7c702" class="cell" data-tags="[]" data-execution_count="476">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> [build_tower(max_time<span class="op">=</span><span class="dv">2</span>,end_condition<span class="op">=</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>)]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>{s:results.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(results)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="476">
+<pre><code>{'규빈승': 499, '무승부 (둘이 동시에 성공)': 266, '다호승': 235}</code></pre>
 </div>
 </div>
+<p>규빈이 유리하다.</p>
 <p><code>(2)</code> 규빈과 다호가 10층 높이의 탑을 먼저 쌓는 내기를 하였다고 하자. 탑을 쌓을수 있는 기회는 10회 준다. 이 내기는 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라. (둘이 동시에 탑을 쌓을경우 무승부로 판단한다.)</p>
-<p><strong>힌트</strong>: 시뮬레이션 결과는 아래와 같다. 따라서 다호가 유리하다.</p>
-<div id="b8ad1483" class="cell" data-execution_count="459">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘이 동시에 성공)'</span>: <span class="dv">1580</span>, <span class="st">'다호승'</span>: <span class="dv">89045</span>, <span class="st">'규빈승'</span>: <span class="dv">9375</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="459">
-<pre><code>{'무승부 (둘이 동시에 성공)': 1580, '다호승': 89045, '규빈승': 9375}</code></pre>
+<p><code>(풀이)</code></p>
+<div id="f3e29eac-de8d-4ab1-a616-3f8c4abded60" class="cell" data-tags="[]" data-execution_count="477">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> [build_tower(max_time<span class="op">=</span><span class="dv">10</span>,end_condition<span class="op">=</span><span class="dv">10</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>)]</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>{s:results.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(results)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="477">
+<pre><code>{'규빈승': 105, '무승부 (둘이 동시에 성공)': 18, '다호승': 877}</code></pre>
 </div>
 </div>
+<p>다호가 유리하다.</p>
 <p><code>(3)</code> 규빈은 (2)의 게임을 반복하다가 본인이 불리하다는 사실을 알고 분노했다. 흑화한 규빈은 매번 50%의 확률로 다호의 탑을 공격하기로 하였다. 공격 성공률은 60% 이며 공격이 성공시 다호의 탑은 모두 무너진다. (단, 공격시 규빈은 탑을 쌓을 수 없다) 규빈과 다호에게 탑을 쌓거나 상대방의 탑을 공격할 기회를 20회 준다고 가정하자. 이 내기는 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라. (둘이 동시에 탑을 쌓거나 둘 모두 탑을 쌓지 못할 경우 무승부로 판단한다.)</p>
-<p><strong>힌트</strong>: 시뮬레이션 결과는 아래와 같다. 유불리가 비슷하다.</p>
-<div id="8e7f00a7" class="cell" data-execution_count="460">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘이 동시에 성공)'</span>: <span class="dv">133</span>, <span class="st">'무승부 (둘다 쌓지 못함)'</span>: <span class="dv">79385</span>, <span class="st">'다호승'</span>: <span class="dv">10165</span>, <span class="st">'규빈승'</span>: <span class="dv">10317</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="460">
-<pre><code>{'무승부 (둘이 동시에 성공)': 133, '무승부 (둘다 쌓지 못함)': 79385, '다호승': 10165, '규빈승': 10317}</code></pre>
+<p><code>(풀이)</code></p>
+<div id="a541af8b-479a-4c3d-ac33-4aed1020900b" class="cell" data-tags="[]" data-execution_count="478">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_tower3(max_time, end_condition):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    guebin <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    daho <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(max_time): <span class="co"># max_time 동안 게임을 진행 </span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">#--# 블록을 쌓음         </span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.random.rand() <span class="op">&lt;</span> <span class="fl">0.5</span>: <span class="co"># 규빈이 공격하기로 마음먹음</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> np.random.rand() <span class="op">&lt;</span> <span class="fl">0.6</span>: <span class="co"># 공격성공 </span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>                daho <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>: <span class="co"># 공격실패 </span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                daho <span class="op">=</span> daho <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: <span class="co"># 규빈이 공격안하고 탑 쌓기로 마음먹음 </span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> np.random.rand() <span class="op">&lt;</span> <span class="fl">0.5</span>: <span class="co"># 규빈이 탑 쌓다가 실수로 무너짐</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>                guebin <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>                daho <span class="op">=</span> daho <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>: <span class="co"># 규빈이 탑을 잘 쌓음 </span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                guebin <span class="op">=</span> guebin <span class="op">+</span> <span class="dv">2</span>  </span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                daho <span class="op">=</span> daho <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">#--# 승패를 체크</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (guebin <span class="op">&gt;=</span> end_condition) <span class="kw">and</span> (daho <span class="op">&gt;=</span> end_condition):</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"무승부 (둘이 동시에 성공)"</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> (guebin <span class="op">&gt;=</span> end_condition) <span class="kw">and</span> (daho <span class="op">&lt;</span> end_condition):</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"규빈승"</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> (guebin <span class="op">&lt;</span> end_condition) <span class="kw">and</span> (daho <span class="op">&gt;=</span> end_condition):</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"다호승"</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"무승부 (둘다 쌓지 못함)"</span></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3041284b-ab76-4d30-888c-9118cb1fd852" class="cell" data-tags="[]" data-execution_count="479">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> [build_tower3(max_time<span class="op">=</span><span class="dv">20</span>,end_condition<span class="op">=</span><span class="dv">10</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>{s:results.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(results)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="479">
+<pre><code>{'무승부 (둘다 쌓지 못함)': 7974, '무승부 (둘이 동시에 성공)': 13, '다호승': 1014, '규빈승': 999}</code></pre>
 </div>
 </div>
+<p>규빈과 다호가 비슷하게 유리하다.</p>
 <p><code>(4)</code> 규빈은 공격을 하는사이에 본인의 탑을 쌓지 못하게 되자 전략을 바꾸었다. 다호의 탑을 관찰하며, 다호의 탑이 5층 이상인 경우에만 공격하기로 하였다. 이 경우 규빈과 다호에게 탑을 쌓거나 상대방의 탑을 공격할 기회를 20회 준다고 가정하면 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라. (둘이 동시에 탑을 쌓거나 둘 모두 탑을 쌓지 못할 경우 무승부로 판단한다.)</p>
-<p><strong>힌트</strong>: 시뮬레이션 결과는 아래와 같다. 규빈이 유리하다.</p>
-<div id="328c488e" class="cell" data-execution_count="461">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">'무승부 (둘다 쌓지 못함)'</span>: <span class="dv">79324</span>, <span class="st">'다호승'</span>: <span class="dv">1950</span>, <span class="st">'규빈승'</span>: <span class="dv">18726</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="461">
-<pre><code>{'무승부 (둘다 쌓지 못함)': 79324, '다호승': 1950, '규빈승': 18726}</code></pre>
+<p><code>(풀이)</code></p>
+<div id="605f9108-9660-4ef4-8986-1eb8c24934f6" class="cell" data-tags="[]" data-execution_count="480">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_tower4(max_time, end_condition):</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    guebin <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    daho <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(max_time): <span class="co"># max_time 동안 게임을 진행 </span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">#--# 블록을 쌓음           </span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> daho <span class="op">&gt;=</span> <span class="dv">5</span>: <span class="co"># 다호의 탑이 5층이상이 되어 규빈이 공격하기로 마음먹음</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> np.random.rand() <span class="op">&lt;</span> <span class="fl">0.6</span>: <span class="co"># 공격성공 </span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>                daho <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>: <span class="co"># 공격실패 </span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                daho <span class="op">=</span> daho <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: <span class="co"># 규빈이 공격안하고 탑 쌓기로 마음먹음 </span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> np.random.rand() <span class="op">&lt;</span> <span class="fl">0.5</span>: <span class="co"># 규빈이 탑 쌓다가 실수로 무너짐</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>                guebin <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>                daho <span class="op">=</span> daho <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>: <span class="co"># 규빈이 탑을 잘 쌓음 </span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>                guebin <span class="op">=</span> guebin <span class="op">+</span> <span class="dv">2</span>  </span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>                daho <span class="op">=</span> daho <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">#--# 승패를 체크</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (guebin <span class="op">&gt;=</span> end_condition) <span class="kw">and</span> (daho <span class="op">&gt;=</span> end_condition):</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"무승부 (둘이 동시에 성공)"</span></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> (guebin <span class="op">&gt;=</span> end_condition) <span class="kw">and</span> (daho <span class="op">&lt;</span> end_condition):</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"규빈승"</span></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> (guebin <span class="op">&lt;</span> end_condition) <span class="kw">and</span> (daho <span class="op">&gt;=</span> end_condition):</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"다호승"</span></span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>            result <span class="op">=</span> <span class="st">"무승부 (둘다 쌓지 못함)"</span></span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="60766310-0626-4af9-b7ce-7948aa33e27d" class="cell" data-tags="[]" data-execution_count="481">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> [build_tower4(max_time<span class="op">=</span><span class="dv">20</span>,end_condition<span class="op">=</span><span class="dv">10</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)]</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>{s:results.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(results)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="481">
+<pre><code>{'무승부 (둘다 쌓지 못함)': 7976, '규빈승': 1829, '다호승': 195}</code></pre>
 </div>
 </div>
+<p>규빈이 유리하다.</p>
 
 
 </section>
