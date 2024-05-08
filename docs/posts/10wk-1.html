@@ -235,12 +235,13 @@ Caution
 </div>
 <p><code>(1)</code> xtrain, xtest를 합쳐서 shape이 (70000,28,28) 인 numpy array를 생성하고 이것을 <code>X</code>에 저장하라.</p>
 <p><code>(2)</code> 아래의 코드에 43052대신 본인 학번 끝의 5자리를 입력하여 (3,3) 크기의 난수를 생성하라.</p>
-<div id="543eb619-bcf3-4bb9-87f5-9fa9e2b5279e" class="cell" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.random.binomial(n<span class="op">=</span><span class="dv">1</span>,p<span class="op">=</span><span class="fl">0.5</span>,size<span class="op">=</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>array([[0, 0, 0],
-       [1, 0, 1],
-       [0, 0, 1]])</code></pre>
+<div id="543eb619-bcf3-4bb9-87f5-9fa9e2b5279e" class="cell" data-tags="[]" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">43052</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>np.random.binomial(n<span class="op">=</span><span class="dv">1</span>,p<span class="op">=</span><span class="fl">0.5</span>,size<span class="op">=</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>array([[1, 0, 1],
+       [1, 0, 0],
+       [1, 1, 1]])</code></pre>
 </div>
 </div>
 <p>위에서 생성된 난수를 저장된 <code>X</code>의 평균이미지를 concat하여 시각화하라.</p>
