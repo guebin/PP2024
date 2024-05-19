@@ -180,10 +180,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a.-bobcount-의-다른구현" id="toc-a.-bobcount-의-다른구현" class="nav-link" data-scroll-target="#a.-bobcount-의-다른구현">A. BobCount 의 다른구현</a></li>
   <li><a href="#b.-self-인스턴스의-태명" id="toc-b.-self-인스턴스의-태명" class="nav-link" data-scroll-target="#b.-self-인스턴스의-태명">B. <code>self</code> = 인스턴스의 태명!</a></li>
   </ul></li>
-  <li><a href="#init__의-이해" id="toc-init__의-이해" class="nav-link" data-scroll-target="#init__의-이해">7. <code>__init__</code>의 이해</a>
+  <li><a href="#init__" id="toc-init__" class="nav-link" data-scroll-target="#init__">7. <code>__init__</code></a>
   <ul class="collapse">
   <li><a href="#a.-모티브" id="toc-a.-모티브" class="nav-link" data-scroll-target="#a.-모티브">A. 모티브</a></li>
-  <li><a href="#b.-__init__" id="toc-b.-__init__" class="nav-link" data-scroll-target="#b.-__init__">B. <code>__init__</code></a></li>
+  <li><a href="#b.-__init__-의-이해" id="toc-b.-__init__-의-이해" class="nav-link" data-scroll-target="#b.-__init__-의-이해">B. <code>__init__</code> 의 이해</a></li>
   <li><a href="#c.-클래스-디자인-패턴" id="toc-c.-클래스-디자인-패턴" class="nav-link" data-scroll-target="#c.-클래스-디자인-패턴">C. 클래스 디자인 패턴</a></li>
   <li><a href="#d.-클래스의-디자인-패턴에-따른-예제풀이" id="toc-d.-클래스의-디자인-패턴에-따른-예제풀이" class="nav-link" data-scroll-target="#d.-클래스의-디자인-패턴에-따른-예제풀이">D. 클래스의 디자인 패턴에 따른 예제풀이</a></li>
   </ul></li>
@@ -978,8 +978,8 @@ GPT의 도움을 받아 초기코드를 작성하더라도,
 <p><code>-</code> 요약: <code>self</code>의 의미는 (후에 만들어질) 인스턴스의 이름이다. (즉 <code>self</code>는 인스턴스의 태명같은것임)</p>
 </section>
 </section>
-<section id="init__의-이해" class="level1">
-<h1>7. <code>__init__</code>의 이해</h1>
+<section id="init__" class="level1">
+<h1>7. <code>__init__</code></h1>
 <section id="a.-모티브" class="level2">
 <h2 class="anchored" data-anchor-id="a.-모티브">A. 모티브</h2>
 <p><code>-</code> 아래의 예시를 다시 관찰하자.</p>
@@ -1013,8 +1013,8 @@ GPT의 도움을 받아 초기코드를 작성하더라도,
 <span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>guebin <span class="op">=</span> RPS([<span class="st">'가위'</span>,<span class="st">'바위'</span>]) <span class="co"># 가위와 바위를 낼 수 있는 플레이어 guebin를 생성해줘</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>-</code> 클래스에서 인스턴스를 만드는 시점에서, 내가 사용할 일련의 변수들을 자동으로 선언했으면 좋겠다.</p>
 </section>
-<section id="b.-__init__" class="level2">
-<h2 class="anchored" data-anchor-id="b.-__init__">B. <code>__init__</code></h2>
+<section id="b.-__init__-의-이해" class="level2">
+<h2 class="anchored" data-anchor-id="b.-__init__-의-이해">B. <code>__init__</code> 의 이해</h2>
 <p><code>-</code> 아래의 코드를 사용하자.</p>
 <div id="bc643746-9d1a-4f7e-bf09-361062963de9" class="cell" data-tags="[]" data-execution_count="215">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> RPS:</span>
@@ -1037,6 +1037,9 @@ GPT의 도움을 받아 초기코드를 작성하더라도,
 <pre><code>['가위', '바위', '보']</code></pre>
 </div>
 </div>
+<blockquote class="blockquote">
+<p><code>__init__()</code> 은 “클래스 –&gt; 인스턴스”의 과정에서 자동으로 실행되는 어떠한 코드들의 묶음이다.</p>
+</blockquote>
 </section>
 <section id="c.-클래스-디자인-패턴" class="level2">
 <h2 class="anchored" data-anchor-id="c.-클래스-디자인-패턴">C. 클래스 디자인 패턴</h2>
