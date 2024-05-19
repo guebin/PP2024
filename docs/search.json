@@ -53,7 +53,7 @@
     "href": "posts/11wk-2.html#a.-클래스-선언",
     "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
     "section": "A. 클래스 선언",
-    "text": "A. 클래스 선언\n- 클래스를 선언\n\nclass BobRoss: \n    text = '' \n    imgurl = \"https://github.com/guebin/PP2024/blob/main/posts/easy.jpeg?raw=true\"\n    end = '어때요, 참 쉽죠??'\n    def easy(self):\n        print(self.text)\n        display(PIL.Image.open(PIL.Image.io.BytesIO(requests.get(self.imgurl).content)))\n        print(self.end)\n\n\n규칙1: 메소드(=class안에서 정의되는 함수)의 첫번째 입력은 무조건(?) self\n규칙2: 메소드에서 class안에서 정의된 변수들 (start,url,end) 를 사용하려면 무조건(?) self.변수이름과 같은 형식으로 사용할 것.\n\n\n참고1: 사실 규칙1에서 무조건 self를 써야하는건 아님. 그런데 그냥 무조건 쓴다고 생각하자.\n\n\n참고2: 사실 class안에서 정의된 변수를 쓸때 무조건 self.변수이름와 같은 형식으로 쓰는건 아님.BobRoss.start, BobRoss.url, BobRoss.end와 같이 self 대신 클래스이름을 쓰는 경우도 있음. 그렇지만 여기선 그냥 무조건 쓴다고 생각하자.\n\n\nbob = BobRoss()\n\n\nbob.easy()\n\n\n어때요, 참 쉽죠??"
+    "text": "A. 클래스 선언\n- 클래스를 선언\n\nclass BobRoss: \n    text = 'asdf' \n    imgurl = \"https://github.com/guebin/PP2024/blob/main/posts/easy.jpeg?raw=true\"\n    end = '&lt;h5&gt; 어때요, 참 쉽죠??'\n    def easy(self):\n        print(self.text)\n        display(PIL.Image.open(PIL.Image.io.BytesIO(requests.get(self.imgurl).content)))\n        display(HTML(self.end))\n\n\n규칙1: 메소드(=class안에서 정의되는 함수)의 첫번째 입력은 무조건(?) self\n규칙2: 메소드에서 class안에서 정의된 변수들 (start,url,end) 를 사용하려면 무조건(?) self.변수이름과 같은 형식으로 사용할 것.\n\n\n참고1: 사실 규칙1에서 무조건 self를 써야하는건 아님. 그런데 그냥 무조건 쓴다고 생각하자.\n\n\n참고2: 사실 class안에서 정의된 변수를 쓸때 무조건 self.변수이름와 같은 형식으로 쓰는건 아님.BobRoss.text, BobRoss.url, BobRoss.end와 같이 self 대신 클래스이름을 쓰는 경우도 있음. 그렇지만 여기선 그냥 무조건 쓴다고 생각하자.\n\n\nbob = BobRoss()\n\n\nbob.easy()\n\nasdf\n\n\n\n\n\n\n\n\n\n 어때요, 참 쉽죠??"
   },
   {
     "objectID": "posts/11wk-2.html#b.-클래스의-기본성능-인스턴스의-독립적관리",
@@ -138,6 +138,90 @@
     "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
     "section": "E. 깨달음4",
     "text": "E. 깨달음4\n- a.f()는 f(a)로 해석가능하다고 하였다. 이 해석에 따르면 메소드의 첫번째 입력은 메소드가 소속된 인스턴스라고 해석할 수 있다.\n- 동일한 논리로 아래의 코드는 bob.easy()의 입력에서 bob을 넣는다는 의미이다.\n\nbob.easy()\n\n\n어때요, 참 쉽죠??\n\n\n\n\n\n\n\n\n\n- 그래서 메소드의 첫 입력은 항상 self 인것임."
+  },
+  {
+    "objectID": "posts/11wk-2.html#a.-motive",
+    "href": "posts/11wk-2.html#a.-motive",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "A. motive",
+    "text": "A. motive\n- 아래와 같은 클래스를 관찰하자.\n\nclass UpJump:\n    def __init__(self):\n        self.reset()\n    def up(self):\n        self.a = self.a + 1  \n        print(\"a의 값이 1 증가합니다.\")\n    def jump(self,jump_size):\n        self.a = self.a + jump_size      \n        print(\"a의 값이 {} 증가합니다.\".format(jump_size))\n    def show(self):\n        print('a={}'.format(self.a))\n    def reset(self):\n        self.a = 0\n        print(\"a의 값이 0으로 초기화 되었습니다.\")\n\n\nupjump = UpJump()\n\na의 값이 0으로 초기화 되었습니다.\n\n\n\nupjump?\n\n\nType:        UpJump\nString form: &lt;__main__.UpJump object at 0x7049f859d310&gt;\nDocstring:   &lt;no docstring&gt;\n\n\n\n\nupjump.up()\n\na의 값이 1 증가합니다.\n\n\n\nupjump.jump(-2)\n\na의 값이 -2 증가합니다.\n\n\n\nupjump.show()\n\na=-1\n\n\n\nupjump.reset()\n\na의 값이 0으로 초기화 되었습니다.\n\n\n- 모티브: 생각해보니까 show와 print의 기능이 거의 비슷함 \\(\\to\\) print(upjump)를 하면 upjump.show()와 동일한 효과를 내도록 만들수 있을까?\n- 말도 안되는 소리 같음. 왜?\n\n이유1: print는 파이썬 내장기능이다. 내장기능을 우리가 마음대로 커스터마이징해서 쓰기는 어려울 것 같다.\n이유2: 이유1이 해결된다고 쳐도 문제이다. 그럼 지금까지 우리가 써왔던 수많은 print()의 결과는 어떻게 되는가?\n\n- 그런데 upjump의 자료형(UpJump자료형)에 해당하는 오브젝트들에 한정하여 print를 수정하는 방법이 가능하다면? (그럼 다른 오브젝트들은 수정된 print에 영향을 받지 않음)"
+  },
+  {
+    "objectID": "posts/11wk-2.html#b.-관찰1",
+    "href": "posts/11wk-2.html#b.-관찰1",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "B. 관찰1",
+    "text": "B. 관찰1\n- 현재 print(upjump)의 결과는 아래와 같다.\n\nprint(upjump)\n\n&lt;__main__.UpJump object at 0x7049f859d310&gt;\n\n\n\nupjump는 UpJump 클래스에서 만들어진 인스턴스이며, upjump가 저장된 메모리주소는 0x7f02a149f0a0 라는 의미"
+  },
+  {
+    "objectID": "posts/11wk-2.html#c.-관찰2",
+    "href": "posts/11wk-2.html#c.-관찰2",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "C. 관찰2",
+    "text": "C. 관찰2\n- upjump 에는 __str__()이라는 숨겨진 메소드가 있다.\n\n결국 print(upjump) 는 print(upjump.__str__()) 와 같은 역할"
+  },
+  {
+    "objectID": "posts/11wk-2.html#d.-해킹",
+    "href": "posts/11wk-2.html#d.-해킹",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "D. 해킹?",
+    "text": "D. 해킹?\n- upjump.__str__()의 기능을 재정의하면 print(upjump)의 결과도 바뀌지 않을까??\n예비학습: 함수 덮어씌우기 (재정의하기)\n\ndef f():\n    print('asdf')\n\n\nf()\n\nasdf\n\n\n\ndef f():\n    print('guebin hahaha')\n\n\nf()\n\nguebin hahaha\n\n\n이런식으로 함수가 이미 정의되어 있더라도, 내가 나중에 덮어씌우면 그 함수의 기능을 다시 정의한다.\n예비학습 끝\n- 이제 .__str__()의 기능을 재정의 하여 보자.\n\nclass UpJump:\n    def __init__(self):\n        self.reset()\n    def up(self):\n        self.a = self.a + 1  \n        print(\"a의 값이 1 증가합니다.\")\n    def jump(self,jump_size):\n        self.a = self.a + jump_size      \n        print(\"a의 값이 {} 증가합니다.\".format(jump_size))\n    def __str__(self):\n        return 'a={}'.format(self.a)\n    def reset(self):\n        self.a = 0\n        print(\"a의 값이 0으로 초기화 되었습니다.\")\n\n\nupjump = UpJump()\n\na의 값이 0으로 초기화 되었습니다.\n\n\n\nupjump.__str__()\n\n'a=0'\n\n\n\nprint(upjump.__str__())\n\na=0\n\n\n\nprint(upjump) ## 성공!\n\na=0"
+  },
+  {
+    "objectID": "posts/11wk-2.html#e.-지금까지의-print-다시-확인",
+    "href": "posts/11wk-2.html#e.-지금까지의-print-다시-확인",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "E. 지금까지의 print 다시 확인",
+    "text": "E. 지금까지의 print 다시 확인\n- 예시1\n\na=[1,2,3]\nprint(a)\n\n[1, 2, 3]\n\n\n\na.__str__()\n\n'[1, 2, 3]'\n\n\n\nprint(a.__str__())\n\n[1, 2, 3]\n\n\n- 예시2\n\na={1,2,3}\nprint(a)\n\n{1, 2, 3}\n\n\n\na.__str__()\n\n'{1, 2, 3}'\n\n\n\nprint(a.__str__())\n\n{1, 2, 3}\n\n\n- 예시3\n\na= np.arange(4).reshape(2,2)\nprint(a)\n\n[[0 1]\n [2 3]]\n\n\n\na.__str__() \n\n'[[0 1]\\n [2 3]]'\n\n\n\nprint(a.__str__())\n\n[[0 1]\n [2 3]]\n\n\n\n파이썬의 비밀: print(a)는 사실 print(a.__str__()) 의 축약버전이었다.\n\n직관: 클래스에서 정의된 숨겨진 메소드 __????__ 들이 사실 파이썬의 비밀 덩어리였음!!!"
+  },
+  {
+    "objectID": "posts/11wk-2.html#a.-motive-1",
+    "href": "posts/11wk-2.html#a.-motive-1",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "A. motive",
+    "text": "A. motive\n\nrepr은 representation의 약자이다.\n\n- 모티브: 생각해보니까 print를 해서 우리가 원하는 정보를 확인하는건 아니었음\n\na=[1,2,3]\n\n\na\n\n[1, 2, 3]\n\n\n\nprint(a)\n\n[1, 2, 3]\n\n\n- 의문: a + 엔터는 print(a) + 엔터와 같은 효과인가?\n- 반례\n\na= np.arange(4).reshape(2,2)\na\n\narray([[0, 1],\n       [2, 3]])\n\n\n\nprint(a)\n\n[[0 1]\n [2 3]]"
+  },
+  {
+    "objectID": "posts/11wk-2.html#b.-__repr__-의-역할",
+    "href": "posts/11wk-2.html#b.-__repr__-의-역할",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "B. __repr__ 의 역할",
+    "text": "B. __repr__ 의 역할\n- a + 엔터와 print(a) + 엔터가 다른 경우도 있다. \\(\\to\\) 추측: 서로 다른 숨겨진 기능이 있다! \\(\\to\\) 결론: 추측이 맞다. 그 기능은 __repr__에 저장되어있음.\n\na.__str__()\n\n'[[0 1]\\n [2 3]]'\n\n\n\na.__repr__() # 이렇게 조잡하다고? ㅋㅋㅋ\n\n'array([[0, 1],\\n       [2, 3]])'\n\n\n\nprint(a.__str__()) # print(a) + 엔터와 같은 효과\n\n[[0 1]\n [2 3]]\n\n\n\nprint(a.__repr__()) # a + 엔터와 같은 효과\n\narray([[0, 1],\n       [2, 3]])"
+  },
+  {
+    "objectID": "posts/11wk-2.html#c.-연습",
+    "href": "posts/11wk-2.html#c.-연습",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "C. 연습",
+    "text": "C. 연습\n\nclass UpJump:\n    def __init__(self):\n        self.reset()\n    def up(self):\n        self.a = self.a + 1  \n        print(\"a의 값이 1 증가합니다.\")\n    def jump(self,jump_size):\n        self.a = self.a + jump_size      \n        print(f\"a의 값이 {self.jump_size} 증가합니다.\")\n    def __str__(self):\n        return f\"a의 값은 {self.a}입니다.\"\n    def reset(self):\n        self.a = 0\n        print(\"a의 값이 0으로 초기화 되었습니다.\")\n    def __repr__(self):\n        return f\"a={self.a}\"\n    \n\n\nupjump = UpJump()\n\na의 값이 0으로 초기화 되었습니다.\n\n\n\nprint(upjump)\n\na의 값은 0입니다.\n\n\n\nupjump\n\na=0"
+  },
+  {
+    "objectID": "posts/11wk-2.html#d.-__repr__-__str__-의-관계",
+    "href": "posts/11wk-2.html#d.-__repr__-__str__-의-관계",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "D. __repr__(), __str__() 의 관계",
+    "text": "D. __repr__(), __str__() 의 관계\n- 만약에 __repr__() 만 정의되었고 __str__()이 정의되지 않았다면 __repr__()의 내용이 __str__()의 내용을 대신한다. (하지만 역은 성립하지 않음)\n\nclass UpJump:\n    def __init__(self):\n        self.reset()\n    def up(self):\n        self.a = self.a + 1  \n        print(\"a의 값이 1 증가합니다.\")\n    def jump(self,jump_size):\n        self.a = self.a + jump_size      \n        print(f\"a의 값이 {jump_size} 증가합니다.\")\n    def reset(self):\n        self.a = 0\n        print(\"a의 값이 0으로 초기화 되었습니다.\")\n    def __repr__(self):\n        return 'a={}'.format(self.a)    \n\n\nupjump = UpJump()\n\na의 값이 0으로 초기화 되었습니다.\n\n\n\nprint(upjump)\n\na=0\n\n\n\nupjump\n\na=0\n\n\n- 역은 성립안함! 즉 __str__() 만 정의되었고 __repr__()이 정의되지 않은경우에는 __str__()의 내용이 __repr__()의 내용을 대신할 수 없다.\n\nclass UpJump:\n    def __init__(self):\n        self.reset()\n    def up(self):\n        self.a = self.a + 1  \n        print(\"a의 값이 1 증가합니다.\")\n    def jump(self,jump_size):\n        self.a = self.a + jump_size      \n        print(f\"a의 값이 {jump_size} 증가합니다.\")\n    def __str__(self):\n        return \"a의 값은 {self.a}입니다.\"\n    def reset(self):\n        self.a = 0\n        print(\"a의 값이 0으로 초기화 되었습니다.\")\n\n\nupjump = UpJump()\n\na의 값이 0으로 초기화 되었습니다.\n\n\n\nprint(upjump)\n\na의 값은 {self.a}입니다.\n\n\n\nupjump\n\n&lt;__main__.UpJump at 0x7049f85b70d0&gt;\n\n\n\n파이썬의 비밀4: 대화형콘솔에서 a+엔터하여 나오는 출력결과는 print(a.__repr__()) 이라고 생각할 수 있다. (생각할수 있다? 아닐 수도 있다는 거야?)"
+  },
+  {
+    "objectID": "posts/11wk-2.html#a.-motive-2",
+    "href": "posts/11wk-2.html#a.-motive-2",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "A. motive",
+    "text": "A. motive\n- 모티브: 요즘에는 IDE의 발전에 따라서 오브젝트이름 + 엔터 를 입력할때 나오는 출력의 형태도 다양해지고 있음.\n\ndf = pd.DataFrame({'a':[1,2,3],'b':[2,3,4]})\ndf\n\n\n\n\n\n\n\n\na\nb\n\n\n\n\n0\n1\n2\n\n\n1\n2\n3\n\n\n2\n3\n4\n\n\n\n\n\n\n\n\n예쁘게 나온다… 이건 근데 문자열따위로 구현할 수 있는 출력 기능이 아닌것 같은데?\n\n\nprint(df.__repr__())\n\n   a  b\n0  1  2\n1  2  3\n2  3  4\n\n\n\nprint(df.__str__())\n\n   a  b\n0  1  2\n1  2  3\n2  3  4"
+  },
+  {
+    "objectID": "posts/11wk-2.html#b.-_repr_html_-의-역할",
+    "href": "posts/11wk-2.html#b.-_repr_html_-의-역할",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "B. _repr_html_ 의 역할",
+    "text": "B. _repr_html_ 의 역할\n\ndf._repr_html_()\n\n'&lt;div&gt;\\n&lt;style scoped&gt;\\n    .dataframe tbody tr th:only-of-type {\\n        vertical-align: middle;\\n    }\\n\\n    .dataframe tbody tr th {\\n        vertical-align: top;\\n    }\\n\\n    .dataframe thead th {\\n        text-align: right;\\n    }\\n&lt;/style&gt;\\n&lt;table border=\"1\" class=\"dataframe\"&gt;\\n  &lt;thead&gt;\\n    &lt;tr style=\"text-align: right;\"&gt;\\n      &lt;th&gt;&lt;/th&gt;\\n      &lt;th&gt;a&lt;/th&gt;\\n      &lt;th&gt;b&lt;/th&gt;\\n    &lt;/tr&gt;\\n  &lt;/thead&gt;\\n  &lt;tbody&gt;\\n    &lt;tr&gt;\\n      &lt;th&gt;0&lt;/th&gt;\\n      &lt;td&gt;1&lt;/td&gt;\\n      &lt;td&gt;2&lt;/td&gt;\\n    &lt;/tr&gt;\\n    &lt;tr&gt;\\n      &lt;th&gt;1&lt;/th&gt;\\n      &lt;td&gt;2&lt;/td&gt;\\n      &lt;td&gt;3&lt;/td&gt;\\n    &lt;/tr&gt;\\n    &lt;tr&gt;\\n      &lt;th&gt;2&lt;/th&gt;\\n      &lt;td&gt;3&lt;/td&gt;\\n      &lt;td&gt;4&lt;/td&gt;\\n    &lt;/tr&gt;\\n  &lt;/tbody&gt;\\n&lt;/table&gt;\\n&lt;/div&gt;'\n\n\n\nHTML(df._repr_html_())\n\n\n\n\n\n\n\n\na\nb\n\n\n\n\n0\n1\n2\n\n\n1\n2\n3\n\n\n2\n3\n4\n\n\n\n\n\n\n\n참고: 그럼 df.__repr__()의 역할은 뭐야?\n\n대화형콘솔중 HTML 출력을 지원하면 오브젝트이름+엔터는 HTML(df._repr_html_()) 의 효과\n대화형콘솔중 HTML 출력을 지원하지 않으면 오브젝트이름+엔터는 print(df.__str__()) 의 효과\n\n\n\n\n그림1: HTML을 지원하는 않는 대화형 콘솔에서의 df출력예시"
+  },
+  {
+    "objectID": "posts/11wk-2.html#c.-_repr_html_-__repr__-__str__-의-관계",
+    "href": "posts/11wk-2.html#c.-_repr_html_-__repr__-__str__-의-관계",
+    "title": "11wk-2: 클래스 (1) – 클래스의 기본사용",
+    "section": "C. _repr_html_(), __repr__(), __str__() 의 관계",
+    "text": "C. _repr_html_(), __repr__(), __str__() 의 관계\n- _repr_html_() 는 기본적으로 __repr__(), __str__() 와는 아무런 관계가 없다.\n\nclass UpJump:\n    def __init__(self):\n        self.reset()\n    def up(self):\n        self.a = self.a + 1  \n        print(\"a의 값이 1 증가합니다.\")\n    def jump(self,jump_size):\n        self.a = self.a + jump_size      \n        print(\"a의 값이 {} 증가합니다.\".format(jump_size))\n    # def __str__(self):\n    #     return 'a의 값은 {}입니다.'.format(self.a)\n    def reset(self):\n        self.a = 0\n        print(\"a의 값이 0으로 초기화 되었습니다.\")\n    # def __repr__(self):\n    #     return 'a={}'.format(self.a)    \n    def _repr_html_(self):\n        return 'a={}'.format(self.a)            \n\n\nupjump = UpJump()\n\na의 값이 0으로 초기화 되었습니다.\n\n\n\nupjump\n\na=0\n\n\n\nprint(upjump)\n\n&lt;__main__.UpJump object at 0x7049f85a9590&gt;\n\n\n\n꿀팁: __repr__() 과 __str__() 을 재정의하지 않고 _repr_html_()만을 재정의하여 출력결과를 바꿀 수 있다.\n\n\n파이썬의 비밀: 대화형콘솔에서 a+엔터하여 나오는 출력결과는 print(a.__repr__()) 혹은 HTML(a._repr_html_()) 이다."
   },
   {
     "objectID": "posts/04wk-2.html#a.-사용자가-직접형태변환",

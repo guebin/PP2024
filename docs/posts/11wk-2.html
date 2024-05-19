@@ -59,7 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,6 +102,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -191,11 +194,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#d.-깨달음3" id="toc-d.-깨달음3" class="nav-link" data-scroll-target="#d.-깨달음3">D. 깨달음3</a></li>
   <li><a href="#e.-깨달음4" id="toc-e.-깨달음4" class="nav-link" data-scroll-target="#e.-깨달음4">E. 깨달음4</a></li>
   </ul></li>
+  <li><a href="#str__" id="toc-str__" class="nav-link" data-scroll-target="#str__">9. <code>__str__</code></a>
+  <ul class="collapse">
+  <li><a href="#a.-motive" id="toc-a.-motive" class="nav-link" data-scroll-target="#a.-motive">A. motive</a></li>
+  <li><a href="#b.-관찰1" id="toc-b.-관찰1" class="nav-link" data-scroll-target="#b.-관찰1">B. 관찰1</a></li>
+  <li><a href="#c.-관찰2" id="toc-c.-관찰2" class="nav-link" data-scroll-target="#c.-관찰2">C. 관찰2</a></li>
+  <li><a href="#d.-해킹" id="toc-d.-해킹" class="nav-link" data-scroll-target="#d.-해킹">D. 해킹?</a></li>
+  <li><a href="#e.-지금까지의-print-다시-확인" id="toc-e.-지금까지의-print-다시-확인" class="nav-link" data-scroll-target="#e.-지금까지의-print-다시-확인">E. 지금까지의 <strong><em>print</em></strong> 다시 확인</a></li>
+  </ul></li>
+  <li><a href="#repr__" id="toc-repr__" class="nav-link" data-scroll-target="#repr__">10. <code>__repr__</code></a>
+  <ul class="collapse">
+  <li><a href="#a.-motive-1" id="toc-a.-motive-1" class="nav-link" data-scroll-target="#a.-motive-1">A. motive</a></li>
+  <li><a href="#b.-__repr__-의-역할" id="toc-b.-__repr__-의-역할" class="nav-link" data-scroll-target="#b.-__repr__-의-역할">B. <code>__repr__</code> 의 역할</a></li>
+  <li><a href="#c.-연습" id="toc-c.-연습" class="nav-link" data-scroll-target="#c.-연습">C. 연습</a></li>
+  <li><a href="#d.-__repr__-__str__-의-관계" id="toc-d.-__repr__-__str__-의-관계" class="nav-link" data-scroll-target="#d.-__repr__-__str__-의-관계">D. <code>__repr__()</code>, <code>__str__()</code> 의 관계</a></li>
+  </ul></li>
+  <li><a href="#repr_html_" id="toc-repr_html_" class="nav-link" data-scroll-target="#repr_html_">11. <code>_repr_html_</code></a>
+  <ul class="collapse">
+  <li><a href="#a.-motive-2" id="toc-a.-motive-2" class="nav-link" data-scroll-target="#a.-motive-2">A. motive</a></li>
+  <li><a href="#b.-_repr_html_-의-역할" id="toc-b.-_repr_html_-의-역할" class="nav-link" data-scroll-target="#b.-_repr_html_-의-역할">B. <code>_repr_html_</code> 의 역할</a></li>
+  <li><a href="#c.-_repr_html_-__repr__-__str__-의-관계" id="toc-c.-_repr_html_-__repr__-__str__-의-관계" class="nav-link" data-scroll-target="#c.-_repr_html_-__repr__-__str__-의-관계">C. <code>_repr_html_()</code>, <code>__repr__()</code>, <code>__str__()</code> 의 관계</a></li>
+  </ul></li>
+  <li><a href="#연습문제들" id="toc-연습문제들" class="nav-link" data-scroll-target="#연습문제들">12. 연습문제들</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="11wk-2.out.ipynb" download="11wk-2.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -237,10 +262,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="imports" class="level1">
 <h1>2. Imports</h1>
-<div id="c1da9510-e3c7-4e0b-9312-3846f380ef7f" class="cell" data-tags="[]" data-execution_count="78">
+<div id="c1da9510-e3c7-4e0b-9312-3846f380ef7f" class="cell" data-tags="[]" data-execution_count="200">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> PIL.Image</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="밈meme" class="level1">
@@ -360,15 +388,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="a.-클래스-선언" class="level2">
 <h2 class="anchored" data-anchor-id="a.-클래스-선언">A. 클래스 선언</h2>
 <p><code>-</code> 클래스를 선언</p>
-<div id="3b888786-a4df-4c4f-aa30-079bef518430" class="cell" data-tags="[]" data-execution_count="24">
+<div id="3b888786-a4df-4c4f-aa30-079bef518430" class="cell" data-tags="[]">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BobRoss: </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> <span class="st">''</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> <span class="st">'asdf'</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    imgurl <span class="op">=</span> <span class="st">"https://github.com/guebin/PP2024/blob/main/posts/easy.jpeg?raw=true"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    end <span class="op">=</span> <span class="st">'어때요, 참 쉽죠??'</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    end <span class="op">=</span> <span class="st">'&lt;h5&gt; 어때요, 참 쉽죠??'</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> easy(<span class="va">self</span>):</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="va">self</span>.text)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        display(PIL.Image.<span class="bu">open</span>(PIL.Image.io.BytesIO(requests.get(<span class="va">self</span>.imgurl).content)))</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="va">self</span>.end)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        display(HTML(<span class="va">self</span>.end))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>규칙1: 메소드(=class안에서 정의되는 함수)의 첫번째 입력은 무조건(?) <code>self</code></li>
@@ -378,16 +406,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>참고1: 사실 규칙1에서 무조건 <code>self</code>를 써야하는건 아님. 그런데 그냥 무조건 쓴다고 생각하자.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>참고2: 사실 class안에서 정의된 변수를 쓸때 무조건 <code>self.변수이름</code>와 같은 형식으로 쓰는건 아님.<code>BobRoss.start</code>, <code>BobRoss.url</code>, <code>BobRoss.end</code>와 같이 self 대신 클래스이름을 쓰는 경우도 있음. 그렇지만 여기선 그냥 무조건 쓴다고 생각하자.</p>
+<p>참고2: 사실 class안에서 정의된 변수를 쓸때 무조건 <code>self.변수이름</code>와 같은 형식으로 쓰는건 아님.<code>BobRoss.text</code>, <code>BobRoss.url</code>, <code>BobRoss.end</code>와 같이 self 대신 클래스이름을 쓰는 경우도 있음. 그렇지만 여기선 그냥 무조건 쓴다고 생각하자.</p>
 </blockquote>
-<div id="6e102cec-f6e6-413f-ad04-3da9ad017172" class="cell" data-tags="[]" data-execution_count="25">
+<div id="6e102cec-f6e6-413f-ad04-3da9ad017172" class="cell" data-tags="[]" data-execution_count="145">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>bob <span class="op">=</span> BobRoss()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="941b34c2-167d-4421-9363-ea25411dc928" class="cell" data-tags="[]" data-execution_count="26">
+<div id="941b34c2-167d-4421-9363-ea25411dc928" class="cell" data-tags="[]" data-execution_count="146">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bob.easy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-어때요, 참 쉽죠??</code></pre>
+<pre><code>asdf</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -396,14 +423,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
+<div class="cell-output cell-output-display">
+<h5 class="anchored"> 어때요, 참 쉽죠?? </h5>
+</div>
 </div>
 </section>
 <section id="b.-클래스의-기본성능-인스턴스의-독립적관리" class="level2">
 <h2 class="anchored" data-anchor-id="b.-클래스의-기본성능-인스턴스의-독립적관리">B. 클래스의 기본성능 – 인스턴스의 독립적관리</h2>
-<div id="3d4058ad-6ad1-42cc-a8f1-1856177526a5" class="cell" data-tags="[]" data-execution_count="36">
+<div id="3d4058ad-6ad1-42cc-a8f1-1856177526a5" class="cell" data-tags="[]" data-execution_count="109">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mid1 <span class="op">=</span> BobRoss()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a1663781-2e9b-4613-a29d-203d73c7e2b2" class="cell" data-tags="[]" data-execution_count="49">
+<div id="a1663781-2e9b-4613-a29d-203d73c7e2b2" class="cell" data-tags="[]" data-execution_count="110">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mid1.text <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="st">1번은 numpy의 axis을 잘 활용할 수 있으면 접근하기 쉬웠습니다.</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">(1) xtrain,xtest를 합치는 과정, </span></span>
@@ -412,7 +442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="st">(4) 이미지를 합치는 과정 모두 axis을 활용하면 됩니다.</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="70b4db4a-aa79-404a-978c-efb6ffbe25ef" class="cell" data-tags="[]" data-execution_count="50">
+<div id="70b4db4a-aa79-404a-978c-efb6ffbe25ef" class="cell" data-tags="[]" data-execution_count="111">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mid1.easy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -432,10 +462,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="579d8910-17f4-4629-ac07-9821c7fde60a" class="cell" data-tags="[]" data-execution_count="54">
+<div id="579d8910-17f4-4629-ac07-9821c7fde60a" class="cell" data-tags="[]" data-execution_count="112">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mid3 <span class="op">=</span> BobRoss()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="22674332-9695-4753-9ecc-0171338d02c2" class="cell" data-tags="[]" data-execution_count="55">
+<div id="22674332-9695-4753-9ecc-0171338d02c2" class="cell" data-tags="[]" data-execution_count="113">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mid3.text <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="st">3번은 알고리즘을 검토하고 디버깅하는 능력을 봤습니다. </span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">GPT의 도움을 받아 코드를 작성하더라도 </span></span>
@@ -443,7 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="st">(2) 맞는 알고리즘이 아닐 경우 수정하는 능력을 평가했습니다.</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b31bac9d-6a3e-459f-bb7e-3441f3925ae3" class="cell" data-tags="[]" data-execution_count="56">
+<div id="b31bac9d-6a3e-459f-bb7e-3441f3925ae3" class="cell" data-tags="[]" data-execution_count="114">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mid3.easy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -462,10 +492,10 @@ GPT의 도움을 받아 코드를 작성하더라도
 </div>
 </div>
 </div>
-<div id="4c036db2-631c-49ee-91cd-adb82e43ce8b" class="cell" data-tags="[]" data-execution_count="57">
+<div id="4c036db2-631c-49ee-91cd-adb82e43ce8b" class="cell" data-tags="[]" data-execution_count="115">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mid3.imgurl <span class="op">=</span> <span class="st">"https://github.com/guebin/PP2024/blob/main/posts/easy2.png?raw=true"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="851794a1-ea9a-4cd9-9bf7-4f6d26fda463" class="cell" data-tags="[]" data-execution_count="58">
+<div id="851794a1-ea9a-4cd9-9bf7-4f6d26fda463" class="cell" data-tags="[]" data-execution_count="116">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>mid3.easy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -484,7 +514,7 @@ GPT의 도움을 받아 코드를 작성하더라도
 </div>
 </div>
 </div>
-<div id="a9883339-9c2c-447f-abe8-a4538b90497f" class="cell" data-tags="[]" data-execution_count="69">
+<div id="a9883339-9c2c-447f-abe8-a4538b90497f" class="cell" data-tags="[]" data-execution_count="117">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mid3.text <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="st">3번은 알고리즘을 검토하고 디버깅하는 능력을 봤습니다. </span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="st">GPT의 도움을 받아 코드를 작성하더라도 </span></span>
@@ -494,7 +524,7 @@ GPT의 도움을 받아 코드를 작성하더라도
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="st">물론, 처음부터 알고리즘을 짜도 괜찮고요</span></span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d70f4935-701d-42e0-8a8e-ac2a30a9be7f" class="cell" data-tags="[]" data-execution_count="70">
+<div id="d70f4935-701d-42e0-8a8e-ac2a30a9be7f" class="cell" data-tags="[]" data-execution_count="118">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>mid3.easy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -515,7 +545,7 @@ GPT의 도움을 받아 코드를 작성하더라도
 </div>
 </div>
 </div>
-<div id="16c25171-96dc-4eaa-a394-ec064806a5ad" class="cell" data-tags="[]" data-execution_count="71">
+<div id="16c25171-96dc-4eaa-a394-ec064806a5ad" class="cell" data-tags="[]" data-execution_count="119">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>mid1.text <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="st">[파이썬 프로그래밍 중간고사 1번해설]</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="st">1번은 numpy의 axis을 잘 활용할 수 있으면 접근하기 쉬웠습니다.</span></span>
@@ -525,7 +555,7 @@ GPT의 도움을 받아 코드를 작성하더라도
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="st">(4) 이미지를 합치는 과정 모두 axis을 활용하면 됩니다.</span></span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1c90cffb-9519-4d64-a2dd-194186ca379a" class="cell" data-tags="[]" data-execution_count="72">
+<div id="1c90cffb-9519-4d64-a2dd-194186ca379a" class="cell" data-tags="[]" data-execution_count="120">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>mid1.easy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -546,7 +576,7 @@ GPT의 도움을 받아 코드를 작성하더라도
 </div>
 </div>
 </div>
-<div id="e7b760f4-a5e5-4c9f-b4d1-7e1eeb0021b7" class="cell" data-tags="[]" data-execution_count="73">
+<div id="e7b760f4-a5e5-4c9f-b4d1-7e1eeb0021b7" class="cell" data-tags="[]" data-execution_count="121">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>mid3.text <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="st">[파이썬 프로그래밍 중간고사 3번해설]</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="st">3번은 알고리즘을 검토하고 디버깅하는 능력을 봤습니다. </span></span>
@@ -557,7 +587,7 @@ GPT의 도움을 받아 코드를 작성하더라도
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="st">물론, 처음부터 알고리즘을 짜도 괜찮고요</span></span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a68abe80-00f0-4139-841c-75b01c971c54" class="cell" data-tags="[]" data-execution_count="74">
+<div id="a68abe80-00f0-4139-841c-75b01c971c54" class="cell" data-tags="[]" data-execution_count="122">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mid3.easy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -1192,9 +1222,723 @@ The argument must be an iterable if specified.</pre>
 </div>
 </div>
 <p><code>-</code> 그래서 메소드의 첫 입력은 항상 self 인것임.</p>
-
-
 </section>
+</section>
+<section id="str__" class="level1">
+<h1>9. <code>__str__</code></h1>
+<section id="a.-motive" class="level2">
+<h2 class="anchored" data-anchor-id="a.-motive">A. motive</h2>
+<p><code>-</code> 아래와 같은 클래스를 관찰하자.</p>
+<div id="5312420f-2e4b-4642-ae71-0ff4e6d909f9" class="cell" data-tags="[]" data-execution_count="217">
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> UpJump:</span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.reset()</span>
+<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> up(<span class="va">self</span>):</span>
+<span id="cb120-5"><a href="#cb120-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> <span class="dv">1</span>  </span>
+<span id="cb120-6"><a href="#cb120-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 1 증가합니다."</span>)</span>
+<span id="cb120-7"><a href="#cb120-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> jump(<span class="va">self</span>,jump_size):</span>
+<span id="cb120-8"><a href="#cb120-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> jump_size      </span>
+<span id="cb120-9"><a href="#cb120-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 </span><span class="sc">{}</span><span class="st"> 증가합니다."</span>.<span class="bu">format</span>(jump_size))</span>
+<span id="cb120-10"><a href="#cb120-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> show(<span class="va">self</span>):</span>
+<span id="cb120-11"><a href="#cb120-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'a=</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="va">self</span>.a))</span>
+<span id="cb120-12"><a href="#cb120-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> reset(<span class="va">self</span>):</span>
+<span id="cb120-13"><a href="#cb120-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb120-14"><a href="#cb120-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 0으로 초기화 되었습니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2cb13a76-62c9-4ca6-84d9-fbe6bc99bb55" class="cell" data-tags="[]" data-execution_count="218">
+<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a>upjump <span class="op">=</span> UpJump()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값이 0으로 초기화 되었습니다.</code></pre>
+</div>
+</div>
+<div id="0b777de6-f912-444e-8bda-2045fb8917d9" class="cell" data-tags="[]" data-execution_count="219">
+<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>upjump?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Type:</span>        UpJump
+<span class="ansi-red-fg">String form:</span> &lt;__main__.UpJump object at 0x7049f859d310&gt;
+<span class="ansi-red-fg">Docstring:</span>   &lt;no docstring&gt;</pre>
+</div>
+</div>
+</div>
+<div id="5f1fd2f9-90b6-44ad-9de3-0203a0504141" class="cell" data-tags="[]" data-execution_count="220">
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>upjump.up()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값이 1 증가합니다.</code></pre>
+</div>
+</div>
+<div id="8dc0ad9b-2ce0-45c2-90f2-039b56338028" class="cell" data-tags="[]" data-execution_count="221">
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>upjump.jump(<span class="op">-</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값이 -2 증가합니다.</code></pre>
+</div>
+</div>
+<div id="48ce9ad3-106e-4c2e-9504-2422c2aa918c" class="cell" data-tags="[]" data-execution_count="222">
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>upjump.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a=-1</code></pre>
+</div>
+</div>
+<div id="7cb2947d-c8d9-4ef6-b6af-dd5e18aa555d" class="cell" data-tags="[]" data-execution_count="223">
+<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>upjump.reset()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값이 0으로 초기화 되었습니다.</code></pre>
+</div>
+</div>
+<p><code>-</code> 모티브: 생각해보니까 show와 print의 기능이 거의 비슷함 <span class="math inline">\(\to\)</span> print(upjump)를 하면 upjump.show()와 동일한 효과를 내도록 만들수 있을까?</p>
+<p><code>-</code> 말도 안되는 소리 같음. 왜?</p>
+<ul>
+<li>이유1: print는 파이썬 내장기능이다. 내장기능을 우리가 마음대로 커스터마이징해서 쓰기는 어려울 것 같다.</li>
+<li>이유2: 이유1이 해결된다고 쳐도 문제이다. 그럼 지금까지 우리가 써왔던 수많은 print()의 결과는 어떻게 되는가?</li>
+</ul>
+<p><code>-</code> 그런데 upjump의 자료형(UpJump자료형)에 해당하는 오브젝트들에 한정하여 print를 수정하는 방법이 가능하다면? (그럼 다른 오브젝트들은 수정된 print에 영향을 받지 않음)</p>
+</section>
+<section id="b.-관찰1" class="level2">
+<h2 class="anchored" data-anchor-id="b.-관찰1">B. 관찰1</h2>
+<p><code>-</code> 현재 print(upjump)의 결과는 아래와 같다.</p>
+<div id="bfffd809-b25a-48ab-b34f-681529c998ba" class="cell" data-tags="[]" data-execution_count="224">
+<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(upjump)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;__main__.UpJump object at 0x7049f859d310&gt;</code></pre>
+</div>
+</div>
+<ul>
+<li>upjump는 UpJump 클래스에서 만들어진 인스턴스이며, upjump가 저장된 메모리주소는 0x7f02a149f0a0 라는 의미</li>
+</ul>
+</section>
+<section id="c.-관찰2" class="level2">
+<h2 class="anchored" data-anchor-id="c.-관찰2">C. 관찰2</h2>
+<p><code>-</code> upjump 에는 <code>__str__()</code>이라는 숨겨진 메소드가 있다.</p>
+<blockquote class="blockquote">
+<p>결국 <code>print(upjump)</code> 는 <code>print(upjump.__str__())</code> 와 같은 역할</p>
+</blockquote>
+</section>
+<section id="d.-해킹" class="level2">
+<h2 class="anchored" data-anchor-id="d.-해킹">D. 해킹?</h2>
+<p><code>-</code> <code>upjump.__str__()</code>의 기능을 재정의하면 <code>print(upjump)</code>의 결과도 바뀌지 않을까??</p>
+<p><strong><em>예비학습:</em></strong> 함수 덮어씌우기 (재정의하기)</p>
+<div id="49f74282-0e75-491b-99af-5f732ebda720" class="cell" data-tags="[]" data-execution_count="225">
+<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f():</span>
+<span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'asdf'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="a8b0ed7f-4e27-4ea9-910a-a83f5722da51" class="cell" data-tags="[]" data-execution_count="226">
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>f()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>asdf</code></pre>
+</div>
+</div>
+<div id="0d1aab88-e90d-4485-9bbd-ea8a687b22d8" class="cell" data-tags="[]" data-execution_count="227">
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f():</span>
+<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'guebin hahaha'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="edbbb747-ae32-4ee2-8755-da44ebed1217" class="cell" data-tags="[]" data-execution_count="228">
+<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>f()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>guebin hahaha</code></pre>
+</div>
+</div>
+<p>이런식으로 함수가 이미 정의되어 있더라도, 내가 나중에 덮어씌우면 그 함수의 기능을 다시 정의한다.</p>
+<p><strong><em>예비학습 끝</em></strong></p>
+<p><code>-</code> 이제 <strong><code>.__str__()</code>의 기능을 재정의</strong> 하여 보자.</p>
+<div id="dbae4640-44f9-485b-9d9c-9c48c2ce6717" class="cell" data-tags="[]" data-execution_count="229">
+<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> UpJump:</span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.reset()</span>
+<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> up(<span class="va">self</span>):</span>
+<span id="cb140-5"><a href="#cb140-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> <span class="dv">1</span>  </span>
+<span id="cb140-6"><a href="#cb140-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 1 증가합니다."</span>)</span>
+<span id="cb140-7"><a href="#cb140-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> jump(<span class="va">self</span>,jump_size):</span>
+<span id="cb140-8"><a href="#cb140-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> jump_size      </span>
+<span id="cb140-9"><a href="#cb140-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 </span><span class="sc">{}</span><span class="st"> 증가합니다."</span>.<span class="bu">format</span>(jump_size))</span>
+<span id="cb140-10"><a href="#cb140-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb140-11"><a href="#cb140-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'a=</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="va">self</span>.a)</span>
+<span id="cb140-12"><a href="#cb140-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> reset(<span class="va">self</span>):</span>
+<span id="cb140-13"><a href="#cb140-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb140-14"><a href="#cb140-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 0으로 초기화 되었습니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cc43d819-e40e-4604-8ac3-6ac6bfbeb6d1" class="cell" data-tags="[]" data-execution_count="230">
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>upjump <span class="op">=</span> UpJump()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값이 0으로 초기화 되었습니다.</code></pre>
+</div>
+</div>
+<div id="9197dac3-1e43-4e59-b162-05740be8a827" class="cell" data-tags="[]" data-execution_count="231">
+<div class="sourceCode cell-code" id="cb143"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a>upjump.<span class="fu">__str__</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="231">
+<pre><code>'a=0'</code></pre>
+</div>
+</div>
+<div id="37b7e58d-7c00-4ea4-9b9f-8be3be2bb635" class="cell" data-tags="[]" data-execution_count="232">
+<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(upjump.<span class="fu">__str__</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a=0</code></pre>
+</div>
+</div>
+<div id="6cc9b300-be93-4461-a99c-5a9dee9207f7" class="cell" data-tags="[]" data-execution_count="233">
+<div class="sourceCode cell-code" id="cb147"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(upjump) <span class="co">## 성공!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a=0</code></pre>
+</div>
+</div>
+</section>
+<section id="e.-지금까지의-print-다시-확인" class="level2">
+<h2 class="anchored" data-anchor-id="e.-지금까지의-print-다시-확인">E. 지금까지의 <strong><em>print</em></strong> 다시 확인</h2>
+<p><code>-</code> 예시1</p>
+<div id="9a70d835-dd6a-48e2-a859-4eb5fb2b9f61" class="cell" data-tags="[]" data-execution_count="234">
+<div class="sourceCode cell-code" id="cb149"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3]</code></pre>
+</div>
+</div>
+<div id="424a6d91-535f-4c84-af45-7c605a652494" class="cell" data-tags="[]" data-execution_count="235">
+<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>a.<span class="fu">__str__</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="235">
+<pre><code>'[1, 2, 3]'</code></pre>
+</div>
+</div>
+<div id="5f3bbd1d-3a11-429e-933e-9cadd7e4cc79" class="cell" data-tags="[]" data-execution_count="236">
+<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.<span class="fu">__str__</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3]</code></pre>
+</div>
+</div>
+<p><code>-</code> 예시2</p>
+<div id="c860c7d6-7aa7-452a-97e1-6f53be0cc975" class="cell" data-tags="[]" data-execution_count="237">
+<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>{<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>}</span>
+<span id="cb155-2"><a href="#cb155-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3}</code></pre>
+</div>
+</div>
+<div id="dfb5fc2f-e7de-449b-bc1f-7a4b47ec5db3" class="cell" data-tags="[]" data-execution_count="238">
+<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a>a.<span class="fu">__str__</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="238">
+<pre><code>'{1, 2, 3}'</code></pre>
+</div>
+</div>
+<div id="caaa7f50-6941-4006-90ad-317b2f1874d3" class="cell" data-tags="[]" data-execution_count="239">
+<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.<span class="fu">__str__</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3}</code></pre>
+</div>
+</div>
+<p><code>-</code> 예시3</p>
+<div id="d7217347-6aa3-4a67-89e5-e5a9297d2d00" class="cell" data-tags="[]" data-execution_count="240">
+<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span> np.arange(<span class="dv">4</span>).reshape(<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[0 1]
+ [2 3]]</code></pre>
+</div>
+</div>
+<div id="a3d1bd2a-b19f-4f8c-98fa-6391a0417c67" class="cell" data-tags="[]" data-execution_count="250">
+<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>a.<span class="fu">__str__</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="250">
+<pre><code>'[[0 1]\n [2 3]]'</code></pre>
+</div>
+</div>
+<div id="6d6ad624-63c3-49a5-aaec-d98e1b8bef15" class="cell" data-tags="[]" data-execution_count="242">
+<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.<span class="fu">__str__</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[0 1]
+ [2 3]]</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>파이썬의 비밀: <code>print(a)</code>는 사실 <code>print(a.__str__())</code> 의 축약버전이었다.</p>
+</blockquote>
+<p><strong><em>직관: 클래스에서 정의된 숨겨진 메소드 <code>__????__</code> 들이 사실 파이썬의 비밀 덩어리였음!!!</em></strong></p>
+</section>
+</section>
+<section id="repr__" class="level1">
+<h1>10. <code>__repr__</code></h1>
+<section id="a.-motive-1" class="level2">
+<h2 class="anchored" data-anchor-id="a.-motive-1">A. motive</h2>
+<blockquote class="blockquote">
+<p>repr은 representation의 약자이다.</p>
+</blockquote>
+<p><code>-</code> 모티브: 생각해보니까 print를 해서 우리가 원하는 정보를 확인하는건 아니었음</p>
+<div id="ef55b606-b3e2-4c14-9851-b6b257625879" class="cell" data-tags="[]" data-execution_count="243">
+<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb167-1"><a href="#cb167-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="93384f3e-f7d3-4717-9608-bf1c438342b5" class="cell" data-tags="[]" data-execution_count="244">
+<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="244">
+<pre><code>[1, 2, 3]</code></pre>
+</div>
+</div>
+<div id="a2abe654-60c8-4317-b517-71f9ff51348b" class="cell" data-tags="[]" data-execution_count="245">
+<div class="sourceCode cell-code" id="cb170"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb170-1"><a href="#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3]</code></pre>
+</div>
+</div>
+<p><code>-</code> 의문: <code>a + 엔터</code>는 <code>print(a) + 엔터</code>와 같은 효과인가?</p>
+<p><code>-</code> 반례</p>
+<div id="865569f8-ac59-4ae3-a02d-d51002c06bf0" class="cell" data-tags="[]" data-execution_count="246">
+<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span> np.arange(<span class="dv">4</span>).reshape(<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="246">
+<pre><code>array([[0, 1],
+       [2, 3]])</code></pre>
+</div>
+</div>
+<div id="baa76cad-ece5-4774-ba21-705185019b7a" class="cell" data-tags="[]" data-execution_count="247">
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb174-1"><a href="#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[0 1]
+ [2 3]]</code></pre>
+</div>
+</div>
+</section>
+<section id="b.-__repr__-의-역할" class="level2">
+<h2 class="anchored" data-anchor-id="b.-__repr__-의-역할">B. <code>__repr__</code> 의 역할</h2>
+<p><code>-</code> <code>a + 엔터</code>와 <code>print(a) + 엔터</code>가 다른 경우도 있다. <span class="math inline">\(\to\)</span> 추측: 서로 다른 숨겨진 기능이 있다! <span class="math inline">\(\to\)</span> 결론: 추측이 맞다. 그 기능은 <code>__repr__</code>에 저장되어있음.</p>
+<div id="9ddd10bf-4371-4ce4-9c54-e68050aa5db6" class="cell" data-execution_count="136">
+<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a>a.<span class="fu">__str__</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="136">
+<pre><code>'[[0 1]\n [2 3]]'</code></pre>
+</div>
+</div>
+<div id="5e43599a-2701-4502-bec8-0c02cb3947f7" class="cell" data-execution_count="138">
+<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb178-1"><a href="#cb178-1" aria-hidden="true" tabindex="-1"></a>a.<span class="fu">__repr__</span>() <span class="co"># 이렇게 조잡하다고? ㅋㅋㅋ</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="138">
+<pre><code>'array([[0, 1],\n       [2, 3]])'</code></pre>
+</div>
+</div>
+<div id="091c43af-2402-42d0-9f2c-68ad2eef0af9" class="cell" data-execution_count="141">
+<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.<span class="fu">__str__</span>()) <span class="co"># print(a) + 엔터와 같은 효과</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[0 1]
+ [2 3]]</code></pre>
+</div>
+</div>
+<div id="c2ca3e28-9d0c-446c-829c-5f0a4f2fbe24" class="cell" data-execution_count="143">
+<div class="sourceCode cell-code" id="cb182"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a.<span class="fu">__repr__</span>()) <span class="co"># a + 엔터와 같은 효과</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>array([[0, 1],
+       [2, 3]])</code></pre>
+</div>
+</div>
+</section>
+<section id="c.-연습" class="level2">
+<h2 class="anchored" data-anchor-id="c.-연습">C. 연습</h2>
+<div id="b35b02ce-b772-4e0a-a41d-b2c8c8131077" class="cell" data-tags="[]" data-execution_count="256">
+<div class="sourceCode cell-code" id="cb184"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb184-1"><a href="#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> UpJump:</span>
+<span id="cb184-2"><a href="#cb184-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb184-3"><a href="#cb184-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.reset()</span>
+<span id="cb184-4"><a href="#cb184-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> up(<span class="va">self</span>):</span>
+<span id="cb184-5"><a href="#cb184-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> <span class="dv">1</span>  </span>
+<span id="cb184-6"><a href="#cb184-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 1 증가합니다."</span>)</span>
+<span id="cb184-7"><a href="#cb184-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> jump(<span class="va">self</span>,jump_size):</span>
+<span id="cb184-8"><a href="#cb184-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> jump_size      </span>
+<span id="cb184-9"><a href="#cb184-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"a의 값이 </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>jump_size<span class="sc">}</span><span class="ss"> 증가합니다."</span>)</span>
+<span id="cb184-10"><a href="#cb184-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb184-11"><a href="#cb184-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"a의 값은 </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>a<span class="sc">}</span><span class="ss">입니다."</span></span>
+<span id="cb184-12"><a href="#cb184-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> reset(<span class="va">self</span>):</span>
+<span id="cb184-13"><a href="#cb184-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb184-14"><a href="#cb184-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 0으로 초기화 되었습니다."</span>)</span>
+<span id="cb184-15"><a href="#cb184-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb184-16"><a href="#cb184-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"a=</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>a<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb184-17"><a href="#cb184-17" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="f1031e33-c039-4188-9633-ebeb1fa69039" class="cell" data-tags="[]" data-execution_count="257">
+<div class="sourceCode cell-code" id="cb185"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a>upjump <span class="op">=</span> UpJump()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값이 0으로 초기화 되었습니다.</code></pre>
+</div>
+</div>
+<div id="6f629961-390c-42a8-bd23-dbb81e370f6d" class="cell" data-tags="[]" data-execution_count="258">
+<div class="sourceCode cell-code" id="cb187"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb187-1"><a href="#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(upjump)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값은 0입니다.</code></pre>
+</div>
+</div>
+<div id="ca6a8593-ba63-46dd-9d16-8a25d942d06e" class="cell" data-tags="[]" data-execution_count="259">
+<div class="sourceCode cell-code" id="cb189"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a>upjump</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="259">
+<pre><code>a=0</code></pre>
+</div>
+</div>
+</section>
+<section id="d.-__repr__-__str__-의-관계" class="level2">
+<h2 class="anchored" data-anchor-id="d.-__repr__-__str__-의-관계">D. <code>__repr__()</code>, <code>__str__()</code> 의 관계</h2>
+<p><code>-</code> 만약에 <code>__repr__()</code> 만 정의되었고 <code>__str__()</code>이 정의되지 않았다면 <code>__repr__()</code>의 내용이 <code>__str__()</code>의 내용을 대신한다. (하지만 역은 성립하지 않음)</p>
+<div id="ff0075ad-22eb-47f6-8442-e504e806b854" class="cell" data-tags="[]" data-execution_count="261">
+<div class="sourceCode cell-code" id="cb191"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> UpJump:</span>
+<span id="cb191-2"><a href="#cb191-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb191-3"><a href="#cb191-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.reset()</span>
+<span id="cb191-4"><a href="#cb191-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> up(<span class="va">self</span>):</span>
+<span id="cb191-5"><a href="#cb191-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> <span class="dv">1</span>  </span>
+<span id="cb191-6"><a href="#cb191-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 1 증가합니다."</span>)</span>
+<span id="cb191-7"><a href="#cb191-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> jump(<span class="va">self</span>,jump_size):</span>
+<span id="cb191-8"><a href="#cb191-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> jump_size      </span>
+<span id="cb191-9"><a href="#cb191-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"a의 값이 </span><span class="sc">{</span>jump_size<span class="sc">}</span><span class="ss"> 증가합니다."</span>)</span>
+<span id="cb191-10"><a href="#cb191-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> reset(<span class="va">self</span>):</span>
+<span id="cb191-11"><a href="#cb191-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb191-12"><a href="#cb191-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 0으로 초기화 되었습니다."</span>)</span>
+<span id="cb191-13"><a href="#cb191-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb191-14"><a href="#cb191-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'a=</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="va">self</span>.a)    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="39a0658e-d07c-40ab-95fb-4ca0088ac163" class="cell" data-tags="[]" data-execution_count="262">
+<div class="sourceCode cell-code" id="cb192"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb192-1"><a href="#cb192-1" aria-hidden="true" tabindex="-1"></a>upjump <span class="op">=</span> UpJump()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값이 0으로 초기화 되었습니다.</code></pre>
+</div>
+</div>
+<div id="7c5f21e1-2244-4db9-881f-70f33aa039a6" class="cell" data-tags="[]" data-execution_count="263">
+<div class="sourceCode cell-code" id="cb194"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb194-1"><a href="#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(upjump)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a=0</code></pre>
+</div>
+</div>
+<div id="c61a1c27-93c3-4aba-a7f9-be59eb1986fa" class="cell" data-tags="[]" data-execution_count="264">
+<div class="sourceCode cell-code" id="cb196"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb196-1"><a href="#cb196-1" aria-hidden="true" tabindex="-1"></a>upjump</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="264">
+<pre><code>a=0</code></pre>
+</div>
+</div>
+<p><code>-</code> 역은 성립안함! 즉 <code>__str__()</code> 만 정의되었고 <code>__repr__()</code>이 정의되지 않은경우에는 <code>__str__()</code>의 내용이 <code>__repr__()</code>의 내용을 대신할 수 없다.</p>
+<div id="86ec78b8-bde2-4824-877f-5060a25de4b8" class="cell" data-tags="[]" data-execution_count="266">
+<div class="sourceCode cell-code" id="cb198"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb198-1"><a href="#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> UpJump:</span>
+<span id="cb198-2"><a href="#cb198-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb198-3"><a href="#cb198-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.reset()</span>
+<span id="cb198-4"><a href="#cb198-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> up(<span class="va">self</span>):</span>
+<span id="cb198-5"><a href="#cb198-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> <span class="dv">1</span>  </span>
+<span id="cb198-6"><a href="#cb198-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 1 증가합니다."</span>)</span>
+<span id="cb198-7"><a href="#cb198-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> jump(<span class="va">self</span>,jump_size):</span>
+<span id="cb198-8"><a href="#cb198-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> jump_size      </span>
+<span id="cb198-9"><a href="#cb198-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"a의 값이 </span><span class="sc">{</span>jump_size<span class="sc">}</span><span class="ss"> 증가합니다."</span>)</span>
+<span id="cb198-10"><a href="#cb198-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb198-11"><a href="#cb198-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"a의 값은 </span><span class="sc">{self.a}</span><span class="st">입니다."</span></span>
+<span id="cb198-12"><a href="#cb198-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> reset(<span class="va">self</span>):</span>
+<span id="cb198-13"><a href="#cb198-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb198-14"><a href="#cb198-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 0으로 초기화 되었습니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="6d537d34-d73d-44fe-b58e-8c135b328d2f" class="cell" data-tags="[]" data-execution_count="267">
+<div class="sourceCode cell-code" id="cb199"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb199-1"><a href="#cb199-1" aria-hidden="true" tabindex="-1"></a>upjump <span class="op">=</span> UpJump()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값이 0으로 초기화 되었습니다.</code></pre>
+</div>
+</div>
+<div id="0772e067-a71a-42a2-907d-6edd3526c3ed" class="cell" data-tags="[]" data-execution_count="268">
+<div class="sourceCode cell-code" id="cb201"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb201-1"><a href="#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(upjump)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값은 {self.a}입니다.</code></pre>
+</div>
+</div>
+<div id="e45b27aa-898c-4ef3-8261-d9b6e3b5c504" class="cell" data-tags="[]" data-execution_count="269">
+<div class="sourceCode cell-code" id="cb203"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb203-1"><a href="#cb203-1" aria-hidden="true" tabindex="-1"></a>upjump</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="269">
+<pre><code>&lt;__main__.UpJump at 0x7049f85b70d0&gt;</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>파이썬의 비밀4: 대화형콘솔에서 <code>a+엔터</code>하여 나오는 출력결과는 <code>print(a.__repr__())</code> 이라고 생각할 수 있다. (생각할수 있다? 아닐 수도 있다는 거야?)</p>
+</blockquote>
+</section>
+</section>
+<section id="repr_html_" class="level1 page-columns page-full">
+<h1>11. <code>_repr_html_</code></h1>
+<section id="a.-motive-2" class="level2">
+<h2 class="anchored" data-anchor-id="a.-motive-2">A. motive</h2>
+<p><code>-</code> 모티브: 요즘에는 IDE의 발전에 따라서 <code>오브젝트이름 + 엔터</code> 를 입력할때 나오는 출력의 형태도 다양해지고 있음.</p>
+<div id="ce1e5b77-afc7-471b-8355-b6d01b57aafe" class="cell" data-tags="[]" data-execution_count="270">
+<div class="sourceCode cell-code" id="cb205"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb205-1"><a href="#cb205-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'a'</span>:[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],<span class="st">'b'</span>:[<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]})</span>
+<span id="cb205-2"><a href="#cb205-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="270">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">a</th>
+<th data-quarto-table-cell-role="th">b</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li>예쁘게 나온다… 이건 근데 문자열따위로 구현할 수 있는 출력 기능이 아닌것 같은데?</li>
+</ul>
+<div id="f5db1db1-5215-449c-8082-b4b961cc69ef" class="cell" data-tags="[]" data-execution_count="271">
+<div class="sourceCode cell-code" id="cb206"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb206-1"><a href="#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.<span class="fu">__repr__</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   a  b
+0  1  2
+1  2  3
+2  3  4</code></pre>
+</div>
+</div>
+<div id="d4d6d15b-802d-4caf-b5b2-2ce14c9171fa" class="cell" data-tags="[]" data-execution_count="272">
+<div class="sourceCode cell-code" id="cb208"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb208-1"><a href="#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.<span class="fu">__str__</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   a  b
+0  1  2
+1  2  3
+2  3  4</code></pre>
+</div>
+</div>
+</section>
+<section id="b.-_repr_html_-의-역할" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="b.-_repr_html_-의-역할">B. <code>_repr_html_</code> 의 역할</h2>
+<div id="b32caa08-f368-4dbd-b173-049ebf70cb0e" class="cell" data-tags="[]" data-execution_count="273">
+<div class="sourceCode cell-code" id="cb210"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb210-1"><a href="#cb210-1" aria-hidden="true" tabindex="-1"></a>df._repr_html_()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="273">
+<pre><code>'&lt;div&gt;\n&lt;style scoped&gt;\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n&lt;/style&gt;\n&lt;table border="1" class="dataframe"&gt;\n  &lt;thead&gt;\n    &lt;tr style="text-align: right;"&gt;\n      &lt;th&gt;&lt;/th&gt;\n      &lt;th&gt;a&lt;/th&gt;\n      &lt;th&gt;b&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;th&gt;0&lt;/th&gt;\n      &lt;td&gt;1&lt;/td&gt;\n      &lt;td&gt;2&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;1&lt;/th&gt;\n      &lt;td&gt;2&lt;/td&gt;\n      &lt;td&gt;3&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;2&lt;/th&gt;\n      &lt;td&gt;3&lt;/td&gt;\n      &lt;td&gt;4&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;\n&lt;/div&gt;'</code></pre>
+</div>
+</div>
+<div id="658aef1a-98ba-468d-850d-234a5d1dfc1a" class="cell" data-tags="[]" data-execution_count="274">
+<div class="sourceCode cell-code" id="cb212"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb212-1"><a href="#cb212-1" aria-hidden="true" tabindex="-1"></a>HTML(df._repr_html_())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="274">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">a</th>
+<th data-quarto-table-cell-role="th">b</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong><em>참고: 그럼 <code>df.__repr__()</code>의 역할은 뭐야?</em></strong></p>
+<ol type="1">
+<li>대화형콘솔중 HTML 출력을 지원하면 <code>오브젝트이름+엔터</code>는 <code>HTML(df._repr_html_())</code> 의 효과</li>
+<li>대화형콘솔중 HTML 출력을 지원하지 않으면 <code>오브젝트이름+엔터</code>는 <code>print(df.__str__())</code> 의 효과</li>
+</ol>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="11wk-2_files/figure-html/aa5bfc92-2984-4d5c-b7d3-1e5c8a710062-1-c07183d1-88cf-431c-888d-669c12b09d52.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">그림1: HTML을 지원하는 않는 대화형 콘솔에서의 df출력예시</figcaption>
+</figure>
+</div>
+</section>
+<section id="c.-_repr_html_-__repr__-__str__-의-관계" class="level2">
+<h2 class="anchored" data-anchor-id="c.-_repr_html_-__repr__-__str__-의-관계">C. <code>_repr_html_()</code>, <code>__repr__()</code>, <code>__str__()</code> 의 관계</h2>
+<p><code>-</code> <code>_repr_html_()</code> 는 기본적으로 <code>__repr__()</code>, <code>__str__()</code> 와는 아무런 관계가 없다.</p>
+<div id="4b2ead5b-28c8-49fa-a41d-f3fd2bb606f3" class="cell" data-tags="[]" data-execution_count="275">
+<div class="sourceCode cell-code" id="cb213"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb213-1"><a href="#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> UpJump:</span>
+<span id="cb213-2"><a href="#cb213-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb213-3"><a href="#cb213-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.reset()</span>
+<span id="cb213-4"><a href="#cb213-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> up(<span class="va">self</span>):</span>
+<span id="cb213-5"><a href="#cb213-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> <span class="dv">1</span>  </span>
+<span id="cb213-6"><a href="#cb213-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 1 증가합니다."</span>)</span>
+<span id="cb213-7"><a href="#cb213-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> jump(<span class="va">self</span>,jump_size):</span>
+<span id="cb213-8"><a href="#cb213-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> jump_size      </span>
+<span id="cb213-9"><a href="#cb213-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 </span><span class="sc">{}</span><span class="st"> 증가합니다."</span>.<span class="bu">format</span>(jump_size))</span>
+<span id="cb213-10"><a href="#cb213-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># def __str__(self):</span></span>
+<span id="cb213-11"><a href="#cb213-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     return 'a의 값은 {}입니다.'.format(self.a)</span></span>
+<span id="cb213-12"><a href="#cb213-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> reset(<span class="va">self</span>):</span>
+<span id="cb213-13"><a href="#cb213-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb213-14"><a href="#cb213-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"a의 값이 0으로 초기화 되었습니다."</span>)</span>
+<span id="cb213-15"><a href="#cb213-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># def __repr__(self):</span></span>
+<span id="cb213-16"><a href="#cb213-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     return 'a={}'.format(self.a)    </span></span>
+<span id="cb213-17"><a href="#cb213-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _repr_html_(<span class="va">self</span>):</span>
+<span id="cb213-18"><a href="#cb213-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'a=</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="va">self</span>.a)            </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="53b8fca1-c6d2-4018-9e4f-e0c7743851a5" class="cell" data-tags="[]" data-execution_count="276">
+<div class="sourceCode cell-code" id="cb214"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb214-1"><a href="#cb214-1" aria-hidden="true" tabindex="-1"></a>upjump <span class="op">=</span> UpJump()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a의 값이 0으로 초기화 되었습니다.</code></pre>
+</div>
+</div>
+<div id="1729bfc5-76a7-436c-b845-7edcee103a6b" class="cell" data-tags="[]" data-execution_count="277">
+<div class="sourceCode cell-code" id="cb216"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb216-1"><a href="#cb216-1" aria-hidden="true" tabindex="-1"></a>upjump</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="277">
+a=0
+</div>
+</div>
+<div id="dde663ef-b755-4997-a8f1-d757bfeffc2a" class="cell" data-tags="[]" data-execution_count="278">
+<div class="sourceCode cell-code" id="cb217"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb217-1"><a href="#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(upjump)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;__main__.UpJump object at 0x7049f85a9590&gt;</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>꿀팁: <code>__repr__()</code> 과 <code>__str__()</code> 을 재정의하지 않고 <code>_repr_html_()</code>만을 재정의하여 출력결과를 바꿀 수 있다.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>파이썬의 비밀: 대화형콘솔에서 <code>a+엔터</code>하여 나오는 출력결과는 <code>print(a.__repr__())</code> 혹은 <code>HTML(a._repr_html_())</code> 이다.</p>
+</blockquote>
+</section>
+</section>
+<section id="연습문제들" class="level1">
+<h1>12. 연습문제들</h1>
+<p><code>1</code>. Student 클래스를 생성지침 및 사용예시를 참고하여 설계하라.</p>
+<p><strong><code>생성지침</code></strong></p>
+<p><strong>attributes</strong></p>
+<ul>
+<li><code>name</code>: 이름을 저장하는 변수</li>
+<li><code>age</code>: 나이를 저장하는 변수</li>
+<li><code>semester</code>: 학기를 저장하는 변수</li>
+</ul>
+<p><strong>methods</strong></p>
+<ul>
+<li><code>__init__</code>: name, age, semester 세 가지 매개변수를 입력받아 인스턴스의 attribute로 저장</li>
+<li><code>__str__</code>: 인스턴스의 정보(이름,나이,학기)를 문자열 형태로 반환</li>
+</ul>
+<p><strong><code>사용예시</code></strong></p>
+<div id="4b9736a9-ed7f-4fe1-926e-9ca5abb2bb59" class="cell" data-execution_count="224">
+<div class="sourceCode cell-code" id="cb219"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb219-1"><a href="#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 사용 예시</span></span>
+<span id="cb219-2"><a href="#cb219-2" aria-hidden="true" tabindex="-1"></a>boram <span class="op">=</span> Student(name<span class="op">=</span><span class="st">'김보람'</span>, age<span class="op">=</span><span class="dv">20</span>, semester<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb219-3"><a href="#cb219-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(boram)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>이름: 김보람
+나이: 20
+학기: 1</code></pre>
+</div>
+</div>
+<p><code>2</code>. RPS 클래스를 생성지침 및 사용예시를 참고하여 설계하라.</p>
+<p><strong><code>생성지침</code></strong></p>
+<p><strong>속성</strong></p>
+<ul>
+<li><code>action_space</code> (리스트): 사용 가능한 선택지인 ‘가위’, ‘바위’, ’보’로 이루어진 리스트</li>
+<li><code>actions</code> (리스트): 선택한 동작을 기록하는 리스트</li>
+</ul>
+<p><strong>메서드</strong></p>
+<ul>
+<li><code>__init__</code>: 클래스의 생성자로, <code>action_space</code> 를 입력으로 받아 인스턴스의 속성으로 저장한다. 그리고 <code>actions</code>를 빈 리스트로 초기화한다.</li>
+<li><code>act</code>: <code>action_space</code> 무작위로 하나의 선택지를 고르고, <code>actions</code>에 선택한 동작을 기록한다.</li>
+<li><code>_repr_html_</code>: 클래스의 정보를 HTML 형식의 문자열로 반환한다. 반환된 문자열에는 <code>candidate</code>와 <code>actions</code>의 내용이 포함되어야 한다.</li>
+</ul>
+<p><strong>클래스 설명</strong>: RPS 클래스는 가위, 바위, 보 중 하나를 선택하고, 선택한 동작을 기록하는 클래스이다. 사용 가능한 선택지는 <code>action_space</code>에 저장되고, 선택한 동작은 <code>actions</code>에 기록된다. 클래스의 정보는 HTML 형식의 문자열로 표현되며, 낼 수 있는 패(action_space)와 기록된 동작(actions)이 포함된다.</p>
+<p><strong><code>사용예시</code></strong></p>
+<p><strong>예시1: 인스턴스의 생성</strong></p>
+<div id="18521a5f-ce81-49e4-a0c2-0af6a0a7c265" class="cell" data-execution_count="237">
+<div class="sourceCode cell-code" id="cb221"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb221-1"><a href="#cb221-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> RPS([<span class="st">'가위'</span>,<span class="st">'바위'</span>,<span class="st">'보'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>예시2: 인스턴스의 속성확인</strong></p>
+<div id="4922ebd4-5b0c-4ef5-bc0d-67d492b2807b" class="cell" data-execution_count="238">
+<div class="sourceCode cell-code" id="cb222"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb222-1"><a href="#cb222-1" aria-hidden="true" tabindex="-1"></a>a.candidate, a.actions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="238">
+<pre><code>(['가위', '바위', '보'], [])</code></pre>
+</div>
+</div>
+<p><strong>예시3: <code>_repr_html_</code>의 사용예시</strong></p>
+<div id="e19cbb08-7b24-47de-a4f6-e7b0174effaa" class="cell" data-execution_count="239">
+<div class="sourceCode cell-code" id="cb224"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb224-1"><a href="#cb224-1" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="239">
+
+        낼 수 있는 패: ['가위', '바위', '보'] <br> 
+        기록: []
+        
+</div>
+</div>
+<p><strong>예시4: <code>pick</code> method의 사용예시</strong></p>
+<div id="88e7ff43-0066-466b-80d5-65b53804340f" class="cell" data-execution_count="240">
+<div class="sourceCode cell-code" id="cb225"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb225-1"><a href="#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb225-2"><a href="#cb225-2" aria-hidden="true" tabindex="-1"></a>    a.pick()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3257ecd2-c747-43cb-925a-2aa28de591e4" class="cell" data-execution_count="241">
+<div class="sourceCode cell-code" id="cb226"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a>a.candidate, a.actions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="241">
+<pre><code>(['가위', '바위', '보'], ['바위', '가위', '보', '바위', '바위'])</code></pre>
+</div>
+</div>
+<div id="7388eba6-bd99-4812-bae5-dcf53004c3e5" class="cell" data-execution_count="242">
+<div class="sourceCode cell-code" id="cb228"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb228-1"><a href="#cb228-1" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="242">
+
+        낼 수 있는 패: ['가위', '바위', '보'] <br> 
+        기록: ['바위', '가위', '보', '바위', '바위']
+        
+</div>
+</div>
+<p><code>3</code>. RPS클래스에서 player a와 player b를 만들어라. Player a는 [‘가위’,‘보’] 중에 하나를 랜덤으로 낸다. 그리고 Player b는 [‘가위’] 만 낸다. 누가 더 유리한가? 10회 가상대결을 해보고 누가 더 유리하게 나왔는지 판단하라.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>힌트</strong>: b가 절대 지는일은 없으므로 당연히 b가 유리하겠죠? 저는 시뮬레이션 결과가 아래와 같이 나왔습니다.</p>
+<pre><code>{'a승리': 0, 'b승리': 5, '무승부': 5}</code></pre>
+</div>
+</div>
+<p><code>4</code>. RPS클래스에서 player a와 player b를 만들어라. Player a는 [‘가위’,‘보’] 중에 하나를 낼 수 있다. 그리고 Player b는 [‘가위’,‘바위’] 중 하나를 낼 수 있다. 누가 더 유리한가? 100회 가상대결을 해보고 누가 더 유리하게 나왔는지 판단하라.</p>
+<p><code>5</code>. 아래의 코드를 관찰하고 결과를 설명하라.</p>
+<p><strong>예시1</strong></p>
+<div id="581258c4-9bcc-4230-ae53-3968a4dff1cc" class="cell" data-tags="[]" data-execution_count="279">
+<div class="sourceCode cell-code" id="cb230"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb230-1"><a href="#cb230-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">'123'</span>  </span>
+<span id="cb230-2"><a href="#cb230-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="279">
+<pre><code>['1', '2', '3']</code></pre>
+</div>
+</div>
+<p><strong>예시2</strong></p>
+<div id="351ac49f-b22f-4f9c-a2c8-f3ac900deaff" class="cell" data-tags="[]" data-execution_count="280">
+<div class="sourceCode cell-code" id="cb232"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb232-1"><a href="#cb232-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb232-2"><a href="#cb232-2" aria-hidden="true" tabindex="-1"></a>a.<span class="fu">__init__</span>(<span class="st">'123'</span>)</span>
+<span id="cb232-3"><a href="#cb232-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="280">
+<pre><code>['1', '2', '3']</code></pre>
+</div>
+</div>
+<p><strong>예시3</strong></p>
+<div id="83ae863e-3574-41ed-84d0-3770a5920199" class="cell" data-tags="[]" data-execution_count="281">
+<div class="sourceCode cell-code" id="cb234"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb234-1"><a href="#cb234-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb234-2"><a href="#cb234-2" aria-hidden="true" tabindex="-1"></a>a.<span class="fu">__init__</span>(<span class="st">'123'</span>) </span>
+<span id="cb234-3"><a href="#cb234-3" aria-hidden="true" tabindex="-1"></a>a.<span class="fu">__init__</span>() <span class="co"># 이런식으로 다시 리스트롤 초기화하는 것도 가능</span></span>
+<span id="cb234-4"><a href="#cb234-4" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="281">
+<pre><code>[]</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>파이썬의 비밀: list(‘123’)은 사실 자료형을 변환하는 것이 아니라, ’123’을 list 클래스의 <code>__init__()</code> 입력으로 하여 “list 클래스 <span class="math inline">\(\to\)</span> 인스턴스” 를 수행하는 코드로 해석가능하다.</p>
+</blockquote>
+
+
 </section>
 
 </main> <!-- /main -->
