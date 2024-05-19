@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.520">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="최규빈">
+<meta name="dcterms.date" content="2024-05-17">
+
+<title>PP2024 - 11wk-2: 클래스 (1) – 클래스의 기본사용</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">PP2024</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/guebin/PP2024"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.youtube.com/channel/UCQk9RyBNgXc7ORIsYlOfQrg/playlists?view=50&amp;sort=dd&amp;shelf_id=2"> <i class="bi bi-youtube" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#강의영상" id="toc-강의영상" class="nav-link active" data-scroll-target="#강의영상">1. 강의영상</a></li>
+  <li><a href="#imports" id="toc-imports" class="nav-link" data-scroll-target="#imports">2. Imports</a></li>
+  <li><a href="#밈meme" id="toc-밈meme" class="nav-link" data-scroll-target="#밈meme">3. 밈(Meme)</a>
+  <ul class="collapse">
+  <li><a href="#a.-하이브" id="toc-a.-하이브" class="nav-link" data-scroll-target="#a.-하이브">A. 하이브</a></li>
+  <li><a href="#b.-하이브사태의-밈화" id="toc-b.-하이브사태의-밈화" class="nav-link" data-scroll-target="#b.-하이브사태의-밈화">B. 하이브사태의 밈화</a></li>
+  <li><a href="#c.-참-쉽죠" id="toc-c.-참-쉽죠" class="nav-link" data-scroll-target="#c.-참-쉽죠">C. 참 쉽죠</a></li>
+  <li><a href="#d.-밈이란-밈과-인터넷-밈의-차이" id="toc-d.-밈이란-밈과-인터넷-밈의-차이" class="nav-link" data-scroll-target="#d.-밈이란-밈과-인터넷-밈의-차이">D. 밈이란? 밈과 인터넷 밈의 차이</a></li>
+  </ul></li>
+  <li><a href="#클래스" id="toc-클래스" class="nav-link" data-scroll-target="#클래스">4. 클래스</a>
+  <ul class="collapse">
+  <li><a href="#a.-클래스란-다른교재-설명" id="toc-a.-클래스란-다른교재-설명" class="nav-link" data-scroll-target="#a.-클래스란-다른교재-설명">A. 클래스란? (다른교재 설명)</a></li>
+  <li><a href="#b.-클래스란-제-생각" id="toc-b.-클래스란-제-생각" class="nav-link" data-scroll-target="#b.-클래스란-제-생각">B. 클래스란? (제 생각)</a></li>
+  </ul></li>
+  <li><a href="#클래스의-선언-및-사용" id="toc-클래스의-선언-및-사용" class="nav-link" data-scroll-target="#클래스의-선언-및-사용">5. 클래스의 선언 및 사용</a>
+  <ul class="collapse">
+  <li><a href="#a.-클래스-선언" id="toc-a.-클래스-선언" class="nav-link" data-scroll-target="#a.-클래스-선언">A. 클래스 선언</a></li>
+  <li><a href="#b.-인스턴스의-독립성" id="toc-b.-인스턴스의-독립성" class="nav-link" data-scroll-target="#b.-인스턴스의-독립성">B. 인스턴스의 독립성</a></li>
+  <li><a href="#c.-연습문제" id="toc-c.-연습문제" class="nav-link" data-scroll-target="#c.-연습문제">C. 연습문제</a></li>
+  </ul></li>
+  <li><a href="#self의-의미" id="toc-self의-의미" class="nav-link" data-scroll-target="#self의-의미">6. <code>self</code>의 의미</a>
+  <ul class="collapse">
+  <li><a href="#a.-bobcount-의-다른구현" id="toc-a.-bobcount-의-다른구현" class="nav-link" data-scroll-target="#a.-bobcount-의-다른구현">A. BobCount 의 다른구현</a></li>
+  <li><a href="#b.-self-인스턴스의-태명" id="toc-b.-self-인스턴스의-태명" class="nav-link" data-scroll-target="#b.-self-인스턴스의-태명">B. <code>self</code> = 인스턴스의 태명!</a></li>
+  </ul></li>
+  <li><a href="#init__의-이해" id="toc-init__의-이해" class="nav-link" data-scroll-target="#init__의-이해">7. <code>__init__</code>의 이해</a>
+  <ul class="collapse">
+  <li><a href="#a.-모티브" id="toc-a.-모티브" class="nav-link" data-scroll-target="#a.-모티브">A. 모티브</a></li>
+  <li><a href="#b.-__init__" id="toc-b.-__init__" class="nav-link" data-scroll-target="#b.-__init__">B. <code>__init__</code></a></li>
+  <li><a href="#c.-클래스-디자인-패턴" id="toc-c.-클래스-디자인-패턴" class="nav-link" data-scroll-target="#c.-클래스-디자인-패턴">C. 클래스 디자인 패턴</a></li>
+  </ul></li>
+  <li><a href="#파이썬의-자료형" id="toc-파이썬의-자료형" class="nav-link" data-scroll-target="#파이썬의-자료형">8. 파이썬의 자료형</a>
+  <ul class="collapse">
+  <li><a href="#a.-인스턴스의-자료형" id="toc-a.-인스턴스의-자료형" class="nav-link" data-scroll-target="#a.-인스턴스의-자료형">A. 인스턴스의 자료형</a></li>
+  <li><a href="#b.-깨달음1" id="toc-b.-깨달음1" class="nav-link" data-scroll-target="#b.-깨달음1">B. 깨달음1</a></li>
+  <li><a href="#c.-깨달음2" id="toc-c.-깨달음2" class="nav-link" data-scroll-target="#c.-깨달음2">C. 깨달음2</a></li>
+  <li><a href="#d.-깨달음3" id="toc-d.-깨달음3" class="nav-link" data-scroll-target="#d.-깨달음3">D. 깨달음3</a></li>
+  <li><a href="#e.-깨달음4" id="toc-e.-깨달음4" class="nav-link" data-scroll-target="#e.-깨달음4">E. 깨달음4</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="11wk-2-lecture.out.ipynb" download="11wk-2-lecture.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">11wk-2: 클래스 (1) – 클래스의 기본사용</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>최규빈 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 17, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://colab.research.google.com/github/guebin/PP2024/blob/main/posts/11wk-2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" style="text-align: left"></a></p>
+<section id="강의영상" class="level1">
+<h1>1. 강의영상</h1>
+<div id="1af481c3-8870-46b4-a68e-77416120ab8f" class="cell" data-tags="[]" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#{{&lt;video https://youtu.be/playlist?list=PLQqh36zP38-xKLMTjfFSp1PMSYsgSx5zd&amp;si=v9NqSzwmAbbi3BiB &gt;}}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="imports" class="level1">
+<h1>2. Imports</h1>
+<div id="c1da9510-e3c7-4e0b-9312-3846f380ef7f" class="cell" data-tags="[]" data-execution_count="78">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> PIL.Image</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="밈meme" class="level1">
+<h1>3. 밈(Meme)</h1>
+<section id="a.-하이브" class="level2">
+<h2 class="anchored" data-anchor-id="a.-하이브">A. 하이브</h2>
+<p><a href="https://imnews.imbc.com/replay/2024/nwtoday/article/6593064_36523.html" class="uri">https://imnews.imbc.com/replay/2024/nwtoday/article/6593064_36523.html</a></p>
+</section>
+<section id="b.-하이브사태의-밈화" class="level2">
+<h2 class="anchored" data-anchor-id="b.-하이브사태의-밈화">B. 하이브사태의 밈화</h2>
+<p><a href="https://youtu.be/tSI7yTu7OH8?si=RTED0CNkUdAiC6K5" class="uri">https://youtu.be/tSI7yTu7OH8?si=RTED0CNkUdAiC6K5</a></p>
+</section>
+<section id="c.-참-쉽죠" class="level2">
+<h2 class="anchored" data-anchor-id="c.-참-쉽죠">C. 참 쉽죠</h2>
+<p><a href="https://www.youtube.com/shorts/W4xSOV96ing" class="uri">https://www.youtube.com/shorts/W4xSOV96ing</a></p>
+<ul>
+<li>밥로스는 누구?: 나무위키 <a href="https://namu.wiki/w/밥%20로스" class="uri">https://namu.wiki/w/밥%20로스</a></li>
+<li>참쉽죠 밈: 나무위키 <a href="https://namu.wiki/w/참%20쉽죠%3F" class="uri">https://namu.wiki/w/참%20쉽죠%3F</a></li>
+<li>참쉽죠 밈의 설명: 티스토리 <a href="https://everymemes.tistory.com/156" class="uri">https://everymemes.tistory.com/156</a></li>
+</ul>
+</section>
+<section id="d.-밈이란-밈과-인터넷-밈의-차이" class="level2">
+<h2 class="anchored" data-anchor-id="d.-밈이란-밈과-인터넷-밈의-차이">D. 밈이란? 밈과 인터넷 밈의 차이</h2>
+<p><code>-</code> 밈이란? (유전자처럼) 복제가능한 something</p>
+<ul>
+<li>이기적 유전자에서 제시한 개념</li>
+<li>유전자는 (1) 복제 (2) 변형되면서 (3) 전파되는 속성이 있다는 사실을 관찰</li>
+<li>종교, 사상, 이념도 유전자처럼 (1) 복제 (2) 변형되면서 (3) 전파되더라..</li>
+<li>밈 = 유전자의 일반화된 개념 = 복제가능한 something</li>
+</ul>
+<p><code>-</code> 인터넷 밈이란?</p>
+<ul>
+<li>밈의 한 형태</li>
+<li>인터넷을 통하여 (1)복제 (2)변형되면서 (3) 전파되는 something</li>
+<li>어떠한 내용이 많은 사람들에게 그 복제, 변형, 전파 되는것에 성공되었다면 그 어떠한 내용이 “밈화” 되었다고 표현한다.</li>
+</ul>
+<p><code>-</code> 밈의 예시</p>
+<ul>
+<li>이데올로기: 민주주의, 공산주의와 같은 이념은 오랜시간동안 다양한 문화와 사회에 전파되고 발전해왔음.</li>
+<li>건축양식: 특정 건축 양식이나 디자인도 밈으로 볼 수 있음. 예를들어 고딕양식의 건축물이나 르네상스 시대의 건축양식은 각 시대와 지역에 문화요소에 맞추어 발전되고 전파되었음.</li>
+<li>레포트표지: 어떤 사람이 레포트표지 양식을 만들었음. 이 레포트 양식을 후배들에게 전달되었는데 그것이 변형을 거쳐서 이어내려오며 살아있음. 이 역시 “아이디어나 어떠한 요소가 사람들사이에서 (1) 복제 (2) 변형 (3) 재생산 되므로” 밈의 전형적인 특성과 일치한다. 따라서 레포표지양식의 변형 및 확산도 밈으로 간주할 수 있음.</li>
+</ul>
+</section>
+</section>
+<section id="클래스" class="level1">
+<h1>4. 클래스</h1>
+<section id="a.-클래스란-다른교재-설명" class="level2">
+<h2 class="anchored" data-anchor-id="a.-클래스란-다른교재-설명">A. 클래스란? (다른교재 설명)</h2>
+<p><code>-</code> 클래스의 정의</p>
+<ul>
+<li>많은 교재에서 정의를 회피한다.</li>
+<li>대신에 비유적으로 설명하거나 다른 대상을 가져와서 설명한다.</li>
+</ul>
+<p><code>-</code> 클래스에 대한 비유적 설명 (implicit definition)</p>
+<ul>
+<li><p><a href="https://wikidocs.net/book/1">점프투파이썬</a>: 클래스는 과자틀과 비슷하다. 클래스란 똑같은 무엇인가를 계속 만들어 낼 수도 있는 설계도면이고 객체란 클래스로 만든 피조물을 뜻한다.</p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Class_(computer_programming)">위키피디아</a>: In object-oriented programming, a class is an extensible program-code-template for creating objects, providing initial valuesfor state (member variables) and implementations of behavior (member functions or methods). // 객체 지향 프로그래밍에서 클래스는 상태(멤버 변수) 및 동작 구현(멤버 함수 또는 메서드)에 대한 초기 값을 제공하는 객체 생성을 위한 확장 가능한 프로그램 코드 템플릿입니다.</p></li>
+<li><p><a href="http://www.tcpschool.com/java/java_class_intro">TCP스쿨</a>: 클래스(class)란 객체를 정의하는 틀 또는 설계도와 같은 의미로 사용</p></li>
+<li><p><a href="https://javacpro.tistory.com/29">티스토리 블로그</a>: 학생 클래스..?</p></li>
+<li><p>기타 서적들..</p></li>
+</ul>
+</section>
+<section id="b.-클래스란-제-생각" class="level2">
+<h2 class="anchored" data-anchor-id="b.-클래스란-제-생각">B. 클래스란? (제 생각)</h2>
+<p><code>-</code> <strong>클래스에 대한 명시적 정의 (책에 나온것 아니고 제 생각입니다!!)</strong>: 클래스는 <strong>복제</strong>, <strong>변형</strong>, <strong>확산</strong>을 용이하게 하기 위해 만들어진 프로그램의 코드의 단위(<strong>extensible program-code-template</strong>)이다. 즉 밈이다.</p>
+<p><code>-</code> 생각해보면 클래스를 만들고 사용하는 과정이 인터넷에서 밈을 만들고 노는것과 닮아 있다.</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">단계</th>
+<th style="text-align: left;">인터넷밈</th>
+<th style="text-align: left;">클래스</th>
+<th style="text-align: left;">레포트표지</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1단계: 구상</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> 이거 재미있다. <br> <span class="math inline">\(\bullet\)</span> 밈화하자.</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> 이 코드 반복해서 자주 쓸 것 같다. <br> <span class="math inline">\(\bullet\)</span> 이 코드를 쉽게 찍어내는 (복사할 수 있는) 클래스를 만들자</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> 레포트 표지를 자주 만들 것 같음 <br> <span class="math inline">\(\bullet\)</span> 양식파일을 만들까?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2단계: 틀생성</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> “밈틀”: 복사하고 싶은 속성을 추려 밈을 생산하기에 유리한 틀을 만듬</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> 클래스의 선언</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> REPORT_2024_최규빈.hwp 양식파일을 생성</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3단계: 틀 <span class="math inline">\(\to\)</span> 복제</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> 밈화: “밈틀”에서 다양한 밈을 만들고 놈</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> 인스턴스화: 클래스에서 인스턴스를 생산</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> 레포트 양식표지에서 다양한 레포트를 냄</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4단계: 틀 <span class="math inline">\(\to\)</span> 틀변경 <span class="math inline">\(\to\)</span> 복제</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> 생각해보니까 초기 밈틀은 시시함. <br> <span class="math inline">\(\bullet\)</span> 초기 밈틀을 수정해 새로운 밈틀을 만들고 더 재미있는 밈을 만들고 놈</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> 초기클래스와 비슷한 클래스를 선언할 일이 생김 <br> <span class="math inline">\(\bullet\)</span> 상속,오버라이딩: 초기클래스를 상속받아 클래스를 새롭게 정의하고 인스턴스를 재 생산</td>
+<td style="text-align: left;"><span class="math inline">\(\bullet\)</span> 공모전에 참가하여 결과보고서 표지를 만들 일이 생김. <br> <span class="math inline">\(\bullet\)</span> REPORT_2023_최규빈.hwp 를 적당히 변형하여 수정된 틀을 만들고 결과보고서 생산.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>밈이 변형된 예시</strong>: 슉슈슈슈슉 ㅅㅂㄹㅁ</p>
+<p><code>-</code> 기원: 트위치 -&gt; 문자 -&gt; 돌하르방</p>
+<ul>
+<li><a href="https://namu.wiki/w/%EC%8A%88%EC%8A%89%20%EC%8A%88%EC%88%99.%20%EC%8A%89.%20%EC%8B%9C.%20%EC%8B%9C%EB%B0%9C%EB%9F%BC%EC%95%84.">참고자료</a></li>
+</ul>
+<p><code>-</code> 전혀 다른 성질을 가진 밈으로 재탄생한 경우임</p>
+<ul>
+<li>만들어진 계기: 트위치에서 tts를 이용해 조롱을 하기 위해 탄생</li>
+<li>유명해진 계기: 택배실수</li>
+<li>슉슈슈슈슉: 돌하르방과 결합.. (돌하르방의 기묘한 자세와 결합하여 더 재미있음)</li>
+</ul>
+</section>
+</section>
+<section id="클래스의-선언-및-사용" class="level1">
+<h1>5. 클래스의 선언 및 사용</h1>
+<section id="a.-클래스-선언" class="level2">
+<h2 class="anchored" data-anchor-id="a.-클래스-선언">A. 클래스 선언</h2>
+<p><code>-</code> 클래스를 선언</p>
+<div id="53e9fec0-fcc0-4dea-857f-e7c062e5f117" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BobRoss:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>규칙1: 메소드(=class안에서 정의되는 함수)의 첫번째 입력은 무조건(?) <code>self</code></li>
+<li>규칙2: 메소드에서 class안에서 정의된 변수들 (<code>start</code>,<code>url</code>,<code>end</code>) 를 사용하려면 무조건(?) <code>self.변수이름</code>과 같은 형식으로 사용할 것.</li>
+</ul>
+<blockquote class="blockquote">
+<p>참고1: 사실 규칙1에서 무조건 <code>self</code>를 써야하는건 아님. 그런데 그냥 무조건 쓴다고 생각하자.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>참고2: 사실 class안에서 정의된 변수를 쓸때 무조건 <code>self.변수이름</code>와 같은 형식으로 쓰는건 아님.<code>BobRoss.start</code>, <code>BobRoss.url</code>, <code>BobRoss.end</code>와 같이 self 대신 클래스이름을 쓰는 경우도 있음. 그렇지만 여기선 그냥 무조건 쓴다고 생각하자.</p>
+</blockquote>
+<p><code>-</code> 클래스의 사용 (클래스에서 인스턴스 만들기, 인스턴스에서 메소드 사용하기)</p>
+</section>
+<section id="b.-인스턴스의-독립성" class="level2">
+<h2 class="anchored" data-anchor-id="b.-인스턴스의-독립성">B. 인스턴스의 독립성</h2>
+<p><code>-</code> 중간고사 1번해설</p>
+<p><code>-</code> 중간고사 3번 해설</p>
+<p><code>-</code> 중간고사 3번해설의 이미지 변경</p>
+<p><code>-</code> 여전히 중간고사 1번해설은 잘 있음</p>
+<p><code>-</code> 중간고사3번 해설추가 + 제목추가</p>
+<p><code>-</code> 중간고사1번해설도 제목 추가.</p>
+</section>
+<section id="c.-연습문제" class="level2">
+<h2 class="anchored" data-anchor-id="c.-연습문제">C. 연습문제</h2>
+<p><code># 예제1</code>: 아래의 클래스를 구현하라.</p>
+<p><code>-</code> 클래스내에는 변수 <code>a</code>가 있다. 변수 <code>a</code>의 초기값은 True이다.</p>
+<p><code>-</code> 클래스에는 <code>show()</code>라는 메소드가 있다. <code>show()</code>의 기능은 <code>a</code>의 값을 print하는 기능을 한다.</p>
+<p>(풀이)</p>
+<p><code>#</code></p>
+<p><code># 예제2</code>: 아래의 클래스를 구현하라.</p>
+<p><code>-</code> 클래스내에는 변수 <code>a</code>가 있다. 변수 <code>a</code>의 초기값은 1이다.</p>
+<p><code>-</code> 클래스에는 <code>up()</code>라는 메소드가 있다. <code>up()</code>의 기능은 <code>a</code>의 값을 1증가시키는 기능을 한다.</p>
+<p>(풀이)</p>
+<p><code># 예제3</code>: 아래의 클래스를 구현하라.</p>
+<p><code>-</code> 클래스내에는 변수 <code>a</code>가 있다. 변수 <code>a</code>의 초기값은 0이다.</p>
+<p><code>-</code> 클래스에는 <code>up()</code>,<code>down()</code>,<code>show()</code>라는 메소드가 있다. 각각은 <code>a</code>의 값을 1증가, <code>a</code>의 값을 1감소, <code>a</code>의 값을 print하는 기능을 한다.</p>
+<p>(풀이)</p>
+<p><code>#</code></p>
+<p><code># 예제4</code>: 아래의 클래스를 구현하라.</p>
+<p><code>-</code> 클래스내에는 변수 <code>a</code>가 있다. 변수 <code>a</code>의 초기값은 0이다.</p>
+<p><code>-</code> 클래스에는 <code>up()</code>,<code>jump()</code>,<code>show()</code> 라는 메소드가 있다.</p>
+<ul>
+<li><code>up()</code>은 <code>a</code>의 값을 1증가시킨다.</li>
+<li><code>jump()</code>는 <code>jump_size</code>를 입력으로 받으며 <code>a</code>의 값을 <code>jump_size</code>만큼 증가시킨다.</li>
+<li><code>show()</code>는 <code>a</code>의 값을 print하는 기능을 한다.</li>
+</ul>
+<p><code># 예제5</code>: 아래의 클래스 <code>BobCount</code>을 구현하라.</p>
+<p><code>-</code> 클래스내에는 변수 <code>imgurl</code>이 있음. 초기값은 <code>https://github.com/guebin/PP2024/blob/main/posts/easy.jpeg?raw=true</code>이다.</p>
+<p><code>-</code> 클래스에는 <code>imshow()</code>이라는 메소드를 가지는데, 메소드는 아래와 같은 기능을 한다.</p>
+<ul>
+<li>기능1: <code>imgurl</code>의 그림을 출력</li>
+<li>기능2: ‘당신은 이 그림을 <span class="math inline">\(n\)</span>번 보았습니다’ 출력. 여기에서 <span class="math inline">\(n\)</span>은 그림을 본 횟수</li>
+</ul>
+<p>(풀이)</p>
+<p><code>#</code></p>
+<p><code># 예제6</code>: 아래의 기능을 가지는 <code>RPS</code> 클래스를 구현하라.</p>
+<p><code>-</code> <code>action_space</code> 라는 변수가 있다. 초기값은 빈 리스트.</p>
+<p><code>-</code> <code>act</code> 라는 함수가 있다. 이 함수는 <code>action_space</code>에서 하나의 값을 뽑는 함수이다.</p>
+<p>사용예시</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>guebin <span class="op">=</span> RPS()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>guebin.action_space <span class="op">=</span> [<span class="st">'가위'</span>,<span class="st">'바위'</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>guebin.act() <span class="co"># 가위가 1/2 바위가 1/2의 확률로 출력 </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>hani <span class="op">=</span> RPS()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>hani.action_space <span class="op">=</span> [<span class="st">'가위'</span>,<span class="st">'바위'</span>,<span class="st">'보'</span>]</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>hani.act() <span class="co"># 가위, 바위, 보가 1/3의 확률로 출력 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(풀이)</p>
+<p><code>#</code></p>
+</section>
+</section>
+<section id="self의-의미" class="level1">
+<h1>6. <code>self</code>의 의미</h1>
+<section id="a.-bobcount-의-다른구현" class="level2">
+<h2 class="anchored" data-anchor-id="a.-bobcount-의-다른구현">A. BobCount 의 다른구현</h2>
+<p><code>-</code> 이전 예제를 다시 복습</p>
+<p><code>-</code> 위의 예제는 아래와 같이 구현할 수도 있다.</p>
+</section>
+<section id="b.-self-인스턴스의-태명" class="level2">
+<h2 class="anchored" data-anchor-id="b.-self-인스턴스의-태명">B. <code>self</code> = 인스턴스의 태명!</h2>
+<p><code>-</code> 결국에는 <code>a.n = a.n + 1</code>의 기능을 구현하여 클래스의 <code>imshow</code> 메소드에 넣은것이 <code>self.n = self.n + 1</code> 이다.</p>
+<p><code>-</code> 따라서 <code>self</code>는 <code>a</code>에 대응한다. 즉 <code>self</code>는 인스턴스의 이름을 대신한다. 우리가 하고 싶은 것은 클래스를 선언하는 시점에서 인스턴스가 생성된 이후시점에 대한 어떠한 동작들을 정의하고 싶은 것이다. 그런데 클래스를 설계하는 시점에서는 인스턴스의 이름이 정해지지 않았으므로 (아직 인스턴스가 태어나지도 않음) 이러한 동작들을 정의하기 불편하다. 그래서 클래스를 설계하는 시점에서 그 클래스로부터 만들어지는 인스턴스는 그냥 <code>self</code>라는 가칭으로 부른다. (굳이 비유하면 <code>self</code>는 인스턴스의 태명같은 것임)</p>
+<p><code>-</code> 요약: <code>self</code>의 의미는 (후에 만들어질) 인스턴스의 이름이다. (즉 <code>self</code>는 인스턴스의 태명같은것임)</p>
+</section>
+</section>
+<section id="init__의-이해" class="level1">
+<h1>7. <code>__init__</code>의 이해</h1>
+<section id="a.-모티브" class="level2">
+<h2 class="anchored" data-anchor-id="a.-모티브">A. 모티브</h2>
+<p><code>-</code> 아래의 예시를 다시 관찰하자.</p>
+<p><code>-</code> 인스턴스를 만들때마다 <code>guebin.action_space</code> , <code>hani.action_space</code> 를 재설정해서 쓸만하게 만드는 것이 귀찮다. <span class="math inline">\(\to\)</span> <code>guebin</code>을 만들때 <code>action_space</code>도 같이 초기화하면 어떨까?</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 희망코드 </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>guebin <span class="op">=</span> RPS([<span class="st">'가위'</span>,<span class="st">'바위'</span>]) <span class="co"># 가위와 바위를 낼 수 있는 플레이어 guebin를 생성해줘</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>hani <span class="op">=</span> RPS([<span class="st">'가위'</span>,<span class="st">'바위'</span>,<span class="st">'보'</span>]) <span class="co"># 가위와 바위와 보를 낼 수 있는 플레이어 hani를 생성해줘</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>-</code> 클래스에서 인스턴스를 만드는 시점에서, 내가 사용할 일련의 변수들을 자동으로 선언했으면 좋겠다.</p>
+</section>
+<section id="b.-__init__" class="level2">
+<h2 class="anchored" data-anchor-id="b.-__init__">B. <code>__init__</code></h2>
+<p><code>-</code> 아래의 코드를 사용하자.</p>
+</section>
+<section id="c.-클래스-디자인-패턴" class="level2">
+<h2 class="anchored" data-anchor-id="c.-클래스-디자인-패턴">C. 클래스 디자인 패턴</h2>
+<p><code>#1</code> 클래스의 선언: 클래스의 선언은 아래와 같이 하며 클래스의 이름은 대문자로 한다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 예시1: 좋은사례</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BobRoss:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    ???</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    ???</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 예시2: 나쁜사례 -- 클래스 이름은 대문자로 시작해야해</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> bobRoss:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    ???</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    ???</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>딴지: 대문가 아니어도 에러는 안나는데..</p>
+</blockquote>
+<p><code>#2</code> 클래스의 내용: 클래스의 내용은 메소드만을 정의하는데에만 사용한다.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 예시1: 좋은사례 </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> RPS:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.action_space <span class="op">=</span> []</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> act(<span class="va">self</span>):</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> random.choice(<span class="va">self</span>.action_space)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 예시2: 나쁜사례</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> RPS:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    action_space <span class="op">=</span> []</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> act(<span class="va">self</span>):</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> random.choice(<span class="va">self</span>.action_space)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>딴지: 꼭 메소드만 클래스의 내용으로 쓰라는 법이 없긴함.</p>
+</blockquote>
+<p><code>#3</code> 메소드의 첫번째 입력은 항상 self 로 사용한다.</p>
+<blockquote class="blockquote">
+<p>딴지: 이것도 꼭 그런건 아님</p>
+</blockquote>
+</section>
+</section>
+<section id="파이썬의-자료형" class="level1">
+<h1>8. 파이썬의 자료형</h1>
+<section id="a.-인스턴스의-자료형" class="level2">
+<h2 class="anchored" data-anchor-id="a.-인스턴스의-자료형">A. 인스턴스의 자료형</h2>
+<p><code>-</code> 파이썬에는 자료형이라는게 있었음.</p>
+<div id="86f5b41e-546f-4b38-8c0c-1a9955cb459a" class="cell" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2a3b35c2-f9e5-4a5e-ba53-1b55c1b2c1b6" class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>list</code></pre>
+</div>
+</div>
+<p><code>-</code> 그렇다면 아래의 자료형은 뭐지?</p>
+<div id="991495da-5825-4c84-ac99-af1be7602bae" class="cell" data-tags="[]" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BobRoss: </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> <span class="st">''</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    imgurl <span class="op">=</span> <span class="st">"https://github.com/guebin/PP2024/blob/main/posts/easy.jpeg?raw=true"</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    end <span class="op">=</span> <span class="st">'어때요, 참 쉽죠??'</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> easy(<span class="va">self</span>):</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="va">self</span>.text)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        display(PIL.Image.<span class="bu">open</span>(PIL.Image.io.BytesIO(requests.get(<span class="va">self</span>.imgurl).content)))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="va">self</span>.end)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c6df1680-4da5-442f-b64f-e1a3d3c0af5a" class="cell" data-tags="[]" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>bob <span class="op">=</span> BobRoss()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>-</code> 타입을 알아보자.</p>
+<p><code>-</code> ??? 타입은 자료형, 즉 <code>int</code>, <code>float</code>, <code>list</code> 이런것 아니었나??</p>
+<p><code>-</code> 지금 <code>bob</code>의 자료형은 int, float, list 같은게 아니라 <code>BobRoss</code>가 나왔다.</p>
+<ul>
+<li>가설1: 사실 밥로스를 기리기 위해서 파이썬 내부에 <code>BobRoss</code>라는 자료형이 있었다. 그런데 내가 만든 <code>bob</code>이 우연히 그 자료형을 따르는 것!</li>
+<li>가설2: 지금 보니까 인스턴스의 type은 클래스의 이름과 같은것 같다. 따라서 <code>a = [1,2,3]</code> 에서 <code>a</code>의 자료형이 <code>list</code>인것은 사실 <code>list</code>라는 클래스의 존재가 있음을 의미하고, <code>a</code>는 그 클래스에서 생긴 인스턴스라는 의미이다. 즉 <code>list</code> 자료형을 찍어낼 수 있는 어떠한 클래스가 파이썬에 내부적으로 존재할 것이다.</li>
+</ul>
+</section>
+<section id="b.-깨달음1" class="level2">
+<h2 class="anchored" data-anchor-id="b.-깨달음1">B. 깨달음1</h2>
+<p><code>-</code> 가설2가 맞다? 그렇다면 아래는 모두 어딘가에서 찍혀진 인스턴스이다.</p>
+<div id="6eb5f950-0113-4e2b-8cf5-fe9917536f18" class="cell" data-tags="[]" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>a?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Type:</span>        list
+<span class="ansi-red-fg">String form:</span> [1, 2, 3]
+<span class="ansi-red-fg">Length:</span>      3
+<span class="ansi-red-fg">Docstring:</span>  
+Built-in mutable sequence.
+If no argument is given, the constructor creates a new empty list.
+The argument must be an iterable if specified.</pre>
+</div>
+</div>
+</div>
+<div id="5644b8b5-0500-4447-87ee-b83971ca7b2d" class="cell" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>a?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Type:</span>        tuple
+<span class="ansi-red-fg">String form:</span> (1, 2, 3)
+<span class="ansi-red-fg">Length:</span>      3
+<span class="ansi-red-fg">Docstring:</span>  
+Built-in immutable sequence.
+If no argument is given, the constructor returns an empty tuple.
+If iterable is specified the tuple is initialized from iterable's items.
+If the argument is a tuple, the return value is the same object.</pre>
+</div>
+</div>
+</div>
+<div id="ac7e52fb-c1de-48da-9187-b882b232b213" class="cell" data-tags="[]" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>a?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Type:</span>        int
+<span class="ansi-red-fg">String form:</span> 1
+<span class="ansi-red-fg">Docstring:</span>  
+int([x]) -&gt; integer
+int(x, base=10) -&gt; integer
+Convert a number or string to an integer, or return 0 if no arguments
+are given.  If x is a number, return x.__int__().  For floating point
+numbers, this truncates towards zero.
+If x is not a number or if base is given, then x must be a string,
+bytes, or bytearray instance representing an integer literal in the
+given base.  The literal can be preceded by '+' or '-' and be surrounded
+by whitespace.  The base defaults to 10.  Valid bases are 0 and 2-36.
+Base 0 means to interpret the base from the string as an integer literal.
+&gt;&gt;&gt; int('0b100', base=0)
+4</pre>
+</div>
+</div>
+</div>
+<div id="53e69f5f-3155-49ab-abae-92ee61e1da6d" class="cell" data-tags="[]" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span><span class="st">'1'</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>a?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Type:</span>        str
+<span class="ansi-red-fg">String form:</span> 1
+<span class="ansi-red-fg">Length:</span>      1
+<span class="ansi-red-fg">Docstring:</span>  
+str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str
+Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.__str__() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</pre>
+</div>
+</div>
+</div>
+<p><code>-</code> 그리고 위의 <code>a=[1,2,3]</code>과 같은 것들은 모두 “클래스-&gt;인스턴스”에 해당하는 과정이었음</p>
+</section>
+<section id="c.-깨달음2" class="level2">
+<h2 class="anchored" data-anchor-id="c.-깨달음2">C. 깨달음2</h2>
+<p><code>-</code> 생각해보니까 아래와 같이 list를 선언하는 방식도 있었음</p>
+<div id="8118f39e-937f-453d-ba54-9664a9968b22" class="cell" data-tags="[]" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span><span class="bu">list</span>()</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>[]</code></pre>
+</div>
+</div>
+<ul>
+<li>이거 지금 생각하니까 list라는 이름의 클래스에서 a라는 인스턴스를 찍어내는 문법이다?!</li>
+</ul>
+<p><code>-</code> 아래도 가능함</p>
+<div id="f9cb158f-2525-47f9-93c6-a0e5ce8766cb" class="cell" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span><span class="bu">list</span>((<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>a?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Type:</span>        list
+<span class="ansi-red-fg">String form:</span> [1, 2, 3]
+<span class="ansi-red-fg">Length:</span>      3
+<span class="ansi-red-fg">Docstring:</span>  
+Built-in mutable sequence.
+If no argument is given, the constructor creates a new empty list.
+The argument must be an iterable if specified.</pre>
+</div>
+</div>
+</div>
+<ul>
+<li>이것도 지금 보니까 list라는 이름의 클래스에서 a라는 인스턴스를 찍어내는 문법이다. 여기에서 (1,2,3)은 <code>__init__()</code>의 입력이다.</li>
+</ul>
+</section>
+<section id="d.-깨달음3" class="level2">
+<h2 class="anchored" data-anchor-id="d.-깨달음3">D. 깨달음3</h2>
+<p><code>-</code> 그러고보니까 각 자료형마다 특수한 기능들이 있었음</p>
+<div id="cb7c5119-6d11-4a71-838e-420b2e5fd76c" class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>-</code> <code>a.</code>+tab 을 하면 append, clear 등등이 나온다.</p>
+<p><code>-</code> 이러한 기능은 지금까지 우리가 “list자료형 특수기능들”이라고 부르면서 사용했었다. 그런데 a가 list클래스에서 생성된 인스턴스라는 관점에서 보면 이러한 기능들은 list클래스에서 정의된 메소드라고 볼 수 있다.</p>
+</section>
+<section id="e.-깨달음4" class="level2">
+<h2 class="anchored" data-anchor-id="e.-깨달음4">E. 깨달음4</h2>
+<p><code>-</code> <code>a.f()</code>는 <code>f(a)</code>로 해석가능하다고 하였다. 이 해석에 따르면 메소드의 첫번째 입력은 메소드가 소속된 인스턴스라고 해석할 수 있다. 즉 <code>a.f()</code>라는 함수의 입력은 <code>a</code>자신이 되는 것이다.</p>
+<p><code>-</code> 동일한 논리로 아래의 코드는 <code>bob.easy()</code>의 입력에서 <code>bob</code>을 넣는다는 의미이다.</p>
+<div id="716343be-9202-4820-9d87-64d494819ab3" class="cell" data-tags="[]" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>bob.easy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+어때요, 참 쉽죠??</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="11wk-2-lecture_files/figure-html/cell-57-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>-</code> 그래서 메소드의 첫 입력은 항상 <code>self</code> 인 것임.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="guebin/DL2024" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
