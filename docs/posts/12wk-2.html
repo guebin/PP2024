@@ -1594,9 +1594,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>바위를 내었을 경우 보상점수 총합 = 100점</li>
 </ul>
 <p>그렇다면 플레이어B는 각각 (50/150,100/150) 의 확률로 (가위,바위) 중 하나를 선택한다. 101번째 대결에 플레이어B가 가위를 내서 비겼다면 이후에는 (51/151,100/151) 의 확률로 (가위,바위) 중 하나를 선택한다. 102번째 대결에 플레이어B가 바위를 내서 이겼다면 이후에는 각각 (51/153,102/153) 의 확률로 (가위,바위) 중 하나를 선택한다. 이러한 상황을 요약하여 표로 정리하면 아래와 같다.</p>
-<p><strong>플레이어 B의 확률업데이트 예시</strong> |시점|점수 |확률| |:-:|:-:|:-:| |0&lt;= t &lt; 100|B = {가위: 50, 바위:100}| B = {가위: 50/150, 바위: 100/150}| |t= 100| B= {가위: 51, 바위:100}| B = {가위: 51/151, 바위: 100/151}| |t=101|B = {가위: 51, 바위:102}| B = {가위: 51/153, 바위: 102/153}|</p>
+<p><strong>플레이어 B의 확률업데이트 예시</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">시점</th>
+<th style="text-align: center;">점수</th>
+<th style="text-align: center;">확률</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0&lt;= t &lt; 100</td>
+<td style="text-align: center;">B = {가위: 50, 바위:100}</td>
+<td style="text-align: center;">B = {가위: 50/150, 바위: 100/150}</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">t= 100</td>
+<td style="text-align: center;">B= {가위: 51, 바위:100}</td>
+<td style="text-align: center;">B = {가위: 51/151, 바위: 100/151}</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">t=101</td>
+<td style="text-align: center;">B = {가위: 51, 바위:102}</td>
+<td style="text-align: center;">B = {가위: 51/153, 바위: 102/153}</td>
+</tr>
+</tbody>
+</table>
 <p>첫 100회 까지는 확률을 업데이트 하지 않고 (=학습하지 않고) 100~500회까지는 플레이어B가 데이터를 보고 확률을 수정한다고 하자. 즉 아래와 같은 방식으로 수정한다고 하자.</p>
-<p><strong>플레이어 A,B의 시점별 확률업데이트</strong> |시점|확률|학습| |:-:|:-:|:-:| |0&lt;= t &lt; 100 |A = {가위: 1/2, 바위: 1/2}, B = {가위:1/2, 바위:1/2}| A = False, B = False| |100&lt;= t &lt;500| A= {가위: 1/2, 바위:1/2}, B= {가위: ??, 바위: ??}| A = False, B = <strong>True</strong>|</p>
+<p><strong>플레이어 A,B의 시점별 확률업데이트</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">시점</th>
+<th style="text-align: center;">확률</th>
+<th style="text-align: center;">학습</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0&lt;= t &lt; 100</td>
+<td style="text-align: center;">A = {가위: 1/2, 바위: 1/2}, B = {가위:1/2, 바위:1/2}</td>
+<td style="text-align: center;">A = False, B = False</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100&lt;= t &lt;500</td>
+<td style="text-align: center;">A= {가위: 1/2, 바위:1/2}, B= {가위: ??, 바위: ??}</td>
+<td style="text-align: center;">A = False, B = <strong>True</strong></td>
+</tr>
+</tbody>
+</table>
 <p>500번의 대결이 끝난 이후 플레이어B가 (가위,바위)를 낼 확률은 각각 얼마로 업데이트 되었는가?</p>
 <p><strong>hint: 시간이 지날수록 플레이어B는 (가위,바위)중 바위를 내는 쪽이 유리하다는 것을 알게 될 것이다.</strong></p>
 <p>(풀이)</p>
@@ -1669,7 +1726,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>두 플레이어는 처음 100번의 대결 동안 플레이어 C와 플레이어 D는 둘 다 ’가위’와 ’바위’를 랜덤하게 선택한다. 즉, 어떤 규칙 없이 무작위로 선택한다. 그리고 500번째 대결까지는 문제 (3)와 같은 방식으로 확률을 수정한다.</p>
-<p><strong>플레이어 C,D의 시점별 확률업데이트</strong> |시점|확률|학습| |:-:|:-:|:-:| |0&lt;= t &lt;100 | C = {가위: 1/2, 바위: 1/2}, D = {가위:1/2, 바위:1/2}| C = False, D = False| |100&lt;= t &lt;500| C = {가위: ??, 바위:??}, D = {가위: ??, 바위: ??}| C = <strong>True</strong>, D = <strong>True</strong>|</p>
+<p><strong>플레이어 C,D의 시점별 확률업데이트</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">시점</th>
+<th style="text-align: center;">확률</th>
+<th style="text-align: center;">학습</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0&lt;= t &lt;100</td>
+<td style="text-align: center;">C = {가위: 1/2, 바위: 1/2}, D = {가위:1/2, 바위:1/2}</td>
+<td style="text-align: center;">C = False, D = False</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100&lt;= t &lt;500</td>
+<td style="text-align: center;">C = {가위: ??, 바위:??}, D = {가위: ??, 바위: ??}</td>
+<td style="text-align: center;">C = <strong>True</strong>, D = <strong>True</strong></td>
+</tr>
+</tbody>
+</table>
 <p>500번의 대결이 끝난 이후 플레이어C,D가 (가위,바위)를 낼 확률은 각각 얼마로 업데이트 되었는가?</p>
 <p><strong>hint: 시간이 지날수록 두 플레이어 모두 바위를 내는 쪽이 유리하다는 것을 알게 될 것이다.</strong></p>
 <p>(풀이)</p>
@@ -1779,7 +1862,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>두 플레이어는 100회까지는 랜덤으로 자신의 패를 선택한다. 그리고 101회부터 500회까지는 플레이어F만 데이터로 부터 학습을 하여 수정된 확률을 사용한다.</p>
-<p><strong>플레이어 E,F의 시점별 확률업데이트</strong> |시점|확률|학습| |:-:|:-:|:-:| |0&lt;= t &lt;100 | E = {가위: 1/2, 바위: 1/2}, F = {가위:1/2, 보:1/2}| E = False, F = False| |100&lt;= t &lt;500| E = {가위: 1/2, 바위: 1/2}, F = {가위: ??, 보: ??}| E = False, F = <strong>True</strong>|</p>
+<p><strong>플레이어 E,F의 시점별 확률업데이트</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">시점</th>
+<th style="text-align: center;">확률</th>
+<th style="text-align: center;">학습</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0&lt;= t &lt;100</td>
+<td style="text-align: center;">E = {가위: 1/2, 바위: 1/2},<br> F = {가위:1/2, 보:1/2}</td>
+<td style="text-align: center;">E = False, F = False</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100&lt;= t &lt;500</td>
+<td style="text-align: center;">E = {가위: 1/2, 바위: 1/2},<br> F = {가위: ??, 보: ??}</td>
+<td style="text-align: center;">E = False, F = <strong>True</strong></td>
+</tr>
+</tbody>
+</table>
 <p>500번의 대결이 끝나고 플레이어F가 (가위,보)를 선택하는 확률이 어떻게 업데이트 되어있는가?</p>
 <p><strong>hint: 플레이어F는 보를 내는 것이 낫다고 생각할 것이다. (가위를 내면 지거나 비기지만 보를 내면 지거나 이긴다.)</strong></p>
 <div id="147a16ea-a0e6-48dd-94cb-ae32d91e2751" class="cell" data-tags="[]" data-execution_count="1199">
@@ -1814,7 +1923,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><code>(7)</code> (6)번의 플레이어E와 플레이어F가 500회~1000회까지 추가로 게임을 한다. 이번에는 플레이어E만 데이터로부터 학습한다. 1000회까지 대결을 끝낸 이후 플레이어E가 (가위,바위)를 내는 확률은 어떻게 업데이트 되었는가?</p>
-<p><strong>플레이어 E,F의 시점별 확률업데이트</strong> |시점|확률|학습| |:-:|:-:|:-:| |0&lt;= t &lt;100 | E = {가위: 1/2, 바위: 1/2}, F = {가위:1/2, 보:1/2}| E = False, F = False| |100&lt;= t &lt;500| E = {가위: 1/2, 바위: 1/2}, F = {가위: ??, 보: ??}| E = False, F = <strong>True</strong>| |-|-|-| |t &lt; 1000| E = {가위: ??, 바위: ??}, F = {가위: ??, 보: ??}| E = <strong>True</strong>, F = False|</p>
+<p><strong>플레이어 E,F의 시점별 확률업데이트</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">시점</th>
+<th style="text-align: center;">확률</th>
+<th style="text-align: center;">학습</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0&lt;= t &lt;100</td>
+<td style="text-align: center;">E = {가위: 1/2, 바위: 1/2},<br> F = {가위:1/2, 보:1/2}</td>
+<td style="text-align: center;">E = False, F = False</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100&lt;= t &lt;500</td>
+<td style="text-align: center;">E = {가위: 1/2, 바위: 1/2},<br> F = {가위: ??, 보: ??}</td>
+<td style="text-align: center;">E = False, F = <strong>True</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">t &lt; 1000</td>
+<td style="text-align: center;">E = {가위: ??, 바위: ??},<br> F = {가위: ??, 보: ??}</td>
+<td style="text-align: center;">E = <strong>True</strong>, F = False</td>
+</tr>
+</tbody>
+</table>
 <p><strong>hint: 플레이어F는 보를 내도록 학습되어 있다. 따라서 플레이어E가 바위를 내면 지고 가위를 내면 이길것이다. 따라서 플레이어E는 가위가 유리하다고 생각할 것이다.</strong></p>
 <div id="357bff86-85a8-4a78-8b3e-3d8b8243e12a" class="cell" data-tags="[]" data-execution_count="1202">
 <div class="sourceCode cell-code" id="cb270"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb270-1"><a href="#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">500</span>,<span class="dv">1000</span>):</span>
@@ -1842,7 +1987,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><code>(8)</code> (7)번의 플레이어E와 플레이어F가 1000회~10000회까지 추가로 게임을 한다. 이번에는 플레이어F만 데이터로부터 학습한다. 10000회까지 대결을 끝낸 이후 플레이어F가 (가위,보)를 내는 확률은 어떻게 업데이트 되었는가?</p>
-<p><strong>플레이어 E,F의 시점별 확률업데이트</strong> |시점|확률|학습| |:-:|:-:|:-:| |0&lt;= t &lt;100 | E = {가위: 1/2, 바위: 1/2}, F = {가위:1/2, 보:1/2}| E = False, F = False| |100&lt;= t &lt;500| E = {가위: 1/2, 바위: 1/2}, F = {가위: ??, 보: ??}| E = False, F = <strong>True</strong>| |500&lt;= t &lt; 1000| E = {가위: ??, 바위: ??}, F = {가위: ??, 보: ??}| E = <strong>True</strong>, F = False| |-|-|-| |1000&lt;= t &lt; 10000| E = {가위: ??, 바위: ??}, F = {가위: ??, 보: ??}| E = False, F = <strong>True</strong>|</p>
+<p><strong>플레이어 E,F의 시점별 확률업데이트</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">시점</th>
+<th style="text-align: center;">확률</th>
+<th style="text-align: center;">학습</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0&lt;= t &lt;100</td>
+<td style="text-align: center;">E = {가위: 1/2, 바위: 1/2},<br> F = {가위:1/2, 보:1/2}</td>
+<td style="text-align: center;">E = False, F = False</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">100&lt;= t &lt;500</td>
+<td style="text-align: center;">E = {가위: 1/2, 바위: 1/2},<br> F = {가위: ??, 보: ??}</td>
+<td style="text-align: center;">E = False, F = <strong>True</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">500&lt;= t &lt; 1000</td>
+<td style="text-align: center;">E = {가위: ??, 바위: ??},<br> F = {가위: ??, 보: ??}</td>
+<td style="text-align: center;">E = <strong>True</strong>, F = False</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1000&lt;= t &lt; 10000</td>
+<td style="text-align: center;">E = {가위: ??, 바위: ??},<br> F = {가위: ??, 보: ??}</td>
+<td style="text-align: center;">E = False, F = <strong>True</strong></td>
+</tr>
+</tbody>
+</table>
 <p><strong>hint: 플레이어F는 원래 보가 유리하다고 생각하여 보를 자주 내도록 학습되었다. 하지만 플레이어E가 그러한 플레이어F의 성향을 파악하고 가위를 주로 내도록 학습하였다. 플레이어F는 그러한 플레이어E의 성향을 다시 파악하여 이번에는 가위을 자주 내는 것이 유리하다고 생각할 것이다.</strong></p>
 <p>(풀이)</p>
 <div id="8ed090a7-117a-4287-b1f0-c65bd1e41c56" class="cell" data-tags="[]" data-execution_count="1332">
@@ -1909,12 +2095,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">0&lt;= t &lt;1000</td>
-<td style="text-align: center;">E = {가위: 1/2, 바위: 1/2}, F = {가위: 3/4, 보: 1/4}</td>
+<td style="text-align: center;">E = {가위: 1/2, 바위: 1/2},<br> F = {가위: 3/4, 보: 1/4}</td>
 <td style="text-align: center;">E = False, F = False</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1000&lt;= t &lt;2000</td>
-<td style="text-align: center;">E = {가위: ??, 바위: ??}, F = {가위: 3/4, 보: 1/4}</td>
+<td style="text-align: center;">E = {가위: ??, 바위: ??},<br> F = {가위: 3/4, 보: 1/4}</td>
 <td style="text-align: center;">E = <strong>True</strong>, F = False</td>
 </tr>
 </tbody>
@@ -1956,7 +2142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 확률: {'가위': 0.75, '보': 0.25}</code></pre>
 </div>
 </div>
-<p><code>(10)</code> 플레이어E와 플레이어F의 대결기록을 초기화 한다. 이번에는 플레이어F가 항상 (2/3)의 확률로 가위를 (1/3)의 확률로 보를 낸다고 가정한다. 플레이어E는 100번의 대결까지는 랜덤으로 (가위,바위)중 하나를 내고 101번째 대결부터 1000번째 대결까지는 대결 데이터를 학습하여 수정한 확률을 사용한다고 하자. 1000번째 대결이후에 플레이어E가 (가위,바위)를 내는 확률이 어떻게 업데이트 되어있는가?</p>
+<p><code>(10)</code> 플레이어E와 플레이어F의 대결기록을 초기화 한다. 이번에는 플레이어F가 항상 (2/3)의 확률로 가위를 (1/3)의 확률로 보를 낸다고 가정한다.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -1995,12 +2181,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">0&lt;= t &lt;1000</td>
-<td style="text-align: center;">E = {가위: 1/2, 바위: 1/2}, F = {가위: 3/4, 보: 1/4}</td>
+<td style="text-align: center;">E = {가위: 1/2, 바위: 1/2},<br> F = {가위: 3/4, 보: 1/4}</td>
 <td style="text-align: center;">E = False, F = False</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">1000&lt;= t &lt;2000</td>
-<td style="text-align: center;">E = {가위: ??, 바위: ??}, F = {가위: 3/4, 보: 1/4}</td>
+<td style="text-align: center;">E = {가위: ??, 바위: ??},<br> F = {가위: 3/4, 보: 1/4}</td>
 <td style="text-align: center;">E = <strong>True</strong>, F = False</td>
 </tr>
 </tbody>
