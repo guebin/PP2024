@@ -2203,52 +2203,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>(풀이)</p>
-<div id="76c26dfc-3da2-4bd1-b379-a19027fed9f8" class="cell" data-tags="[]" data-execution_count="676">
+<div id="76c26dfc-3da2-4bd1-b379-a19027fed9f8" class="cell" data-tags="[]" data-execution_count="703">
 <div class="sourceCode cell-code" id="cb299"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb299-1"><a href="#cb299-1" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> RPSlrn([<span class="st">'가위'</span>,<span class="st">'바위'</span>])</span>
 <span id="cb299-2"><a href="#cb299-2" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> RPSlrn([<span class="st">'가위'</span>,<span class="st">'보'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1579ad80-66a0-453c-9772-30fa50e69032" class="cell" data-tags="[]" data-execution_count="677">
+<div id="1579ad80-66a0-453c-9772-30fa50e69032" class="cell" data-tags="[]" data-execution_count="704">
 <div class="sourceCode cell-code" id="cb300"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb300-1"><a href="#cb300-1" aria-hidden="true" tabindex="-1"></a>F.prob <span class="op">=</span> [<span class="dv">3</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">4</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="bac03dcc-fe8c-40bf-bdb9-559dac26f4ac" class="cell" data-tags="[]" data-execution_count="678">
+<div id="bac03dcc-fe8c-40bf-bdb9-559dac26f4ac" class="cell" data-tags="[]" data-execution_count="705">
 <div class="sourceCode cell-code" id="cb301"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb301-1"><a href="#cb301-1" aria-hidden="true" tabindex="-1"></a>E</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="678">
+<div class="cell-output cell-output-display" data-execution_count="705">
 <pre><code>낼 수 있는 패: ['가위', '바위']
 최근기록: []
 최근승패: []
 확률: {'가위': 0.5, '바위': 0.5}</code></pre>
 </div>
 </div>
-<div id="779b1b63-f2ed-4f5a-8b9a-b83dbc4c88b7" class="cell" data-tags="[]" data-execution_count="679">
+<div id="779b1b63-f2ed-4f5a-8b9a-b83dbc4c88b7" class="cell" data-tags="[]" data-execution_count="706">
 <div class="sourceCode cell-code" id="cb303"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb303-1"><a href="#cb303-1" aria-hidden="true" tabindex="-1"></a>F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="679">
+<div class="cell-output cell-output-display" data-execution_count="706">
 <pre><code>낼 수 있는 패: ['가위', '보']
 최근기록: []
 최근승패: []
 확률: {'가위': 0.75, '보': 0.25}</code></pre>
 </div>
 </div>
-<div id="131dfb49-0a8c-4ec4-b0bd-7751d334189e" class="cell" data-tags="[]" data-execution_count="680">
+<div id="131dfb49-0a8c-4ec4-b0bd-7751d334189e" class="cell" data-tags="[]" data-execution_count="707">
 <div class="sourceCode cell-code" id="cb305"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb305-1"><a href="#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
 <span id="cb305-2"><a href="#cb305-2" aria-hidden="true" tabindex="-1"></a>    E<span class="op">*</span>F </span>
 <span id="cb305-3"><a href="#cb305-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>,<span class="dv">2000</span>):</span>
-<span id="cb305-4"><a href="#cb305-4" aria-hidden="true" tabindex="-1"></a>    E.learn()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb305-4"><a href="#cb305-4" aria-hidden="true" tabindex="-1"></a>    E<span class="op">*</span>F </span>
+<span id="cb305-5"><a href="#cb305-5" aria-hidden="true" tabindex="-1"></a>    E.learn()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="405837a1-0386-47b1-8b24-a7dcd79f812b" class="cell" data-tags="[]" data-execution_count="682">
+<div id="405837a1-0386-47b1-8b24-a7dcd79f812b" class="cell" data-tags="[]" data-execution_count="708">
 <div class="sourceCode cell-code" id="cb306"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb306-1"><a href="#cb306-1" aria-hidden="true" tabindex="-1"></a>E</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="682">
+<div class="cell-output cell-output-display" data-execution_count="708">
 <pre><code>낼 수 있는 패: ['가위', '바위']
-최근기록: ['가위', '바위', '가위', '가위', '가위', '바위', '가위', '가위', '가위', '바위']
-최근승패: ['승리', '패배', '무승부', '무승부', '승리', '패배', '무승부', '무승부', '무승부', '승리']
-확률: {'가위': 0.43976348854397634, '바위': 0.5602365114560236}</code></pre>
+최근기록: ['가위', '가위', '가위', '가위', '가위', '바위', '가위', '바위', '바위', '가위']
+최근승패: ['무승부', '무승부', '무승부', '무승부', '승리', '승리', '무승부', '승리', '패배', '승리']
+확률: {'가위': 0.42478510028653294, '바위': 0.5752148997134671}</code></pre>
 </div>
 </div>
-<div id="739a977c-0dce-402b-87a0-e43b8349dd07" class="cell" data-tags="[]" data-execution_count="681">
+<div id="739a977c-0dce-402b-87a0-e43b8349dd07" class="cell" data-tags="[]" data-execution_count="709">
 <div class="sourceCode cell-code" id="cb308"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb308-1"><a href="#cb308-1" aria-hidden="true" tabindex="-1"></a>F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="681">
+<div class="cell-output cell-output-display" data-execution_count="709">
 <pre><code>낼 수 있는 패: ['가위', '보']
-최근기록: ['보', '보', '가위', '가위', '보', '보', '가위', '가위', '가위', '가위']
-최근승패: ['패배', '승리', '무승부', '무승부', '패배', '승리', '무승부', '무승부', '무승부', '패배']
+최근기록: ['가위', '가위', '가위', '가위', '보', '가위', '가위', '가위', '보', '보']
+최근승패: ['무승부', '무승부', '무승부', '무승부', '패배', '패배', '무승부', '패배', '승리', '패배']
 확률: {'가위': 0.75, '보': 0.25}</code></pre>
 </div>
 </div>
@@ -2305,52 +2306,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>(풀이)</p>
-<div id="a6611008-ed76-47ab-80b0-c1b1775466ef" class="cell" data-tags="[]" data-execution_count="683">
+<div id="a6611008-ed76-47ab-80b0-c1b1775466ef" class="cell" data-tags="[]" data-execution_count="710">
 <div class="sourceCode cell-code" id="cb310"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb310-1"><a href="#cb310-1" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> RPSlrn([<span class="st">'가위'</span>,<span class="st">'바위'</span>])</span>
 <span id="cb310-2"><a href="#cb310-2" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> RPSlrn([<span class="st">'가위'</span>,<span class="st">'보'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ac8dc3f7-e663-4560-8823-08941b4b7273" class="cell" data-tags="[]" data-execution_count="684">
+<div id="ac8dc3f7-e663-4560-8823-08941b4b7273" class="cell" data-tags="[]" data-execution_count="711">
 <div class="sourceCode cell-code" id="cb311"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb311-1"><a href="#cb311-1" aria-hidden="true" tabindex="-1"></a>F.prob <span class="op">=</span> [<span class="dv">2</span><span class="op">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a0ee40e1-b2c7-4792-b8ea-96eadec3b298" class="cell" data-tags="[]" data-execution_count="685">
+<div id="a0ee40e1-b2c7-4792-b8ea-96eadec3b298" class="cell" data-tags="[]" data-execution_count="712">
 <div class="sourceCode cell-code" id="cb312"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb312-1"><a href="#cb312-1" aria-hidden="true" tabindex="-1"></a>E</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="685">
+<div class="cell-output cell-output-display" data-execution_count="712">
 <pre><code>낼 수 있는 패: ['가위', '바위']
 최근기록: []
 최근승패: []
 확률: {'가위': 0.5, '바위': 0.5}</code></pre>
 </div>
 </div>
-<div id="a555ab3a-d938-4733-bdfc-9678bbe0917e" class="cell" data-tags="[]" data-execution_count="686">
+<div id="a555ab3a-d938-4733-bdfc-9678bbe0917e" class="cell" data-tags="[]" data-execution_count="713">
 <div class="sourceCode cell-code" id="cb314"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb314-1"><a href="#cb314-1" aria-hidden="true" tabindex="-1"></a>F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="686">
+<div class="cell-output cell-output-display" data-execution_count="713">
 <pre><code>낼 수 있는 패: ['가위', '보']
 최근기록: []
 최근승패: []
 확률: {'가위': 0.6666666666666666, '보': 0.3333333333333333}</code></pre>
 </div>
 </div>
-<div id="c3b5b314-bd6e-4faa-bd64-0ae747c4a8b5" class="cell" data-tags="[]" data-execution_count="687">
+<div id="c3b5b314-bd6e-4faa-bd64-0ae747c4a8b5" class="cell" data-tags="[]" data-execution_count="714">
 <div class="sourceCode cell-code" id="cb316"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb316-1"><a href="#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
 <span id="cb316-2"><a href="#cb316-2" aria-hidden="true" tabindex="-1"></a>    E<span class="op">*</span>F </span>
 <span id="cb316-3"><a href="#cb316-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>,<span class="dv">2000</span>):</span>
-<span id="cb316-4"><a href="#cb316-4" aria-hidden="true" tabindex="-1"></a>    E.learn()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb316-4"><a href="#cb316-4" aria-hidden="true" tabindex="-1"></a>    E<span class="op">*</span>F </span>
+<span id="cb316-5"><a href="#cb316-5" aria-hidden="true" tabindex="-1"></a>    E.learn()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="60d44415-3c92-4a7b-862a-c54d70835f73" class="cell" data-tags="[]" data-execution_count="688">
+<div id="60d44415-3c92-4a7b-862a-c54d70835f73" class="cell" data-tags="[]" data-execution_count="716">
 <div class="sourceCode cell-code" id="cb317"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb317-1"><a href="#cb317-1" aria-hidden="true" tabindex="-1"></a>E</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="688">
+<div class="cell-output cell-output-display" data-execution_count="716">
 <pre><code>낼 수 있는 패: ['가위', '바위']
-최근기록: ['바위', '바위', '바위', '가위', '가위', '가위', '바위', '바위', '가위', '바위']
-최근승패: ['패배', '승리', '승리', '무승부', '무승부', '무승부', '승리', '패배', '무승부', '승리']
-확률: {'가위': 0.5026217228464419, '바위': 0.49737827715355803}</code></pre>
+최근기록: ['가위', '바위', '가위', '가위', '가위', '가위', '가위', '가위', '바위', '바위']
+최근승패: ['무승부', '패배', '무승부', '무승부', '무승부', '승리', '무승부', '승리', '승리', '승리']
+확률: {'가위': 0.4884233737596472, '바위': 0.5115766262403528}</code></pre>
 </div>
 </div>
-<div id="8d713287-706e-4938-a84e-80bac69116ec" class="cell" data-tags="[]" data-execution_count="689">
+<div id="8d713287-706e-4938-a84e-80bac69116ec" class="cell" data-tags="[]" data-execution_count="717">
 <div class="sourceCode cell-code" id="cb319"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb319-1"><a href="#cb319-1" aria-hidden="true" tabindex="-1"></a>F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="689">
+<div class="cell-output cell-output-display" data-execution_count="717">
 <pre><code>낼 수 있는 패: ['가위', '보']
-최근기록: ['보', '가위', '가위', '가위', '가위', '가위', '가위', '보', '가위', '가위']
-최근승패: ['승리', '패배', '패배', '무승부', '무승부', '무승부', '패배', '승리', '무승부', '패배']
+최근기록: ['가위', '보', '가위', '가위', '가위', '보', '가위', '보', '가위', '가위']
+최근승패: ['무승부', '승리', '무승부', '무승부', '무승부', '패배', '무승부', '패배', '패배', '패배']
 확률: {'가위': 0.6666666666666666, '보': 0.3333333333333333}</code></pre>
 </div>
 </div>
@@ -2407,53 +2409,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>(풀이)</p>
-<div id="bd04c883-00a1-470a-ae25-7d6208166528" class="cell" data-tags="[]" data-execution_count="696">
+<div id="bd04c883-00a1-470a-ae25-7d6208166528" class="cell" data-tags="[]" data-execution_count="718">
 <div class="sourceCode cell-code" id="cb321"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb321-1"><a href="#cb321-1" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> RPSlrn([<span class="st">'가위'</span>,<span class="st">'바위'</span>])</span>
 <span id="cb321-2"><a href="#cb321-2" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> RPSlrn([<span class="st">'가위'</span>,<span class="st">'보'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5d63ddc6-0c64-4cd3-a995-67f1905c7a9b" class="cell" data-tags="[]" data-execution_count="697">
+<div id="5d63ddc6-0c64-4cd3-a995-67f1905c7a9b" class="cell" data-tags="[]" data-execution_count="719">
 <div class="sourceCode cell-code" id="cb322"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb322-1"><a href="#cb322-1" aria-hidden="true" tabindex="-1"></a>E.prob <span class="op">=</span> [<span class="dv">2</span><span class="op">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9a23233b-9f16-43c5-aeb1-de3e57fe54c2" class="cell" data-tags="[]" data-execution_count="698">
+<div id="9a23233b-9f16-43c5-aeb1-de3e57fe54c2" class="cell" data-tags="[]" data-execution_count="720">
 <div class="sourceCode cell-code" id="cb323"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb323-1"><a href="#cb323-1" aria-hidden="true" tabindex="-1"></a>E</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="698">
+<div class="cell-output cell-output-display" data-execution_count="720">
 <pre><code>낼 수 있는 패: ['가위', '바위']
 최근기록: []
 최근승패: []
 확률: {'가위': 0.6666666666666666, '바위': 0.3333333333333333}</code></pre>
 </div>
 </div>
-<div id="f9b5a278-4fa8-478c-9a4a-179dd2229af9" class="cell" data-tags="[]" data-execution_count="699">
+<div id="f9b5a278-4fa8-478c-9a4a-179dd2229af9" class="cell" data-tags="[]" data-execution_count="721">
 <div class="sourceCode cell-code" id="cb325"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb325-1"><a href="#cb325-1" aria-hidden="true" tabindex="-1"></a>F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="699">
+<div class="cell-output cell-output-display" data-execution_count="721">
 <pre><code>낼 수 있는 패: ['가위', '보']
 최근기록: []
 최근승패: []
 확률: {'가위': 0.5, '보': 0.5}</code></pre>
 </div>
 </div>
-<div id="7238dffd-39a0-45bd-a088-56d846e17272" class="cell" data-tags="[]" data-execution_count="700">
+<div id="7238dffd-39a0-45bd-a088-56d846e17272" class="cell" data-tags="[]" data-execution_count="722">
 <div class="sourceCode cell-code" id="cb327"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb327-1"><a href="#cb327-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
 <span id="cb327-2"><a href="#cb327-2" aria-hidden="true" tabindex="-1"></a>    E<span class="op">*</span>F </span>
 <span id="cb327-3"><a href="#cb327-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>,<span class="dv">2000</span>):</span>
-<span id="cb327-4"><a href="#cb327-4" aria-hidden="true" tabindex="-1"></a>    F.learn()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb327-4"><a href="#cb327-4" aria-hidden="true" tabindex="-1"></a>    E<span class="op">*</span>F </span>
+<span id="cb327-5"><a href="#cb327-5" aria-hidden="true" tabindex="-1"></a>    F.learn()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cf10506c-ad63-45fa-8c9d-e197a0d66365" class="cell" data-tags="[]" data-execution_count="701">
+<div id="cf10506c-ad63-45fa-8c9d-e197a0d66365" class="cell" data-tags="[]" data-execution_count="723">
 <div class="sourceCode cell-code" id="cb328"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb328-1"><a href="#cb328-1" aria-hidden="true" tabindex="-1"></a>E</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="701">
+<div class="cell-output cell-output-display" data-execution_count="723">
 <pre><code>낼 수 있는 패: ['가위', '바위']
-최근기록: ['바위', '바위', '바위', '바위', '바위', '바위', '가위', '가위', '바위', '가위']
-최근승패: ['승리', '승리', '승리', '패배', '패배', '승리', '무승부', '승리', '승리', '승리']
+최근기록: ['바위', '가위', '바위', '가위', '가위', '가위', '가위', '바위', '바위', '가위']
+최근승패: ['패배', '승리', '승리', '승리', '무승부', '승리', '무승부', '패배', '패배', '무승부']
 확률: {'가위': 0.6666666666666666, '바위': 0.3333333333333333}</code></pre>
 </div>
 </div>
-<div id="163cf0fc-831b-42fe-9893-26a43f042c8d" class="cell" data-tags="[]" data-execution_count="702">
+<div id="163cf0fc-831b-42fe-9893-26a43f042c8d" class="cell" data-tags="[]" data-execution_count="724">
 <div class="sourceCode cell-code" id="cb330"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb330-1"><a href="#cb330-1" aria-hidden="true" tabindex="-1"></a>F</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="702">
+<div class="cell-output cell-output-display" data-execution_count="724">
 <pre><code>낼 수 있는 패: ['가위', '보']
-최근기록: ['가위', '가위', '가위', '보', '보', '가위', '가위', '보', '가위', '보']
-최근승패: ['패배', '패배', '패배', '승리', '승리', '패배', '무승부', '패배', '패배', '패배']
-확률: {'가위': 0.5288888888888889, '보': 0.4711111111111111}</code></pre>
+최근기록: ['보', '보', '가위', '보', '가위', '보', '가위', '보', '보', '가위']
+최근승패: ['승리', '패배', '패배', '패배', '무승부', '패배', '무승부', '승리', '승리', '무승부']
+확률: {'가위': 0.45953971789161097, '보': 0.540460282108389}</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
