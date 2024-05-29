@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.520">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -108,6 +108,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -221,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="11wk-2.out.ipynb" download="11wk-2.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -1956,7 +1983,7 @@ a = 6</code></pre>
 </blockquote>
 </section>
 </section>
-<section id="repr_html_" class="level1 page-columns page-full">
+<section id="repr_html_" class="level1">
 <h1>11. <code>_repr_html_</code></h1>
 <section id="a.-motive-2" class="level2">
 <h2 class="anchored" data-anchor-id="a.-motive-2">A. motive</h2>
@@ -2061,7 +2088,7 @@ a = 6</code></pre>
 <li>사실 <code>df+엔터</code>는 <code>print(df.__repr__())</code>의 축약이 아니라 <code>display(HTML(df._repr_html_()))</code>의 축약이다.</li>
 </ul>
 </section>
-<section id="b.-_repr_html_-의-역할" class="level2 page-columns page-full">
+<section id="b.-_repr_html_-의-역할" class="level2">
 <h2 class="anchored" data-anchor-id="b.-_repr_html_-의-역할">B. <code>_repr_html_</code> 의 역할</h2>
 <div id="fa660f91-169e-4f74-bd34-2b12caa78fc5" class="cell" data-tags="[]" data-execution_count="542">
 <div class="sourceCode cell-code" id="cb265"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb265-1"><a href="#cb265-1" aria-hidden="true" tabindex="-1"></a>df._repr_html_()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2110,10 +2137,10 @@ a = 6</code></pre>
 <li>대화형콘솔중 HTML 출력을 지원하면 <code>오브젝트이름+엔터</code>는 <code>display(HTML(df._repr_html_())) + 엔터</code> 의 효과</li>
 <li>대화형콘솔중 HTML 출력을 지원하지 않으면 <code>오브젝트이름+엔터</code>는 <code>print(df.__repr__()) + 엔터</code> 의 효과</li>
 </ol>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="https://github.com/guebin/PP2024/blob/main/posts/oldpython.png?raw=true" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">그림1: HTML을 지원하는 않는 대화형 콘솔에서의 df출력예시</figcaption>
+<figcaption>그림1: HTML을 지원하는 않는 대화형 콘솔에서의 df출력예시</figcaption>
 </figure>
 </div>
 </section>
@@ -2622,27 +2649,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -2657,10 +2663,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -2669,7 +2679,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
