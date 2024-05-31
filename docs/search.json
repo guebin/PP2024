@@ -763,11 +763,11 @@
     "text": "A. 모티브\n\na = [11,22,33]\na\n\n[11, 22, 33]\n\n\n\na[0]\n\n11\n\n\n\n이거 좋아보인다?\n\n\na.__getitem__(0) # a[0]의 축약표현\n\n11\n\n\n\na.__getitem__(1) # a[1]의 축약표현\n\n22\n\n\n\na.__getitem__(-1) # a[-1]의 축약표현\n\n33\n\n\n\n이런거였어??"
   },
   {
-    "objectID": "posts/12wk-2.html#b.-rps2-__getitem__의-사용",
-    "href": "posts/12wk-2.html#b.-rps2-__getitem__의-사용",
+    "objectID": "posts/12wk-2.html#b.-rps1-__getitem__의-사용",
+    "href": "posts/12wk-2.html#b.-rps1-__getitem__의-사용",
     "title": "12wk-2: 클래스 (2)",
-    "section": "B. RPS2: __getitem__의 사용",
-    "text": "B. RPS2: __getitem__의 사용\n\nclass RPSBase:\n    def __init__(self,action_space):\n        self.action_space = action_space \n        self.actions = []\n    def act(self):\n        action = np.random.choice(self.action_space)\n        self.actions.append(action)\n        return action\n    def __repr__(self):\n        text = f\"낼 수 있는 패: {self.action_space}\\n기록: {self.actions}\"\n        return text\n\n\nA = RPSBase(['가위','바위','보'])\nA\n\n낼 수 있는 패: ['가위', '바위', '보']\n기록: []\n\n\n\nA.act()\nA.act()\n\n'바위'\n\n\n\nA\n\n낼 수 있는 패: ['가위', '바위', '보']\n기록: ['바위', '바위']\n\n\n\nA[0], A[1]\n\nTypeError: 'RPSBase' object is not subscriptable\n\n\n\n이 결과가 “A.actions[0]=바위”, “A.actions[1]=가위”로 나왔으면 좋겠다.. 그런데 지금은 불가능함.\n\n\nA.__getitem__(0)\n\nAttributeError: 'RPSBase' object has no attribute '__getitem__'\n\n\n\nclass RPS1(RPSBase):\n    def __getitem__(self,idx):\n        return self.actions[idx]\n\n\nA = RPS1(['가위','바위','보'])\nA\n\n낼 수 있는 패: ['가위', '바위', '보']\n기록: []\n\n\n\nA.act()\nA.act()\nA.act()\nA.act()\n\n'보'\n\n\n\nA\n\n낼 수 있는 패: ['가위', '바위', '보']\n기록: ['바위', '보', '보', '보']\n\n\n\nA[0],A[1],A[2],A[-1]\n\n('바위', '보', '보', '보')\n\n\n\n파이썬의 비밀: A[0]는 A.__getitem__(0)의 축약형이다."
+    "section": "B. RPS1: __getitem__의 사용",
+    "text": "B. RPS1: __getitem__의 사용\n\nclass RPSBase:\n    def __init__(self,action_space):\n        self.action_space = action_space \n        self.actions = []\n    def act(self):\n        action = np.random.choice(self.action_space)\n        self.actions.append(action)\n        return action\n    def __repr__(self):\n        text = f\"낼 수 있는 패: {self.action_space}\\n기록: {self.actions}\"\n        return text\n\n\nA = RPSBase(['가위','바위','보'])\nA\n\n낼 수 있는 패: ['가위', '바위', '보']\n기록: []\n\n\n\nA.act()\nA.act()\n\n'바위'\n\n\n\nA\n\n낼 수 있는 패: ['가위', '바위', '보']\n기록: ['바위', '바위']\n\n\n\nA[0], A[1]\n\nTypeError: 'RPSBase' object is not subscriptable\n\n\n\n이 결과가 “A.actions[0]=바위”, “A.actions[1]=가위”로 나왔으면 좋겠다.. 그런데 지금은 불가능함.\n\n\nA.__getitem__(0)\n\nAttributeError: 'RPSBase' object has no attribute '__getitem__'\n\n\n\nclass RPS1(RPSBase):\n    def __getitem__(self,idx):\n        return self.actions[idx]\n\n\nA = RPS1(['가위','바위','보'])\nA\n\n낼 수 있는 패: ['가위', '바위', '보']\n기록: []\n\n\n\nA.act()\nA.act()\nA.act()\nA.act()\n\n'보'\n\n\n\nA\n\n낼 수 있는 패: ['가위', '바위', '보']\n기록: ['바위', '보', '보', '보']\n\n\n\nA[0],A[1],A[2],A[-1]\n\n('바위', '보', '보', '보')\n\n\n\n파이썬의 비밀: A[0]는 A.__getitem__(0)의 축약형이다."
   },
   {
     "objectID": "posts/12wk-2.html#a.-모티브-2",
@@ -777,11 +777,11 @@
     "text": "A. 모티브\n\nA = RPS1(['가위','바위'])\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: []\n\n\n\nA.act()\nA.act()\nA.act()\nA.act()\n\n'바위'\n\n\n\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: ['바위', '바위', '가위', '바위']\n\n\n\nA[0]\n\n'바위'\n\n\n\nA[0] = \"보\"\n\nTypeError: 'RPS1' object does not support item assignment\n\n\n\n여기서 이 문법이 가능하면 결과 조작이긴 함.\n그런데 경우에 따라서는 이런 문법이 필요할 때도 있음."
   },
   {
-    "objectID": "posts/12wk-2.html#b.-rps3-__setitem__-사용",
-    "href": "posts/12wk-2.html#b.-rps3-__setitem__-사용",
+    "objectID": "posts/12wk-2.html#b.-rps2-__setitem__-사용",
+    "href": "posts/12wk-2.html#b.-rps2-__setitem__-사용",
     "title": "12wk-2: 클래스 (2)",
-    "section": "B. RPS3: __setitem__ 사용",
-    "text": "B. RPS3: __setitem__ 사용\n- 관찰\n\nlst = [1,2,3] \nlst\n\n[1, 2, 3]\n\n\n\nlst[0] = 11\nlst\n\n[11, 2, 3]\n\n\n\nlst.__setitem__(0,-11) # lst[0] = -11 의 역할\nlst\n\n[-11, 2, 3]\n\n\n- RPS예제\n\nclass RPS2(RPS1):\n    def __setitem__(self,idx,val):\n        self.actions[idx] = val \n\n\nA = RPS2(['가위','바위'])\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: []\n\n\n\nA.act()\nA.act()\nA.act()\nA.act()\n\n'가위'\n\n\n\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: ['바위', '가위', '바위', '가위']\n\n\n\nA[0]\n\n'바위'\n\n\n\nA[0] = \"보\"\n# A.__setitem__(0,\"보\")\n# A.actions[0] = \"보\" \n\n\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: ['보', '가위', '바위', '가위']\n\n\n\n파이썬의 비밀: A[0]=\"보\"는 A.__setitem__(0,\"보\")의 축약형이다."
+    "section": "B. RPS2: __setitem__ 사용",
+    "text": "B. RPS2: __setitem__ 사용\n- 관찰\n\nlst = [1,2,3] \nlst\n\n[1, 2, 3]\n\n\n\nlst[0] = 11\nlst\n\n[11, 2, 3]\n\n\n\nlst.__setitem__(0,-11) # lst[0] = -11 의 역할\nlst\n\n[-11, 2, 3]\n\n\n- RPS예제\n\nclass RPS2(RPS1):\n    def __setitem__(self,idx,val):\n        self.actions[idx] = val \n\n\nA = RPS2(['가위','바위'])\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: []\n\n\n\nA.act()\nA.act()\nA.act()\nA.act()\n\n'가위'\n\n\n\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: ['바위', '가위', '바위', '가위']\n\n\n\nA[0]\n\n'바위'\n\n\n\nA[0] = \"보\"\n# A.__setitem__(0,\"보\")\n# A.actions[0] = \"보\" \n\n\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: ['보', '가위', '바위', '가위']\n\n\n\n파이썬의 비밀: A[0]=\"보\"는 A.__setitem__(0,\"보\")의 축약형이다."
   },
   {
     "objectID": "posts/12wk-2.html#a.-모티브-3",
@@ -791,11 +791,11 @@
     "text": "A. 모티브\n\nA = RPS2(['가위','바위'])\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: []\n\n\n\nA.act()\nA.act()\nA.act()\nA.act()\n\n'가위'\n\n\n\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: ['가위', '가위', '바위', '가위']\n\n\n\nA[0],A[1],A[2],A[3]\n\n('가위', '가위', '바위', '가위')\n\n\n\nlen(A)\n\nTypeError: object of type 'RPS2' has no len()\n\n\n\n이게 4라고 나왔으면.."
   },
   {
-    "objectID": "posts/12wk-2.html#b.-rps4-__len__-의-사용",
-    "href": "posts/12wk-2.html#b.-rps4-__len__-의-사용",
+    "objectID": "posts/12wk-2.html#b.-rps3-__len__-의-사용",
+    "href": "posts/12wk-2.html#b.-rps3-__len__-의-사용",
     "title": "12wk-2: 클래스 (2)",
-    "section": "B. RPS4: __len__ 의 사용",
-    "text": "B. RPS4: __len__ 의 사용\n- 관찰\n\na = [1,2,3]\nlen(a)\n\n3\n\n\n\na.__len__()\n\n3\n\n\n- 구현\n\nclass RPS3(RPS2):\n    def __len__(self):\n        return len(self.actions)\n\n\nA = RPS3(['가위','바위'])\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: []\n\n\n\nA.act()\nA.act()\nA.act()\nA.act()\nA.act()\nA.act()\nA.act()\n\n'가위'\n\n\n\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: ['가위', '가위', '바위', '가위', '가위', '바위', '가위']\n\n\n\nlen(A)\n\n7\n\n\n\n파이썬의 비밀: len(A)는 A.__len__()의 축약형이다."
+    "section": "B. RPS3: __len__ 의 사용",
+    "text": "B. RPS3: __len__ 의 사용\n- 관찰\n\na = [1,2,3]\nlen(a)\n\n3\n\n\n\na.__len__()\n\n3\n\n\n- 구현\n\nclass RPS3(RPS2):\n    def __len__(self):\n        return len(self.actions)\n\n\nA = RPS3(['가위','바위'])\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: []\n\n\n\nA.act()\nA.act()\nA.act()\nA.act()\nA.act()\nA.act()\nA.act()\n\n'가위'\n\n\n\nA\n\n낼 수 있는 패: ['가위', '바위']\n기록: ['가위', '가위', '바위', '가위', '가위', '바위', '가위']\n\n\n\nlen(A)\n\n7\n\n\n\n파이썬의 비밀: len(A)는 A.__len__()의 축약형이다."
   },
   {
     "objectID": "posts/12wk-2.html#a.-모티브-4",
@@ -805,11 +805,11 @@
     "text": "A. 모티브\n\nA = RPS3(['가위','바위'])\nB = RPS3(['가위','보'])\n\n\nA.act()\nB.act()\n\n'보'\n\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['가위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['보'])\n\n\n\nA[0] = \"가위\"\nB[0] = \"가위\"\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['가위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['가위'])\n\n\n\nA == B\n\nFalse\n\n\n\n의미상으로는 A와 B 모두 “가위”를 냈으므로, 현재는 비겼음.\n그래서 A==B의 결과가 True가 나오는 것이 더 의미상 맞는것 같다."
   },
   {
-    "objectID": "posts/12wk-2.html#b.-rps5-__eq__-의-사용",
-    "href": "posts/12wk-2.html#b.-rps5-__eq__-의-사용",
+    "objectID": "posts/12wk-2.html#b.-rps4-__eq__-의-사용",
+    "href": "posts/12wk-2.html#b.-rps4-__eq__-의-사용",
     "title": "12wk-2: 클래스 (2)",
-    "section": "B. RPS5: __eq__ 의 사용",
-    "text": "B. RPS5: __eq__ 의 사용\n- 관찰\n\na = 33 \nb = 33 \nc = 55\n\n\na.__eq__(b)  # a==b\n\nTrue\n\n\n\na.__eq__(c)  # a==c\n\nFalse\n\n\n- 구현\n\nclass RPS4(RPS3):\n    def __eq__(self,other):\n        return self[-1] == other[-1]\n\n\nA = RPS4(['가위','바위'])\nB = RPS4(['가위','보'])\n\n1회 대결\n\nA.act()\nB.act()\n\n'보'\n\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['바위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['보'])\n\n\n\nA == B\n\nFalse\n\n\n2회 대결\n\nA.act()\nB.act()\n\n'가위'\n\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['바위', '바위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['보', '가위'])\n\n\n\nA == B\n\nFalse"
+    "section": "B. RPS4: __eq__ 의 사용",
+    "text": "B. RPS4: __eq__ 의 사용\n- 관찰\n\na = 33 \nb = 33 \nc = 55\n\n\na.__eq__(b)  # a==b\n\nTrue\n\n\n\na.__eq__(c)  # a==c\n\nFalse\n\n\n- 구현\n\nclass RPS4(RPS3):\n    def __eq__(self,other):\n        return self[-1] == other[-1]\n\n\nA = RPS4(['가위','바위'])\nB = RPS4(['가위','보'])\n\n1회 대결\n\nA.act()\nB.act()\n\n'보'\n\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['바위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['보'])\n\n\n\nA == B\n\nFalse\n\n\n2회 대결\n\nA.act()\nB.act()\n\n'가위'\n\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['바위', '바위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['보', '가위'])\n\n\n\nA == B\n\nFalse"
   },
   {
     "objectID": "posts/12wk-2.html#a.-모티브-5",
@@ -819,11 +819,11 @@
     "text": "A. 모티브\n\nA = RPS4(['가위','바위'])\nB = RPS4(['가위','보'])\n\n1회 대결\n\nA.act()\nB.act()\n\n'보'\n\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['가위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['보'])\n\n\n\nA&gt;B\n\nTypeError: '&gt;' not supported between instances of 'RPS4' and 'RPS4'"
   },
   {
-    "objectID": "posts/12wk-2.html#b.-rps6-__gt__-의-사용",
-    "href": "posts/12wk-2.html#b.-rps6-__gt__-의-사용",
+    "objectID": "posts/12wk-2.html#b.-rps5-__gt__-의-사용",
+    "href": "posts/12wk-2.html#b.-rps5-__gt__-의-사용",
     "title": "12wk-2: 클래스 (2)",
-    "section": "B. RPS6: __gt__ 의 사용",
-    "text": "B. RPS6: __gt__ 의 사용\n- 관찰\n\na = 11\nb = 22 \n\n\na.__gt__(b) # a&lt;b \n\nFalse\n\n\n\nb.__gt__(a) # b&gt;a\n\nTrue\n\n\n- 구현\n\nclass RPS5(RPS4):\n    def __gt__(self,other):\n        return [self[-1], other[-1]] in [[\"가위\",\"보\"], [\"바위\",\"가위\"], [\"보\",\"바위\"]]\n\n\nA = RPS5(['가위','바위'])\nB = RPS5(['가위','보'])\n\n1회대결\n\nA.act()\nB.act()\n\n'보'\n\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['가위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['보'])\n\n\n\nA &gt; B\n\nTrue\n\n\n2회대결\n\nA.act()\nB.act()\n\n'보'\n\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['가위', '가위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['보', '보'])\n\n\n\nA &gt; B # 이건 원래 A.__gt__(B) 의 실행임 \n\nTrue\n\n\n- 이상태에서 A&lt;B 를 한다면?\n\nA &lt; B # 이건 원래 A.__lt__(B) 의 실행임 \n\nFalse\n\n\n\nA &lt; B, A == B, A &gt; B\n\n(False, False, True)\n\n\n- 비교연산자 정리\n\n\n\n특수메소드\n의미\n\n\n\n\n__eq__\nself == other\n\n\n__gt__\nself &gt; other\n\n\n__lt__\nself &lt; other\n\n\n__ge__\nself &gt;= other\n\n\n__le__\nself &lt;= other\n\n\n\n\n파이썬의 비밀10: __eq__, __gt__, __lt__, __ge__, __le__는 각각 ==, &gt;, &lt;, &gt;=, &lt;= 를 재정의한다."
+    "section": "B. RPS5: __gt__ 의 사용",
+    "text": "B. RPS5: __gt__ 의 사용\n- 관찰\n\na = 11\nb = 22 \n\n\na.__gt__(b) # a&lt;b \n\nFalse\n\n\n\nb.__gt__(a) # b&gt;a\n\nTrue\n\n\n- 구현\n\nclass RPS5(RPS4):\n    def __gt__(self,other):\n        return [self[-1], other[-1]] in [[\"가위\",\"보\"], [\"바위\",\"가위\"], [\"보\",\"바위\"]]\n\n\nA = RPS5(['가위','바위'])\nB = RPS5(['가위','보'])\n\n1회대결\n\nA.act()\nB.act()\n\n'보'\n\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['가위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['보'])\n\n\n\nA &gt; B\n\nTrue\n\n\n2회대결\n\nA.act()\nB.act()\n\n'보'\n\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['가위', '가위'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['보', '보'])\n\n\n\nA &gt; B # 이건 원래 A.__gt__(B) 의 실행임 \n\nTrue\n\n\n- 이상태에서 A&lt;B 를 한다면?\n\nA &lt; B # 이건 원래 A.__lt__(B) 의 실행임 \n\nFalse\n\n\n\nA &lt; B, A == B, A &gt; B\n\n(False, False, True)\n\n\n- 비교연산자 정리\n\n\n\n특수메소드\n의미\n\n\n\n\n__eq__\nself == other\n\n\n__gt__\nself &gt; other\n\n\n__lt__\nself &lt; other\n\n\n__ge__\nself &gt;= other\n\n\n__le__\nself &lt;= other\n\n\n\n\n파이썬의 비밀10: __eq__, __gt__, __lt__, __ge__, __le__는 각각 ==, &gt;, &lt;, &gt;=, &lt;= 를 재정의한다."
   },
   {
     "objectID": "posts/12wk-2.html#a.-모티브-6",
@@ -833,11 +833,11 @@
     "text": "A. 모티브\n\na = 3 \nb = 2 \n\n\na*b\n\n6\n\n\n\na.__mul__(b)\n\n6\n\n\n- 하고싶은것: A*B 가 두 플레이어 A,B의 “대결”을 의미하도록 하고싶다!"
   },
   {
-    "objectID": "posts/12wk-2.html#b.-rps7-__mul__-의-사용",
-    "href": "posts/12wk-2.html#b.-rps7-__mul__-의-사용",
+    "objectID": "posts/12wk-2.html#b.-rps6-__mul__-의-사용",
+    "href": "posts/12wk-2.html#b.-rps6-__mul__-의-사용",
     "title": "12wk-2: 클래스 (2)",
-    "section": "B. RPS7: __mul__ 의 사용",
-    "text": "B. RPS7: __mul__ 의 사용\n- 구현\n\nclass RPS6(RPS5):\n    def __init__(self,action_space):\n        super().__init__(action_space)\n        self.results = [] \n    def __mul__(self,other):\n        self.act()\n        other.act()\n        if self&gt;other:\n            self.results.append(\"승리\")\n            other.results.append(\"패배\") \n        elif self&lt;other:\n            self.results.append(\"패배\")\n            other.results.append(\"승리\")\n        else:\n            self.results.append(\"무승부\")\n            other.results.append(\"무승부\")\n    def __repr__(self):\n        text = super().__repr__()\n        text = text + f\"\\n승패: {self.results}\"\n        return text\n\n\nA = RPS6(['가위','바위'])\nB = RPS6(['가위','보'])\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: []\n 승패: [],\n 낼 수 있는 패: ['가위', '보']\n 기록: []\n 승패: [])\n\n\n\nA*B\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['바위']\n 승패: ['승리'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['가위']\n 승패: ['패배'])\n\n\n\nA*B\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['바위', '가위']\n 승패: ['승리', '무승부'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['가위', '가위']\n 승패: ['패배', '무승부'])"
+    "section": "B. RPS6: __mul__ 의 사용",
+    "text": "B. RPS6: __mul__ 의 사용\n- 구현\n\nclass RPS6(RPS5):\n    def __init__(self,action_space):\n        super().__init__(action_space)\n        self.results = [] \n    def __mul__(self,other):\n        self.act()\n        other.act()\n        if self&gt;other:\n            self.results.append(\"승리\")\n            other.results.append(\"패배\") \n        elif self&lt;other:\n            self.results.append(\"패배\")\n            other.results.append(\"승리\")\n        else:\n            self.results.append(\"무승부\")\n            other.results.append(\"무승부\")\n    def __repr__(self):\n        text = super().__repr__()\n        text = text + f\"\\n승패: {self.results}\"\n        return text\n\n\nA = RPS6(['가위','바위'])\nB = RPS6(['가위','보'])\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: []\n 승패: [],\n 낼 수 있는 패: ['가위', '보']\n 기록: []\n 승패: [])\n\n\n\nA*B\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['바위']\n 승패: ['승리'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['가위']\n 승패: ['패배'])\n\n\n\nA*B\n\n\nA,B\n\n(낼 수 있는 패: ['가위', '바위']\n 기록: ['바위', '가위']\n 승패: ['승리', '무승부'],\n 낼 수 있는 패: ['가위', '보']\n 기록: ['가위', '가위']\n 승패: ['패배', '무승부'])"
   },
   {
     "objectID": "posts/supp1.html#a.-line-라인플랏",
