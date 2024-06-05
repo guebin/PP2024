@@ -1514,7 +1514,7 @@ enumerate is useful for obtaining an indexed list:
 </div>
 <p><code>#</code></p>
 <p><code># 예제3</code> – 질문을 해결하기 위한 코드 (2)</p>
-<div id="a28c511d-69c6-4901-9321-0f82322d7ee7" class="cell" data-tags="[]" data-execution_count="366">
+<div id="a28c511d-69c6-4901-9321-0f82322d7ee7" class="cell" data-tags="[]" data-execution_count="704">
 <div class="sourceCode cell-code" id="cb262"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb262-1"><a href="#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GS25: </span>
 <span id="cb262-2"><a href="#cb262-2" aria-hidden="true" tabindex="-1"></a>    n_stores <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb262-3"><a href="#cb262-3" aria-hidden="true" tabindex="-1"></a>    n_total_guests <span class="op">=</span> <span class="dv">0</span></span>
@@ -1528,42 +1528,42 @@ enumerate is useful for obtaining an indexed list:
 <span id="cb262-11"><a href="#cb262-11" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> (</span>
 <span id="cb262-12"><a href="#cb262-12" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"GS25-</span><span class="sc">{</span>GS25<span class="sc">.</span>n_stores<span class="sc">}</span><span class="ss">호점</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb262-13"><a href="#cb262-13" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"손님수(인스턴스) = </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>n_guests<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb262-14"><a href="#cb262-14" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"손님수(클래스) = </span><span class="sc">{</span>GS25<span class="sc">.</span>n_total_guests<span class="sc">}</span><span class="ss">"</span>    </span>
+<span id="cb262-14"><a href="#cb262-14" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"총손님수(클래스) = </span><span class="sc">{</span>GS25<span class="sc">.</span>n_total_guests<span class="sc">}</span><span class="ss">"</span>    </span>
 <span id="cb262-15"><a href="#cb262-15" aria-hidden="true" tabindex="-1"></a>        )</span>
 <span id="cb262-16"><a href="#cb262-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5c3ddc97-07bc-431b-9092-fd9dd2439088" class="cell" data-tags="[]" data-execution_count="367">
+<div id="5c3ddc97-07bc-431b-9092-fd9dd2439088" class="cell" data-tags="[]" data-execution_count="705">
 <div class="sourceCode cell-code" id="cb263"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb263-1"><a href="#cb263-1" aria-hidden="true" tabindex="-1"></a>store1 <span class="op">=</span> GS25()</span>
 <span id="cb263-2"><a href="#cb263-2" aria-hidden="true" tabindex="-1"></a>store1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="367">
+<div class="cell-output cell-output-display" data-execution_count="705">
 <pre><code>GS25-1호점
 손님수(인스턴스) = 0
-손님수(클래스) = 0</code></pre>
+총손님수(클래스) = 0</code></pre>
 </div>
 </div>
-<div id="22892ae9-78ce-47d4-a166-e5cc6e9bd75b" class="cell" data-tags="[]" data-execution_count="368">
+<div id="22892ae9-78ce-47d4-a166-e5cc6e9bd75b" class="cell" data-tags="[]" data-execution_count="706">
 <div class="sourceCode cell-code" id="cb265"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb265-1"><a href="#cb265-1" aria-hidden="true" tabindex="-1"></a>store1.come(<span class="dv">2</span>)</span>
 <span id="cb265-2"><a href="#cb265-2" aria-hidden="true" tabindex="-1"></a>store1.come(<span class="dv">3</span>)</span>
 <span id="cb265-3"><a href="#cb265-3" aria-hidden="true" tabindex="-1"></a>store1.come(<span class="dv">5</span>)</span>
 <span id="cb265-4"><a href="#cb265-4" aria-hidden="true" tabindex="-1"></a>store1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="368">
+<div class="cell-output cell-output-display" data-execution_count="706">
 <pre><code>GS25-1호점
 손님수(인스턴스) = 10
-손님수(클래스) = 10</code></pre>
+총손님수(클래스) = 10</code></pre>
 </div>
 </div>
-<div id="c4223c0e-446c-414b-a2fc-6a4bb56c6301" class="cell" data-tags="[]" data-execution_count="369">
+<div id="c4223c0e-446c-414b-a2fc-6a4bb56c6301" class="cell" data-tags="[]" data-execution_count="707">
 <div class="sourceCode cell-code" id="cb267"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb267-1"><a href="#cb267-1" aria-hidden="true" tabindex="-1"></a>store2 <span class="op">=</span> GS25()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7de7586f-6428-4446-bb1b-489a88f511f3" class="cell" data-tags="[]" data-execution_count="370">
+<div id="7de7586f-6428-4446-bb1b-489a88f511f3" class="cell" data-tags="[]" data-execution_count="708">
 <div class="sourceCode cell-code" id="cb268"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb268-1"><a href="#cb268-1" aria-hidden="true" tabindex="-1"></a>store2.come(<span class="dv">1</span>)</span>
 <span id="cb268-2"><a href="#cb268-2" aria-hidden="true" tabindex="-1"></a>store2.come(<span class="dv">1</span>)</span>
 <span id="cb268-3"><a href="#cb268-3" aria-hidden="true" tabindex="-1"></a>store2.come(<span class="dv">1</span>)</span>
 <span id="cb268-4"><a href="#cb268-4" aria-hidden="true" tabindex="-1"></a>store2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="370">
+<div class="cell-output cell-output-display" data-execution_count="708">
 <pre><code>GS25-2호점
 손님수(인스턴스) = 3
-손님수(클래스) = 13</code></pre>
+총손님수(클래스) = 13</code></pre>
 </div>
 </div>
 <p><strong>요약</strong></p>
@@ -1573,160 +1573,160 @@ enumerate is useful for obtaining an indexed list:
 <li>클래스변수를 사용할때는 <code>클래스이름.변수이름</code> 와 같은 형식으로, 인스턴스변수를 사용할때는 <code>self.변수이름</code>와 같은 형식으로 쓴다.</li>
 </ol>
 <p><code># 예제4</code> – 인스턴스변수는 선언되지 않았으나, 같은이름의 클래스변수가 선언된 경우 클래스변수가 인스턴스변수를 대신한다.</p>
-<div id="8ada0e2f-55a4-4409-a670-c1bab9d910cc" class="cell" data-tags="[]" data-execution_count="430">
+<div id="8ada0e2f-55a4-4409-a670-c1bab9d910cc" class="cell" data-tags="[]" data-execution_count="709">
 <div class="sourceCode cell-code" id="cb270"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb270-1"><a href="#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Klass:</span>
 <span id="cb270-2"><a href="#cb270-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">0</span> <span class="co"># a는 클래스 변수</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ebc802ec-bb54-44eb-bec0-5d8ea70c2d4b" class="cell" data-tags="[]" data-execution_count="431">
+<div id="ebc802ec-bb54-44eb-bec0-5d8ea70c2d4b" class="cell" data-tags="[]" data-execution_count="710">
 <div class="sourceCode cell-code" id="cb271"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb271-1"><a href="#cb271-1" aria-hidden="true" tabindex="-1"></a>Klass.a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="431">
+<div class="cell-output cell-output-display" data-execution_count="710">
 <pre><code>0</code></pre>
 </div>
 </div>
-<div id="362621d9-934a-4d9e-8d34-5682d408550a" class="cell" data-tags="[]" data-execution_count="432">
+<div id="362621d9-934a-4d9e-8d34-5682d408550a" class="cell" data-tags="[]" data-execution_count="711">
 <div class="sourceCode cell-code" id="cb273"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb273-1"><a href="#cb273-1" aria-hidden="true" tabindex="-1"></a>ins <span class="op">=</span> Klass()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="4ed1cd09-007f-4c40-be71-703687f4d508" class="cell" data-tags="[]" data-execution_count="433">
+<div id="4ed1cd09-007f-4c40-be71-703687f4d508" class="cell" data-tags="[]" data-execution_count="712">
 <div class="sourceCode cell-code" id="cb274"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb274-1"><a href="#cb274-1" aria-hidden="true" tabindex="-1"></a>ins.a <span class="co"># 인스턴스 변수가 없고, 클래스변수는 존재할 경우 클래스변수를 빌려쓴다. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="433">
+<div class="cell-output cell-output-display" data-execution_count="712">
 <pre><code>0</code></pre>
 </div>
 </div>
 <p><code>#</code></p>
 <p><code># 예제5</code> – 인스턴스가 클래스변수를 빌려쓰는 경우 클래스변수를 바꾸면 자동으로 인스턴스 변수도 바뀐다.</p>
-<div id="497214c5-19eb-4b6e-8b36-45f07ce3c4a7" class="cell" data-tags="[]" data-execution_count="434">
+<div id="497214c5-19eb-4b6e-8b36-45f07ce3c4a7" class="cell" data-tags="[]" data-execution_count="713">
 <div class="sourceCode cell-code" id="cb276"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb276-1"><a href="#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Klass:</span>
 <span id="cb276-2"><a href="#cb276-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">0</span> <span class="co"># a는 클래스 변수</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="92a22747-cc2e-4568-8610-048d3bc18623" class="cell" data-tags="[]" data-execution_count="435">
+<div id="92a22747-cc2e-4568-8610-048d3bc18623" class="cell" data-tags="[]" data-execution_count="714">
 <div class="sourceCode cell-code" id="cb277"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb277-1"><a href="#cb277-1" aria-hidden="true" tabindex="-1"></a>Klass.a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="435">
+<div class="cell-output cell-output-display" data-execution_count="714">
 <pre><code>0</code></pre>
 </div>
 </div>
-<div id="20ed6c39-578d-4e32-afa5-5200eca365be" class="cell" data-tags="[]" data-execution_count="436">
+<div id="20ed6c39-578d-4e32-afa5-5200eca365be" class="cell" data-tags="[]" data-execution_count="715">
 <div class="sourceCode cell-code" id="cb279"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb279-1"><a href="#cb279-1" aria-hidden="true" tabindex="-1"></a>ins1 <span class="op">=</span> Klass()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b50006fc-1dcc-4430-af2f-38308ff70b9a" class="cell" data-tags="[]" data-execution_count="437">
+<div id="b50006fc-1dcc-4430-af2f-38308ff70b9a" class="cell" data-tags="[]" data-execution_count="716">
 <div class="sourceCode cell-code" id="cb280"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb280-1"><a href="#cb280-1" aria-hidden="true" tabindex="-1"></a>ins2 <span class="op">=</span> Klass()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c792c2d8-c581-4e9d-a78c-4851290cd5d6" class="cell" data-tags="[]" data-execution_count="438">
+<div id="c792c2d8-c581-4e9d-a78c-4851290cd5d6" class="cell" data-tags="[]" data-execution_count="717">
 <div class="sourceCode cell-code" id="cb281"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb281-1"><a href="#cb281-1" aria-hidden="true" tabindex="-1"></a>ins1.a, ins2.a </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="438">
+<div class="cell-output cell-output-display" data-execution_count="717">
 <pre><code>(0, 0)</code></pre>
 </div>
 </div>
-<div id="78347122-f2de-4380-9c95-a4a1d41c864b" class="cell" data-tags="[]" data-execution_count="439">
+<div id="78347122-f2de-4380-9c95-a4a1d41c864b" class="cell" data-tags="[]" data-execution_count="718">
 <div class="sourceCode cell-code" id="cb283"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb283-1"><a href="#cb283-1" aria-hidden="true" tabindex="-1"></a>Klass.a <span class="op">=</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ac0e3f17-6cd1-4d94-a5d7-5098cf16b4f5" class="cell" data-tags="[]" data-execution_count="440">
+<div id="ac0e3f17-6cd1-4d94-a5d7-5098cf16b4f5" class="cell" data-tags="[]" data-execution_count="719">
 <div class="sourceCode cell-code" id="cb284"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb284-1"><a href="#cb284-1" aria-hidden="true" tabindex="-1"></a>ins1.a, ins2.a </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="440">
+<div class="cell-output cell-output-display" data-execution_count="719">
 <pre><code>(10, 10)</code></pre>
 </div>
 </div>
 <p><code>#</code></p>
 <p><code># 예제6</code> – 인스턴스변수와 클래스변수가 동시에 선언된 경우, 각각 독립적으로 행동한다.</p>
-<div id="18bc821c-0b10-4067-ae2c-06d055fed735" class="cell" data-tags="[]" data-execution_count="441">
+<div id="18bc821c-0b10-4067-ae2c-06d055fed735" class="cell" data-tags="[]" data-execution_count="720">
 <div class="sourceCode cell-code" id="cb286"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb286-1"><a href="#cb286-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Klass:</span>
 <span id="cb286-2"><a href="#cb286-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">0</span> <span class="co"># a는 클래스 변수</span></span>
 <span id="cb286-3"><a href="#cb286-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb286-4"><a href="#cb286-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="dv">1</span> <span class="co"># a는 인스턴스 변수</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="6e63a6d6-3b62-4ff2-8d8f-e6ea298504f4" class="cell" data-tags="[]" data-execution_count="442">
+<div id="6e63a6d6-3b62-4ff2-8d8f-e6ea298504f4" class="cell" data-tags="[]" data-execution_count="721">
 <div class="sourceCode cell-code" id="cb287"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb287-1"><a href="#cb287-1" aria-hidden="true" tabindex="-1"></a>Klass.a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="442">
+<div class="cell-output cell-output-display" data-execution_count="721">
 <pre><code>0</code></pre>
 </div>
 </div>
-<div id="a874193b-cb5c-4017-b40e-a4daaaca3989" class="cell" data-tags="[]" data-execution_count="443">
+<div id="a874193b-cb5c-4017-b40e-a4daaaca3989" class="cell" data-tags="[]" data-execution_count="722">
 <div class="sourceCode cell-code" id="cb289"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb289-1"><a href="#cb289-1" aria-hidden="true" tabindex="-1"></a>ins <span class="op">=</span> Klass()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c7e75df5-1b93-4a69-bce2-8cdbc9ccf1e7" class="cell" data-tags="[]" data-execution_count="444">
+<div id="c7e75df5-1b93-4a69-bce2-8cdbc9ccf1e7" class="cell" data-tags="[]" data-execution_count="723">
 <div class="sourceCode cell-code" id="cb290"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb290-1"><a href="#cb290-1" aria-hidden="true" tabindex="-1"></a>ins.a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="444">
+<div class="cell-output cell-output-display" data-execution_count="723">
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="d055a2ad-d048-4f98-822e-97449fa4a140" class="cell" data-tags="[]" data-execution_count="445">
+<div id="d055a2ad-d048-4f98-822e-97449fa4a140" class="cell" data-tags="[]" data-execution_count="724">
 <div class="sourceCode cell-code" id="cb292"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb292-1"><a href="#cb292-1" aria-hidden="true" tabindex="-1"></a>Klass.a <span class="op">=</span> <span class="dv">100</span></span>
 <span id="cb292-2"><a href="#cb292-2" aria-hidden="true" tabindex="-1"></a>Klass.a, ins.a </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="445">
+<div class="cell-output cell-output-display" data-execution_count="724">
 <pre><code>(100, 1)</code></pre>
 </div>
 </div>
-<div id="59472dbf-b23e-4765-b08c-1d891468e294" class="cell" data-tags="[]" data-execution_count="447">
+<div id="59472dbf-b23e-4765-b08c-1d891468e294" class="cell" data-tags="[]" data-execution_count="725">
 <div class="sourceCode cell-code" id="cb294"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb294-1"><a href="#cb294-1" aria-hidden="true" tabindex="-1"></a>ins.a <span class="op">=</span> <span class="dv">200</span></span>
 <span id="cb294-2"><a href="#cb294-2" aria-hidden="true" tabindex="-1"></a>Klass.a, ins.a </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="447">
+<div class="cell-output cell-output-display" data-execution_count="725">
 <pre><code>(100, 200)</code></pre>
 </div>
 </div>
 <p><code># 예제7</code> – 인스턴스가 클래스변수를 빌려쓰는 경우, 인스턴스 변수를 변경하더라도 클래스변수가 변경되지 않는다. (대신 예제6과 같이 인스턴스변수가 따로 독립적으로 생성되는 효과가 나온다)</p>
-<div id="025ad1de-5c1b-4285-93d3-376e123e88fd" class="cell" data-tags="[]" data-execution_count="457">
+<div id="025ad1de-5c1b-4285-93d3-376e123e88fd" class="cell" data-tags="[]" data-execution_count="726">
 <div class="sourceCode cell-code" id="cb296"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb296-1"><a href="#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Klass:</span>
 <span id="cb296-2"><a href="#cb296-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">0</span> <span class="co"># a는 클래스 변수</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="86d7f82a-bdc1-4940-84a8-64157ad4de6d" class="cell" data-tags="[]" data-execution_count="458">
+<div id="86d7f82a-bdc1-4940-84a8-64157ad4de6d" class="cell" data-tags="[]" data-execution_count="727">
 <div class="sourceCode cell-code" id="cb297"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb297-1"><a href="#cb297-1" aria-hidden="true" tabindex="-1"></a>Klass.a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="458">
+<div class="cell-output cell-output-display" data-execution_count="727">
 <pre><code>0</code></pre>
 </div>
 </div>
-<div id="71d0bbf7-af64-42f7-8e53-b6e204a0035c" class="cell" data-tags="[]" data-execution_count="459">
+<div id="71d0bbf7-af64-42f7-8e53-b6e204a0035c" class="cell" data-tags="[]" data-execution_count="728">
 <div class="sourceCode cell-code" id="cb299"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb299-1"><a href="#cb299-1" aria-hidden="true" tabindex="-1"></a>ins1 <span class="op">=</span> Klass()</span>
 <span id="cb299-2"><a href="#cb299-2" aria-hidden="true" tabindex="-1"></a>ins2 <span class="op">=</span> Klass()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cc919c23-9303-43b4-a56d-3c3a5579a816" class="cell" data-tags="[]" data-execution_count="460">
+<div id="cc919c23-9303-43b4-a56d-3c3a5579a816" class="cell" data-tags="[]" data-execution_count="729">
 <div class="sourceCode cell-code" id="cb300"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb300-1"><a href="#cb300-1" aria-hidden="true" tabindex="-1"></a>ins1.a, ins2.a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="460">
+<div class="cell-output cell-output-display" data-execution_count="729">
 <pre><code>(0, 0)</code></pre>
 </div>
 </div>
-<div id="89b1f4fa-4646-4967-beac-caddf0965813" class="cell" data-tags="[]" data-execution_count="461">
+<div id="89b1f4fa-4646-4967-beac-caddf0965813" class="cell" data-tags="[]" data-execution_count="730">
 <div class="sourceCode cell-code" id="cb302"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb302-1"><a href="#cb302-1" aria-hidden="true" tabindex="-1"></a>Klass.a <span class="op">=</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="6fed5a9b-cac8-4ecb-b9c2-e760aede951b" class="cell" data-tags="[]" data-execution_count="462">
+<div id="6fed5a9b-cac8-4ecb-b9c2-e760aede951b" class="cell" data-tags="[]" data-execution_count="731">
 <div class="sourceCode cell-code" id="cb303"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb303-1"><a href="#cb303-1" aria-hidden="true" tabindex="-1"></a>Klass.a, ins1.a, ins2.a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="462">
+<div class="cell-output cell-output-display" data-execution_count="731">
 <pre><code>(100, 100, 100)</code></pre>
 </div>
 </div>
-<div id="c2ac4cb1-8b69-4400-875f-9800503dcc8b" class="cell" data-tags="[]" data-execution_count="463">
+<div id="c2ac4cb1-8b69-4400-875f-9800503dcc8b" class="cell" data-tags="[]" data-execution_count="732">
 <div class="sourceCode cell-code" id="cb305"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb305-1"><a href="#cb305-1" aria-hidden="true" tabindex="-1"></a>ins1.a <span class="op">=</span> <span class="dv">50</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3680fd3a-4891-4c75-8493-d9d925e80710" class="cell" data-tags="[]" data-execution_count="465">
+<div id="3680fd3a-4891-4c75-8493-d9d925e80710" class="cell" data-tags="[]" data-execution_count="733">
 <div class="sourceCode cell-code" id="cb306"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb306-1"><a href="#cb306-1" aria-hidden="true" tabindex="-1"></a>Klass.a, ins1.a, ins2.a <span class="co"># ins1만 50으로 바뀜</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="465">
+<div class="cell-output cell-output-display" data-execution_count="733">
 <pre><code>(100, 50, 100)</code></pre>
 </div>
 </div>
-<div id="a46fc550-f667-4c78-8792-04f6cc406f01" class="cell" data-tags="[]" data-execution_count="466">
+<div id="a46fc550-f667-4c78-8792-04f6cc406f01" class="cell" data-tags="[]" data-execution_count="734">
 <div class="sourceCode cell-code" id="cb308"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb308-1"><a href="#cb308-1" aria-hidden="true" tabindex="-1"></a>Klass.a <span class="op">=</span> <span class="dv">200</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="8d8e3a06-0702-4b8a-bf21-4f55818ae728" class="cell" data-tags="[]" data-execution_count="468">
+<div id="8d8e3a06-0702-4b8a-bf21-4f55818ae728" class="cell" data-tags="[]" data-execution_count="735">
 <div class="sourceCode cell-code" id="cb309"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb309-1"><a href="#cb309-1" aria-hidden="true" tabindex="-1"></a>Klass.a, ins1.a, ins2.a <span class="co"># ins1는 더이상 변수를 빌려쓰지 않음, 독자노선</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="468">
+<div class="cell-output cell-output-display" data-execution_count="735">
 <pre><code>(200, 50, 200)</code></pre>
 </div>
 </div>
 <p><code># 예제8</code> – 정석적이지 않은사용</p>
-<div id="45ba811b-c132-45e7-ac93-083249893783" class="cell" data-tags="[]" data-execution_count="469">
+<div id="45ba811b-c132-45e7-ac93-083249893783" class="cell" data-tags="[]" data-execution_count="736">
 <div class="sourceCode cell-code" id="cb311"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb311-1"><a href="#cb311-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Up:</span>
 <span id="cb311-2"><a href="#cb311-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">0</span> </span>
 <span id="cb311-3"><a href="#cb311-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> up(<span class="va">self</span>):</span>
 <span id="cb311-4"><a href="#cb311-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.a <span class="op">=</span> <span class="va">self</span>.a <span class="op">+</span> <span class="dv">1</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5a8982fe-4d67-4afa-af67-2c59cf3b94b0" class="cell" data-tags="[]" data-execution_count="470">
+<div id="5a8982fe-4d67-4afa-af67-2c59cf3b94b0" class="cell" data-tags="[]" data-execution_count="737">
 <div class="sourceCode cell-code" id="cb312"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb312-1"><a href="#cb312-1" aria-hidden="true" tabindex="-1"></a>ins <span class="op">=</span> Up()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="52ec07e6-0d63-43f3-a8d2-46c47ae8caa9" class="cell" data-tags="[]" data-execution_count="472">
+<div id="52ec07e6-0d63-43f3-a8d2-46c47ae8caa9" class="cell" data-tags="[]" data-execution_count="738">
 <div class="sourceCode cell-code" id="cb313"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb313-1"><a href="#cb313-1" aria-hidden="true" tabindex="-1"></a>ins.a <span class="co"># 이때는 클래스변수를 빌려씀</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="472">
+<div class="cell-output cell-output-display" data-execution_count="738">
 <pre><code>0</code></pre>
 </div>
 </div>
-<div id="13e1a11c-228c-4f32-9b8b-ec721e8256f0" class="cell" data-tags="[]" data-execution_count="476">
+<div id="13e1a11c-228c-4f32-9b8b-ec721e8256f0" class="cell" data-tags="[]" data-execution_count="739">
 <div class="sourceCode cell-code" id="cb315"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb315-1"><a href="#cb315-1" aria-hidden="true" tabindex="-1"></a>ins.up() <span class="co"># 이걸 실행하는 순간 a는 인스턴스 변수로 변화</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>#</code></p>
@@ -1756,74 +1756,120 @@ enumerate is useful for obtaining an indexed list:
 <pre><code>이름: guebin</code></pre>
 </div>
 </div>
+<p><code>-</code> 그런데 그냥 self를 쓰세요. 관습에 따르세요.</p>
 </section>
 <section id="d.-클래스-메서드" class="level2">
 <h2 class="anchored" data-anchor-id="d.-클래스-메서드">D. 클래스 메서드</h2>
 <p><code>-</code> 클래스 메서드: 함수의 첫 인자로 클래스오브젝트를 받는 메서드를 클래스메서드라고 한다.</p>
-<p><code>-</code> 목표: <code>Guebin.f()</code>와 같은 형태로 사용할 수 있는 함수를 만들어 보자 -&gt; 클래스메서드를 만들어보자!</p>
-<div id="04270ac7-3368-4ef0-b23a-a08a7f2dc26f" class="cell" data-tags="[]" data-execution_count="491">
-<div class="sourceCode cell-code" id="cb322"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb322-1"><a href="#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Guebin: </span>
-<span id="cb322-2"><a href="#cb322-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> f(<span class="va">self</span>):</span>
-<span id="cb322-3"><a href="#cb322-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"인스턴스 메서드"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>-</code> 목표: <code>클래스이름.f()</code>와 같은 형태로 사용할 수 있는 함수를 만들어 보자 -&gt; 클래스메서드를 만들어보자!</p>
+<p><code># 예제1</code> – 아래의 코드를 수정해보자.</p>
+<div id="04270ac7-3368-4ef0-b23a-a08a7f2dc26f" class="cell" data-tags="[]" data-execution_count="703">
+<div class="sourceCode cell-code" id="cb322"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb322-1"><a href="#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="co"># class GS25: </span></span>
+<span id="cb322-2"><a href="#cb322-2" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_stores = 0</span></span>
+<span id="cb322-3"><a href="#cb322-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_total_guests = 0</span></span>
+<span id="cb322-4"><a href="#cb322-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     def __init__(self):</span></span>
+<span id="cb322-5"><a href="#cb322-5" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.n_guests = 0 </span></span>
+<span id="cb322-6"><a href="#cb322-6" aria-hidden="true" tabindex="-1"></a><span class="co">#         GS25.n_stores = GS25.n_stores + 1 </span></span>
+<span id="cb322-7"><a href="#cb322-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     def come(self,m):</span></span>
+<span id="cb322-8"><a href="#cb322-8" aria-hidden="true" tabindex="-1"></a><span class="co">#         self.n_guests = self.n_guests + m </span></span>
+<span id="cb322-9"><a href="#cb322-9" aria-hidden="true" tabindex="-1"></a><span class="co">#         GS25.n_total_guests = GS25.n_total_guests + m</span></span>
+<span id="cb322-10"><a href="#cb322-10" aria-hidden="true" tabindex="-1"></a><span class="co">#     def __repr__(self):</span></span>
+<span id="cb322-11"><a href="#cb322-11" aria-hidden="true" tabindex="-1"></a><span class="co">#         text = (</span></span>
+<span id="cb322-12"><a href="#cb322-12" aria-hidden="true" tabindex="-1"></a><span class="co">#             f"GS25-{GS25.n_stores}호점\n"</span></span>
+<span id="cb322-13"><a href="#cb322-13" aria-hidden="true" tabindex="-1"></a><span class="co">#             f"손님수(인스턴스) = {self.n_guests}\n"</span></span>
+<span id="cb322-14"><a href="#cb322-14" aria-hidden="true" tabindex="-1"></a><span class="co">#             f"총손님수(클래스) = {GS25.n_total_guests}"    </span></span>
+<span id="cb322-15"><a href="#cb322-15" aria-hidden="true" tabindex="-1"></a><span class="co">#         )</span></span>
+<span id="cb322-16"><a href="#cb322-16" aria-hidden="true" tabindex="-1"></a><span class="co">#         return text </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5e37fe51-b5ef-4863-94f2-14cec054cf7b" class="cell" data-tags="[]" data-execution_count="493">
-<div class="sourceCode cell-code" id="cb323"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb323-1"><a href="#cb323-1" aria-hidden="true" tabindex="-1"></a>Guebin.f()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>TypeError: Guebin.f() missing 1 required positional argument: 'self'</code></pre>
+<div id="5e37fe51-b5ef-4863-94f2-14cec054cf7b" class="cell" data-tags="[]" data-execution_count="702">
+<div class="sourceCode cell-code" id="cb323"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb323-1"><a href="#cb323-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> GS25:</span>
+<span id="cb323-2"><a href="#cb323-2" aria-hidden="true" tabindex="-1"></a>    n_stores <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb323-3"><a href="#cb323-3" aria-hidden="true" tabindex="-1"></a>    n_total_guests <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb323-4"><a href="#cb323-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
+<span id="cb323-5"><a href="#cb323-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_store(cls):</span>
+<span id="cb323-6"><a href="#cb323-6" aria-hidden="true" tabindex="-1"></a>        cls.n_stores <span class="op">=</span> cls.n_stores <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb323-7"><a href="#cb323-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span>        </span>
+<span id="cb323-8"><a href="#cb323-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_guest(cls):</span>
+<span id="cb323-9"><a href="#cb323-9" aria-hidden="true" tabindex="-1"></a>        cls.n_total_guests <span class="op">=</span> cls.n_stores <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb323-10"><a href="#cb323-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span> </span>
+<span id="cb323-11"><a href="#cb323-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> info(cls):</span>
+<span id="cb323-12"><a href="#cb323-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"총점포수 = </span><span class="sc">{</span>cls<span class="sc">.</span>n_stores<span class="sc">}</span><span class="ch">\n</span><span class="ss">총손님수 = </span><span class="sc">{</span>cls<span class="sc">.</span>n_total_guests<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb323-13"><a href="#cb323-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">#---#</span></span>
+<span id="cb323-14"><a href="#cb323-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb323-15"><a href="#cb323-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.n_guests <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb323-16"><a href="#cb323-16" aria-hidden="true" tabindex="-1"></a>        GS25.add_store()</span>
+<span id="cb323-17"><a href="#cb323-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> come(<span class="va">self</span>,m):</span>
+<span id="cb323-18"><a href="#cb323-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.n_guests <span class="op">=</span> <span class="va">self</span>.n_guests <span class="op">+</span> m </span>
+<span id="cb323-19"><a href="#cb323-19" aria-hidden="true" tabindex="-1"></a>        GS25.n_total_guests <span class="op">=</span> GS25.n_total_guests <span class="op">+</span> m</span>
+<span id="cb323-20"><a href="#cb323-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb323-21"><a href="#cb323-21" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> (</span>
+<span id="cb323-22"><a href="#cb323-22" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"GS25-</span><span class="sc">{</span>GS25<span class="sc">.</span>n_stores<span class="sc">}</span><span class="ss">호점</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb323-23"><a href="#cb323-23" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"손님수(인스턴스) = </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>n_guests<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb323-24"><a href="#cb323-24" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"총손님수(클래스) = </span><span class="sc">{</span>GS25<span class="sc">.</span>n_total_guests<span class="sc">}</span><span class="ss">"</span>    </span>
+<span id="cb323-25"><a href="#cb323-25" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb323-26"><a href="#cb323-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div id="6f9735c8-312f-4764-86be-79647f1b8b83" class="cell" data-tags="[]" data-execution_count="494">
-<div class="sourceCode cell-code" id="cb325"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb325-1"><a href="#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Guebin: </span>
-<span id="cb325-2"><a href="#cb325-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
-<span id="cb325-3"><a href="#cb325-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> f(cls): </span>
-<span id="cb325-4"><a href="#cb325-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"클래스 메서드"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="9a53c3fc-1429-415a-b6d8-1dc724c07d65" class="cell" data-tags="[]" data-execution_count="496">
-<div class="sourceCode cell-code" id="cb326"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb326-1"><a href="#cb326-1" aria-hidden="true" tabindex="-1"></a>Guebin.f()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="61fce19f-2555-4e94-8096-21fe2af698a0" class="cell" data-tags="[]" data-execution_count="696">
+<div class="sourceCode cell-code" id="cb324"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb324-1"><a href="#cb324-1" aria-hidden="true" tabindex="-1"></a>GS25.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>클래스 메서드</code></pre>
+<pre><code>총점포수 = 0
+총손님수 = 0</code></pre>
 </div>
 </div>
-<div id="30d5c2fa-67d0-42f7-9104-c1a54297a486" class="cell" data-tags="[]" data-execution_count="497">
-<div class="sourceCode cell-code" id="cb328"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb328-1"><a href="#cb328-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> Guebin()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9a53c3fc-1429-415a-b6d8-1dc724c07d65" class="cell" data-tags="[]" data-execution_count="697">
+<div class="sourceCode cell-code" id="cb326"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb326-1"><a href="#cb326-1" aria-hidden="true" tabindex="-1"></a>store1 <span class="op">=</span> GS25()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="0fd2eee8-bd20-42e1-a908-35a8ffe9ac10" class="cell" data-tags="[]" data-execution_count="498">
-<div class="sourceCode cell-code" id="cb329"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb329-1"><a href="#cb329-1" aria-hidden="true" tabindex="-1"></a>a.f() <span class="co"># 인스턴스 메서드를 따로 정의한적은 없지만 같은 이름의 클래스 메서드가 있으므로 빌려와서 씀!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>클래스 메서드</code></pre>
+<div id="30d5c2fa-67d0-42f7-9104-c1a54297a486" class="cell" data-tags="[]" data-execution_count="698">
+<div class="sourceCode cell-code" id="cb327"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb327-1"><a href="#cb327-1" aria-hidden="true" tabindex="-1"></a>store1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="698">
+<pre><code>GS25-1호점
+손님수(인스턴스) = 0
+손님수(클래스) = 0</code></pre>
+</div>
+</div>
+<div id="490e0d9c-4010-4bec-aa44-e0447020dcd7" class="cell" data-tags="[]" data-execution_count="700">
+<div class="sourceCode cell-code" id="cb329"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb329-1"><a href="#cb329-1" aria-hidden="true" tabindex="-1"></a>store1.come(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="608f6f31-cecd-4115-aa3e-43c8f12aa6ff" class="cell" data-tags="[]" data-execution_count="701">
+<div class="sourceCode cell-code" id="cb330"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb330-1"><a href="#cb330-1" aria-hidden="true" tabindex="-1"></a>store1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="701">
+<pre><code>GS25-1호점
+손님수(인스턴스) = 2
+손님수(클래스) = 2</code></pre>
 </div>
 </div>
 </section>
 <section id="f.-스태틱-메서드" class="level2">
 <h2 class="anchored" data-anchor-id="f.-스태틱-메서드">F. 스태틱 메서드</h2>
 <p><code>-</code> 스태틱 메서드: 첫 인자로 인스턴스와 클래스 모두 받지 않음. (클래스안에 정의되어 있지만 그냥 함수와 같음)</p>
-<div id="edd868f8-1d9a-4ab0-bd8e-caf97ec48b97" class="cell" data-tags="[]" data-execution_count="55">
-<div class="sourceCode cell-code" id="cb331"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb331-1"><a href="#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Cals: </span>
-<span id="cb331-2"><a href="#cb331-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
-<span id="cb331-3"><a href="#cb331-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add(a,b):</span>
-<span id="cb331-4"><a href="#cb331-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> a<span class="op">+</span>b</span>
-<span id="cb331-5"><a href="#cb331-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
-<span id="cb331-6"><a href="#cb331-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> sub(a,b):</span>
-<span id="cb331-7"><a href="#cb331-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> a<span class="op">-</span>b </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="edd868f8-1d9a-4ab0-bd8e-caf97ec48b97" class="cell" data-tags="[]" data-execution_count="740">
+<div class="sourceCode cell-code" id="cb332"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb332-1"><a href="#cb332-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Calculator: </span>
+<span id="cb332-2"><a href="#cb332-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb332-3"><a href="#cb332-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add(a,b):</span>
+<span id="cb332-4"><a href="#cb332-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> a<span class="op">+</span>b</span>
+<span id="cb332-5"><a href="#cb332-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb332-6"><a href="#cb332-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> sub(a,b):</span>
+<span id="cb332-7"><a href="#cb332-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> a<span class="op">-</span>b </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="68437aa9-1969-4a91-8529-77812af04713" class="cell" data-tags="[]" data-execution_count="56">
-<div class="sourceCode cell-code" id="cb332"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb332-1"><a href="#cb332-1" aria-hidden="true" tabindex="-1"></a>fs <span class="op">=</span> Cals()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="68437aa9-1969-4a91-8529-77812af04713" class="cell" data-tags="[]" data-execution_count="744">
+<div class="sourceCode cell-code" id="cb333"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb333-1"><a href="#cb333-1" aria-hidden="true" tabindex="-1"></a>cal <span class="op">=</span> Calculator()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="de6bb843-fca9-4b43-8f61-b8fdb557c324" class="cell" data-tags="[]" data-execution_count="57">
-<div class="sourceCode cell-code" id="cb333"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb333-1"><a href="#cb333-1" aria-hidden="true" tabindex="-1"></a>fs.add(<span class="dv">1</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="57">
+<div id="de6bb843-fca9-4b43-8f61-b8fdb557c324" class="cell" data-tags="[]" data-execution_count="745">
+<div class="sourceCode cell-code" id="cb334"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb334-1"><a href="#cb334-1" aria-hidden="true" tabindex="-1"></a>cal.add(<span class="dv">1</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="745">
 <pre><code>3</code></pre>
 </div>
 </div>
-<div id="cbc84cf8-d841-4e61-bea2-2a1eed535291" class="cell" data-tags="[]" data-execution_count="58">
-<div class="sourceCode cell-code" id="cb335"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb335-1"><a href="#cb335-1" aria-hidden="true" tabindex="-1"></a>fs.sub(<span class="dv">1</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="58">
+<div id="cbc84cf8-d841-4e61-bea2-2a1eed535291" class="cell" data-tags="[]" data-execution_count="746">
+<div class="sourceCode cell-code" id="cb336"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb336-1"><a href="#cb336-1" aria-hidden="true" tabindex="-1"></a>cal.sub(<span class="dv">1</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="746">
 <pre><code>-1</code></pre>
 </div>
 </div>
 <ul>
-<li>fs는 그냥 함수들을 묶어놓은 느낌? 정리하게 편하게?</li>
+<li><code>cal</code>는 그냥 함수들을 묶어놓은 느낌? 정리하게 편하게?</li>
 </ul>
+<p><code>-</code> 쓸모없다?</p>
 
 
 </section>
