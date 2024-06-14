@@ -150,7 +150,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#공든-탑-쌓기-150점" id="toc-공든-탑-쌓기-150점" class="nav-link active" data-scroll-target="#공든-탑-쌓기-150점">1. 공든 탑 쌓기 – 150점</a></li>
+  <li><a href="#공든-탑-쌓기-150점" id="toc-공든-탑-쌓기-150점" class="nav-link active" data-scroll-target="#공든-탑-쌓기-150점">1. 공든 탑 쌓기 – 150점</a>
+  <ul class="collapse">
+  <li><a href="#base-클래스-설계" id="toc-base-클래스-설계" class="nav-link" data-scroll-target="#base-클래스-설계"><code>(1)</code> <code>Base</code> 클래스 설계</a></li>
+  <li><a href="#guebin-클래스-설계" id="toc-guebin-클래스-설계" class="nav-link" data-scroll-target="#guebin-클래스-설계"><code>(2)</code> <code>Guebin</code> 클래스 설계</a></li>
+  <li><a href="#guebintraining-클래스-설계" id="toc-guebintraining-클래스-설계" class="nav-link" data-scroll-target="#guebintraining-클래스-설계"><code>(3)</code> <code>GuebinTraining</code>&nbsp; 클래스 설계</a></li>
+  <li><a href="#규빈-vs-다호" id="toc-규빈-vs-다호" class="nav-link" data-scroll-target="#규빈-vs-다호"><code>(4)</code> 규빈 vs 다호</a></li>
+  <li><a href="#수련하는규빈-vs-다호" id="toc-수련하는규빈-vs-다호" class="nav-link" data-scroll-target="#수련하는규빈-vs-다호"><code>(5)</code> 수련하는규빈 vs 다호</a></li>
+  <li><a href="#애교쟁이-최다호" id="toc-애교쟁이-최다호" class="nav-link" data-scroll-target="#애교쟁이-최다호"><code>(6)</code> 애교쟁이 최다호</a></li>
+  <li><a href="#공격하는-규빈" id="toc-공격하는-규빈" class="nav-link" data-scroll-target="#공격하는-규빈"><code>(7)</code> 공격하는 규빈</a></li>
+  <li><a href="#울보최다호" id="toc-울보최다호" class="nav-link" data-scroll-target="#울보최다호"><code>(8)</code> 울보최다호</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="15wk-2.out.ipynb" download="15wk-2.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -196,14 +206,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="공든-탑-쌓기-150점" class="level1">
 <h1>1. 공든 탑 쌓기 – 150점</h1>
-<p><code>(1)</code> 아래와 같은 기능을 하도록 <code>Base</code> 클래스를 만들어라.</p>
+<section id="base-클래스-설계" class="level2">
+<h2 class="anchored" data-anchor-id="base-클래스-설계"><code>(1)</code> <code>Base</code> 클래스 설계</h2>
+<p>아래와 같은 기능을 하도록 <code>Base</code> 클래스를 만들어라.</p>
 <p><code># 예시1</code></p>
-<div id="983a45fd-7bd8-4cec-9ab2-48d44cf73e33" class="cell" data-tags="[]" data-execution_count="663">
+<div id="983a45fd-7bd8-4cec-9ab2-48d44cf73e33" class="cell" data-tags="[]" data-execution_count="861">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">=</span> Base(end_condition<span class="op">=</span><span class="dv">5</span>,name<span class="op">=</span><span class="st">"다호"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cdb996bc-a41d-4f51-a788-f032cb397ac4" class="cell" data-tags="[]" data-execution_count="664">
+<div id="cdb996bc-a41d-4f51-a788-f032cb397ac4" class="cell" data-tags="[]" data-execution_count="862">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>다호</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="664">
+<div class="cell-output cell-output-display" data-execution_count="862">
 <pre><code>이름: 다호
 목표높이: 5
 현재높이: 0
@@ -211,12 +223,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 완성상태: False</code></pre>
 </div>
 </div>
-<div id="20205857-8916-4af0-aa6a-aed2bb3c03df" class="cell" data-tags="[]" data-execution_count="665">
+<div id="20205857-8916-4af0-aa6a-aed2bb3c03df" class="cell" data-tags="[]" data-execution_count="863">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>다호.탑쌓기()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9b6379e6-4298-4681-ba9a-fc2570a65ebf" class="cell" data-tags="[]" data-execution_count="666">
+<div id="9b6379e6-4298-4681-ba9a-fc2570a65ebf" class="cell" data-tags="[]" data-execution_count="864">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>다호</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="666">
+<div class="cell-output cell-output-display" data-execution_count="864">
 <pre><code>이름: 다호
 목표높이: 5
 현재높이: 1
@@ -224,12 +236,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 완성상태: False</code></pre>
 </div>
 </div>
-<div id="de8cc0c2-89da-4f9a-ae6e-b807df98ef3a" class="cell" data-tags="[]" data-execution_count="667">
+<div id="de8cc0c2-89da-4f9a-ae6e-b807df98ef3a" class="cell" data-tags="[]" data-execution_count="865">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>다호.탑쌓기()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="90a94e59-1afc-45de-8913-07fac0d9d1e8" class="cell" data-tags="[]" data-execution_count="668">
+<div id="90a94e59-1afc-45de-8913-07fac0d9d1e8" class="cell" data-tags="[]" data-execution_count="866">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>다호</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="668">
+<div class="cell-output cell-output-display" data-execution_count="866">
 <pre><code>이름: 다호
 목표높이: 5
 현재높이: 2
@@ -239,16 +251,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><code>#</code></p>
 <p><code># 예시2</code></p>
-<div id="f3c56df0-8d4c-49bd-976c-4f427d8fcff4" class="cell" data-tags="[]" data-execution_count="669">
+<div id="f3c56df0-8d4c-49bd-976c-4f427d8fcff4" class="cell" data-tags="[]" data-execution_count="867">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>하니 <span class="op">=</span> Base(end_condition<span class="op">=</span><span class="dv">5</span>,name<span class="op">=</span><span class="st">"하니"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7128d226-94ac-4a96-af2e-34344a865e30" class="cell" data-tags="[]" data-execution_count="670">
+<div id="7128d226-94ac-4a96-af2e-34344a865e30" class="cell" data-tags="[]" data-execution_count="868">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    하니.탑쌓기()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a2b07d07-f64d-460d-be44-a321a476c266" class="cell" data-tags="[]" data-execution_count="671">
+<div id="a2b07d07-f64d-460d-be44-a321a476c266" class="cell" data-tags="[]" data-execution_count="869">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>하니 <span class="co"># 목표치에 도달하여 완성상태가 변경</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="671">
+<div class="cell-output cell-output-display" data-execution_count="869">
 <pre><code>이름: 하니
 목표높이: 5
 현재높이: 5
@@ -256,13 +268,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 완성상태: True</code></pre>
 </div>
 </div>
-<div id="4599c780-875a-425e-8449-812cba733525" class="cell" data-tags="[]" data-execution_count="672">
+<div id="4599c780-875a-425e-8449-812cba733525" class="cell" data-tags="[]" data-execution_count="870">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    하니.탑쌓기()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a94ff7e8-eb03-40ed-84fb-9792182c3977" class="cell" data-tags="[]" data-execution_count="673">
+<div id="a94ff7e8-eb03-40ed-84fb-9792182c3977" class="cell" data-tags="[]" data-execution_count="871">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>하니 <span class="co"># 목표치에 도달하여 더이상 탑이 쌓이지 않았음</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="673">
+<div class="cell-output cell-output-display" data-execution_count="871">
 <pre><code>이름: 하니
 목표높이: 5
 현재높이: 5
@@ -272,14 +284,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><code>#</code></p>
 <p><code># 예시3</code></p>
-<div id="45d34795-4611-4340-8ae6-21bc1531b912" class="cell" data-tags="[]" data-execution_count="674">
+<div id="45d34795-4611-4340-8ae6-21bc1531b912" class="cell" data-tags="[]" data-execution_count="872">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">=</span> Base(end_condition<span class="op">=</span><span class="dv">5</span>,name<span class="op">=</span><span class="st">"다호"</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>하니 <span class="op">=</span> Base(end_condition<span class="op">=</span><span class="dv">5</span>,name<span class="op">=</span><span class="st">"하니"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="760f3d37-715a-4786-b2aa-d29f07a0479f" class="cell" data-tags="[]" data-execution_count="675">
+<div id="760f3d37-715a-4786-b2aa-d29f07a0479f" class="cell" data-tags="[]" data-execution_count="873">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>다호.탑쌓기()</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>다호</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="675">
+<div class="cell-output cell-output-display" data-execution_count="873">
 <pre><code>이름: 다호
 목표높이: 5
 현재높이: 1
@@ -287,17 +299,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 완성상태: False</code></pre>
 </div>
 </div>
-<div id="9b2c06a6-7c81-410f-8178-90ca5bb8eb9a" class="cell" data-tags="[]" data-execution_count="676">
+<div id="9b2c06a6-7c81-410f-8178-90ca5bb8eb9a" class="cell" data-tags="[]" data-execution_count="874">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">&gt;</span> 하니, 다호 <span class="op">&lt;</span> 하니 <span class="co"># 현재높이비교</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="676">
+<div class="cell-output cell-output-display" data-execution_count="874">
 <pre><code>(True, False)</code></pre>
 </div>
 </div>
-<div id="1b55d81d-e532-4bf5-9266-a7b2862bd043" class="cell" data-tags="[]" data-execution_count="677">
+<div id="1b55d81d-e532-4bf5-9266-a7b2862bd043" class="cell" data-tags="[]" data-execution_count="875">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>하니.탑쌓기()</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>하니.탑쌓기()</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>하니</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="677">
+<div class="cell-output cell-output-display" data-execution_count="875">
 <pre><code>이름: 하니
 목표높이: 5
 현재높이: 2
@@ -305,22 +317,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 완성상태: False</code></pre>
 </div>
 </div>
-<div id="f8eb751f-5523-465c-8724-785fb16082fe" class="cell" data-tags="[]" data-execution_count="678">
+<div id="f8eb751f-5523-465c-8724-785fb16082fe" class="cell" data-tags="[]" data-execution_count="876">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">&gt;</span> 하니, 다호 <span class="op">&lt;</span> 하니 <span class="co"># 현재높이비교</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="678">
+<div class="cell-output cell-output-display" data-execution_count="876">
 <pre><code>(False, True)</code></pre>
 </div>
 </div>
 <p><code>#</code></p>
 <p><code># 예시4</code></p>
-<div id="a92e8457-c52c-4f36-8be0-0e00fa75b153" class="cell" data-tags="[]" data-execution_count="679">
+<div id="a92e8457-c52c-4f36-8be0-0e00fa75b153" class="cell" data-tags="[]" data-execution_count="877">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">=</span> Base(end_condition<span class="op">=</span><span class="dv">5</span>,name<span class="op">=</span><span class="st">"다호"</span>)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>하니 <span class="op">=</span> Base(end_condition<span class="op">=</span><span class="dv">5</span>,name<span class="op">=</span><span class="st">"하니"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1aeee44b-e4b0-4664-b5c8-6f33ad211571" class="cell" data-tags="[]" data-execution_count="680">
+<div id="1aeee44b-e4b0-4664-b5c8-6f33ad211571" class="cell" data-tags="[]" data-execution_count="878">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>다호.탑쌓기()</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>다호</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="680">
+<div class="cell-output cell-output-display" data-execution_count="878">
 <pre><code>이름: 다호
 목표높이: 5
 현재높이: 1
@@ -328,23 +340,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 완성상태: False</code></pre>
 </div>
 </div>
-<div id="38a798a9-8c72-4f19-ad50-23e7ac3b424b" class="cell" data-tags="[]" data-execution_count="681">
+<div id="38a798a9-8c72-4f19-ad50-23e7ac3b424b" class="cell" data-tags="[]" data-execution_count="879">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">&gt;</span> 하니, 다호 <span class="op">&lt;</span> 하니</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="681">
+<div class="cell-output cell-output-display" data-execution_count="879">
 <pre><code>(True, False)</code></pre>
 </div>
 </div>
-<div id="6cb9ade1-b551-4d73-9b52-5a3195cf590c" class="cell" data-tags="[]" data-execution_count="682">
+<div id="6cb9ade1-b551-4d73-9b52-5a3195cf590c" class="cell" data-tags="[]" data-execution_count="880">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">&gt;&gt;</span> 하니, 다호 <span class="op">&lt;&lt;</span> 하니 <span class="co"># 승리조건 체크 (다호가 1층 높지만 어느 누구도 승리상태아님)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="682">
+<div class="cell-output cell-output-display" data-execution_count="880">
 <pre><code>(False, False)</code></pre>
 </div>
 </div>
-<div id="792ed274-5112-4366-822e-015cbc5593fb" class="cell" data-tags="[]" data-execution_count="683">
+<div id="792ed274-5112-4366-822e-015cbc5593fb" class="cell" data-tags="[]" data-execution_count="881">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>하니.탑쌓기()</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>하니.탑쌓기()</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>하니</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="683">
+<div class="cell-output cell-output-display" data-execution_count="881">
 <pre><code>이름: 하니
 목표높이: 5
 현재높이: 2
@@ -352,27 +364,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 완성상태: False</code></pre>
 </div>
 </div>
-<div id="57d54414-4de9-42db-a2c5-8bd62f98ff7d" class="cell" data-tags="[]" data-execution_count="684">
+<div id="57d54414-4de9-42db-a2c5-8bd62f98ff7d" class="cell" data-tags="[]" data-execution_count="882">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">&gt;</span> 하니, 다호 <span class="op">&lt;</span> 하니</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="684">
+<div class="cell-output cell-output-display" data-execution_count="882">
 <pre><code>(False, True)</code></pre>
 </div>
 </div>
-<div id="2f51f890-d386-4fa3-80dc-5583ae446056" class="cell" data-tags="[]" data-execution_count="685">
+<div id="2f51f890-d386-4fa3-80dc-5583ae446056" class="cell" data-tags="[]" data-execution_count="883">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">&gt;&gt;</span> 하니, 다호 <span class="op">&lt;&lt;</span> 하니 <span class="co"># 승리조건 체크 (하니가 1층 높지만 어느 누구도 승리상태아님)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="685">
+<div class="cell-output cell-output-display" data-execution_count="883">
 <pre><code>(False, False)</code></pre>
 </div>
 </div>
-<div id="1512acef-9978-4ab3-ae06-449c2e856db7" class="cell" data-tags="[]" data-execution_count="686">
+<div id="1512acef-9978-4ab3-ae06-449c2e856db7" class="cell" data-tags="[]" data-execution_count="884">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>다호.탑쌓기()</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>다호.탑쌓기()</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>다호.탑쌓기()</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>다호.탑쌓기()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2ce0d22c-a91f-48e6-9a0a-d93f51ac11da" class="cell" data-tags="[]" data-execution_count="687">
+<div id="2ce0d22c-a91f-48e6-9a0a-d93f51ac11da" class="cell" data-tags="[]" data-execution_count="885">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="co"># 다호가 탑을 완성함. 승리조건 달성</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="687">
+<div class="cell-output cell-output-display" data-execution_count="885">
 <pre><code>이름: 다호
 목표높이: 5
 현재높이: 5
@@ -380,88 +392,260 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 완성상태: True</code></pre>
 </div>
 </div>
-<div id="7e02c6a0-44ed-461b-88c7-2b263cad26ec" class="cell" data-tags="[]" data-execution_count="688">
+<div id="7e02c6a0-44ed-461b-88c7-2b263cad26ec" class="cell" data-tags="[]" data-execution_count="886">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">&gt;&gt;</span> 하니, 다호 <span class="op">&lt;&lt;</span> 하니 <span class="co"># 승리조건 체크 -- 다호의 승리</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="688">
+<div class="cell-output cell-output-display" data-execution_count="886">
 <pre><code>(True, False)</code></pre>
 </div>
 </div>
 <p><code>#</code></p>
-<p><code>(2)</code> <code>Base</code>를 상속받아 예시와 같은 <code>Guebin</code> 클래스를 만들어라.</p>
+</section>
+<section id="guebin-클래스-설계" class="level2">
+<h2 class="anchored" data-anchor-id="guebin-클래스-설계"><code>(2)</code> <code>Guebin</code> 클래스 설계</h2>
+<p><code>Base</code>를 상속받아 예시와 같은 <code>Guebin</code> 클래스를 만들어라.</p>
 <p><code># 예시1</code></p>
-<div id="7183ab08-42f7-4097-ab91-6ff6ebdbf610" class="cell" data-tags="[]" data-execution_count="730">
+<div id="7183ab08-42f7-4097-ab91-6ff6ebdbf610" class="cell" data-tags="[]" data-execution_count="904">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>규빈 <span class="op">=</span> Guebin(name<span class="op">=</span><span class="st">"규빈"</span>,end_condition<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f4b59575-a291-484f-939a-002b7ba5d2b0" class="cell" data-tags="[]" data-execution_count="731">
+<div id="f4b59575-a291-484f-939a-002b7ba5d2b0" class="cell" data-tags="[]" data-execution_count="905">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>규빈.prob</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="731">
+<div class="cell-output cell-output-display" data-execution_count="905">
 <pre><code>0.5</code></pre>
-</div>
-</div>
-<div id="1eb57b2c-259d-47fa-9b9b-c6c69193d351" class="cell" data-tags="[]" data-execution_count="732">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>규빈</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="732">
-<pre><code>이름: 규빈
-목표높이: 5
-현재높이: 0
-진행횟수: 0
-완성상태: False
-고유스킬 
-- 빨리쌓기: 블럭2개를 쌓음. (0.5의 확률로 성공, 실패시 탑은 무너짐)</code></pre>
-</div>
-</div>
-<div id="d4d09484-d396-4a0b-b257-af30fdee06b2" class="cell" data-tags="[]" data-execution_count="733">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>규빈.prob <span class="op">=</span> <span class="fl">0.8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="23b86454-0f17-421f-85e5-da317dcbd0dc" class="cell" data-tags="[]" data-execution_count="734">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>규빈</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="734">
-<pre><code>이름: 규빈
-목표높이: 5
-현재높이: 0
-진행횟수: 0
-완성상태: False
-고유스킬 
-- 빨리쌓기: 블럭2개를 쌓음. (0.8의 확률로 성공, 실패시 탑은 무너짐)</code></pre>
 </div>
 </div>
 <p><code>#</code></p>
 <p><code># 예시2</code></p>
-<div id="be09ce21-e0fb-4867-b6ee-5003f543a4b4" class="cell" data-tags="[]" data-execution_count="745">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>규빈 <span class="op">=</span> Guebin(name<span class="op">=</span><span class="st">"규빈"</span>,end_condition<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="be09ce21-e0fb-4867-b6ee-5003f543a4b4" class="cell" data-tags="[]" data-execution_count="906">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>규빈 <span class="op">=</span> Guebin(name<span class="op">=</span><span class="st">"규빈"</span>,end_condition<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d5296bf5-13a3-4e4b-9718-a070a12efa62" class="cell" data-tags="[]" data-execution_count="746">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>규빈.탑쌓기()</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>규빈</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="746">
+<div id="d5296bf5-13a3-4e4b-9718-a070a12efa62" class="cell" data-tags="[]" data-execution_count="907">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"성공확률 = </span><span class="sc">{규빈.</span>prob<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>규빈.탑쌓기()</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>규빈</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>성공확률 = 0.5</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="907">
 <pre><code>이름: 규빈
+목표높이: 5
+현재높이: 0
+진행횟수: 1
+완성상태: False</code></pre>
+</div>
+</div>
+<div id="ab1c86ea-d777-4075-b2f8-9d52ac626649" class="cell" data-tags="[]" data-execution_count="908">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"성공확률 = </span><span class="sc">{규빈.</span>prob<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    규빈.탑쌓기()</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">repr</span>(규빈))</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"--"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>성공확률 = 0.5
+이름: 규빈
+목표높이: 5
+현재높이: 0
+진행횟수: 2
+완성상태: False
+--
+이름: 규빈
+목표높이: 5
+현재높이: 2
+진행횟수: 3
+완성상태: False
+--
+이름: 규빈
+목표높이: 5
+현재높이: 0
+진행횟수: 4
+완성상태: False
+--
+이름: 규빈
+목표높이: 5
+현재높이: 0
+진행횟수: 5
+완성상태: False
+--
+이름: 규빈
+목표높이: 5
+현재높이: 2
+진행횟수: 6
+완성상태: False
+--</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 예시3</code></p>
+<div id="4ff4ddd7-65e5-4a20-ab1b-b0aab5ba4a56" class="cell" data-tags="[]" data-execution_count="909">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>규빈 <span class="op">=</span> Guebin(name<span class="op">=</span><span class="st">"규빈"</span>,end_condition<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="89f1fa66-7b90-4288-9f5e-a09c1b977197" class="cell" data-tags="[]" data-execution_count="910">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>규빈.prob <span class="op">=</span> <span class="fl">0.9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="a68ca8e9-01cf-4547-9fa9-9c2d9a128584" class="cell" data-tags="[]" data-execution_count="911">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"성공확률 = </span><span class="sc">{규빈.</span>prob<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    규빈.탑쌓기()</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">repr</span>(규빈))</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"2블럭 성공확률: </span><span class="sc">{규빈.</span>prob<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"2블럭 성공여부: </span><span class="sc">{규빈.</span>success<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"--"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>성공확률 = 0.9
+이름: 규빈
 목표높이: 5
 현재높이: 2
 진행횟수: 1
 완성상태: False
-고유스킬 
-- 빨리쌓기: 블럭2개를 쌓음. (0.5의 확률로 성공, 실패시 탑은 무너짐)</code></pre>
-</div>
-</div>
-<div id="ab1c86ea-d777-4075-b2f8-9d52ac626649" class="cell" data-tags="[]" data-execution_count="747">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    규빈.탑쌓기()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="91b0e9a2-a1e3-4457-9133-936852a67bc7" class="cell" data-tags="[]" data-execution_count="748">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>규빈</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="748">
-<pre><code>이름: 규빈
+2블럭 성공확률: 0.90
+2블럭 성공여부: True
+--
+이름: 규빈
 목표높이: 5
-현재높이: 2
-진행횟수: 11
+현재높이: 4
+진행횟수: 2
 완성상태: False
-고유스킬 
-- 빨리쌓기: 블럭2개를 쌓음. (0.5의 확률로 성공, 실패시 탑은 무너짐)</code></pre>
+2블럭 성공확률: 0.90
+2블럭 성공여부: True
+--
+이름: 규빈
+목표높이: 5
+현재높이: 6
+진행횟수: 3
+완성상태: True
+2블럭 성공확률: 0.90
+2블럭 성공여부: True
+--
+이름: 규빈
+목표높이: 5
+현재높이: 6
+진행횟수: 4
+완성상태: True
+2블럭 성공확률: 0.90
+2블럭 성공여부: True
+--
+이름: 규빈
+목표높이: 5
+현재높이: 6
+진행횟수: 5
+완성상태: True
+2블럭 성공확률: 0.90
+2블럭 성공여부: True
+--</code></pre>
 </div>
 </div>
 <p><code>#</code></p>
+</section>
+<section id="guebintraining-클래스-설계" class="level2">
+<h2 class="anchored" data-anchor-id="guebintraining-클래스-설계"><code>(3)</code> <code>GuebinTraining</code>&nbsp; 클래스 설계</h2>
+<p>배경설명: 규빈은 2개의 블록을 실패하지 않고 쌓는 연습을 하기로 했다.</p>
+<p><code>Guebin</code>을 상속받아 아래와 같은 역할을 하는 <code>GuebinTraining</code>을 설계하라.</p>
+<p><code># 예시1</code></p>
+<div id="5e6b9874-3493-46fd-ab7b-14872ae911a2" class="cell" data-tags="[]" data-execution_count="913">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>수련하는규빈 <span class="op">=</span> GuebinTraining(name<span class="op">=</span><span class="st">"규빈"</span>,end_condition<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>수련하는규빈</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="913">
+<pre><code>이름: 규빈
+목표높이: 5
+현재높이: 0
+진행횟수: 0
+완성상태: False</code></pre>
+</div>
+</div>
+<div id="617650c4-393f-423b-8c70-e06146c01518" class="cell" data-tags="[]" data-execution_count="914">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"성공확률 = </span><span class="sc">{규빈.</span>prob<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>    수련하는규빈.탑쌓기()</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>    수련하는규빈.수련하기()</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">repr</span>(수련하는규빈))</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"2블럭 성공확률: </span><span class="sc">{수련하는규빈.</span>prob<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"2블럭 성공여부: </span><span class="sc">{수련하는규빈.</span>success<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"--"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>성공확률 = 0.9
+이름: 규빈
+목표높이: 5
+현재높이: 2
+진행횟수: 1
+완성상태: False
+2블럭 성공확률: 0.55
+2블럭 성공여부: True
+--
+이름: 규빈
+목표높이: 5
+현재높이: 4
+진행횟수: 2
+완성상태: False
+2블럭 성공확률: 0.60
+2블럭 성공여부: True
+--
+이름: 규빈
+목표높이: 5
+현재높이: 6
+진행횟수: 3
+완성상태: True
+2블럭 성공확률: 0.65
+2블럭 성공여부: True
+--
+이름: 규빈
+목표높이: 5
+현재높이: 6
+진행횟수: 4
+완성상태: True
+2블럭 성공확률: 0.70
+2블럭 성공여부: True
+--
+이름: 규빈
+목표높이: 5
+현재높이: 6
+진행횟수: 5
+완성상태: True
+2블럭 성공확률: 0.75
+2블럭 성공여부: True
+--</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+</section>
+<section id="규빈-vs-다호" class="level2">
+<h2 class="anchored" data-anchor-id="규빈-vs-다호"><code>(4)</code> 규빈 vs 다호</h2>
+<p>아래와 같은 인스턴스를 고려하자.</p>
+<div id="eece490d-26a8-4b20-a1dc-b62334f89541" class="cell" data-tags="[]" data-execution_count="898">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>규빈 <span class="op">=</span> Guebin(name<span class="op">=</span><span class="st">"규빈"</span>,end_condition<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">=</span> Base(name<span class="op">=</span><span class="st">"다호"</span>,end_condition<span class="op">=</span><span class="dv">10</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>10층높이의 탑을 먼저 쌓는 게임을 진행할시 누가 더 유리한가?</p>
+</section>
+<section id="수련하는규빈-vs-다호" class="level2">
+<h2 class="anchored" data-anchor-id="수련하는규빈-vs-다호"><code>(5)</code> 수련하는규빈 vs 다호</h2>
+<p>아래와 같은 인스턴스를 고려하자.</p>
+<div id="c33c75f9-f35e-4379-a542-003606fb461d" class="cell" data-tags="[]" data-execution_count="899">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>수련하는규빈 <span class="op">=</span> GuebinTraining(name<span class="op">=</span><span class="st">"규빈"</span>,end_condition<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>다호 <span class="op">=</span> Base(name<span class="op">=</span><span class="st">"다호"</span>,end_condition<span class="op">=</span><span class="dv">10</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>10층높이의 탑을 먼저 쌓는 게임을 진행할시 누가 더 유리한가? (규빈은 수련시 2개의 블록을 성공할 확률이 5퍼센트씩 증가한다. )</p>
+</section>
+<section id="애교쟁이-최다호" class="level2">
+<h2 class="anchored" data-anchor-id="애교쟁이-최다호"><code>(6)</code> 애교쟁이 최다호</h2>
+<p>배경설명: 최다호는 매턴 규빈에게 애교를 부리기로 했다. 애교의 성공률은 20%이며 효과는 아래와 같다.</p>
+<ul>
+<li>규빈이 2블럭 쌓기를 성공: 규빈은 2개의 블럭을 본인의 탑에 쌓지않고 다호의 탑에 쌓는다.</li>
+<li>규빈이 2블럭 쌓기를 실패: 아무일도 일어나지 않음.</li>
+</ul>
+<p>단, 다호가 애교를 부릴경우 다호의 탑은 쌓이지 않는다.</p>
+</section>
+<section id="공격하는-규빈" class="level2">
+<h2 class="anchored" data-anchor-id="공격하는-규빈"><code>(7)</code> 공격하는 규빈</h2>
+</section>
+<section id="울보최다호" class="level2">
+<h2 class="anchored" data-anchor-id="울보최다호"><code>(8)</code> 울보최다호</h2>
+<p>배경설명: 최다호는 규빈의 공격으로 공든탑이 무너지자 참을수가 없어져 결국 울음을 터뜨렸다. 울음의 효과는 아래와 같다.</p>
+<ul>
+<li>탑과 관련없이 무조건 다호의 승리</li>
+</ul>
+<p>울음은 다호의 탑이 무너질 경우 발생하며 발생확률은 50%이다.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

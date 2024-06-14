@@ -1887,7 +1887,63 @@
     "href": "posts/15wk-2.html",
     "title": "15wk-2: 기말고사 (예상문제)",
     "section": "",
-    "text": "import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n\n1. 공든 탑 쌓기 – 150점\n(1) 아래와 같은 기능을 하도록 Base 클래스를 만들어라.\n# 예시1\n\n다호 = Base(end_condition=5,name=\"다호\")\n\n\n다호\n\n이름: 다호\n목표높이: 5\n현재높이: 0\n진행횟수: 0\n완성상태: False\n\n\n\n다호.탑쌓기()\n\n\n다호\n\n이름: 다호\n목표높이: 5\n현재높이: 1\n진행횟수: 1\n완성상태: False\n\n\n\n다호.탑쌓기()\n\n\n다호\n\n이름: 다호\n목표높이: 5\n현재높이: 2\n진행횟수: 2\n완성상태: False\n\n\n#\n# 예시2\n\n하니 = Base(end_condition=5,name=\"하니\")\n\n\nfor _ in range(5):\n    하니.탑쌓기()\n\n\n하니 # 목표치에 도달하여 완성상태가 변경\n\n이름: 하니\n목표높이: 5\n현재높이: 5\n진행횟수: 5\n완성상태: True\n\n\n\nfor _ in range(5):\n    하니.탑쌓기()\n\n\n하니 # 목표치에 도달하여 더이상 탑이 쌓이지 않았음\n\n이름: 하니\n목표높이: 5\n현재높이: 5\n진행횟수: 10\n완성상태: True\n\n\n#\n# 예시3\n\n다호 = Base(end_condition=5,name=\"다호\")\n하니 = Base(end_condition=5,name=\"하니\")\n\n\n다호.탑쌓기()\n다호\n\n이름: 다호\n목표높이: 5\n현재높이: 1\n진행횟수: 1\n완성상태: False\n\n\n\n다호 &gt; 하니, 다호 &lt; 하니 # 현재높이비교\n\n(True, False)\n\n\n\n하니.탑쌓기()\n하니.탑쌓기()\n하니\n\n이름: 하니\n목표높이: 5\n현재높이: 2\n진행횟수: 2\n완성상태: False\n\n\n\n다호 &gt; 하니, 다호 &lt; 하니 # 현재높이비교\n\n(False, True)\n\n\n#\n# 예시4\n\n다호 = Base(end_condition=5,name=\"다호\")\n하니 = Base(end_condition=5,name=\"하니\")\n\n\n다호.탑쌓기()\n다호\n\n이름: 다호\n목표높이: 5\n현재높이: 1\n진행횟수: 1\n완성상태: False\n\n\n\n다호 &gt; 하니, 다호 &lt; 하니\n\n(True, False)\n\n\n\n다호 &gt;&gt; 하니, 다호 &lt;&lt; 하니 # 승리조건 체크 (다호가 1층 높지만 어느 누구도 승리상태아님)\n\n(False, False)\n\n\n\n하니.탑쌓기()\n하니.탑쌓기()\n하니\n\n이름: 하니\n목표높이: 5\n현재높이: 2\n진행횟수: 2\n완성상태: False\n\n\n\n다호 &gt; 하니, 다호 &lt; 하니\n\n(False, True)\n\n\n\n다호 &gt;&gt; 하니, 다호 &lt;&lt; 하니 # 승리조건 체크 (하니가 1층 높지만 어느 누구도 승리상태아님)\n\n(False, False)\n\n\n\n다호.탑쌓기()\n다호.탑쌓기()\n다호.탑쌓기()\n다호.탑쌓기()\n\n\n다호 # 다호가 탑을 완성함. 승리조건 달성\n\n이름: 다호\n목표높이: 5\n현재높이: 5\n진행횟수: 5\n완성상태: True\n\n\n\n다호 &gt;&gt; 하니, 다호 &lt;&lt; 하니 # 승리조건 체크 -- 다호의 승리\n\n(True, False)\n\n\n#\n(2) Base를 상속받아 예시와 같은 Guebin 클래스를 만들어라.\n# 예시1\n\n규빈 = Guebin(name=\"규빈\",end_condition=5)\n\n\n규빈.prob\n\n0.5\n\n\n\n규빈\n\n이름: 규빈\n목표높이: 5\n현재높이: 0\n진행횟수: 0\n완성상태: False\n고유스킬 \n- 빨리쌓기: 블럭2개를 쌓음. (0.5의 확률로 성공, 실패시 탑은 무너짐)\n\n\n\n규빈.prob = 0.8\n\n\n규빈\n\n이름: 규빈\n목표높이: 5\n현재높이: 0\n진행횟수: 0\n완성상태: False\n고유스킬 \n- 빨리쌓기: 블럭2개를 쌓음. (0.8의 확률로 성공, 실패시 탑은 무너짐)\n\n\n#\n# 예시2\n\n규빈 = Guebin(name=\"규빈\",end_condition=5)\n\n\n규빈.탑쌓기()\n규빈\n\n이름: 규빈\n목표높이: 5\n현재높이: 2\n진행횟수: 1\n완성상태: False\n고유스킬 \n- 빨리쌓기: 블럭2개를 쌓음. (0.5의 확률로 성공, 실패시 탑은 무너짐)\n\n\n\nfor _ in range(10):\n    규빈.탑쌓기()\n\n\n규빈\n\n이름: 규빈\n목표높이: 5\n현재높이: 2\n진행횟수: 11\n완성상태: False\n고유스킬 \n- 빨리쌓기: 블럭2개를 쌓음. (0.5의 확률로 성공, 실패시 탑은 무너짐)\n\n\n#"
+    "text": "import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "posts/15wk-2.html#base-클래스-설계",
+    "href": "posts/15wk-2.html#base-클래스-설계",
+    "title": "15wk-2: 기말고사 (예상문제)",
+    "section": "(1) Base 클래스 설계",
+    "text": "(1) Base 클래스 설계\n아래와 같은 기능을 하도록 Base 클래스를 만들어라.\n# 예시1\n\n다호 = Base(end_condition=5,name=\"다호\")\n\n\n다호\n\n이름: 다호\n목표높이: 5\n현재높이: 0\n진행횟수: 0\n완성상태: False\n\n\n\n다호.탑쌓기()\n\n\n다호\n\n이름: 다호\n목표높이: 5\n현재높이: 1\n진행횟수: 1\n완성상태: False\n\n\n\n다호.탑쌓기()\n\n\n다호\n\n이름: 다호\n목표높이: 5\n현재높이: 2\n진행횟수: 2\n완성상태: False\n\n\n#\n# 예시2\n\n하니 = Base(end_condition=5,name=\"하니\")\n\n\nfor _ in range(5):\n    하니.탑쌓기()\n\n\n하니 # 목표치에 도달하여 완성상태가 변경\n\n이름: 하니\n목표높이: 5\n현재높이: 5\n진행횟수: 5\n완성상태: True\n\n\n\nfor _ in range(5):\n    하니.탑쌓기()\n\n\n하니 # 목표치에 도달하여 더이상 탑이 쌓이지 않았음\n\n이름: 하니\n목표높이: 5\n현재높이: 5\n진행횟수: 10\n완성상태: True\n\n\n#\n# 예시3\n\n다호 = Base(end_condition=5,name=\"다호\")\n하니 = Base(end_condition=5,name=\"하니\")\n\n\n다호.탑쌓기()\n다호\n\n이름: 다호\n목표높이: 5\n현재높이: 1\n진행횟수: 1\n완성상태: False\n\n\n\n다호 &gt; 하니, 다호 &lt; 하니 # 현재높이비교\n\n(True, False)\n\n\n\n하니.탑쌓기()\n하니.탑쌓기()\n하니\n\n이름: 하니\n목표높이: 5\n현재높이: 2\n진행횟수: 2\n완성상태: False\n\n\n\n다호 &gt; 하니, 다호 &lt; 하니 # 현재높이비교\n\n(False, True)\n\n\n#\n# 예시4\n\n다호 = Base(end_condition=5,name=\"다호\")\n하니 = Base(end_condition=5,name=\"하니\")\n\n\n다호.탑쌓기()\n다호\n\n이름: 다호\n목표높이: 5\n현재높이: 1\n진행횟수: 1\n완성상태: False\n\n\n\n다호 &gt; 하니, 다호 &lt; 하니\n\n(True, False)\n\n\n\n다호 &gt;&gt; 하니, 다호 &lt;&lt; 하니 # 승리조건 체크 (다호가 1층 높지만 어느 누구도 승리상태아님)\n\n(False, False)\n\n\n\n하니.탑쌓기()\n하니.탑쌓기()\n하니\n\n이름: 하니\n목표높이: 5\n현재높이: 2\n진행횟수: 2\n완성상태: False\n\n\n\n다호 &gt; 하니, 다호 &lt; 하니\n\n(False, True)\n\n\n\n다호 &gt;&gt; 하니, 다호 &lt;&lt; 하니 # 승리조건 체크 (하니가 1층 높지만 어느 누구도 승리상태아님)\n\n(False, False)\n\n\n\n다호.탑쌓기()\n다호.탑쌓기()\n다호.탑쌓기()\n다호.탑쌓기()\n\n\n다호 # 다호가 탑을 완성함. 승리조건 달성\n\n이름: 다호\n목표높이: 5\n현재높이: 5\n진행횟수: 5\n완성상태: True\n\n\n\n다호 &gt;&gt; 하니, 다호 &lt;&lt; 하니 # 승리조건 체크 -- 다호의 승리\n\n(True, False)\n\n\n#"
+  },
+  {
+    "objectID": "posts/15wk-2.html#guebin-클래스-설계",
+    "href": "posts/15wk-2.html#guebin-클래스-설계",
+    "title": "15wk-2: 기말고사 (예상문제)",
+    "section": "(2) Guebin 클래스 설계",
+    "text": "(2) Guebin 클래스 설계\nBase를 상속받아 예시와 같은 Guebin 클래스를 만들어라.\n# 예시1\n\n규빈 = Guebin(name=\"규빈\",end_condition=5)\n\n\n규빈.prob\n\n0.5\n\n\n#\n# 예시2\n\n규빈 = Guebin(name=\"규빈\",end_condition=5)\n\n\nprint(f\"성공확률 = {규빈.prob}\")\n규빈.탑쌓기()\n규빈\n\n성공확률 = 0.5\n\n\n이름: 규빈\n목표높이: 5\n현재높이: 0\n진행횟수: 1\n완성상태: False\n\n\n\nprint(f\"성공확률 = {규빈.prob}\")\nfor _ in range(5):\n    규빈.탑쌓기()\n    print(repr(규빈))\n    print(\"--\")\n\n성공확률 = 0.5\n이름: 규빈\n목표높이: 5\n현재높이: 0\n진행횟수: 2\n완성상태: False\n--\n이름: 규빈\n목표높이: 5\n현재높이: 2\n진행횟수: 3\n완성상태: False\n--\n이름: 규빈\n목표높이: 5\n현재높이: 0\n진행횟수: 4\n완성상태: False\n--\n이름: 규빈\n목표높이: 5\n현재높이: 0\n진행횟수: 5\n완성상태: False\n--\n이름: 규빈\n목표높이: 5\n현재높이: 2\n진행횟수: 6\n완성상태: False\n--\n\n\n#\n# 예시3\n\n규빈 = Guebin(name=\"규빈\",end_condition=5)\n\n\n규빈.prob = 0.9\n\n\nprint(f\"성공확률 = {규빈.prob}\")\nfor _ in range(5):\n    규빈.탑쌓기()\n    print(repr(규빈))\n    print(f\"2블럭 성공확률: {규빈.prob:.2f}\")\n    print(f\"2블럭 성공여부: {규빈.success}\")\n    print(\"--\")\n\n성공확률 = 0.9\n이름: 규빈\n목표높이: 5\n현재높이: 2\n진행횟수: 1\n완성상태: False\n2블럭 성공확률: 0.90\n2블럭 성공여부: True\n--\n이름: 규빈\n목표높이: 5\n현재높이: 4\n진행횟수: 2\n완성상태: False\n2블럭 성공확률: 0.90\n2블럭 성공여부: True\n--\n이름: 규빈\n목표높이: 5\n현재높이: 6\n진행횟수: 3\n완성상태: True\n2블럭 성공확률: 0.90\n2블럭 성공여부: True\n--\n이름: 규빈\n목표높이: 5\n현재높이: 6\n진행횟수: 4\n완성상태: True\n2블럭 성공확률: 0.90\n2블럭 성공여부: True\n--\n이름: 규빈\n목표높이: 5\n현재높이: 6\n진행횟수: 5\n완성상태: True\n2블럭 성공확률: 0.90\n2블럭 성공여부: True\n--\n\n\n#"
+  },
+  {
+    "objectID": "posts/15wk-2.html#guebintraining-클래스-설계",
+    "href": "posts/15wk-2.html#guebintraining-클래스-설계",
+    "title": "15wk-2: 기말고사 (예상문제)",
+    "section": "(3) GuebinTraining  클래스 설계",
+    "text": "(3) GuebinTraining  클래스 설계\n배경설명: 규빈은 2개의 블록을 실패하지 않고 쌓는 연습을 하기로 했다.\nGuebin을 상속받아 아래와 같은 역할을 하는 GuebinTraining을 설계하라.\n# 예시1\n\n수련하는규빈 = GuebinTraining(name=\"규빈\",end_condition=5)\n수련하는규빈\n\n이름: 규빈\n목표높이: 5\n현재높이: 0\n진행횟수: 0\n완성상태: False\n\n\n\nprint(f\"성공확률 = {규빈.prob}\")\nfor _ in range(5):\n    수련하는규빈.탑쌓기()\n    수련하는규빈.수련하기()\n    print(repr(수련하는규빈))\n    print(f\"2블럭 성공확률: {수련하는규빈.prob:.2f}\")\n    print(f\"2블럭 성공여부: {수련하는규빈.success}\")\n    print(\"--\")\n\n성공확률 = 0.9\n이름: 규빈\n목표높이: 5\n현재높이: 2\n진행횟수: 1\n완성상태: False\n2블럭 성공확률: 0.55\n2블럭 성공여부: True\n--\n이름: 규빈\n목표높이: 5\n현재높이: 4\n진행횟수: 2\n완성상태: False\n2블럭 성공확률: 0.60\n2블럭 성공여부: True\n--\n이름: 규빈\n목표높이: 5\n현재높이: 6\n진행횟수: 3\n완성상태: True\n2블럭 성공확률: 0.65\n2블럭 성공여부: True\n--\n이름: 규빈\n목표높이: 5\n현재높이: 6\n진행횟수: 4\n완성상태: True\n2블럭 성공확률: 0.70\n2블럭 성공여부: True\n--\n이름: 규빈\n목표높이: 5\n현재높이: 6\n진행횟수: 5\n완성상태: True\n2블럭 성공확률: 0.75\n2블럭 성공여부: True\n--\n\n\n#"
+  },
+  {
+    "objectID": "posts/15wk-2.html#규빈-vs-다호",
+    "href": "posts/15wk-2.html#규빈-vs-다호",
+    "title": "15wk-2: 기말고사 (예상문제)",
+    "section": "(4) 규빈 vs 다호",
+    "text": "(4) 규빈 vs 다호\n아래와 같은 인스턴스를 고려하자.\n\n규빈 = Guebin(name=\"규빈\",end_condition=10)\n다호 = Base(name=\"다호\",end_condition=10) \n\n10층높이의 탑을 먼저 쌓는 게임을 진행할시 누가 더 유리한가?"
+  },
+  {
+    "objectID": "posts/15wk-2.html#수련하는규빈-vs-다호",
+    "href": "posts/15wk-2.html#수련하는규빈-vs-다호",
+    "title": "15wk-2: 기말고사 (예상문제)",
+    "section": "(5) 수련하는규빈 vs 다호",
+    "text": "(5) 수련하는규빈 vs 다호\n아래와 같은 인스턴스를 고려하자.\n\n수련하는규빈 = GuebinTraining(name=\"규빈\",end_condition=10)\n다호 = Base(name=\"다호\",end_condition=10) \n\n10층높이의 탑을 먼저 쌓는 게임을 진행할시 누가 더 유리한가? (규빈은 수련시 2개의 블록을 성공할 확률이 5퍼센트씩 증가한다. )"
+  },
+  {
+    "objectID": "posts/15wk-2.html#애교쟁이-최다호",
+    "href": "posts/15wk-2.html#애교쟁이-최다호",
+    "title": "15wk-2: 기말고사 (예상문제)",
+    "section": "(6) 애교쟁이 최다호",
+    "text": "(6) 애교쟁이 최다호\n배경설명: 최다호는 매턴 규빈에게 애교를 부리기로 했다. 애교의 성공률은 20%이며 효과는 아래와 같다.\n\n규빈이 2블럭 쌓기를 성공: 규빈은 2개의 블럭을 본인의 탑에 쌓지않고 다호의 탑에 쌓는다.\n규빈이 2블럭 쌓기를 실패: 아무일도 일어나지 않음.\n\n단, 다호가 애교를 부릴경우 다호의 탑은 쌓이지 않는다."
+  },
+  {
+    "objectID": "posts/15wk-2.html#공격하는-규빈",
+    "href": "posts/15wk-2.html#공격하는-규빈",
+    "title": "15wk-2: 기말고사 (예상문제)",
+    "section": "(7) 공격하는 규빈",
+    "text": "(7) 공격하는 규빈"
+  },
+  {
+    "objectID": "posts/15wk-2.html#울보최다호",
+    "href": "posts/15wk-2.html#울보최다호",
+    "title": "15wk-2: 기말고사 (예상문제)",
+    "section": "(8) 울보최다호",
+    "text": "(8) 울보최다호\n배경설명: 최다호는 규빈의 공격으로 공든탑이 무너지자 참을수가 없어져 결국 울음을 터뜨렸다. 울음의 효과는 아래와 같다.\n\n탑과 관련없이 무조건 다호의 승리\n\n울음은 다호의 탑이 무너질 경우 발생하며 발생확률은 50%이다."
   },
   {
     "objectID": "posts/09wk-2.html",
