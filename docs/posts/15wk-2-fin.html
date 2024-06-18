@@ -189,66 +189,84 @@ window.Quarto = {
 <section id="공든-탑-쌓기-i" class="level1">
 <h1>1. 공든 탑 쌓기 I</h1>
 <p>규빈과 다호가 블록을 사용하여 탑을 쌓는다. 규빈은 한 번에 2개의 블록을 사용하여 탑을 쌓지만, 실수로 탑을 무너뜨릴 확률이 50%이다. 한 번 무너진 탑은 다시 처음부터 쌓아야 한다. 다호는 한 번에 1개의 블록을 사용하여 신중하게 탑을 쌓는다. 다호는 천천히 탑을 쌓지만 실수로 탑을 무너뜨리지 않는다.</p>
-<p><code>(1)</code> 규빈과 다호가 10층 높이의 탑을 먼저 쌓는 내기를 하였다고 하자. 탑을 쌓을수 있는 기회는 10회 (=10 round) 준다. 승리조건은 각 라운드가 끝난 이후 정산하며 양쪽이 같은 round에 탑을 완성 시킨 경우나 양쪽이 제한횟수내에 모두 탑을 쌓지 못한경우면 무승부로 처리한다. 이 내기는 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라.</p>
-<p><code>(2)</code> 규빈은 게임을 반복하다가 본인이 불리하다는 사실을 알았다. 규빈은 다호의 탑을 관찰하며, 다호의 탑이 5층 이상인 경우 다호의 탑을 공격하기로 결정했다. 공격 성공률은 60% 이며 공격이 성공시 다호의 탑은 모두 무너진다. (단, 공격시 규빈은 탑을 쌓을 수 없다) 규빈과 다호에게 탑을 쌓거나 상대방의 탑을 공격할 기회를 20회 준다고 가정하면 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라.</p>
+<p><code>(1)</code> 규빈과 다호가 10층 높이의 탑을 먼저 쌓는 내기를 하였다고 하자. 탑을 쌓을수 있는 기회는 10회 (=10-rounds) 준다. 승리조건은 각 라운드가 끝난 이후 정산하며 양쪽이 같은 round에 탑을 완성 시킨 경우나 양쪽이 제한횟수내에 모두 탑을 쌓지 못한경우면 무승부로 처리한다. 이 내기는 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라.</p>
+<p><code>(2)</code> 규빈은 게임을 반복하다가 본인이 불리하다는 사실을 알았다. 규빈은 다호의 탑을 관찰하며, 다호의 탑이 5층 이상인 경우 다호의 탑을 공격하기로 결정했다. 공격 성공률은 60% 이며 공격이 성공시 다호의 탑은 모두 무너진다. (단, 공격시 규빈은 탑을 쌓을 수 없다) 규빈과 다호에게 탑을 쌓거나 상대방의 탑을 공격할 기회를 20회 준다. 즉 20-rounds 동안 게임을 진행한다. 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라.</p>
 <p><code>(3)</code> 다호는 규빈의 공격으로 공든탑이 무너지자 참을수가 없어져 결국 울음을 터뜨렸다. “울음”의 효과는 아래와 같다.</p>
 <ul>
 <li>현재 탑의 높이와 상관없이 다호의 승리 (규빈은 다호가 울면 전의를 상실하고 게임을 포기한다)</li>
 </ul>
 <p>“울음”은 다호의 탑이 무너진 경우 <span class="math inline">\(p_{으앙}\)</span> 의 확률로 발생한다. 다호가 유리해지기 시작하는 <span class="math inline">\(p_{으앙}\)</span> 는 얼마인가? (소수점 첫번째 자리까지의 정확도만 요구함)</p>
+<blockquote class="blockquote">
+<p>울음이벤트의 랜덤발생을 제외하고 전체 게임 상황은 (2)의 게임이 유지된다. 즉 게임은 20-rounds 진행되며 규빈은 다호의탑이 5층이상인 경우 다호의 탑을 공격한다. 공격성공률은 60%이며 공격이 성공시 다호의 탑은 모두 무너진다.</p>
+</blockquote>
 <p><code>(4)</code> 다호가 울어버리자 규빈은 공격을 하지 않고 수련을 반복하여 다호를 이기기로 결심하였다. 규빈은 매회 탑을 쌓는 연습을 몰래하였으며 연습을 통해 탑을 쌓을 확률을 5%씩 증가시켰다. 예를들면 아래의 표와 같다.</p>
 <table class="table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>시도횟수</th>
-<th>규빈의 성공확률</th>
-<th>규빈이 한번에 쌓는 탑의 수</th>
-<th>다호의 성공확률</th>
-<th>다호가 한번에 쌓는 탑의 수</th>
+<th style="text-align: center;">round</th>
+<th style="text-align: center;">플레이어</th>
+<th style="text-align: center;">행동</th>
+<th style="text-align: center;">탑쌓기성공확률</th>
+<th style="text-align: center;">상태</th>
+<th style="text-align: center;">탑의높이</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>50%</td>
-<td>2</td>
-<td>100%</td>
-<td>1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">수련규빈</td>
+<td style="text-align: center;">탑쌓기</td>
+<td style="text-align: center;">0.50</td>
+<td style="text-align: center;">탑쌓기성공</td>
+<td style="text-align: center;">2</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>55%</td>
-<td>2</td>
-<td>100%</td>
-<td>1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">수련규빈</td>
+<td style="text-align: center;">수련하기</td>
+<td style="text-align: center;">(0.50 <span class="math inline">\(\to\)</span>) 0.55</td>
+<td style="text-align: center;">수련결과 탑쌓는 확률 상승</td>
+<td style="text-align: center;">2</td>
 </tr>
 <tr class="odd">
-<td>3</td>
-<td>60%</td>
-<td>2</td>
-<td>100%</td>
-<td>1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">다호</td>
+<td style="text-align: center;">탑쌓기</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">탑쌓기성공</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
-<td>4</td>
-<td>65%</td>
-<td>2</td>
-<td>100%</td>
-<td>1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">수련규빈</td>
+<td style="text-align: center;">탑쌓기</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;">탑쌓기성공</td>
+<td style="text-align: center;">4</td>
 </tr>
 <tr class="odd">
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">수련규빈</td>
+<td style="text-align: center;">수련하기</td>
+<td style="text-align: center;">(0.55 <span class="math inline">\(\to\)</span>) 0.60</td>
+<td style="text-align: center;">수련결과 탑쌓는 확률 상승</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">다호</td>
+<td style="text-align: center;">탑쌓기</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">탑쌓기성공</td>
+<td style="text-align: center;">2</td>
 </tr>
 </tbody>
 </table>
@@ -262,7 +280,7 @@ window.Quarto = {
 <table class="table">
 <thead>
 <tr class="header">
-<th style="text-align: center;">규빈2블록성공</th>
+<th style="text-align: center;">수련규빈이 탑쌓기 성공</th>
 <th style="text-align: center;">애교시도</th>
 <th style="text-align: center;">애교성공</th>
 <th style="text-align: center;">규빈탑높이</th>
@@ -272,28 +290,28 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">True</td>
-<td style="text-align: center;">O</td>
+<td style="text-align: center;">True</td>
 <td style="text-align: center;">True</td>
 <td style="text-align: center;">+0</td>
 <td style="text-align: center;">+2</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">True</td>
-<td style="text-align: center;">O</td>
+<td style="text-align: center;">True</td>
 <td style="text-align: center;">False</td>
 <td style="text-align: center;">+2</td>
 <td style="text-align: center;">+0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">False</td>
-<td style="text-align: center;">X</td>
+<td style="text-align: center;">False</td>
 <td style="text-align: center;">None</td>
 <td style="text-align: center;">+0</td>
 <td style="text-align: center;">+1</td>
 </tr>
 </tbody>
 </table>
-<p>아래는 5층 높이의 탑을 먼저 쌓는 조건을 round4까지만 진행한다고 할때 발생가능한 게임양상의 예시이다.</p>
+<p>아래는 5층 높이의 탑을 먼저 쌓는 조건을 round 4까지만 진행한다고 할때 발생가능한 게임양상의 예시이다.</p>
 <p><code># 경우1</code> – 애교다호가 승리</p>
 <table class="table">
 <colgroup>
@@ -472,7 +490,7 @@ window.Quarto = {
 </table>
 <p><strong>최종적으로 다호의 승리</strong></p>
 <p><code>#</code></p>
-<p>(라운드 제한없이) <span class="math inline">\(n\)</span>층의 높이를 먼저 쌓는 내기를 할때, 애교의 성공확률 <span class="math inline">\(p_{아잉}\)</span> 가 얼마 이상이면 다호의 승률이 80% 이상이 되는가? (Note: <span class="math inline">\(p_{아잉}=1\)</span> 이면 다호의 승률은 100%이다. 즉 규빈은 이길 수 없다.)</p>
+<p>라운드 제한없이 <span class="math inline">\(n\)</span>층의 높이를 먼저 쌓는 내기를 할때, 애교의 성공확률 <span class="math inline">\(p_{아잉}\)</span> 가 얼마 이상이면 다호의 승률이 80% 이상이 되는가? (Note: <span class="math inline">\(p_{아잉}=1\)</span> 이면 다호의 승률은 100%이다. 즉 규빈은 이길 수 없다.)</p>
 </section>
 <section id="공든탑쌓기-ii" class="level1 page-columns page-full">
 <h1>2. 공든탑쌓기 II</h1>
