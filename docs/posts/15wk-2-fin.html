@@ -9,7 +9,7 @@
 <meta name="author" content="최규빈">
 <meta name="dcterms.date" content="2024-06-21">
 
-<title>PP2024 - 15wk-2: 기말고사</title>
+<title>PP2024 - 15wk-2: 기말고사 – 06/18, 10:56</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,7 +156,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">15wk-2: 기말고사</h1>
+<h1 class="title">15wk-2: 기말고사 – 06/18, 10:56</h1>
 </div>
 
 
@@ -496,16 +496,17 @@ window.Quarto = {
 <h1>2. 공든 탑 쌓기 II</h1>
 <p>하니는 규빈과 다호가 탑을 쌓는 과정을 유심히 바라보다가 게임을 하나 만들었다. 게임에는 다음과 같은 4명의 캐릭터가 등장한다.</p>
 <ul>
-<li>공격규빈: 문제 (2)에서의 규빈</li>
-<li>울보다호: 문제 (3)에서의 다호 // <span class="math inline">\(p_{으앙}\)</span>의 확률로 울음</li>
-<li>수련규빈: 문제 (4)에서의 규빈</li>
-<li>애교다호: 문제 (5)에서의 다호 // <span class="math inline">\(p_{애교}\)</span>의 확률로 매회 애교</li>
+<li>공격규빈: 공든 탑 쌓기 I-(2)에서의 규빈</li>
+<li>울보다호: 공든 탑 쌓기 I-(3)에서의 다호 // <span class="math inline">\(p_{으앙}\)</span>의 확률로 울음</li>
+<li>수련규빈: 공든 탑 쌓기 I-(4)에서의 규빈</li>
+<li>애교다호: 공든 탑 쌓기 I-(5)에서의 다호 // 애교는 <span class="math inline">\(p_{아잉}\)</span>의 확률로 성공한다.</li>
 </ul>
-<p>[수련규빈, 공격규빈] 이 한팀으로, [울보다호, 애교다호] 가 한팀으로 구성되었다. 게임은 수련규빈, 울보다호, 공격규빈, 애교다호 순서로 번갈아가며 탑을 쌓는 방식으로 진행한다. 수련규빈, 울보다호, 공격규빈, 애교다호의 탑중 가장 빨리 탑을 완성시킨 캐릭터가 포함된 팀이 최종승리한다. 승리조건은 각 라운드가 끝난 이후 정산하며 양팀이 같은 round에 탑을 완성 시킨 경우나 양팀이 제한횟수내에 모두 탑을 쌓지 못한경우면 팀의 탑높이를 합산하여 승자를 결정한다. 합산점수도 동일하다면 무승부 처리한다. 규칙의 세부적인 내용은 아래와 같다.</p>
+<p>4명의 캐릭터중 [수련규빈, 공격규빈] 이 한팀으로, [울보다호, 애교다호] 가 한팀으로 구성되었다. 게임은 수련규빈, 울보다호, 공격규빈, 애교다호 순서로 번갈아가며 탑을 쌓는 방식으로 진행한다. 수련규빈, 울보다호, 공격규빈, 애교다호의 탑중 가장 빨리 탑을 완성시킨 캐릭터가 포함된 팀이 최종승리한다. 승리조건은 각 라운드가 끝난 이후 정산하며 양팀이 같은 round에 탑을 완성 시킨 경우나 양팀이 제한횟수내에 모두 탑을 쌓지 못한경우면 팀의 탑높이를 합산하여 승자를 결정한다. 합산점수도 동일하다면 무승부 처리한다. 규칙의 세부적인 내용은 아래와 같다.</p>
 <ol type="1">
 <li>공격규빈과 애교다호는 1라운드에는 탑을 공격하거나 뺏지 않으며 2라운드부터 상대팀 중 한명의 탑을 무너뜨리거나 뺏을 수 있다.</li>
 <li>울보다호가 울 경우 게임은 즉시 중지되며 다호팀이 승리한다.</li>
 <li>팀의 탑의 높이를 합산할시, 최종목표타워 높이보다 높은 블록은 합산하지 않는다. (즉 5층을 먼저 쌓는 내기라면 6층을 쌓더라도 5층으로 계산한다.)</li>
+<li>애교다호는 해당 라운드에 탑쌓기에 성공한 플레이어에게만 애교를 사용할 수 있다. 탑쌓기에 성공한 플레이어가 2명이면 둘중하나에게만 애교를 사용할 수 있다. (애교를 거는 대상은 팀 전략에 따라 달라진다. 랜덤으로 애교를 건다든가? 탑을 높이 쌓은 쪽에게 애교를 시전한다든가?)</li>
 </ol>
 <p>5층 높이의 탑을 먼저 쌓는 조건을 round4까지만 진행한다고 할때 발생가능한 게임예시는 아래와 같다.</p>
 <p><code># 경우1</code> – 수련규빈이 먼저 탑을 완성하며 규빈팀 최종승리</p>
@@ -596,9 +597,9 @@ window.Quarto = {
 <tr class="odd">
 <td style="text-align: center;">2</td>
 <td style="text-align: center;">애교다호</td>
-<td style="text-align: center;">탑쌓기</td>
-<td style="text-align: center;">탑쌓기성공</td>
-<td style="text-align: center;">[4,2], [2,2]</td>
+<td style="text-align: center;">수련규빈에게 애교</td>
+<td style="text-align: center;">애교실패</td>
+<td style="text-align: center;">[4,2], [2,1]</td>
 <td style="text-align: center;">양팀 모두 승리조건 만족X</td>
 </tr>
 <tr class="even">
@@ -614,7 +615,7 @@ window.Quarto = {
 <td style="text-align: center;">수련규빈</td>
 <td style="text-align: center;">탑쌓기 <span class="math inline">\(\to\)</span> 수련하기</td>
 <td style="text-align: center;">탑쌓기성공</td>
-<td style="text-align: center;">[6,2], [2,2]</td>
+<td style="text-align: center;">[6,2], [2,1]</td>
 <td style="text-align: center;">규빈팀 승리조건 만족</td>
 </tr>
 <tr class="even">
@@ -622,7 +623,7 @@ window.Quarto = {
 <td style="text-align: center;">울보다호</td>
 <td style="text-align: center;">탑쌓기</td>
 <td style="text-align: center;">탑쌓기성공</td>
-<td style="text-align: center;">[6,2], [3,2]</td>
+<td style="text-align: center;">[6,2], [3,1]</td>
 <td style="text-align: center;">규빈팀 승리조건 만족</td>
 </tr>
 <tr class="odd">
@@ -630,15 +631,15 @@ window.Quarto = {
 <td style="text-align: center;">공격규빈</td>
 <td style="text-align: center;">탑쌓기</td>
 <td style="text-align: center;">탑쌓기성공</td>
-<td style="text-align: center;">[6,4], [3,2]</td>
+<td style="text-align: center;">[6,4], [3,1]</td>
 <td style="text-align: center;">규빈팀 승리조건 만족</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">애교다호</td>
-<td style="text-align: center;">탑쌓기</td>
-<td style="text-align: center;">탑쌓기성공</td>
-<td style="text-align: center;">[6,4], [3,3]</td>
+<td style="text-align: center;">수련규빈에게 애교</td>
+<td style="text-align: center;">애교실패</td>
+<td style="text-align: center;">[6,4], [3,1]</td>
 <td style="text-align: center;">규빈팀 승리조건 만족</td>
 </tr>
 </tbody>
@@ -1112,8 +1113,8 @@ window.Quarto = {
 </table>
 <p><strong>양팀 모두 승리 조건 만족, <code>규빈팀 합산 = (6-1)+2 = 7</code>, <code>다호팀 합산 = 3+5 = 8</code> 이므로 다호팀 승리</strong></p>
 <p><code>#</code></p>
-<p><code>(1)</code> 공격규빈은 2라운드부터 항상 울보다호를 공격하는 전략을 선택한다고 하자. 20라운드 동안 20층높이의 탑을 먼저 쌓는 내기를 할때 유리한 팀은 어느쪽인가? 시뮬레이션을 바탕으로 근거를 설명하라.</p>
-<p><code>(2)</code> 공격규빈은 2라운드부터 항상 애교다호를 공격하는 전략을 선택한다고 하자. 20라운드 동안 20층높이의 탑을 먼저 쌓는 내기를 할때 유리한 팀은 어느쪽인가? 시뮬레이션을 바탕으로 근거를 설명하라.</p>
+<p><code>(1)</code> 공격규빈은 2라운드부터 항상 울보다호를 공격하는 전략을 선택한다고 하자. (따라서 애교다호가 애교를 부릴수 있는 대상은 수련규빈 뿐이다) 20라운드 동안 20층높이의 탑을 먼저 쌓는 내기를 할때 유리한 팀은 어느쪽인가? 시뮬레이션을 바탕으로 근거를 설명하라.</p>
+<p><code>(2)</code> 공격규빈은 2라운드부터 항상 애교다호를 공격하는 전략을 선택한다고 하자. (따라서 애교다호가 애교를 부릴수 있는 대상은 수련규빈 뿐이다) 20라운드 동안 20층높이의 탑을 먼저 쌓는 내기를 할때 유리한 팀은 어느쪽인가? 시뮬레이션을 바탕으로 근거를 설명하라.</p>
 </section>
 <section id="wk-2-강의내용-50점" class="level1">
 <h1>3. 14wk-2 강의내용 – 50점</h1>
