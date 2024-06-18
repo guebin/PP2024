@@ -145,9 +145,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#공든-탑-쌓기-i-150점" id="toc-공든-탑-쌓기-i-150점" class="nav-link active" data-scroll-target="#공든-탑-쌓기-i-150점">1. 공든 탑 쌓기 I – 150점</a></li>
-  <li><a href="#wk-2-강의내용-50점" id="toc-wk-2-강의내용-50점" class="nav-link" data-scroll-target="#wk-2-강의내용-50점">2. 14wk-2 강의내용: 50점</a></li>
-  <li><a href="#공든탑쌓기-ii-추가문항" id="toc-공든탑쌓기-ii-추가문항" class="nav-link" data-scroll-target="#공든탑쌓기-ii-추가문항">3. 공든탑쌓기 II – 추가문항</a></li>
+  <li><a href="#공든-탑-쌓기-i" id="toc-공든-탑-쌓기-i" class="nav-link active" data-scroll-target="#공든-탑-쌓기-i">1. 공든 탑 쌓기 I</a></li>
+  <li><a href="#공든탑쌓기-ii" id="toc-공든탑쌓기-ii" class="nav-link" data-scroll-target="#공든탑쌓기-ii">2. 공든탑쌓기 II</a></li>
+  <li><a href="#wk-2-강의내용" id="toc-wk-2-강의내용" class="nav-link" data-scroll-target="#wk-2-강의내용">3. 14wk-2 강의내용</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="15wk-2-fin.out.ipynb" download="15wk-2-fin.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -186,8 +186,8 @@ window.Quarto = {
 
 
 <p><a href="https://colab.research.google.com/github/guebin/PP2024/blob/main/posts/15wk-2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" style="text-align: left"></a></p>
-<section id="공든-탑-쌓기-i-150점" class="level1">
-<h1>1. 공든 탑 쌓기 I – 150점</h1>
+<section id="공든-탑-쌓기-i" class="level1">
+<h1>1. 공든 탑 쌓기 I</h1>
 <p>규빈과 다호가 블록을 사용하여 탑을 쌓는다. 규빈은 한 번에 2개의 블록을 사용하여 탑을 쌓지만, 실수로 탑을 무너뜨릴 확률이 50%이다. 한 번 무너진 탑은 다시 처음부터 쌓아야 한다. 다호는 한 번에 1개의 블록을 사용하여 신중하게 탑을 쌓는다. 다호는 천천히 탑을 쌓지만 실수로 탑을 무너뜨리지 않는다.</p>
 <p><code>(1)</code> 규빈과 다호가 10층 높이의 탑을 먼저 쌓는 내기를 하였다고 하자. 탑을 쌓을수 있는 기회는 10회 (=10 round) 준다. 승리조건은 각 라운드가 끝난 이후 정산하며 양쪽이 같은 round에 탑을 완성 시킨 경우나 양쪽이 제한횟수내에 모두 탑을 쌓지 못한경우면 무승부로 처리한다. 이 내기는 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라.</p>
 <p><code>(2)</code> 규빈은 게임을 반복하다가 본인이 불리하다는 사실을 알았다. 규빈은 다호의 탑을 관찰하며, 다호의 탑이 5층 이상인 경우 다호의 탑을 공격하기로 결정했다. 공격 성공률은 60% 이며 공격이 성공시 다호의 탑은 모두 무너진다. (단, 공격시 규빈은 탑을 쌓을 수 없다) 규빈과 다호에게 탑을 쌓거나 상대방의 탑을 공격할 기회를 20회 준다고 가정하면 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라.</p>
@@ -472,13 +472,10 @@ window.Quarto = {
 </table>
 <p><strong>최종적으로 다호의 승리</strong></p>
 <p><code>#</code></p>
-<p>애교의 성공확률 <span class="math inline">\(p_{아잉}\)</span> 가 얼마 이상일 경우 다호의 승률이 80% 이상이 되는가? (Note: <span class="math inline">\(p_{아잉}=1\)</span> 이면 다호의 승률은 100%이다. 즉 규빈은 이길 수 없다.)</p>
+<p>(라운드 제한없이) <span class="math inline">\(n\)</span>층의 높이를 먼저 쌓는 내기를 할때, 애교의 성공확률 <span class="math inline">\(p_{아잉}\)</span> 가 얼마 이상이면 다호의 승률이 80% 이상이 되는가? (Note: <span class="math inline">\(p_{아잉}=1\)</span> 이면 다호의 승률은 100%이다. 즉 규빈은 이길 수 없다.)</p>
 </section>
-<section id="wk-2-강의내용-50점" class="level1">
-<h1>2. 14wk-2 강의내용: 50점</h1>
-</section>
-<section id="공든탑쌓기-ii-추가문항" class="level1 page-columns page-full">
-<h1>3. 공든탑쌓기 II – 추가문항</h1>
+<section id="공든탑쌓기-ii" class="level1 page-columns page-full">
+<h1>2. 공든탑쌓기 II</h1>
 <p>하니는 규빈과 다호가 탑을 쌓는 과정을 유심히 바라보다가 게임을 하나 만들었다. 게임에는 다음과 같은 4명의 캐릭터가 등장한다.</p>
 <ul>
 <li>공격규빈: 문제 (2)에서의 규빈</li>
@@ -1099,6 +1096,9 @@ window.Quarto = {
 <p><code>#</code></p>
 <p><code>(1)</code> 공격규빈은 2라운드부터 항상 울보다호를 공격하는 전략을 선택한다고 하자. 20라운드 동안 20층높이의 탑을 먼저 쌓는 내기를 할때 유리한 팀은 어느쪽인가? 시뮬레이션을 바탕으로 근거를 설명하라.</p>
 <p><code>(2)</code> 공격규빈은 2라운드부터 항상 애교다호를 공격하는 전략을 선택한다고 하자. 20라운드 동안 20층높이의 탑을 먼저 쌓는 내기를 할때 유리한 팀은 어느쪽인가? 시뮬레이션을 바탕으로 근거를 설명하라.</p>
+</section>
+<section id="wk-2-강의내용" class="level1">
+<h1>3. 14wk-2 강의내용</h1>
 
 
 </section>
