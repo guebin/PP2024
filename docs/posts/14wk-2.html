@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.520">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -111,33 +111,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -2284,16 +2257,14 @@ Name: 0, dtype: int64</code></pre>
 <span id="cb267-2"><a href="#cb267-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 수정_및_추가할_함수이름(<span class="va">self</span>,...):</span>
 <span id="cb267-3"><a href="#cb267-3" aria-hidden="true" tabindex="-1"></a>        ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code># 예시1</code> – UpJump</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   C[UpJump] --&gt; |"거슬러올라가면"| A[Up]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -2360,17 +2331,15 @@ Name: 0, dtype: int64</code></pre>
 </div>
 </div>
 <p><code>-</code> AddMul 클래스를 선언 (기존의 Add, Mul 상속받아서 이용)</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   C[AddMul] --&gt; |"거슬러올라가면"| A[Add]
   C[AddMul] --&gt; |"거슬러올라가면"| B[Mul] 
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -2431,10 +2400,9 @@ Name: 0, dtype: int64</code></pre>
 </div>
 </div>
 <p>개념상 아래와 같은 서열인데,</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   B[Add] --&gt; |"거슬러올라가면"| A[object]
@@ -2443,15 +2411,13 @@ Name: 0, dtype: int64</code></pre>
   D[AddMul] --&gt; |"거슬러올라가면"| C[Mul]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
 <p>공식적으로는 아래와 같은 서열로 이해한다.</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   C[Mul] --&gt; |"거슬러올라가면"| A[object]
@@ -2459,7 +2425,6 @@ Name: 0, dtype: int64</code></pre>
   B[Add] --&gt; |"거슬러올라가면"| C[Mul]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -2518,16 +2483,14 @@ Note
 <section id="b.-super" class="level2">
 <h2 class="anchored" data-anchor-id="b.-super">B. <code>super()</code></h2>
 <p><code># 예시1</code> – 기본적인 사용법</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   B[Student] --&gt; |"거슬러올라가면"| A[StudentWrong]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -2606,16 +2569,14 @@ Note
 <pre><code>['6개', '???', '???', '???', '???']</code></pre>
 </div>
 </div>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   C[ProblemSolver2] --&gt; |"거슬러올라가면"| D[ProblemSolver1]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -2655,17 +2616,15 @@ Note
 <pre><code>['6개', '???', '2', '1', '6']</code></pre>
 </div>
 </div>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   B[ProblemSolver3] --&gt; |"거슬러올라가면"| C[ProblemSolver2]
   C[ProblemSolver2] --&gt; |"거슬러올라가면"| D[ProblemSolver1]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -2712,10 +2671,9 @@ Note
 </div>
 </div>
 <p><strong><em>그런데 2층에서 3층 아래로가면 사실 지하 2층이다..</em></strong></p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   A[ProblemSolver4] --&gt; |"거슬러올라가면"| B[ProblemSolver3]
@@ -2723,7 +2681,6 @@ Note
   C[ProblemSolver2] --&gt; |"거슬러올라가면"| D[ProblemSolver1]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -2765,10 +2722,9 @@ Note
 </div>
 </div>
 <p><code>-</code> <code>ProblemSolver4</code>를 아래와 같이 구현한다면? (틀린구현) // 빙의개념을 이해할것</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   A[ProblemSolver4Wrong] --&gt; |"거슬러올라가면"| B[ProblemSolver3]
@@ -2776,7 +2732,6 @@ Note
   C[ProblemSolver2] --&gt; |"거슬러올라가면"| D[ProblemSolver1]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -2827,16 +2782,14 @@ Note
 <h2 class="anchored" data-anchor-id="c.-super-쓰지-않기">C. <code>super()</code> 쓰지 않기</h2>
 <p><code>-</code> 예전에는 <code>super()</code>가 없었다고 한다.</p>
 <p><code># 예제1</code> – super()를 이용 vs 이용하지 않음</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   A[Dummy2] --&gt; |"거슬러올라가면"| B[Dummy]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -2881,10 +2834,9 @@ Note
 </div>
 <p><code>#</code></p>
 <p><code># 예제2</code> – 안쓰는 이유</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   B[Dummy2] --&gt; |"거슬러올라가면"| A[Dummy]
@@ -2893,7 +2845,6 @@ Note
   D[Dummy4] --&gt; |"거슬러올라가면"| C[Dummy3]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -3005,10 +2956,9 @@ Note
 <p><code>Dummy4.__mro__</code> 를 타고 올라가서 제일 꼭대기부터 한번씩만 <code>__init__()</code> 을 실행함.</p>
 <p><code>#</code></p>
 <p><code># 예제3</code> – 오개념 방지를 위한 예제들</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   B[Dummy2] --&gt; |"거슬러올라가면"| A[Dummy]
@@ -3017,7 +2967,6 @@ Note
   D[Dummy4] --&gt; |"거슬러올라가면"| C[Dummy3]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -3060,10 +3009,9 @@ Note
 <p>왜 이런일이?</p>
 <p><code>-</code> <code>mro/super</code>는 상속순서를 직선으로 재정렬함</p>
 <p>개념적으로는 아래구조의 상속이지만</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   B[Dummy2] --&gt; |"거슬러올라가면"| A[Dummy]
@@ -3072,15 +3020,13 @@ Note
   D[Dummy4] --&gt; |"거슬러올라가면"| C[Dummy3]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
 <p>실제로는 아래구조의 상속임</p>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
 <div>
-<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   A[Dummy4] --&gt; |"거슬러올라가면"| B[Dummy2]
@@ -3088,7 +3034,6 @@ Note
   C[Dummy3] --&gt; |"거슬러올라가면"| D[Dummy]
 </pre>
 </div>
-<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -3681,6 +3626,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -3695,14 +3661,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
+        typesetMath(container);
         return container.innerHTML
       } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -3711,9 +3673,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
