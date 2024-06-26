@@ -194,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><a href="https://colab.research.google.com/github/guebin/PP2024/blob/main/posts/15wk-2-fin.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" style="text-align: left"></a></p>
-<div id="ee093171-c43d-4608-9745-1ae98c716782" class="cell" data-tags="[]" data-execution_count="1">
+<div id="ee093171-c43d-4608-9745-1ae98c716782" class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -445,7 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>규빈과 다호가 블록을 사용하여 탑을 쌓는다. (규빈이 먼저 쌓음) 규빈은 한 번에 2개의 블록을 사용하여 탑을 쌓지만, 실수로 탑을 무너뜨릴 확률이 50%이다. 한 번 무너진 탑은 다시 처음부터 쌓아야 한다. 다호는 한 번에 1개의 블록을 사용하여 신중하게 탑을 쌓는다. 다호는 천천히 탑을 쌓지만 실수로 탑을 무너뜨리지 않는다.</p>
 <p><code>(1)</code> 규빈과 다호가 6층 높이의 탑을 먼저 쌓는 내기를 하였다고 하자. 탑을 쌓을수 있는 기회는 10회 (=10-rounds) 준다. 승리조건은 각 라운드가 끝난 이후 정산하며 양쪽이 같은 round에 탑을 완성 시킨 경우나 양쪽이 제한횟수내에 모두 탑을 쌓지 못한경우면 무승부로 처리한다. 이 내기는 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라.</p>
 <p><code>(클래스사용소개)</code></p>
-<div id="d267e3aa-cd12-4f5e-80b1-3149cfbc31a7" class="cell" data-tags="[]" data-execution_count="129">
+<div id="d267e3aa-cd12-4f5e-80b1-3149cfbc31a7" class="cell" data-tags="[]" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Simulator1(BaseSimulator):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 라운드진행(<span class="va">self</span>):</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.다호.탑쌓기()</span>
@@ -453,29 +453,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.규빈.완성상태체크() </span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.다호.완성상태체크()  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a41a9b19-ca7b-4925-940e-ca4a6bbac3f7" class="cell" data-tags="[]" data-execution_count="130">
+<div id="a41a9b19-ca7b-4925-940e-ca4a6bbac3f7" class="cell" data-tags="[]" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>규빈<span class="dv">1</span> <span class="op">=</span> Guebin(이름<span class="op">=</span><span class="st">"Guebin1"</span>,목표높이<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>다호<span class="dv">1</span> <span class="op">=</span> Daho(이름<span class="op">=</span><span class="st">"Daho1"</span>,목표높이<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c76bba06-69c4-453b-b344-f919812a0918" class="cell" data-tags="[]" data-execution_count="131">
+<div id="c76bba06-69c4-453b-b344-f919812a0918" class="cell" data-tags="[]" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>simulator <span class="op">=</span> Simulator1(규빈<span class="dv">1</span>,다호<span class="dv">1</span>,최대라운드<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="0f6e2341-9d5f-43f9-8e15-ce661f39bee6" class="cell" data-tags="[]" data-execution_count="132">
+<div id="0f6e2341-9d5f-43f9-8e15-ce661f39bee6" class="cell" data-tags="[]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> simulator:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    simulator.라운드진행()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    simulator.경험저장()</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    simulator.라운드 <span class="op">=</span> simulator.라운드 <span class="op">+</span> <span class="dv">1</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="42743fd3-e0eb-4e94-80cd-1d96173c154c" class="cell" data-tags="[]" data-execution_count="133">
+<div id="42743fd3-e0eb-4e94-80cd-1d96173c154c" class="cell" data-tags="[]" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>simulator.히스토리()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>규빈의탑높이들: [0, 0, 0, 2, 4, 6, 8, 0, 0, 2]
+<pre><code>규빈의탑높이들: [0, 2, 4, 0, 0, 2, 4, 0, 2, 0]
 다호의탑높이들: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 최종라운드: 10
 결과: 다호승</code></pre>
 </div>
 </div>
-<div id="dcff1c67-8304-456d-b289-8bc9e5e7c6ac" class="cell" data-tags="[]" data-execution_count="134">
+<div id="dcff1c67-8304-456d-b289-8bc9e5e7c6ac" class="cell" data-tags="[]" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>simulator.결과시각화()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -486,21 +486,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><code>(풀이)</code></p>
-<div id="a1535416-2d18-4536-8b90-c0263c465d63" class="cell" data-tags="[]" data-execution_count="135">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>simulator_list <span class="op">=</span> [Simulator1(Guebin(<span class="ss">f"Guebin</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,<span class="dv">10</span>),Daho(<span class="ss">f"Daho</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,<span class="dv">10</span>),최대라운드<span class="op">=</span><span class="dv">10</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100000</span>)] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a1535416-2d18-4536-8b90-c0263c465d63" class="cell" data-tags="[]" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>simulator_list <span class="op">=</span> [Simulator1(Guebin(<span class="ss">f"Guebin</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,목표높이<span class="op">=</span><span class="dv">10</span>),Daho(<span class="ss">f"Daho</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,<span class="dv">10</span>),최대라운드<span class="op">=</span><span class="dv">10</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100000</span>)] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="020dd820-5e92-4c8c-bcee-ff93b634c2d8" class="cell" data-tags="[]" data-execution_count="136">
+<div id="020dd820-5e92-4c8c-bcee-ff93b634c2d8" class="cell" data-tags="[]" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> simulator <span class="kw">in</span> simulator_list:</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> simulator:</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        simulator.라운드진행()</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        simulator.경험저장()</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        simulator.라운드 <span class="op">=</span> simulator.라운드 <span class="op">+</span> <span class="dv">1</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2fecaa65-a4f3-4b21-8e8f-30788142870e" class="cell" data-tags="[]" data-execution_count="137">
+<div id="2fecaa65-a4f3-4b21-8e8f-30788142870e" class="cell" data-tags="[]" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> [s.결과 <span class="cf">for</span> s <span class="kw">in</span> simulator_list]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>{s:results.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(results)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="137">
-<pre><code>{'무승부(모두성공)': 1474, '규빈승': 9478, '다호승': 89048}</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>{'무승부(모두성공)': 1497, '다호승': 89155, '규빈승': 9348}</code></pre>
 </div>
 </div>
 <p><code>(결과분석)</code></p>
@@ -558,7 +558,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><code>(2)</code> 규빈은 게임을 반복하다가 본인이 불리하다는 사실을 알았다. 규빈은 다호의 탑을 관찰하며, 다호의 탑이 5층 이상인 경우 다호의 탑을 공격하기로 결정했다. 공격 성공률은 60% 이며 공격이 성공시 다호의 탑은 모두 무너진다. (단, 공격시 규빈은 탑을 쌓을 수 없다) 규빈과 다호에게 탑을 쌓거나 상대방의 탑을 공격할 기회를 20회 준다. 즉 20-rounds 동안 게임을 진행한다. 누가 유리한가? 시뮬레이션을 통하여 근거를 설명하라.</p>
 <p><code>(풀이)</code></p>
-<div id="b33f0673-a734-498d-9269-3900d88a3d64" class="cell" data-tags="[]" data-execution_count="144">
+<div id="b33f0673-a734-498d-9269-3900d88a3d64" class="cell" data-tags="[]" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Simulator2(BaseSimulator):</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 라운드진행(<span class="va">self</span>):</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.다호.현재높이 <span class="op">&gt;=</span> <span class="dv">5</span>: </span>
@@ -569,21 +569,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.규빈.완성상태체크() </span>
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.다호.완성상태체크()      </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="eb114fe5-8543-4c68-ada3-c6e9f7ccbca5" class="cell" data-tags="[]" data-execution_count="145">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>simulator_list <span class="op">=</span> [Simulator2(GuebinAttack(<span class="ss">f"Guebin</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,<span class="dv">10</span>),Daho(<span class="ss">f"Daho</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,<span class="dv">10</span>),최대라운드<span class="op">=</span><span class="dv">20</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="eb114fe5-8543-4c68-ada3-c6e9f7ccbca5" class="cell" data-tags="[]" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>simulator_list <span class="op">=</span> [Simulator2(GuebinAttack(<span class="ss">f"Guebin</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,목표높이<span class="op">=</span><span class="dv">10</span>,공격성공률<span class="op">=</span><span class="fl">0.6</span>),Daho(<span class="ss">f"Daho</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,목표높이<span class="op">=</span><span class="dv">10</span>),최대라운드<span class="op">=</span><span class="dv">20</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9eeb0b23-a5fe-4029-8b78-bd9bc172cc6e" class="cell" data-tags="[]" data-execution_count="146">
+<div id="9eeb0b23-a5fe-4029-8b78-bd9bc172cc6e" class="cell" data-tags="[]" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> simulator <span class="kw">in</span> simulator_list:</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> simulator:</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        simulator.라운드진행()</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        simulator.경험저장()</span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        simulator.라운드 <span class="op">=</span> simulator.라운드 <span class="op">+</span> <span class="dv">1</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e45321f7-3e5b-42d2-8c21-a6230ead6bfd" class="cell" data-tags="[]" data-execution_count="147">
+<div id="e45321f7-3e5b-42d2-8c21-a6230ead6bfd" class="cell" data-tags="[]" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> [s.결과 <span class="cf">for</span> s <span class="kw">in</span> simulator_list]</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>{s:results.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(results)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="147">
-<pre><code>{'무승부(모두실패)': 7934, '규빈승': 1862, '다호승': 204}</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>{'무승부(모두실패)': 7946, '다호승': 213, '규빈승': 1841}</code></pre>
 </div>
 </div>
 <p><code>(3)</code> 다호는 규빈의 공격으로 공든탑이 무너지자 참을수가 없어져 결국 울음을 터뜨렸다. “울음”의 효과는 아래와 같다.</p>
@@ -595,7 +595,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>울음이벤트의 랜덤발생을 제외하고 전체 게임 상황은 (2)의 게임이 유지된다. 즉 게임은 20-rounds 동안 10층높이의 탑을 쌓는 규칙으로 진행되며 규빈은 다호의탑이 5층이상인 경우 다호의 탑을 공격한다. 공격성공률은 60%이며 공격이 성공시 다호의 탑은 모두 무너진다.</p>
 </blockquote>
 <p><code>(풀이)</code></p>
-<div id="95cf535b-bca1-4cc0-b5ca-43dc25db0e4a" class="cell" data-tags="[]" data-execution_count="148">
+<div id="95cf535b-bca1-4cc0-b5ca-43dc25db0e4a" class="cell" data-tags="[]" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Simulator3(BaseSimulator):</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 라운드진행(<span class="va">self</span>):</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.다호.현재높이 <span class="op">&gt;=</span> <span class="dv">5</span>: <span class="co"># 공격조건만족</span></span>
@@ -613,21 +613,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span>(<span class="pp">StopIteration</span>)        </span>
 <span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__next__</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="35163205-6627-4648-af77-83cfb91c95f1" class="cell" data-tags="[]" data-execution_count="149">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>simulator_list <span class="op">=</span> [Simulator3(GuebinAttack(<span class="ss">f"Guebin</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,<span class="dv">10</span>),DahoCrying(<span class="ss">f"Daho</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,<span class="dv">10</span>,<span class="fl">0.1</span>),최대라운드<span class="op">=</span><span class="dv">20</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="35163205-6627-4648-af77-83cfb91c95f1" class="cell" data-tags="[]" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>simulator_list <span class="op">=</span> [Simulator3(GuebinAttack(<span class="ss">f"Guebin</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,목표높이<span class="op">=</span><span class="dv">10</span>),DahoCrying(<span class="ss">f"Daho</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,목표높이<span class="op">=</span><span class="dv">10</span>,울확률<span class="op">=</span><span class="fl">0.1</span>),최대라운드<span class="op">=</span><span class="dv">20</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="571f73d2-6990-412a-8663-25f194badf32" class="cell" data-tags="[]" data-execution_count="150">
+<div id="571f73d2-6990-412a-8663-25f194badf32" class="cell" data-tags="[]" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> simulator <span class="kw">in</span> simulator_list:</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> simulator:</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>        simulator.라운드진행()</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>        simulator.경험저장()</span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>        simulator.라운드 <span class="op">=</span> simulator.라운드 <span class="op">+</span> <span class="dv">1</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="16855ba7-bec6-42ed-b357-4953455a7c33" class="cell" data-tags="[]" data-execution_count="151">
+<div id="16855ba7-bec6-42ed-b357-4953455a7c33" class="cell" data-tags="[]" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> [s.결과 <span class="cf">for</span> s <span class="kw">in</span> simulator_list]</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>{s:results.count(s) <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">set</span>(results)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="151">
-<pre><code>{'무승부(모두실패)': 5867, '규빈승': 1516, '다호승': 2617}</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<pre><code>{'무승부(모두실패)': 5897, '다호승': 2556, '규빈승': 1547}</code></pre>
 </div>
 </div>
 <p><code>(4)</code> 다호가 울어버리자 규빈은 공격을 하지 않고 수련을 반복하여 다호를 이기기로 결심하였다. 규빈은 매회 탑을 쌓는 연습을 몰래하였으며 연습을 통해 탑을 쌓을 확률을 5%씩 증가시켰다. 예를들면 아래의 표와 같다.</p>
@@ -711,9 +711,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.규빈.완성상태체크()        </span>
 <span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.다호.완성상태체크()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="0fa45bc1-9ae0-4549-b70f-f11845e18501" class="cell" data-tags="[]" data-execution_count="153">
+<div id="0fa45bc1-9ae0-4549-b70f-f11845e18501" class="cell" data-tags="[]" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_n(n):</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    simulator_list <span class="op">=</span> [Simulator4(GuebinTraining(<span class="ss">f"Guebin</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,n),DahoCrying(<span class="ss">f"Daho</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,n,<span class="fl">0.1</span>),최대라운드<span class="op">=</span>n) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)] </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    simulator_list <span class="op">=</span> [Simulator4(GuebinTraining(<span class="ss">f"Guebin</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,목표높이<span class="op">=</span>n),DahoCrying(<span class="ss">f"Daho</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,목표높이<span class="op">=</span>n,울확률<span class="op">=</span><span class="fl">0.1</span>),최대라운드<span class="op">=</span>n) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)] </span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> simulator <span class="kw">in</span> simulator_list:</span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> _ <span class="kw">in</span> simulator:</span>
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>            simulator.라운드진행()</span>
@@ -990,7 +990,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="7ba6b1b9-d509-4317-9f67-51f045ad9719" class="cell" data-tags="[]" data-execution_count="158">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_p(p):</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    simulator_list <span class="op">=</span> [Simulator5(GuebinTraining(<span class="ss">f"Guebin</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,n),DahoStill(<span class="ss">f"Daho</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,n,p)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)] </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    simulator_list <span class="op">=</span> [Simulator5(GuebinTraining(<span class="ss">f"Guebin</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,목표높이<span class="op">=</span>n),DahoStill(<span class="ss">f"Daho</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>,목표높이<span class="op">=</span>n,애교성공률<span class="op">=</span>p)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)] </span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> simulator <span class="kw">in</span> simulator_list:</span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> _ <span class="kw">in</span> simulator:</span>
 <span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>            simulator.라운드진행()</span>
